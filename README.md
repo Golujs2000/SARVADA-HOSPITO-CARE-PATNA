@@ -1,8 +1,8 @@
-# 🏥 Patna Lapro and Stone Healthcare
+# 🏥 Sarvada Hospital
 
-> **Advanced Laparoscopic & Stone Surgery | Expert Care in Patna, Bihar**
+> **Advanced Laparoscopic, Stone Surgery & Multi-specialty Healthcare | Expert Care in Patna, Bihar**
 
-Official website for **Patna Lapro and Stone Healthcare** — built with React, Vite, Tailwind CSS, and Firebase.
+Official website for **Sarvada Hospital** (A Unit of Servada Hospito Care Pvt. Ltd.) — built with React, Vite, Tailwind CSS, and Firebase.
 
 ---
 
@@ -10,10 +10,10 @@ Official website for **Patna Lapro and Stone Healthcare** — built with React, 
 
 | | |
 |---|---|
-| **Hospital** | Patna Lapro and Stone Healthcare |
-| **Specialisation** | Advanced Laparoscopy · Kidney Stone Treatment · General Surgery · Urology |
+| **Hospital** | Sarvada Hospital (A Unit of Servada Hospito Care Pvt. Ltd.) |
+| **Specialisation** | Advanced Laparoscopy · ICU, ICCU, IPD & OPD Care · Dialysis · Ortho, Spine & Neurosurgery · Urology · Gynecology |
 | **City** | Patna, Bihar |
-| **Website** | [patnalapro.web.app](https://patnalapro.web.app) |
+| **Website** | [sarvada-hospito-care.web.app](https://sarvada-hospito-care.web.app) |
 
 ---
 
@@ -280,8 +280,8 @@ Official website for **Patna Lapro and Stone Healthcare** — built with React, 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/Golujs2000/PATNA-LAPRO-AND-STONE-HEALTHCARE.git
-cd PATNA-LAPRO-AND-STONE-HEALTHCARE
+git clone https://github.com/Golujs2000/SARVADA-HOSPITO-CARE-PATNA.git
+cd SARVADA-HOSPITO-CARE-PATNA
 ```
 
 ### 2. Install dependencies
@@ -377,4 +377,4 @@ Manage:
 
 ## 📄 License
 
-© 2025 Patna Lapro and Stone Healthcare. All rights reserved.# SARVADA-HOSPITO-CARE-PATNA
+© 2026 Sarvada Hospital (A Unit of Servada Hospito Care Pvt. Ltd.). All rights reserved.
