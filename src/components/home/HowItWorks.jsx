@@ -15,7 +15,7 @@ const steps = [
     number: '01',
     icon: FiSearch,
     title: 'Choose a Department',
-    desc: 'Browse our 25+ specialities and find the right department or doctor for your health concern.',
+    desc: 'Browse our 25+ departments and find the right department or doctor for your health concern.',
     color: 'from-primary-500 to-primary-700',
   },
   {

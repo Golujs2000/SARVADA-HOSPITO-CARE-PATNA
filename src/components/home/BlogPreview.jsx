@@ -1,31 +1,29 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { FiArrowRight, FiCalendar } from 'react-icons/fi'
+import { FiArrowRight } from 'react-icons/fi'
 import { useBlogs } from '../../hooks/useBlog'
 import { formatDate } from '../../utils/helpers'
 
 const FALLBACK_POSTS = [
   {
     id: 'b1',
-    title: 'Laparoscopic Surgery: What You Need to Know Before Your Procedure',
-    excerpt: 'Dr. Manmohan Suman explains how laparoscopic (keyhole) surgery works, its advantages over open surgery, and what patients should expect before, during, and after the procedure.',
-    category: 'Laparoscopic Surgery',
-    date: '1 Jun 2026',
-    color: 'from-primary-400 to-accent-600',
+    title: 'Laparoscopic Surgery: What You Need to Know',
+    excerpt: 'Learn about the benefits of minimally invasive surgery and how it can help you recover faster than traditional open surgery.',
+    date: 'OCTOBER 19, 2026',
+    image: '/gallery/hospital-1.jpg'
   },
   {
     id: 'b2',
     title: 'Kidney Stones: When Do You Need Surgery?',
-    excerpt: 'Dr. Manmohan Suman explains different treatment options for kidney stones — from medical therapy to PCNL and ureteroscopy — and when surgery becomes necessary.',
-    category: 'Kidney & Stone',
-    date: '1 Jun 2026',
+    excerpt: 'Discover the different treatment options available for kidney stones and when surgical intervention becomes necessary.',
+    date: 'NOVEMBER 05, 2026',
+    image: '/gallery/hospital-2.jpg'
   },
   {
     id: 'b3',
     title: 'Jaundice: When Is It a Surgical Emergency?',
-    excerpt: 'Dr. Manmohan Suman explains the difference between medical and surgical jaundice, red-flag symptoms, and when you need emergency surgical evaluation.',
-    category: 'Jaundice & Liver',
-    date: '1 Jun 2026',
+    excerpt: 'Understand the difference between medical and surgical jaundice, and when you should seek immediate help.',
+    date: 'DECEMBER 12, 2026',
+    image: '/gallery/hospital-3.jpg'
   },
 ]
 
@@ -34,123 +32,61 @@ export default function BlogPreview() {
   const displayed = (blogs.length >= 3 ? blogs : FALLBACK_POSTS).slice(0, 3)
 
   return (
-    <section className="section-padding bg-gray-50">
-      <div className="container-max">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12"
-        >
-          <div>
-            <span className="text-primary-600 font-semibold text-sm tracking-widest uppercase">Health Tips</span>
-            <h2 className="section-title mt-3">Latest from Our Blog</h2>
-            <p className="text-gray-500 mt-2 max-w-lg">
-              Expert advice, health insights, and preventive care tips — written by our doctors.
-            </p>
-          </div>
-          <Link to="/blog" className="hidden md:flex items-center gap-2 text-primary-600 font-semibold text-sm hover:gap-3 transition-all flex-shrink-0">
-            View All Articles <FiArrowRight />
-          </Link>
-        </motion.div>
+    <section className="py-20 md:py-28 bg-slate-50">
+      <div className="container-max px-4 md:px-8">
+        
+        {/* Header */}
+        <div className="mb-14">
+          <h2 className="font-heading font-black text-navy-800 text-3xl md:text-4xl mb-4">
+            Latest News & Blog
+          </h2>
+          <p className="text-gray-500 text-sm md:text-base max-w-2xl leading-relaxed">
+            In this section you can learn more about our latest medical breakthroughs, healthcare tips, and news from our clinical team to help you live a healthier life.
+          </p>
+        </div>
 
+        {/* Blog Grid */}
         {loading ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="md:col-span-2 h-80 bg-gray-200 rounded-2xl animate-pulse" />
-            <div className="flex flex-col gap-5">
-              <div className="h-40 bg-gray-200 rounded-2xl animate-pulse" />
-              <div className="h-40 bg-gray-200 rounded-2xl animate-pulse" />
-            </div>
+           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[...Array(3)].map((_, i) => (
+              <div key={i} className="animate-pulse">
+                <div className="w-full h-56 bg-gray-200 rounded mb-4" />
+                <div className="w-32 h-4 bg-gray-200 rounded mb-4" />
+                <div className="w-48 h-6 bg-gray-200 rounded mb-2" />
+                <div className="w-full h-16 bg-gray-200 rounded" />
+              </div>
+            ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {displayed.length > 0 && (
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="md:col-span-2 bg-white rounded-[5px] overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group flex flex-col"
-              >
-                <div className="h-40 bg-gradient-to-br from-primary-400 to-accent-600 relative overflow-hidden flex-shrink-0">
-                  <div className="absolute inset-0 bg-black/10" />
-                  <div className="absolute bottom-4 left-6">
-                    <span className="text-xs font-bold uppercase tracking-wider text-white/90 bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                      {displayed[0].category}
-                    </span>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {displayed.map((post) => (
+              <div key={post.id} className="group flex flex-col bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <Link to={`/blog/${post.id}`} className="overflow-hidden relative block h-56">
+                  <img 
+                    src={post.image || post.coverImage || '/gallery/hospital-1.jpg'} 
+                    alt={post.title} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </Link>
+                <div className="bg-primary-600 text-white text-[10px] font-bold px-4 py-2 uppercase tracking-widest self-start -mt-4 relative z-10 ml-6">
+                  {post.date || formatDate(post.createdAt)}
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-heading font-bold text-navy-800 text-xl mt-0 mb-3 leading-snug group-hover:text-primary-700 transition-colors">
-                    {displayed[0].title}
+                <div className="pt-6 pb-8 px-6 flex-1 flex flex-col">
+                  <h3 className="font-heading font-bold text-navy-800 text-lg mb-3 hover:text-primary-600 transition-colors leading-snug">
+                    <Link to={`/blog/${post.id}`}>{post.title}</Link>
                   </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-5 flex-1">
-                    {displayed[0].excerpt || displayed[0].summary}
+                  <p className="text-gray-500 text-sm leading-relaxed mb-6 flex-1">
+                    {post.excerpt || post.summary}
                   </p>
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                    <div className="flex items-center gap-3 text-gray-400 text-xs">
-                      <span className="flex items-center gap-1">
-                        <FiCalendar className="w-3.5 h-3.5" /> 
-                        {displayed[0].date || formatDate(displayed[0].createdAt)}
-                      </span>
-                    </div>
-                    <Link
-                      to={`/blog/${displayed[0].id}`}
-                      className="inline-flex items-center gap-1.5 text-primary-600 text-sm font-semibold hover:gap-2.5 transition-all"
-                    >
-                      Read More <FiArrowRight className="w-3.5 h-3.5" />
-                    </Link>
-                  </div>
+                  <Link to={`/blog/${post.id}`} className="inline-flex items-center gap-2 text-primary-600 text-xs font-bold uppercase tracking-widest hover:gap-3 transition-all">
+                    LEARN MORE <FiArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
-              </motion.div>
-            )}
-
-            {displayed.length > 1 && (
-              <div className="flex flex-col gap-5">
-                {displayed.slice(1).map((post, i) => (
-                  <motion.div
-                    key={post.id}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: (i + 1) * 0.1 }}
-                    className="bg-white rounded-[5px] overflow-hidden border border-gray-100 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group flex flex-col flex-1"
-                  >
-                    <div className="h-1.5 bg-gradient-to-r from-primary-400 to-primary-600 flex-shrink-0" />
-                    <div className="p-5 flex flex-col flex-1">
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-primary-600 bg-primary-50 px-2.5 py-1 rounded-full self-start mb-3">
-                        {post.category}
-                      </span>
-                      <h3 className="font-heading font-bold text-navy-800 text-base mb-2 leading-snug group-hover:text-primary-700 transition-colors line-clamp-2 flex-1">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-400 text-xs leading-relaxed line-clamp-2 mb-4">
-                        {post.excerpt || post.summary}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-400 text-xs flex items-center gap-1">
-                          <FiCalendar className="w-3 h-3" /> 
-                          {post.date || formatDate(post.createdAt)}
-                        </span>
-                        <Link
-                          to={`/blog/${post.id}`}
-                          className="text-primary-600 text-xs font-semibold flex items-center gap-1 hover:gap-2 transition-all"
-                        >
-                          Read <FiArrowRight className="w-3 h-3" />
-                        </Link>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
               </div>
-            )}
+            ))}
           </div>
         )}
 
-        <div className="text-center mt-8 md:hidden">
-          <Link to="/blog" className="btn-secondary">
-            View All Articles <FiArrowRight />
-          </Link>
-        </div>
       </div>
     </section>
   )

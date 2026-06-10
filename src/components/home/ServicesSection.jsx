@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { FiArrowRight, FiHeart, FiActivity, FiEye, FiTool, FiUser, FiUsers } from 'react-icons/fi'
-import { useSpecialities } from '../../hooks/useSpecialities'
+import { FiHeart, FiActivity, FiTool, FiUser, FiUsers, FiEye } from 'react-icons/fi'
+import { useCategories } from '../../hooks/useCategories'
 
 const iconMap = {
   heart: FiHeart,
@@ -12,131 +11,60 @@ const iconMap = {
   ribbon: FiEye,
 }
 
-const specialityImages = {
-  'laparoscopic-surgery': '/speciality/laparoscopic-surgery.png',
-  'kidney-ureteric-stone': '/speciality/kidney-ureteric-stone.png',
-  'liver-disorders': '/speciality/liver-disorders.png',
-  'pancreas-disorders': '/speciality/pancreas-disorders.png',
-  'jaundice-biliary-disorders': '/speciality/jaundice-biliary-disorders.png',
-  'general-gi-surgery': '/speciality/general-gi-surgery.png',
-  'colorectal-surgeon': '/speciality/general-gi-surgery.png',
-  'piles-fissure-fistula': '/speciality/general-gi-surgery.png',
-  'pancreatic-stone': '/speciality/pancreas-disorders.png',
-  'fissure-laser-surgery': '/speciality/general-gi-surgery.png',
-  'gall-bladder-stone': '/speciality/laparoscopic-surgery.png',
-  'liver': '/speciality/liver-disorders.png',
-  'ercp-cbd-stone': '/speciality/jaundice-biliary-disorders.png',
-  'stomach-cancer': '/speciality/general-gi-surgery.png',
-  'hernia': '/speciality/laparoscopic-surgery.png',
-  'jaundice-ascites-biliary': '/speciality/jaundice-biliary-disorders.png',
-  'endoscopy-colonoscopy': '/speciality/general-gi-surgery.png',
-}
-
 export default function ServicesSection() {
-  const { specialities, loading } = useSpecialities()
-  const displayed = specialities.slice(0, 20)
+  const { categories: departments, loading } = useCategories()
+  // Show a nice grid of 6 to match the template look
+  const displayed = departments.slice(0, 6)
 
   return (
-    <section className="section-padding bg-slate-50/70 border-b border-primary-50">
-      <div className="container-max">
-
-        {/* Section header — title left, description right */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8 items-end mb-14"
-        >
-          <div>
-            <span className="text-primary-600 font-bold text-xs tracking-widest uppercase mb-3 block">
-              Quality Service
-            </span>
-            <h2 className="font-heading font-bold text-navy-800 text-4xl md:text-5xl leading-tight">
-              Advanced Laparoscopic & Stone Treatment Specialities
-            </h2>
-          </div>
-          <p className="text-gray-500 text-base leading-relaxed md:text-right">
-            We provide investigation, diagnosis, treatment and prevention of all gastrointestinal (stomach and intestines) and hepatological (liver, gallbladder, biliary tree and pancreas) diseases — advanced laparoscopic surgery and comprehensive care by Dr. Manmohan Suman (MBBS, MD), Consultant Physician, Ex-Gastro Surgeon (IGIMS, Patna), Ex-Surgeon (Safdarjung Hospital, New Delhi).
+    <section className="relative py-20 md:py-28 bg-cover bg-center" style={{ backgroundImage: 'url("/gallery/hospital-1.jpg")' }}>
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-navy-900/90 mix-blend-multiply" />
+      
+      <div className="container-max px-4 md:px-8 relative z-10">
+        
+        {/* Header */}
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="font-heading font-black text-white text-3xl md:text-4xl mb-4">
+            Our Medical Services
+          </h2>
+          <p className="text-white/70 text-sm md:text-base leading-relaxed">
+            In this section you can learn more about the diverse range of medical services and specialties we offer. We provide comprehensive care across multiple disciplines with advanced infrastructure.
           </p>
-        </motion.div>
+        </div>
 
-        {/* 3×3 grid */}
+        {/* Services Grid */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {[...Array(9)].map((_, i) => (
-              <div key={i} className="h-32 bg-white/60 rounded-2xl animate-pulse" />
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8">
+             {[...Array(6)].map((_, i) => (
+              <div key={i} className="flex flex-col items-center animate-pulse">
+                <div className="w-16 h-16 rounded-full bg-white/10 mb-4" />
+                <div className="w-32 h-4 bg-white/10 rounded mb-2" />
+                <div className="w-48 h-3 bg-white/10 rounded" />
+              </div>
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {displayed.map((spec, i) => {
-              const Icon = iconMap[spec.icon]
-              const isUrl = spec.icon && (spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.'))
-              const local3dIcon = specialityImages[spec.slug || spec.id]
-              const isEmoji = !Icon && spec.icon && !isUrl
-
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8">
+            {displayed.map((spec) => {
+              const Icon = iconMap[spec.icon] || FiActivity
               return (
-                <motion.div
-                  key={spec.id}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.06 }}
-                >
-                  <Link
-                    to={`/services/${spec.slug || spec.id}`}
-                    className="flex flex-col bg-white rounded-3xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-primary-100 hover:-translate-y-1 transition-all duration-300 group h-full"
-                  >
-                    {/* Big Image box at the top */}
-                    <div className="w-full h-40 bg-gradient-to-br from-primary-50/40 via-white to-cyan-50/20 rounded-2xl flex items-center justify-center mb-5 border border-primary-50/40 relative overflow-hidden group-hover:from-primary-50 group-hover:to-cyan-50 transition-colors shadow-inner">
-                      {isUrl ? (
-                        <img src={spec.icon} alt={spec.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                      ) : local3dIcon ? (
-                        <img src={local3dIcon} alt={spec.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                      ) : isEmoji ? (
-                        <span className="text-5xl leading-none group-hover:scale-108 transition-transform duration-500">{spec.icon}</span>
-                      ) : Icon ? (
-                        <Icon className="w-10 h-10 text-primary-600 group-hover:scale-108 transition-transform duration-500" />
-                      ) : (
-                        <FiHeart className="w-10 h-10 text-primary-600 group-hover:scale-108 transition-transform duration-500" />
-                      )}
-                    </div>
-
-                    {/* Text block below */}
-                    <div className="flex-1 flex flex-col justify-between">
-                      <div>
-                        <h3 className="font-heading font-black text-navy-800 text-lg mb-2 group-hover:text-primary-700 transition-colors leading-snug">
-                          {spec.name}
-                        </h3>
-                        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
-                          {spec.description || 'Expert laparoscopic & surgical treatment for lasting relief.'}
-                        </p>
-                      </div>
-
-                      {/* Learn More link */}
-                      <div className="flex items-center gap-1.5 text-xs font-bold text-primary-600 mt-4 group-hover:text-primary-750 transition-colors">
-                        <span>Learn More</span>
-                        <FiArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
+                <Link to={`/services/${spec.slug || spec.id}`} key={spec.id} className="flex flex-col items-center text-center group">
+                  <div className="w-16 h-16 mb-5 flex items-center justify-center">
+                    <Icon className="w-12 h-12 text-accent-300 group-hover:text-white transition-colors duration-300" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="font-heading font-bold text-white text-lg tracking-wide mb-3 group-hover:text-accent-300 transition-colors uppercase">
+                    {spec.name}
+                  </h3>
+                  <p className="text-white/60 text-sm leading-relaxed max-w-xs line-clamp-3">
+                    {spec.description || 'Expert medical treatment and comprehensive care for a rapid recovery.'}
+                  </p>
+                </Link>
               )
             })}
           </div>
         )}
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <Link to="/services" className="btn-secondary">
-            View All Specialities <FiArrowRight />
-          </Link>
-        </motion.div>
       </div>
     </section>
   )

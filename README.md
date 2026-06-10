@@ -1,8 +1,8 @@
-# 🏥 Sarvada Hospital
+# 🏥 Sarvada Hospito Care
 
 > **Advanced Laparoscopic, Stone Surgery & Multi-specialty Healthcare | Expert Care in Patna, Bihar**
 
-Official website for **Sarvada Hospital** (A Unit of Servada Hospito Care Pvt. Ltd.) — built with React, Vite, Tailwind CSS, and Firebase.
+Official website for **Sarvada Hospito Care** (A Unit of Servada Hospito Care Pvt. Ltd.) — built with React, Vite, Tailwind CSS, and Firebase.
 
 ---
 
@@ -10,7 +10,7 @@ Official website for **Sarvada Hospital** (A Unit of Servada Hospito Care Pvt. L
 
 | | |
 |---|---|
-| **Hospital** | Sarvada Hospital (A Unit of Servada Hospito Care Pvt. Ltd.) |
+| **Hospital** | Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.) |
 | **Specialisation** | Advanced Laparoscopy · ICU, ICCU, IPD & OPD Care · Dialysis · Ortho, Spine & Neurosurgery · Urology · Gynecology |
 | **City** | Patna, Bihar |
 | **Website** | [sarvada-hospito-care.web.app](https://sarvada-hospito-care.web.app) |
@@ -377,4 +377,4 @@ Manage:
 
 ## 📄 License
 
-© 2026 Sarvada Hospital (A Unit of Servada Hospito Care Pvt. Ltd.). All rights reserved.
+© 2026 Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.). All rights reserved.

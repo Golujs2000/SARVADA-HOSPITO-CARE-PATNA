@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // pages/ServiceDetail.jsx
-// Detail page for a single speciality at /services/:slug.
-// Fetches the speciality by slug from Firestore and also loads
+// Detail page for a single department at /services/:slug.
+// Fetches the department by slug from Firestore and also loads
 // associated doctors filtered by the department name.
 // Renders treatment list with individual links to TreatmentDetail.
 // ─────────────────────────────────────────────────────────────
@@ -14,7 +14,7 @@ import {
   FiUser, FiArrowRight, FiMapPin,
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
-import { getSpecialityBySlug } from '../services/specialities'
+import { getCategoryItemBySlug as getDepartmentBySlug } from '../services/categories'
 import { useDoctors } from '../hooks/useDoctors'
 import { getInitials } from '../utils/helpers'
 import { siteData } from '../data/siteData'
@@ -37,16 +37,16 @@ const AVAIL_COLOR = {
 export default function ServiceDetail() {
   const { slug } = useParams()
   const navigate = useNavigate()
-  const [speciality, setSpeciality] = useState(null)
+  const [department, setDepartment] = useState(null)
   const [loading, setLoading] = useState(true)
   const { doctors } = useDoctors()
 
   useEffect(() => {
     setLoading(true)
-    getSpecialityBySlug(slug)
+    getDepartmentBySlug(slug)
       .then((data) => {
-        if (!data) navigate('/services', { replace: true })
-        else setSpeciality(data)
+        if (!data) navigate('/hospital-departments', { replace: true })
+        else setDepartment(data)
       })
       .finally(() => setLoading(false))
   }, [slug])
@@ -65,41 +65,41 @@ export default function ServiceDetail() {
     )
   }
 
-  if (!speciality) return null
+  if (!department) return null
 
-  const cfg = CATEGORY_CONFIG[speciality.category] || CATEGORY_CONFIG['Support']
-  const treatments = Array.isArray(speciality.treatments) ? speciality.treatments : []
-  const features = Array.isArray(speciality.features) ? speciality.features : []
+  const cfg = CATEGORY_CONFIG[department.category] || CATEGORY_CONFIG['Support']
+  const treatments = Array.isArray(department.treatments) ? department.treatments : []
+  const features = Array.isArray(department.features) ? department.features : []
   // Primary: doctors explicitly linked via doctorIds[] in admin
   // Fallback union: also match by specialty name for backward compat
-  const byId   = doctors.filter((d) => (speciality.doctorIds || []).includes(d.id))
+  const byId   = doctors.filter((d) => (department.doctorIds || []).includes(d.id))
   const byName = doctors.filter((d) =>
-    d.specialty === speciality.name ||
-    (Array.isArray(d.specialties) && d.specialties.includes(speciality.name))
+    d.specialty === department.name ||
+    (Array.isArray(d.specialties) && d.specialties.includes(department.name))
   )
   const relatedDoctors = [...new Map([...byId, ...byName].map((d) => [d.id, d])).values()]
 
   return (
     <>
       <SEO
-        title={speciality.name}
-        description={`${speciality.description} Recovery: ${speciality.recoveryTime || 'Varies'}.`}
-        keywords={[speciality.name, `${speciality.name} Patna`, `${speciality.name} hospital Bihar`, ...(speciality.features || [])]}
+        title={department.name}
+        description={`${department.description} Recovery: ${department.recoveryTime || 'Varies'}.`}
+        keywords={[department.name, `${department.name} Patna`, `${department.name} hospital Bihar`, ...(department.features || [])]}
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'MedicalSpecialty',
-            name: speciality.name,
-            description: speciality.description,
-            url: `${siteData.url}/services/${speciality.slug}`,
+            name: department.name,
+            description: department.description,
+            url: `${siteData.url}/services/${department.slug}`,
           },
           {
             '@context': 'https://schema.org',
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: siteData.url },
-              { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteData.url}/services` },
-              { '@type': 'ListItem', position: 3, name: speciality.name },
+              { '@type': 'ListItem', position: 2, name: 'Hospital Departments', item: `${siteData.url}/hospital-departments` },
+              { '@type': 'ListItem', position: 3, name: department.name },
             ],
           },
         ]}
@@ -108,16 +108,16 @@ export default function ServiceDetail() {
       {/* Hero */}
       <section className="bg-hero-gradient text-white py-16 px-4">
         <div className="container-max">
-          <Link to="/services" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-6 transition-colors">
-            <FiArrowLeft className="w-4 h-4" /> Back to All Services
+          <Link to="/hospital-departments" className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-6 transition-colors">
+            <FiArrowLeft className="w-4 h-4" /> Back to Departments
           </Link>
           <div className="flex flex-col md:flex-row md:items-center gap-6">
             <div className={`w-20 h-20 ${cfg.bg} rounded-[5px] flex items-center justify-center text-4xl shadow-lg flex-shrink-0 overflow-hidden`}>
-              {speciality.icon ? (
-                (speciality.icon.startsWith('http') || speciality.icon.startsWith('/') || speciality.icon.includes('.')) ? (
-                  <img src={speciality.icon} alt="" className="w-full h-full object-contain p-2.5" />
+              {department.icon ? (
+                (department.icon.startsWith('http') || department.icon.startsWith('/') || department.icon.includes('.')) ? (
+                  <img src={department.icon} alt="" className="w-full h-full object-contain p-2.5" />
                 ) : (
-                  speciality.icon
+                  department.icon
                 )
               ) : (
                 '🏥'
@@ -125,28 +125,28 @@ export default function ServiceDetail() {
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                {speciality.category && (
+                {department.category && (
                   <span className="text-xs font-bold uppercase tracking-widest bg-white/20 px-3 py-1 rounded-full">
-                    {speciality.category}
+                    {department.category}
                   </span>
                 )}
-                {speciality.available && (
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${AVAIL_COLOR[speciality.available] || 'bg-white/20 text-white'}`}>
-                    {speciality.available}
+                {department.available && (
+                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${AVAIL_COLOR[department.available] || 'bg-white/20 text-white'}`}>
+                    {department.available}
                   </span>
                 )}
               </div>
-              <h1 className="font-heading text-4xl md:text-5xl font-black mb-3">{speciality.name}</h1>
-              <p className="text-white/80 text-lg max-w-2xl">{speciality.description}</p>
+              <h1 className="font-heading text-4xl md:text-5xl font-black mb-3">{department.name}</h1>
+              <p className="text-white/80 text-lg max-w-2xl">{department.description}</p>
             </div>
           </div>
 
           {/* Quick stats */}
           <div className="flex flex-wrap gap-6 mt-8">
-            {speciality.recoveryTime && (
+            {department.recoveryTime && (
               <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
                 <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Recovery Time</p>
-                <p className="text-white font-bold text-lg">{speciality.recoveryTime}</p>
+                <p className="text-white font-bold text-lg">{department.recoveryTime}</p>
               </div>
             )}
             {treatments.length > 0 && (
@@ -167,11 +167,11 @@ export default function ServiceDetail() {
             <div className="lg:col-span-2 space-y-8">
 
               {/* Department Overview */}
-              {speciality.longDescription && (
+              {department.longDescription && (
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
                   <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">Department Overview</h2>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{speciality.longDescription}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{department.longDescription}</p>
                 </motion.div>
               )}
 
@@ -209,7 +209,7 @@ export default function ServiceDetail() {
                         transition={{ delay: i * 0.06 }}
                       >
                         <Link
-                          to={`/services/${speciality.slug}/treatment/${t.slug || i}`}
+                          to={`/services/${department.slug}/treatment/${t.slug || i}`}
                           className={`block bg-white border ${cfg.border} rounded-[5px] p-4 hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 group`}
                         >
                           <div className="flex items-start justify-between gap-2">
@@ -242,7 +242,7 @@ export default function ServiceDetail() {
                 <h3 className="font-heading font-bold text-lg mb-2">Book an Appointment</h3>
                 <p className="text-white/75 text-sm mb-4">Our team will confirm within 30 minutes.</p>
                 <Link
-                  to={`/book-appointment?dept=${encodeURIComponent(speciality.name)}&from=/services/${speciality.slug}`}
+                  to={`/book-appointment?dept=${encodeURIComponent(department.name)}&from=/services/${department.slug}`}
                   className={`w-full flex items-center justify-center gap-2 bg-white font-bold text-sm py-3 rounded-[5px] transition-colors ${cfg.text} hover:opacity-90`}
                 >
                   <FiCalendar className="w-4 h-4" /> Book Now
@@ -256,8 +256,8 @@ export default function ServiceDetail() {
                   <h3 className="font-heading font-semibold text-navy-800">Location</h3>
                 </div>
                 <p className="text-sm text-gray-500">{siteData.contact.address}</p>
-                <p className={`text-xs mt-2 font-semibold ${AVAIL_COLOR[speciality.available] || 'text-gray-500'} inline-block px-2 py-1 rounded-full`}>
-                  {speciality.available || 'By Appointment'}
+                <p className={`text-xs mt-2 font-semibold ${AVAIL_COLOR[department.available] || 'text-gray-500'} inline-block px-2 py-1 rounded-full`}>
+                  {department.available || 'By Appointment'}
                 </p>
               </div>
 

@@ -8,7 +8,7 @@ import {
   FiChevronDown, FiChevronUp, FiX, FiUser,
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
-import { getSpecialityBySlug } from '../services/specialities'
+import { getCategoryItemBySlug as getDepartmentBySlug } from '../services/categories'
 import { getDoctors } from '../services/doctors'
 import { getInitials } from '../utils/helpers'
 import { siteData } from '../data/siteData'
@@ -53,7 +53,7 @@ const PROCESS_STEPS = [
 export default function TreatmentDetail() {
   const { slug, treatmentSlug } = useParams()
   const navigate = useNavigate()
-  const [speciality, setSpeciality] = useState(null)
+  const [department, setdepartment] = useState(null)
   const [loading, setLoading] = useState(true)
   const [activeImg, setActiveImg] = useState(0)
   const [lightbox, setLightbox] = useState(null)
@@ -62,32 +62,32 @@ export default function TreatmentDetail() {
 
   useEffect(() => {
     setLoading(true)
-    getSpecialityBySlug(slug)
+    getDepartmentBySlug(slug)
       .then((data) => {
-        if (!data) navigate('/services', { replace: true })
-        else setSpeciality(data)
+        if (!data) navigate('/hospital-departments', { replace: true })
+        else setdepartment(data)
       })
       .finally(() => setLoading(false))
   }, [slug])
 
   // Fetch doctors and filter to those linked to this treatment
   useEffect(() => {
-    if (!speciality) return
+    if (!department) return
     getDoctors().then((all) => {
-      const treatmentsList = Array.isArray(speciality.treatments) ? speciality.treatments : []
+      const treatmentsList = Array.isArray(department.treatments) ? department.treatments : []
       const foundTreatment = treatmentsList.find((t, i) => (t.slug || String(i)) === treatmentSlug)
       const resolvedSlug = foundTreatment?.slug || treatmentSlug
 
-      const key = `${speciality.id}::${resolvedSlug}`
+      const key = `${department.id}::${resolvedSlug}`
       const filtered = all.filter((d) =>
         (d.linkedTreatments || []).includes(key) ||
-        (d.linkedTreatments || []).includes(`${speciality.id}::${treatmentSlug}`) ||
-        d.specialty === speciality.name ||
-        (Array.isArray(d.specialties) && d.specialties.includes(speciality.name))
+        (d.linkedTreatments || []).includes(`${department.id}::${treatmentSlug}`) ||
+        d.specialty === department.name ||
+        (Array.isArray(d.specialties) && d.specialties.includes(department.name))
       )
       setRelatedDoctors(filtered)
     }).catch(() => {})
-  }, [speciality, treatmentSlug])
+  }, [department, treatmentSlug])
 
   if (loading) {
     return (
@@ -101,9 +101,9 @@ export default function TreatmentDetail() {
     )
   }
 
-  if (!speciality) return null
+  if (!department) return null
 
-  const treatments = Array.isArray(speciality.treatments) ? speciality.treatments : []
+  const treatments = Array.isArray(department.treatments) ? department.treatments : []
   const treatment = treatments.find((t, i) => (t.slug || String(i)) === treatmentSlug)
 
   if (!treatment) {
@@ -111,24 +111,24 @@ export default function TreatmentDetail() {
       <div className="section-padding container-max text-center">
         <FiAlertCircle className="w-12 h-12 text-gray-300 mx-auto mb-4" />
         <h2 className="font-heading text-xl font-bold text-navy-800 mb-2">Treatment not found</h2>
-        <Link to={`/services/${slug}`} className="btn-primary mt-4">Back to {speciality.name}</Link>
+        <Link to={`/services/${slug}`} className="btn-primary mt-4">Back to {department.name}</Link>
       </div>
     )
   }
 
-  const cfg = CATEGORY_CONFIG[speciality.category] || CATEGORY_CONFIG['Support']
+  const cfg = CATEGORY_CONFIG[department.category] || CATEGORY_CONFIG['Support']
   const otherTreatments = treatments.filter((t, i) => (t.slug || String(i)) !== treatmentSlug)
 
   return (
     <>
       <SEO
-        title={`${treatment.name} — ${speciality.name}`}
+        title={`${treatment.name} — ${department.name}`}
         description={
-          `${treatment.name} at Sarvada Hospital, Patna. ` +
+          `${treatment.name} at Sarvada Hospito Care, Patna. ` +
           (treatment.description ? treatment.description.slice(0, 120) + '… ' : '') +
           `Recovery: ${treatment.recovery || 'Varies'}.`
         }
-        keywords={[treatment.name, speciality.name, `${treatment.name} Patna`, speciality.category].filter(Boolean)}
+        keywords={[treatment.name, department.name, `${treatment.name} Patna`, department.category].filter(Boolean)}
         type="article"
         jsonLd={[
           {
@@ -140,7 +140,7 @@ export default function TreatmentDetail() {
             status: 'https://schema.org/ActiveActionStatus',
             preparation: Array.isArray(treatment.preparation) ? treatment.preparation.join(' ') : '',
             followup: `Recovery time: ${treatment.recovery || 'Varies'}. Follow-up as advised by your doctor.`,
-            recognizingAuthority: { '@type': 'Organization', name: 'Sarvada Hospital', url: siteData.url },
+            recognizingAuthority: { '@type': 'Organization', name: 'Sarvada Hospito Care', url: siteData.url },
           },
           ...(treatment.faqs?.length ? [{
             '@context': 'https://schema.org',
@@ -156,8 +156,8 @@ export default function TreatmentDetail() {
             '@type': 'BreadcrumbList',
             itemListElement: [
               { '@type': 'ListItem', position: 1, name: 'Home', item: siteData.url },
-              { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteData.url}/services` },
-              { '@type': 'ListItem', position: 3, name: speciality.name, item: `${siteData.url}/services/${speciality.slug}` },
+              { '@type': 'ListItem', position: 2, name: 'Hospital Departments', item: `${siteData.url}/hospital-departments` },
+              { '@type': 'ListItem', position: 3, name: department.name, item: `${siteData.url}/services/${department.slug}` },
               { '@type': 'ListItem', position: 4, name: treatment.name },
             ],
           },
@@ -169,18 +169,18 @@ export default function TreatmentDetail() {
         <div className="container-max">
           {/* Breadcrumb */}
           <div className="flex items-center gap-2 text-white/60 text-sm mb-6 flex-wrap">
-            <Link to="/services" className="hover:text-white transition-colors">Services</Link>
+            <Link to="/hospital-departments" className="hover:text-white transition-colors">Departments</Link>
             <span>/</span>
-            <Link to={`/services/${slug}`} className="hover:text-white transition-colors">{speciality.name}</Link>
+            <Link to={`/services/${slug}`} className="hover:text-white transition-colors">{department.name}</Link>
             <span>/</span>
             <span className="text-white">{treatment.name}</span>
           </div>
 
           <div className="flex items-center gap-3 mb-4">
             <span className={`text-xs font-bold uppercase tracking-widest ${cfg.light} ${cfg.text} px-3 py-1 rounded-full`}>
-              {speciality.category}
+              {department.category}
             </span>
-            <span className="text-xs text-white/50">{speciality.name}</span>
+            <span className="text-xs text-white/50">{department.name}</span>
           </div>
 
           <h1 className="font-heading text-4xl md:text-5xl font-black mb-6">{treatment.name}</h1>
@@ -196,11 +196,11 @@ export default function TreatmentDetail() {
                 </p>
               </div>
             )}
-            {(treatment.recovery || speciality.recoveryTime) && (
+            {(treatment.recovery || department.recoveryTime) && (
               <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
                 <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Recovery</p>
                 <p className="text-white font-bold text-xl flex items-center gap-2">
-                  <FiActivity className="w-4 h-4" /> {treatment.recovery || speciality.recoveryTime}
+                  <FiActivity className="w-4 h-4" /> {treatment.recovery || department.recoveryTime}
                 </p>
               </div>
             )}
@@ -208,10 +208,10 @@ export default function TreatmentDetail() {
               <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Cost / Price</p>
               <p className="text-white font-bold text-xl">As per Consultation</p>
             </div>
-            {speciality.available && (
+            {department.available && (
               <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
                 <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Availability</p>
-                <p className="text-white font-bold text-xl">{speciality.available}</p>
+                <p className="text-white font-bold text-xl">{department.available}</p>
               </div>
             )}
           </div>
@@ -231,15 +231,15 @@ export default function TreatmentDetail() {
                 <h2 className="font-heading font-bold text-navy-800 text-xl mb-3">About This Procedure</h2>
                 <p className="text-gray-600 leading-relaxed">
                   {treatment.description || (
-                    <><span className="font-semibold">{treatment.name}</span> is treated at Sarvada Hospital under the{' '}
-                    <Link to={`/services/${slug}`} className="text-primary-600 hover:underline">{speciality.name}</Link> department
+                    <><span className="font-semibold">{treatment.name}</span> is treated at Sarvada Hospito Care under the{' '}
+                    <Link to={`/services/${slug}`} className="text-primary-600 hover:underline">{department.name}</Link> department
                     by our experienced medical team. We follow international safety protocols to ensure the best outcomes for every patient.</>
                   )}
                 </p>
-                {(treatment.recovery || speciality.recoveryTime) && (
+                {(treatment.recovery || department.recoveryTime) && (
                   <div className={`mt-4 inline-flex items-center gap-2 ${cfg.light} ${cfg.text} rounded-[5px] px-4 py-2 text-sm font-medium`}>
                     <FiClock className="w-4 h-4" />
-                    Typical recovery: {treatment.recovery || speciality.recoveryTime}
+                    Typical recovery: {treatment.recovery || department.recoveryTime}
                   </div>
                 )}
               </motion.div>
@@ -450,14 +450,14 @@ export default function TreatmentDetail() {
               </motion.div>
 
               {/* Department features */}
-              {Array.isArray(speciality.features) && speciality.features.length > 0 && (
+              {Array.isArray(department.features) && department.features.length > 0 && (
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
                   <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">
-                    Why Choose Sarvada Hospital for {speciality.name}
+                    Why Choose Sarvada Hospito Care for {department.name}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {speciality.features.map((f, i) => (
+                    {department.features.map((f, i) => (
                       <div key={i} className={`flex items-center gap-3 ${cfg.light} rounded-[5px] px-4 py-3`}>
                         <FiCheck className={`w-4 h-4 ${cfg.text} flex-shrink-0`} />
                         <span className="text-sm font-medium text-gray-700">{f}</span>
@@ -472,7 +472,7 @@ export default function TreatmentDetail() {
                 <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
                   <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">
-                    Other Treatments in {speciality.name}
+                    Other Treatments in {department.name}
                   </h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {otherTreatments.slice(0, 6).map((t, i) => (
@@ -506,7 +506,7 @@ export default function TreatmentDetail() {
                   💰 Cost / Price: <span className="font-bold text-white">As per Consultation</span>
                 </p>
                 <Link
-                  to={`/book-appointment?dept=${encodeURIComponent(speciality.name)}&treatment=${encodeURIComponent(treatment.name)}`}
+                  to={`/book-appointment?dept=${encodeURIComponent(department.name)}&treatment=${encodeURIComponent(treatment.name)}`}
                   className="w-full flex items-center justify-center gap-2 bg-white text-primary-700 font-bold text-sm py-3 rounded-lg hover:bg-primary-50 transition-colors mb-2"
                 >
                   <FiCalendar className="w-4 h-4" /> Book Appointment
@@ -600,7 +600,7 @@ export default function TreatmentDetail() {
                   {/* Footer CTA */}
                   <div className="px-5 py-4 bg-gray-50 border-t border-gray-100">
                     <Link
-                      to={`/book-appointment?dept=${encodeURIComponent(speciality.name)}&treatment=${encodeURIComponent(treatment.name)}`}
+                      to={`/book-appointment?dept=${encodeURIComponent(department.name)}&treatment=${encodeURIComponent(treatment.name)}`}
                       className={`w-full flex items-center justify-center gap-2 ${cfg.bg} text-white text-xs font-bold py-2.5 rounded-lg hover:opacity-90 transition-opacity`}
                     >
                       <FiCalendar className="w-3.5 h-3.5" /> Book with a Specialist
@@ -612,7 +612,7 @@ export default function TreatmentDetail() {
               {/* Back to department */}
               <Link to={`/services/${slug}`}
                 className="flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-800 transition-colors px-1">
-                <FiArrowLeft className="w-4 h-4" /> All {speciality.name} treatments
+                <FiArrowLeft className="w-4 h-4" /> All {department.name} treatments
               </Link>
             </div>
           </div>

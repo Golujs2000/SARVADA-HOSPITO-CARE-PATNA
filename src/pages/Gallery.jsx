@@ -80,7 +80,7 @@ export default function Gallery() {
     <>
       <SEO
         title="Gallery"
-        description="Explore Sarvada Hospital's welcoming facility, diagnostic equipment, and clinic environment through our photo gallery."
+        description="Explore Sarvada Hospito Care's welcoming facility, diagnostic equipment, and clinic environment through our photo gallery."
       />
 
       {/* Hero */}

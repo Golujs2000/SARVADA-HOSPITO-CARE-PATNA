@@ -38,7 +38,7 @@ export function useDashboardStats() {
     // Other
     unreadMessages: 0,
     totalDoctors: 0,
-    totalSpecialities: 0,
+    totalDepartments: 0,
   })
 
   const [chartData, setChartData] = useState({
@@ -79,7 +79,7 @@ export function useDashboardStats() {
           getDocs(collection(db, 'appointments')),
           getDocs(collection(db, 'messages')),
           getDocs(collection(db, 'doctors')),
-          getDocs(collection(db, 'specialities')),
+          getDocs(collection(db, 'departments')),
         ])
 
         const appointments = apptSnap.docs.map(d => ({ id: d.id, ...d.data() }))
@@ -142,7 +142,7 @@ export function useDashboardStats() {
           totalAppointments:    appointments.length,
           unreadMessages:       messages.filter(m => !m.read).length,
           totalDoctors:         docSnap.size,
-          totalSpecialities:    specSnap.size,
+          totalDepartments:    specSnap.size,
         })
 
         setChartData({

@@ -15,7 +15,7 @@ import {
 } from 'react-icons/fi'
 import toast from 'react-hot-toast'
 import { getDoctors, addDoctor, updateDoctor, deleteDoctor } from '../../services/doctors'
-import { getSpecialities } from '../../services/specialities'
+import { getDepartments } from '../../services/categories'
 import GalleryPicker from '../../components/admin/GalleryPicker'
 import { slugify } from '../../utils/helpers'
 
@@ -34,7 +34,7 @@ const tKey = (specId, slug) => `${specId}::${slug}`
 
 export default function AdminDoctors() {
   const [doctors, setDoctors] = useState([])
-  const [specialities, setSpecialities] = useState([])
+  const [departments, setDepartments] = useState([])
   const [loading, setLoading] = useState(true)
   const [modalOpen, setModalOpen] = useState(false)
   const [editingId, setEditingId] = useState(null)
@@ -49,9 +49,9 @@ export default function AdminDoctors() {
   const fetchDoctors = async () => {
     setLoading(true)
     try {
-      const [docs, specs] = await Promise.all([getDoctors(), getSpecialities()])
+      const [docs, specs] = await Promise.all([getDoctors(), getDepartments()])
       setDoctors(docs)
-      setSpecialities(specs)
+      setDepartments(specs)
     } catch {
       toast.error('Failed to load doctors')
     } finally {
@@ -478,12 +478,12 @@ export default function AdminDoctors() {
                   {/* Specialties multi-select */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Specialities *
+                      Departments *
                       <span className="text-gray-400 font-normal ml-1 text-xs">(select one or more)</span>
                     </label>
-                    {specialities.length > 0 ? (
+                    {departments.length > 0 ? (
                       <div className="flex flex-wrap gap-2">
-                        {specialities.map((spec) => {
+                        {departments.map((spec) => {
                           const checked = form.specialties.includes(spec.name)
                           return (
                             <button
@@ -514,7 +514,7 @@ export default function AdminDoctors() {
                       </div>
                     ) : (
                       <input name="specialty" value={form.specialty} onChange={handleChange} required
-                        className="input-field" placeholder="Cardiology (add specialities first for picker)" />
+                        className="input-field" placeholder="Cardiology (add departments first for picker)" />
                     )}
                     {form.specialty && (
                       <p className="text-xs text-gray-400 mt-1">Primary: <strong className="text-primary-600">{form.specialty}</strong></p>
@@ -584,7 +584,7 @@ export default function AdminDoctors() {
                   </label>
 
                   {/* Linked Treatments */}
-                  {specialities.some((s) => s.treatments?.length > 0) && (
+                  {departments.some((s) => s.treatments?.length > 0) && (
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">
                         Linked Treatments
@@ -593,13 +593,13 @@ export default function AdminDoctors() {
                         </span>
                       </label>
                       <div className="border border-gray-200 rounded-xl overflow-hidden divide-y divide-gray-100">
-                        {specialities.filter((s) => s.treatments?.length > 0).map((spec) => {
+                        {departments.filter((s) => s.treatments?.length > 0).map((spec) => {
                           const specSelected = spec.treatments.filter(
                             (t) => form.linkedTreatments.includes(tKey(spec.id, t.slug))
                           ).length
                           return (
                             <div key={spec.id}>
-                              {/* Speciality header */}
+                              {/* Department header */}
                               <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-50">
                                 <span className="w-5 h-5 flex items-center justify-center shrink-0 overflow-hidden text-base leading-none">
                                   {spec.icon ? (

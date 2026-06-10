@@ -13,7 +13,7 @@ import { siteData } from '../data/siteData'
 
 const WA_NUMBER = siteData.contact.phone.replace(/\D/g, '')
 const WA_MESSAGE = encodeURIComponent(
-  'Hello! I found Sarvada Hospital online and would like to know more about your treatments / book an appointment.'
+  'Hello! I found Sarvada Hospito Care online and would like to know more about your treatments / book an appointment.'
 )
 const WA_URL = `https://wa.me/91${WA_NUMBER}?text=${WA_MESSAGE}`
 

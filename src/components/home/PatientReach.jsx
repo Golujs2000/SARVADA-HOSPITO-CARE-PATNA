@@ -29,7 +29,7 @@ export default function PatientReach() {
               Trusted Across <span className="text-primary-600">Borders &amp; Districts</span>
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
-              Patna Gastro, Lapro &amp; Stone Healthcare has become a premier surgical destination. Patients from Nepal, Jharkhand, Uttar Pradesh (UP), and all 38 districts of Bihar travel to our Patna clinic for specialized care under <strong className="text-navy-800 font-bold">Dr. Manmohan Suman</strong>.
+              {siteData.name} has become a premier healthcare destination. Patients from all 38 districts of Bihar, Deoghar (Jharkhand), Siliguri (West Bengal), and Nepal travel to our Patna hospital for comprehensive medical care at our <strong className="text-navy-800 font-bold">state-of-the-art facilities</strong>.
             </p>
           </motion.div>
         </div>

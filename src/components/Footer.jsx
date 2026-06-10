@@ -1,12 +1,12 @@
-// ─────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // components/Footer.jsx
-// Redesigned footer with full speciality + treatment + doctor links.
+// Redesigned footer with full department + treatment + doctor links.
 // Layout:
-//   Row 1 — Brand | Quick Links | Contact Us
-//   Row 2 — All Specialities & Treatments (full-width grid)
-//   Row 3 — Our Doctors (full-width grid)
-//   Row 4 — Copyright / legal bar
-// ─────────────────────────────────────────────────────────────
+//   Row 1 â€” Brand | Quick Links | Contact Us
+//   Row 2 â€” All Departments & Treatments (full-width grid)
+//   Row 3 â€” Our Doctors (full-width grid)
+//   Row 4 â€” Copyright / legal bar
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 import { Link } from 'react-router-dom'
 import {
@@ -14,14 +14,18 @@ import {
   FiPhone, FiMail, FiMapPin, FiClock, FiChevronRight, FiUser,
 } from 'react-icons/fi'
 import { siteData } from '../data/siteData'
-import { useSpecialities } from '../hooks/useSpecialities'
+import { useCategories } from '../hooks/useCategories'
 import { useDoctors } from '../hooks/useDoctors'
 
 const quickLinks = [
   { label: 'Home',              to: '/' },
   { label: 'About Us',          to: '/about' },
   { label: 'Our Doctors',       to: '/doctors' },
-  { label: 'Hospital Services', to: '/hospital-services' },
+  { label: 'Hospital Depts',    to: '/hospital-departments' },
+  { label: 'Surgical Services', to: '/surgical-services' },
+  { label: 'Critical Care',     to: '/critical-care' },
+  { label: 'Patient Facilities',to: '/patient-facilities' },
+  { label: 'Diagnostics',       to: '/diagnostics' },
   { label: 'Book Appointment',  to: '/book-appointment' },
   { label: 'Gallery',           to: '/gallery' },
   { label: 'Blog',              to: '/blog' },
@@ -42,7 +46,7 @@ const socialIcons = {
   linkedin:  FiLinkedin,
 }
 
-// Category accent colours for speciality headers
+// Category accent colours for department headers
 const catColor = {
   'General':     'text-blue-400 border-blue-400/40',
   'Skin':        'text-teal-400 border-teal-400/40',
@@ -59,22 +63,58 @@ const catColor = {
 const defaultCat = 'text-primary-400 border-primary-400/40'
 
 export default function Footer() {
-  const { specialities } = useSpecialities()
+  const { categories: departments } = useCategories()
   const { doctors } = useDoctors()
 
   return (
-    <footer className="bg-navy-900 text-gray-300">
+    <footer className="text-gray-300">
+      
+      {/* — Top Call to Action Row (Template Inspiration) — */}
+      <div className="bg-primary-600">
+        <div className="container-max px-4 md:px-8 py-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left text-white divide-y md:divide-y-0 md:divide-x divide-primary-400">
+            
+            {/* Newsletter */}
+            <div className="md:pr-8 pt-4 md:pt-0">
+              <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-4">Newsletter Signup</h4>
+              <div className="flex bg-white/10 rounded overflow-hidden p-1">
+                <input type="email" placeholder="Enter your email" className="bg-transparent border-none text-white px-3 py-2 w-full focus:outline-none placeholder-white/60 text-sm" />
+                <button className="bg-white text-primary-600 px-4 font-bold text-sm hover:bg-gray-100 transition-colors rounded-sm">JOIN</button>
+              </div>
+            </div>
 
-      {/* ── Row 1: Brand / Quick Links / Contact ── */}
-      <div className="container-max px-4 md:px-8 pt-14 pb-10">
+            {/* Map */}
+            <div className="md:px-8 pt-6 md:pt-0 flex flex-col items-center md:items-start justify-center">
+              <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-4">Branch On The Map</h4>
+              <a href={siteData.social?.googleMaps || '#'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white/90 hover:text-white hover:underline uppercase tracking-wide">
+                <FiMapPin className="w-4 h-4" />
+                View Map Directions
+              </a>
+            </div>
+
+            {/* Doctors */}
+            <div className="md:pl-8 pt-6 md:pt-0 flex flex-col items-center md:items-start justify-center">
+              <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-4">Meet Our Doctors</h4>
+              <Link to="/doctors" className="inline-block bg-white text-primary-600 px-6 py-2.5 font-bold text-xs tracking-wider hover:bg-gray-100 transition-colors rounded-sm">
+                VIEW ALL DOCTORS
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-navy-900">
+        {/* — Row 1: Brand / Quick Links / Contact — */}
+        <div className="container-max px-4 md:px-8 pt-14 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-5">
               <img
-                src="/patna-lapro-logo.png"
-                alt="Sarvada Hospital Logo"
+                src="/logo.png"
+                alt="Sarvada Hospito Care Logo"
                 className="w-14 h-14 object-contain shrink-0"
               />
               <div>
@@ -90,7 +130,7 @@ export default function Footer() {
                 to="/book-appointment"
                 className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold py-2.5 px-5 rounded-xl transition-colors"
               >
-                📅 Book Appointment
+                ðŸ“… Book Appointment
               </Link>
               <a
                 href={`tel:${siteData.contact.phone}`}
@@ -176,26 +216,26 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* ── Divider ── */}
+      {/* â”€â”€ Divider â”€â”€ */}
       <div className="border-t border-white/10" />
 
-      {/* ── Row 2: Specialities & Treatments ── */}
-      {specialities.length > 0 && (
+      {/* â”€â”€ Row 2: Departments & Treatments â”€â”€ */}
+      {departments.length > 0 && (
         <div className="container-max px-4 md:px-8 py-10">
           <h4 className="font-heading font-semibold text-white mb-8 text-sm uppercase tracking-wider flex items-center gap-3">
             <span className="w-6 h-px bg-primary-500 inline-block" />
-            Specialities &amp; Treatments
+            Departments &amp; Treatments
             <span className="w-6 h-px bg-primary-500 inline-block" />
           </h4>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {specialities.map((spec) => {
+            {departments.map((spec) => {
               const color = catColor[spec.category] || defaultCat
               const treatments = Array.isArray(spec.treatments) ? spec.treatments : []
               const isIconUrl = spec.icon && (spec.icon.startsWith('http') || spec.icon.startsWith('/') || spec.icon.includes('.'))
               return (
                 <div key={spec.id}>
-                  {/* Speciality header */}
+                  {/* Department header */}
                   <Link
                     to={`/services/${spec.slug}`}
                     className={`inline-flex items-center gap-1.5 font-heading font-bold text-xs uppercase tracking-wider mb-3 border-b pb-2 w-full ${color} hover:opacity-80 transition-opacity`}
@@ -229,7 +269,7 @@ export default function Footer() {
                           to={`/services/${spec.slug}`}
                           className="text-xs text-gray-600 hover:text-primary-300 transition-colors"
                         >
-                          View treatments →
+                          View treatments â†’
                         </Link>
                       </li>
                     )}
@@ -241,7 +281,7 @@ export default function Footer() {
         </div>
       )}
 
-      {/* ── Row 3: Our Doctors ── */}
+      {/* â”€â”€ Row 3: Our Doctors â”€â”€ */}
       {doctors.length > 0 && (
         <>
           <div className="border-t border-white/10" />
@@ -285,17 +325,17 @@ export default function Footer() {
 
             <div className="mt-5">
               <Link to="/doctors" className="text-xs text-primary-400 hover:text-primary-300 transition-colors">
-                View all doctors →
+                View all doctors â†’
               </Link>
             </div>
           </div>
         </>
       )}
 
-      {/* ── Bottom bar ── */}
+      {/* â”€â”€ Bottom bar â”€â”€ */}
       <div className="border-t border-white/10">
         <div className="container-max px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <p>© {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
+          <p>Â© {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-4">
             {legalLinks.map(({ label, to }) => (
               <Link key={to} to={to} className="hover:text-white transition-colors">{label}</Link>
@@ -305,6 +345,7 @@ export default function Footer() {
         </div>
       </div>
 
+      </div>
     </footer>
   )
 }

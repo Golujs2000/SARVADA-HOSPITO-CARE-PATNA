@@ -64,63 +64,63 @@ function Lightbox({ images, index, onClose }) {
 const DEFAULT_IMAGES = [
   {
     id: 'def-1',
-    image: '/gallery/laparoscopy_in_progress.webp',
-    title: 'Laparoscopic Surgery in Progress'
+    image: '/gallery/hospital_ot.webp',
+    title: 'State-of-the-Art OT'
   },
   {
     id: 'def-2',
-    image: '/gallery/laparoscopic_procedure_monitor.webp',
-    title: 'Laparoscopic Procedure Monitor'
+    image: '/gallery/hospital_icu.webp',
+    title: 'Intensive Care Unit (ICU)'
   },
   {
     id: 'def-3',
-    image: '/gallery/operating_room_surgeons.webp',
-    title: 'Operating Room Surgeons'
+    image: '/gallery/hospital_pathology.webp',
+    title: 'Pathology Diagnostics'
   },
   {
     id: 'def-4',
-    image: '/gallery/surgeons_performing_procedure.webp',
-    title: 'Surgeons Performing Procedure'
+    image: '/gallery/hospital_ultrasound.webp',
+    title: 'Advanced Ultrasound'
   },
   {
     id: 'def-5',
-    image: '/gallery/surgery_under_ot_lights.webp',
-    title: 'Surgery Under OT Lights'
+    image: '/gallery/hospital_emergency.webp',
+    title: '24/7 Trauma Care'
   },
   {
     id: 'def-6',
-    image: '/gallery/surgery_team_ot.webp',
-    title: 'Surgery Team in OT'
+    image: '/gallery/hospital_dialysis.webp',
+    title: 'Dialysis Unit'
   },
   {
     id: 'def-7',
-    image: '/gallery/hernia_mesh_placement.webp',
-    title: 'Hernia Mesh Placement'
+    image: '/gallery/hospital_ward.webp',
+    title: 'Patient AC Ward'
   },
   {
     id: 'def-8',
-    image: '/gallery/surgical_stapler_demonstration.webp',
-    title: 'Surgical Stapler Demonstration'
+    image: '/gallery/hospital_xray.webp',
+    title: 'Digital X-Ray'
   },
   {
     id: 'def-9',
-    image: '/gallery/surgical_stapler_presentation.webp',
-    title: 'Surgical Stapler Presentation'
+    image: '/gallery/hospital_ecg.webp',
+    title: 'ECG & 2D Echo'
   },
   {
     id: 'def-10',
-    image: '/gallery/hospital_staff.webp',
-    title: 'Hospital Staff & Support'
+    image: '/gallery/hospital_maternity.webp',
+    title: 'Maternity & Gynecology'
   },
   {
     id: 'def-11',
-    image: '/gallery/surgical_team_group.webp',
-    title: 'Surgical Team Group'
+    image: '/gallery/hospital_opd.webp',
+    title: 'Modern OPD'
   },
   {
     id: 'def-12',
-    image: '/gallery/surgery_team_artwork.webp',
-    title: 'Surgery Team Artwork'
+    image: '/gallery/hospital_ambulance.webp',
+    title: 'Ambulance Service'
   }
 ]
 
@@ -157,7 +157,7 @@ export default function TreatmentGallery() {
             <span className="text-primary-600">Procedures</span>
           </h2>
           <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
-            A glimpse into the healing environment, diagnostics, and treatments at Sarvada Hospital, Anand palace, Bypass Rd, changer, Kankarbagh, Patna.
+            A glimpse into the healing environment, diagnostics, and treatments at Sarvada Hospito Care, Anand palace, Bypass Rd, changer, Kankarbagh, Patna.
           </p>
         </motion.div>
 

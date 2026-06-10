@@ -15,7 +15,7 @@ import {
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { getInitials } from '../utils/helpers'
-import { getSpecialities } from '../services/specialities'
+import { getDepartments } from '../services/categories'
 import { getDoctors } from '../services/doctors'
 import { siteData } from '../data/siteData'
 
@@ -37,10 +37,10 @@ export default function DoctorProfile() {
       .finally(() => setLoading(false))
   }, [slug])
 
-  // Build linked-treatment groups once doctor + specialities are loaded
+  // Build linked-treatment groups once doctor + departments are loaded
   useEffect(() => {
     if (!doctor?.linkedTreatments?.length) return
-    getSpecialities().then((specs) => {
+    getDepartments().then((specs) => {
       const groups = []
       specs.forEach((spec) => {
         const matched = (spec.treatments || []).filter((t) =>
@@ -77,7 +77,7 @@ export default function DoctorProfile() {
     <>
       <SEO
         title={doctor.name}
-        description={`${doctor.name} – ${doctor.specialty} specialist at Sarvada Hospital, Patna. ${doctor.experience} years of experience. ${doctor.qualification}. Book an appointment today.`}
+        description={`${doctor.name} – ${doctor.specialty} specialist at Sarvada Hospito Care, Patna. ${doctor.experience} years of experience. ${doctor.qualification}. Book an appointment today.`}
         keywords={[doctor.name, doctor.specialty, `${doctor.specialty} doctor Patna`, `${doctor.specialty} specialist Bihar`]}
         jsonLd={[
           {
@@ -140,7 +140,7 @@ export default function DoctorProfile() {
             >
               <div className="card p-8 text-center sticky top-24">
                 {/* Avatar */}
-                <div className="w-36 h-36 rounded-2xl mx-auto mb-5 overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center border border-primary-100/50">
+                <div className="w-36 h-36 rounded-[5px] mx-auto mb-5 overflow-hidden bg-primary-50 flex items-center justify-center border border-primary-100">
                   {doctor.image ? (
                     <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover" />
                   ) : (
@@ -154,24 +154,24 @@ export default function DoctorProfile() {
 
                 {/* Info chips */}
                 <div className="space-y-3 text-sm text-left mb-6">
-                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-[5px]">
                     <FiAward className="w-4 h-4 text-primary-500 flex-shrink-0" />
                     <span className="text-gray-700">{doctor.experience} Years Experience</span>
                   </div>
                   {doctor.phone && (
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-[5px]">
                       <FiPhone className="w-4 h-4 text-primary-500 flex-shrink-0" />
                       <a href={`tel:${doctor.phone}`} className="text-gray-700 hover:text-primary-600">{doctor.phone}</a>
                     </div>
                   )}
                   {doctor.email && (
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-[5px]">
                       <FiMail className="w-4 h-4 text-primary-500 flex-shrink-0" />
                       <a href={`mailto:${doctor.email}`} className="text-gray-700 hover:text-primary-600 text-xs truncate">{doctor.email}</a>
                     </div>
                   )}
                   {doctor.consultationFee && (
-                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                    <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-[5px]">
                       <span className="w-4 h-4 text-primary-500 font-extrabold flex items-center justify-center text-xs shrink-0">₹</span>
                       <span className="text-gray-700">Consultation Fee: <strong className="text-navy-800">₹{doctor.consultationFee}</strong></span>
                     </div>
@@ -210,7 +210,7 @@ export default function DoctorProfile() {
                     {dayOrder.map((day) => (
                       <span
                         key={day}
-                        className={`px-4 py-2 rounded-xl text-sm font-medium ${
+                        className={`px-4 py-2 rounded-[5px] text-sm font-medium ${
                           sortedDays.includes(day)
                             ? 'bg-primary-600 text-white'
                             : 'bg-gray-100 text-gray-400'
@@ -241,12 +241,12 @@ export default function DoctorProfile() {
                 </div>
               </div>
 
-              {/* Specialities & Expertise */}
+              {/* Departments & Expertise */}
               {((Array.isArray(doctor.specialties) && doctor.specialties.length > 0) || 
                 (Array.isArray(doctor.specializations) && doctor.specializations.length > 0)) && (
                 <div className="card p-8">
                   <h2 className="font-heading font-bold text-navy-800 text-xl mb-4 flex items-center gap-2">
-                    <FiActivity className="w-5 h-5 text-primary-500" /> Specialities &amp; Expertise
+                    <FiActivity className="w-5 h-5 text-primary-500" /> Departments &amp; Expertise
                   </h2>
                   <div className="flex flex-wrap gap-3">
                     {((Array.isArray(doctor.specialties) ? doctor.specialties : [])

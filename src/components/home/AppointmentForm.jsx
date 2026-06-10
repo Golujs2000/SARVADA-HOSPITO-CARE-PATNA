@@ -12,7 +12,7 @@ import { createAppointment } from '../../services/appointments'
 import { checkHoneypot, checkRateLimit, setRateLimit, sanitizeInput } from '../../utils/formProtection'
 import { siteData } from '../../data/siteData'
 import { generateBookingId } from '../../utils/helpers'
-import { useSpecialities } from '../../hooks/useSpecialities'
+import { useCategories } from '../../hooks/useCategories'
 import { useDoctors } from '../../hooks/useDoctors'
 
 const TIME_SLOTS = [
@@ -25,7 +25,7 @@ const TIME_SLOTS = [
   { label: '4:00 PM',  period: 'afternoon' },
 ]
 
-const PERIOD_LABELS = { morning: '🌤 Morning', afternoon: '☀️ Afternoon', evening: '🌆 Evening' }
+const PERIOD_LABELS = { morning: 'ðŸŒ¤ Morning', afternoon: 'â˜€ï¸ Afternoon', evening: 'ðŸŒ† Evening' }
 
 const SEX_OPTIONS = ['Male', 'Female', 'Other']
 
@@ -80,10 +80,10 @@ export default function AppointmentForm() {
   const [errors, setErrors] = useState({})
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const { specialities } = useSpecialities()
+  const { categories: departments } = useCategories()
   const { doctors } = useDoctors()
-  const departments = specialities.length > 0
-    ? specialities.map((s) => s.name)
+  const departmentList = departments.length > 0
+    ? departments.map((s) => s.name)
     : siteData.departments
 
   const set = (name, value) => {
@@ -191,7 +191,7 @@ export default function AppointmentForm() {
 
       <div className="grid lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-gray-100 shadow-card">
 
-        {/* ── LEFT PANEL: Patient Details ──────────────────────────── */}
+        {/* â”€â”€ LEFT PANEL: Patient Details â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="lg:col-span-3 bg-white p-6 md:p-8 space-y-5">
           <div className="pb-4 border-b border-gray-100">
             <h3 className="font-heading font-bold text-navy-800 text-xl">Patient Information</h3>
@@ -231,7 +231,7 @@ export default function AppointmentForm() {
                         : 'bg-white border-gray-100 text-gray-400 hover:border-primary-300 hover:text-primary-600'
                     }`}
                   >
-                    {s === 'Male' ? '♂' : s === 'Female' ? '♀' : '⚥'} {s}
+                    {s === 'Male' ? 'â™‚' : s === 'Female' ? 'â™€' : 'âš¥'} {s}
                   </button>
                 ))}
               </div>
@@ -277,9 +277,9 @@ export default function AppointmentForm() {
               <select name="department" value={form.department} onChange={handleChange}
                 className={`${inp(errors.department)} pl-10 appearance-none cursor-pointer`}>
                 <option value="">Select department</option>
-                {departments.map((d) => <option key={d} value={d}>{d}</option>)}
+                {departmentList.map((d) => <option key={d} value={d}>{d}</option>)}
               </select>
-              <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none text-xs">▼</span>
+              <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-300 pointer-events-none text-xs">â–¼</span>
             </div>
           </Field>
 
@@ -334,13 +334,13 @@ export default function AppointmentForm() {
             <div className="relative">
               <FiMessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-300" />
               <textarea name="message" value={form.message} onChange={handleChange}
-                rows={2} placeholder="Describe symptoms or special requirements…"
+                rows={2} placeholder="Describe symptoms or special requirementsâ€¦"
                 className={`${inp(false)} pl-10 resize-none`} />
             </div>
           </Field>
         </div>
 
-        {/* ── RIGHT PANEL: Calendar + Time Slots ───────────────────── */}
+        {/* â”€â”€ RIGHT PANEL: Calendar + Time Slots â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="lg:col-span-2 bg-primary-50 border-l border-primary-100 p-6 md:p-7 flex flex-col gap-6">
 
           {/* Calendar */}
@@ -351,7 +351,7 @@ export default function AppointmentForm() {
             </div>
             <p className="text-primary-700 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
               <FiCalendar className="w-3.5 h-3.5" /> Select Date
-              {errors.date && <span className="text-red-500 normal-case font-medium tracking-normal">— {errors.date}</span>}
+              {errors.date && <span className="text-red-500 normal-case font-medium tracking-normal">â€” {errors.date}</span>}
             </p>
             <div className="rounded-2xl overflow-hidden booking-calendar">
               <DatePicker
@@ -372,7 +372,7 @@ export default function AppointmentForm() {
           <div>
             <p className="text-primary-700 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
               <FiClock className="w-3.5 h-3.5" /> Select Time Slot
-              {errors.timeSlot && <span className="text-red-500 normal-case font-medium tracking-normal">— {errors.timeSlot}</span>}
+              {errors.timeSlot && <span className="text-red-500 normal-case font-medium tracking-normal">â€” {errors.timeSlot}</span>}
             </p>
             <div className="space-y-3">
               {Object.keys(grouped).length === 0 ? (
@@ -414,7 +414,7 @@ export default function AppointmentForm() {
             }`}
           >
             {loading ? (
-              <><span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Booking…</>
+              <><span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" /> Bookingâ€¦</>
             ) : (
               <><FiCheckCircle className="w-5 h-5 text-white" /> Confirm Appointment</>
             )}
@@ -422,7 +422,7 @@ export default function AppointmentForm() {
 
           {/* Quick info */}
           <p className="text-gray-500 text-xs font-medium text-center -mt-3">
-            Confirmation call within 30 mins · Call Us: {siteData.contact.phone}
+            Confirmation call within 30 mins Â· Call Us: {siteData.contact.phone}
           </p>
         </div>
       </div>

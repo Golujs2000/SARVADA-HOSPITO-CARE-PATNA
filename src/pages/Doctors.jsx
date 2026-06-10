@@ -25,19 +25,19 @@ export default function Doctors() {
     <>
       <SEO
         title="Our Doctors"
-        description="Meet the Consultant Physician at Sarvada Hospital, Patna — Dr. Manmohan Suman (MBBS, MD). View profiles and book appointments online."
-        keywords={['doctors in Patna', 'best physician Patna', 'consultant physician Bihar', 'Dr Manmohan Suman Patna']}
+        description="Meet our team of expert doctors and specialists at Sarvada Hospito Care, Patna. View doctor profiles, specialties, and book appointments online."
+        keywords={['doctors in Patna', 'best doctors Patna', 'specialists Patna Bihar', 'hospital doctors Patna']}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
-          name: 'Doctors at Sarvada Hospital',
-          description: 'Meet Dr. Manmohan Suman and the team at Sarvada Hospital, Patna, Bihar.',
+          name: 'Doctors at Sarvada Hospito Care',
+          description: 'Meet our team of expert doctors and specialists at Sarvada Hospito Care, Patna, Bihar.',
           url: `${siteData.url}/doctors`,
         }}
       />
 
       {/* Hero */}
-      <section className="page-hero text-center">
+      <section className="page-hero text-center border-b border-navy-800">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="container-max">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Our Expert Doctors</h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
@@ -68,7 +68,7 @@ export default function Doctors() {
               onChange={(e) => setSpecialty(e.target.value)}
               className="input-field w-auto min-w-[200px]"
             >
-              <option value="">All Specialities</option>
+              <option value="">All Departments</option>
               {siteData.departments.map((d) => <option key={d} value={d}>{d}</option>)}
             </select>
           </div>

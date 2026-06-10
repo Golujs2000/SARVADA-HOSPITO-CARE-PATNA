@@ -18,7 +18,7 @@ import { siteData } from '../data/siteData'
 /**
  * SEO head manager.
  * Props:
- *   title        — page title (appended with " | Sarvada Hospital")
+ *   title        — page title (appended with " | Sarvada Hospito Care")
  *   description  — meta description
  *   image        — absolute OG image URL
  *   type         — OG type: 'website' | 'article'

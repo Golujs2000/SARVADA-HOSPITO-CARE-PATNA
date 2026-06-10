@@ -19,6 +19,7 @@ import {
   FiGrid, FiCalendar, FiUsers, FiFileText, FiImage,
   FiMail, FiUserCheck, FiStar, FiSettings, FiLogOut,
   FiMenu, FiX, FiBell, FiPlusSquare, FiActivity,
+  FiHeart, FiShield, FiHome, FiMonitor
 } from 'react-icons/fi'
 import { collection, query, where, onSnapshot } from 'firebase/firestore'
 import { db } from '../../firebase/config'
@@ -31,9 +32,12 @@ const NAV_LINKS = [
   { to: '/admin/blog', label: 'Blog', icon: FiFileText },
   { to: '/admin/gallery', label: 'Gallery', icon: FiImage },
   { to: '/admin/messages', label: 'Messages', icon: FiMail, badge: true },
-  { to: '/admin/specialities', label: 'Specialities', icon: FiStar },
+  { to: '/admin/hospital-departments', label: 'Hospital Depts', icon: FiActivity },
+  { to: '/admin/surgical-services', label: 'Surgical Services', icon: FiHeart },
+  { to: '/admin/critical-care', label: 'Critical Care', icon: FiShield },
+  { to: '/admin/patient-facilities', label: 'Facilities', icon: FiHome },
+  { to: '/admin/diagnostics', label: 'Diagnostics', icon: FiMonitor },
   { to: '/admin/treatments', label: 'Treatments', icon: FiActivity },
-  { to: '/admin/services', label: 'Services', icon: FiPlusSquare },
   // Admin-only links — hidden from staff role
   { to: '/admin/staff', label: 'Staff', icon: FiUserCheck, adminOnly: true },
   { to: '/admin/settings', label: 'Settings', icon: FiSettings, adminOnly: true },
@@ -61,12 +65,12 @@ export default function AdminLayout() {
       {/* Logo */}
       <div className="flex items-center gap-3 px-6 py-5 border-b border-gray-100">
         <img
-          src="/patna-lapro-logo.png"
-          alt="Sarvada Hospital Logo"
+          src="/logo.png"
+          alt="Sarvada Hospito Care Logo"
           className="w-10 h-10 object-contain shrink-0"
         />
         <div>
-          <p className="font-bold text-navy-800 text-sm leading-tight">Sarvada Hospital</p>
+          <p className="font-bold text-navy-800 text-sm leading-tight">Sarvada Hospito Care</p>
           <p className="text-xs text-gray-400">Admin Panel</p>
         </div>
       </div>
@@ -177,11 +181,11 @@ export default function AdminLayout() {
                 </button>
                 <div className="hidden sm:flex items-center gap-2">
                   <img
-                    src="/patna-lapro-logo.png"
-                    alt="Sarvada Hospital Logo"
+                    src="/logo.png"
+                    alt="Sarvada Hospito Care Logo"
                     className="w-8 h-8 object-contain shrink-0"
                   />
-                  <span className="font-semibold text-navy-800 text-sm">Sarvada Hospital</span>
+                  <span className="font-semibold text-navy-800 text-sm">Sarvada Hospito Care</span>
                 </div>
               </div>
 

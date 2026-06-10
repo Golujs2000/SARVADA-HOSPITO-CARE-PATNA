@@ -19,12 +19,12 @@ export default function BookAppointment() {
     <>
       <SEO
         title="Book an Appointment"
-        description="Book a surgical appointment at Sarvada Hospital, Patna online. Choose your department, select a date, and our team confirms within 30 minutes. Consultation by appointment."
-        keywords={['book surgery appointment Patna', 'online laparoscopy booking Patna', 'kidney stone doctor appointment Patna', 'Sarvada Hospital appointment']}
+        description="Book a surgical appointment at Sarvada Hospito Care, Patna online. Choose your department, select a date, and our team confirms within 30 minutes. Consultation by appointment."
+        keywords={['book surgery appointment Patna', 'online laparoscopy booking Patna', 'kidney stone doctor appointment Patna', 'Sarvada Hospito Care appointment']}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'ReserveAction',
-          name: 'Book an Appointment at Sarvada Hospital',
+          name: 'Book an Appointment at Sarvada Hospito Care',
           target: {
             '@type': 'EntryPoint',
             urlTemplate: `${siteData.url}/book-appointment`,

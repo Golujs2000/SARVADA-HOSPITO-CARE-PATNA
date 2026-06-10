@@ -5,7 +5,7 @@ import { laproStoneSpecialities } from '../src/data/seed/laproStoneSpecialities.
 const outputPath = path.resolve('google-business-services.txt')
 
 let output = `================================================================
-  Sarvada Hospital — GOOGLE BUSINESS PROFILE SERVICES
+  Sarvada Hospito Care — GOOGLE BUSINESS PROFILE SERVICES
   Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar 800020
   Call: 7079001600 | 7079001700
   https://sarvada-hospito-care.web.app
@@ -42,7 +42,7 @@ laproStoneSpecialities.forEach((spec, idx) => {
         desc += '.'
       }
       
-      const suffix = " Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar."
+      const suffix = " Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman."
       
       if (!desc.includes("Manmohan Suman") && !desc.includes("Patna")) {
         // Apply truncation if needed and append
@@ -85,12 +85,10 @@ output += `================================================================
 
 HOSPITAL BUSINESS DESCRIPTION (for Google Profile "About" section):
 -----------------------------------------------------------------
-Sarvada Hospital is a specialized surgical clinic in
+Sarvada Hospito Care is a specialized surgical clinic in
 Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar, offering advanced laparoscopic
-surgery, stone treatment, and surgical gastroenterology care. Led by
-Dr. Manmohan Suman (MBBS, MD - Consultant Physician),
-Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna),
-Ex-Surgeon VMMC College & Safdarjung Hospital, New Delhi. 21 years of experience.
+surgery, stone treatment, and surgical gastroenterology care. Led by Director
+Dr. Manmohan Suman (MBBS, MD - Consultant Physician) along with our expert medical team of specialists.
 Services: Laparoscopic Surgery, Kidney & Gallbladder Stone, Liver
 Disorders, Pancreas Surgery, Jaundice & Biliary (ERCP), Upper GI
 Endoscopy, Colonoscopy, GI Disorders, Liver Biopsy, Piles & Fistula,
@@ -112,18 +110,18 @@ Secondary: Gastroenterologist
 
 GOOGLE POSTS / UPDATES — suggested weekly topics:
 --------------------------------------------------
-1. "Advanced Laparoscopic Surgery — faster recovery, smaller scars — Dr. Manmohan Suman"
+1. "Advanced Laparoscopic Surgery — faster recovery, smaller scars — Sarvada Hospito Care"
 2. "Kidney stone? Minimally invasive PCNL & Laser treatment available — Call: 7079001600"
-3. "Jaundice specialist in Patna — ERCP & biliary surgery by Dr. Manmohan Suman"
+3. "Jaundice specialist in Patna — ERCP & biliary surgery under Director Dr. Manmohan Suman"
 4. "Upper GI Endoscopy & Colonoscopy — diagnose stomach & colon problems early"
 5. "Liver biopsy — accurate diagnosis for liver disease — book appointment today"
 6. "Piles, Fissure & Fistula — painless stapler surgery — same-day discharge"
-7. "Pancreatic surgery by Consultant Physician — 21 years experience"
+7. "Pancreatic surgery under Director Dr. Manmohan Suman — 21+ years experience"
 8. "Gallbladder stone? Laparoscopic removal in 45 mins — go home next day"
 
 ================================================================
   Total Services: ${totalServices}  |  Categories: ${laproStoneSpecialities.length}
-  Generated for: Sarvada Hospital, Patna, Bihar
+  Generated for: Sarvada Hospito Care, Patna, Bihar
 ================================================================
 `
 

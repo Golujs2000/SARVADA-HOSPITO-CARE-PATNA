@@ -5,12 +5,14 @@ service cloud.firestore {
     // Helper: check if user is authenticated admin
     function isAdmin() {
       return request.auth != null &&
+        exists(/databases/$(database)/documents/staff/$(request.auth.uid)) &&
         get(/databases/$(database)/documents/staff/$(request.auth.uid)).data.role == 'admin';
     }
 
     // Helper: check if user is authenticated staff or admin
     function isStaff() {
       return request.auth != null &&
+        exists(/databases/$(database)/documents/staff/$(request.auth.uid)) &&
         get(/databases/$(database)/documents/staff/$(request.auth.uid)).data.role in ['admin', 'staff'];
     }
 
@@ -84,7 +86,7 @@ service cloud.firestore {
     // ADMIN ONLY
     match /staff/{doc} {
       allow read: if request.auth != null && (request.auth.uid == doc || isStaff());
-      allow write: if isAdmin();
+      allow write: if isAdmin() || (request.auth != null && request.auth.uid == doc && !exists(/databases/$(database)/documents/staff/$(request.auth.uid)));
     }
   }
 }

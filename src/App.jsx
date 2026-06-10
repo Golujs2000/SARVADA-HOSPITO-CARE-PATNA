@@ -1,14 +1,14 @@
-// ─────────────────────────────────────────────────────────────
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // App.jsx
-// Root router configuration for Sarvada Hospital.
+// Root router configuration for Sarvada Hospito Care.
 // Defines all public and admin routes.
 //
 // Route structure:
-//   /                  → Public pages wrapped in PublicLayout
-//   /admin/login       → Standalone login page (no layout)
-//   /admin/*           → Protected admin pages wrapped in AdminLayout
-//   *                  → 404 NotFound
-// ─────────────────────────────────────────────────────────────
+//   /                  â†’ Public pages wrapped in PublicLayout
+//   /admin/login       â†’ Standalone login page (no layout)
+//   /admin/*           â†’ Protected admin pages wrapped in AdminLayout
+//   *                  â†’ 404 NotFound
+// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useVisitTracker } from './hooks/useVisitTracker'
@@ -17,10 +17,10 @@ import { useVisitTracker } from './hooks/useVisitTracker'
 import PublicLayout from './components/PublicLayout'
 import ProtectedRoute from './components/ProtectedRoute'
 
-// ── Public Pages ─────────────────────────────────────────────
+// â”€â”€ Public Pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 import Home from './pages/Home'
 import About from './pages/About'
-import Services from './pages/Services'
+import Category from './pages/Category'
 import Doctors from './pages/Doctors'
 import DoctorProfile from './pages/DoctorProfile'
 import Gallery from './pages/Gallery'
@@ -28,7 +28,7 @@ import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Contact from './pages/Contact'
 import ServiceDetail from './pages/ServiceDetail'
-import HospitalServices from './pages/HospitalServices'
+// import HospitalServices from './pages/HospitalServices'
 import HospitalServiceDetail from './pages/HospitalServiceDetail'
 import TreatmentDetail from './pages/TreatmentDetail'
 import BookAppointment from './pages/BookAppointment'
@@ -38,7 +38,7 @@ import Terms from './pages/Terms'
 import DataDeletion from './pages/DataDeletion'
 import NotFound from './pages/NotFound'
 
-// ── Admin Pages ──────────────────────────────────────────────
+// â”€â”€ Admin Pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 import AdminLayout from './components/admin/AdminLayout'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
@@ -48,8 +48,7 @@ import AdminBlog from './pages/admin/AdminBlog'
 import AdminGallery from './pages/admin/AdminGallery'
 import AdminMessages from './pages/admin/AdminMessages'
 import AdminStaff from './pages/admin/AdminStaff'
-import AdminSpecialities from './pages/admin/AdminSpecialities'
-import AdminServices from './pages/admin/AdminServices'
+import AdminCategory from './pages/admin/AdminCategory'
 import AdminTreatments from './pages/admin/AdminTreatments'
 import AdminSettings from './pages/admin/AdminSettings'
 
@@ -60,14 +59,19 @@ function AppRoutes() {
 
   return (
     <Routes>
-      {/* ── Public Routes (Navbar + Footer) ── */}
+      {/* â”€â”€ Public Routes (Navbar + Footer) â”€â”€ */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
+        {/* Replaced /services and /hospital-services with the 4 individual pages */}
+        <Route path="/hospital-departments" element={<Category categoryName="Hospital Departments" title="Hospital Departments" description="Our clinical and hospital departments providing specialized medical care." />} />
+        <Route path="/surgical-services" element={<Category categoryName="Surgical Services" title="Surgical Services" description="Advanced surgical treatments, laparoscopic surgery, and general surgical procedures." />} />
+        <Route path="/critical-care" element={<Category categoryName="Critical & Emergency Care" title="Critical & Emergency Care" description="24/7 ICU, ICCU and emergency trauma care facilities managed by expert intensivists." />} />
+        <Route path="/patient-facilities" element={<Category categoryName="Patient Care Facilities" title="Patient Care Facilities" description="Comprehensive facilities including deluxe wards, pharmacy, and ambulance services." />} />
+        <Route path="/diagnostics" element={<Category categoryName="Diagnostics" title="Diagnostics & Imaging" description="State-of-the-art laboratory and imaging services including X-Ray, Ultrasound, and full body checkups." />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/services/:slug/treatment/:treatmentSlug" element={<TreatmentDetail />} />
-        <Route path="/hospital-services" element={<HospitalServices />} />
+        {/* <Route path="/hospital-services" element={<HospitalServices />} /> */}
         <Route path="/hospital-services/:slug" element={<HospitalServiceDetail />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/doctors/:slug" element={<DoctorProfile />} />
@@ -82,10 +86,10 @@ function AppRoutes() {
         <Route path="/data-deletion" element={<DataDeletion />} />
       </Route>
 
-      {/* ── Admin Login (no sidebar layout) ── */}
+      {/* â”€â”€ Admin Login (no sidebar layout) â”€â”€ */}
       <Route path="/admin/login" element={<AdminLogin />} />
 
-      {/* ── Protected Admin Routes (requires auth + staff role) ── */}
+      {/* â”€â”€ Protected Admin Routes (requires auth + staff role) â”€â”€ */}
       <Route
         path="/admin"
         element={
@@ -101,13 +105,16 @@ function AppRoutes() {
         <Route path="gallery" element={<AdminGallery />} />
         <Route path="messages" element={<AdminMessages />} />
         <Route path="staff" element={<ProtectedRoute requireAdmin><AdminStaff /></ProtectedRoute>} />
-        <Route path="specialities" element={<AdminSpecialities />} />
-        <Route path="services" element={<AdminServices />} />
+        <Route path="hospital-departments" element={<AdminCategory categoryName="Hospital Departments" title="Hospital Departments" />} />
+        <Route path="surgical-services" element={<AdminCategory categoryName="Surgical Services" title="Surgical Services" />} />
+        <Route path="critical-care" element={<AdminCategory categoryName="Critical & Emergency Care" title="Critical & Emergency Care" />} />
+        <Route path="patient-facilities" element={<AdminCategory categoryName="Patient Care Facilities" title="Patient Care Facilities" />} />
+        <Route path="diagnostics" element={<AdminCategory categoryName="Diagnostics" title="Diagnostics" />} />
         <Route path="treatments" element={<AdminTreatments />} />
         <Route path="settings" element={<ProtectedRoute requireAdmin><AdminSettings /></ProtectedRoute>} />
       </Route>
 
-      {/* ── 404 Fallback ── */}
+      {/* â”€â”€ 404 Fallback â”€â”€ */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

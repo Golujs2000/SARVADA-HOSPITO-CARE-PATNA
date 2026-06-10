@@ -62,8 +62,8 @@ export default function Contact() {
     <>
       <SEO
         title={`Contact Us — ${siteData.name}`}
-        description={`Contact Sarvada Hospital, Patna at ${siteData.contact.phone}. Located at ${siteData.contact.address}. Book appointments online.`}
-        keywords={['contact Sarvada Hospital', 'clinic address Patna', 'Sarvada Hospital phone number', 'book surgery appointment Patna', 'Dr Manmohan Suman contact']}
+        description={`Contact Sarvada Hospito Care, Patna at ${siteData.contact.phone}. Located at ${siteData.contact.address}. Book appointments online.`}
+        keywords={['contact Sarvada Hospito Care', 'clinic address Patna', 'Sarvada Hospito Care phone number', 'book surgery appointment Patna']}
         jsonLd={{
           '@context': 'https://schema.org',
           '@type': 'MedicalClinic',
@@ -82,12 +82,12 @@ export default function Contact() {
           openingHoursSpecification: [
             { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], opens: '08:00', closes: '21:00' },
           ],
-          hasMap: 'https://maps.google.com/?q=Anand+palace,+Bypass+Rd,+changer,+Kankarbagh,+Patna,+Bihar+800020',
+          hasMap: siteData.mapLink,
         }}
       />
 
       {/* Hero */}
-      <section className="page-hero text-center">
+      <section className="page-hero text-center border-b border-navy-800">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="container-max">
           <h1 className="font-heading text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
@@ -96,7 +96,7 @@ export default function Contact() {
         </motion.div>
       </section>
 
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-slate-50 border-b border-gray-100">
         <div className="container-max grid lg:grid-cols-2 gap-12">
           {/* Contact info */}
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
@@ -104,7 +104,7 @@ export default function Contact() {
 
             <div className="space-y-6 mb-8">
               {[
-                { icon: FiMapPin, label: 'Our Address', value: siteData.contact.address, href: null },
+                { icon: FiMapPin, label: 'Our Address', value: siteData.contact.address, href: siteData.mapLink, target: '_blank', rel: 'noopener noreferrer' },
                 { 
                   icon: FiPhone, 
                   label: 'Phone Numbers', 
@@ -118,13 +118,13 @@ export default function Contact() {
                 },
                 { icon: FiMail, label: 'Email', value: siteData.contact.email, href: `mailto:${siteData.contact.email}` },
                 { icon: FiClock, label: 'Hours', value: siteData.contact.hours, href: null },
-              ].map(({ icon: Icon, label, value, href, isPhones, red }) => (
-                <div key={label} className="flex gap-4">
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${red ? 'bg-red-50' : 'bg-primary-50'}`}>
-                    <Icon className={`w-5 h-5 ${red ? 'text-red-600' : 'text-primary-600'}`} />
+              ].map(({ icon: Icon, label, value, href, isPhones, ...rest }) => (
+                <div key={label} className="flex gap-4 p-5 bg-white rounded-[5px] border border-gray-100 shadow-sm">
+                  <div className={`w-12 h-12 rounded-[5px] flex items-center justify-center flex-shrink-0 bg-primary-50`}>
+                    <Icon className={`w-5 h-5 text-primary-600`} />
                   </div>
                   <div>
-                    <p className="text-xs text-gray-400 font-medium uppercase tracking-wide mb-0.5">{label}</p>
+                    <p className="text-xs text-gray-500 font-bold uppercase tracking-wide mb-0.5">{label}</p>
                     {isPhones ? (
                       <div className="flex flex-col gap-1">
                         {value.map((ph) => (
@@ -134,7 +134,7 @@ export default function Contact() {
                         ))}
                       </div>
                     ) : href ? (
-                      <a href={href} className={`font-medium hover:underline ${red ? 'text-red-600' : 'text-navy-800 hover:text-primary-600'}`}>{value}</a>
+                      <a href={href} {...rest} className={`font-medium hover:underline text-navy-800 hover:text-primary-600`}>{value}</a>
                     ) : (
                       <p className="font-medium text-navy-800">{value}</p>
                     )}
@@ -155,7 +155,7 @@ export default function Contact() {
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-11 h-11 bg-gray-100 hover:bg-primary-100 hover:text-primary-600 rounded-xl flex items-center justify-center transition-colors"
+                  className="w-11 h-11 bg-white border border-gray-200 hover:bg-primary-50 hover:text-primary-600 hover:border-primary-200 rounded-[5px] flex items-center justify-center transition-colors"
                   aria-label={label}
                 >
                   <Icon className="w-5 h-5" />
@@ -172,7 +172,7 @@ export default function Contact() {
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
-                title="Sarvada Hospital Map"
+                title="Sarvada Hospito Care Map"
               />
             </div>
           </motion.div>

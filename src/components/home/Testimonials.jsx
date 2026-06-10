@@ -9,103 +9,63 @@ import { FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 const testimonials = [
   {
-    name: 'Usahri Hasanpura',
+    name: 'Amit Sharma',
     location: 'Patna, Bihar',
-    dept: 'Koch’s Abdomen & Cysticercosis',
+    dept: 'Emergency & Trauma Care',
     rating: 5,
-    date: '4 months ago',
-    text: 'मरीज को कोख (Koch’s) एब्डोमेन के साथ सिस्टिसरकोसिस की समस्या थी। इसका सही और समय पर निदान डॉ. संजीव कुमार, जीआई सर्जन, पटना द्वारा किया गया। डॉ. संजीव कुमार की सटीक जांच, सही निर्णय और बेहतरीन इलाज की वजह से मरीज की जान बच सकी। वे बहुत ही अनुभवी, समझदार और मरीजों के प्रति संवेदनशील डॉक्टर हैं। हम उनके और उनकी पूरी मेडिकल टीम के तहेदिल से आभारी हैं। गैस्ट्रो और जटिल पेट की बीमारियों के लिए हम डॉ. संजीव कुमार की पूरी तरह से सिफारिश करते हैं। 🙏',
-    initials: 'UH',
+    date: '1 month ago',
+    text: 'My father suffered a severe cardiac event late at night. The emergency response team at Sarvada Hospito Care was incredibly swift. The immediate ICU admission and the expertise of the cardiology team saved his life. Extremely grateful to the entire hospital staff.',
+    initials: 'AS',
     verified: true,
   },
   {
-    name: 'Puja Kumari',
-    location: 'Patna, Bihar',
-    dept: 'Fistula, Piles & Stone Surgery',
-    rating: 5,
-    date: '8 months ago',
-    text: 'A good doctor with very polite behaviour. A real gentleman with good knowledge of laproscopy surgery of all types of fistula and piles. Specialist in all types of stone surgery. He has good polite and experienced supporting staff',
-    initials: 'PK',
-    verified: true,
-  },
-  {
-    name: 'Mamta Kumari',
-    location: 'Patna, Bihar',
-    dept: 'Gastroenterology & GI Surgery',
-    rating: 5,
-    date: '8 months ago',
-    text: 'To be very first, very polite and friendly Doctor. Having patience to listen to the problems very deeply. Well known for all kind of fistula, piles and stone surgery both open and laproscopy. Having good experience of liver diseases and pancreatic problems. Good supporting staff and good culture',
-    initials: 'MK',
-    verified: true,
-  },
-  {
-    name: 'Akhilesh Kumar Pandey',
-    location: 'Patna, Bihar',
-    dept: 'Laparoscopic Gallstone Surgery',
-    rating: 5,
-    date: '4 months ago',
-    text: 'Dr. Manmohan Suman is one of the best gastro surgeons in Patna, Bihar. He successfully performed laparoscopic gallstone surgery on my 70-year-old mother. She recovered very well, within two days of the surgery, and was discharged on the third day. The hospital staff and nursing sisters were extremely caring, supportive, and professional. Overall, the experience was excellent. Dr. Manmohan Suman is truly the best surgeon in Bihar. Highly recommended!',
-    initials: 'AP',
-    verified: true,
-  },
-  {
-    name: 'Naziya Bano',
-    location: 'Patna, Bihar',
-    dept: 'Pancreatitis, Jaundice & ERCP',
-    rating: 5,
-    date: '4 months ago',
-    text: 'We consulted Dr. Manmohan Suman gastro surgeon in Patna for a case of stone with pancreatitis and jaundice. The doctor diagnosed the problem accurately and explained everything in a very clear and reassuring manner. ERCP was performed successfully, and the patient improved significantly after the procedure. The hospital staff were supportive, caring, and maintained good cleanliness. Post-procedure care and guidance were excellent. He has two centres in Patna: Chirayu Health Care, Kankarbagh and Medimax Hospital. Best ERCP doctor in Bihar.',
-    initials: 'NB',
-    verified: true,
-  },
-  {
-    name: 'Nitesh Yadav',
-    location: 'Patna, Bihar',
-    dept: 'Koch’s Abdomen & Cysticercosis',
-    rating: 5,
-    date: '4 months ago',
-    text: 'Dr. Manmohan Suman, GI Surgeon and top gastroenterologist of Patna, Bihar, made an accurate and timely diagnosis of Koch’s abdomen with cysticercosis, which saved the patient’s life. He is highly experienced and trustworthy. We are truly grateful for his care.',
-    initials: 'NY',
-    verified: true,
-  },
-  {
-    name: 'Rajesh Prasad',
-    location: 'Patna, Bihar',
-    dept: 'Laparoscopic Gallbladder Surgery',
-    rating: 5,
-    date: 'April 2026',
-    text: 'I had severe gallstone pain for over a year. Dr. Manmohan Suman performed my laparoscopic cholecystectomy and I was discharged the very next morning. Absolutely no large scar, very little pain and I was back to work in a week. Excellent surgeon and wonderful team at Sarvada Hospital.',
-    initials: 'RP',
-    verified: true,
-  },
-  {
-    name: 'Sunita Kumari',
+    name: 'Priya Singh',
     location: 'Muzaffarpur, Bihar',
-    dept: 'Kidney Stone (PCNL)',
+    dept: 'Orthopedic Surgery',
     rating: 5,
-    date: 'March 2026',
-    text: 'I had a 2.5 cm kidney stone and was told I needed PCNL surgery. Dr. Manmohan Suman explained everything clearly, the surgery was smooth and I had zero complications. The stone is completely cleared on my CT scan follow-up. Truly grateful to the doctor and staff.',
-    initials: 'SK',
+    date: '3 months ago',
+    text: 'I underwent knee replacement surgery here. From the pre-op diagnostics to the advanced surgical OT and the post-op physiotherapy, everything was world-class. The AC rooms are very clean and the nursing staff is highly attentive.',
+    initials: 'PS',
     verified: true,
   },
   {
-    name: 'Manoj Kumar Sinha',
+    name: 'Rahul Verma',
+    location: 'Gaya, Bihar',
+    dept: 'General Medicine & Diagnostics',
+    rating: 5,
+    date: '2 months ago',
+    text: 'Visited the OPD for a prolonged fever. The in-house pathology and ultrasound facilities made diagnosis very fast. The doctors explained the treatment plan very well. It is a highly reliable multi-specialty hospital.',
+    initials: 'RV',
+    verified: true,
+  },
+  {
+    name: 'Sneha Gupta',
+    location: 'Patna, Bihar',
+    dept: 'Gynecology & Obstetrics',
+    rating: 5,
+    date: '5 months ago',
+    text: 'My delivery was handled here and the experience was wonderful. The doctors are highly experienced and the day care services are top-notch. They ensured both my baby and I received the best care possible in a clean and safe environment.',
+    initials: 'SG',
+    verified: true,
+  },
+  {
+    name: 'Vijay Kumar',
     location: 'Hajipur, Bihar',
-    dept: 'Laparoscopic Hernia Repair',
+    dept: 'Laparoscopic Surgery',
     rating: 5,
-    date: 'February 2026',
-    text: 'I had a right inguinal hernia that was causing a lot of discomfort. The laparoscopic repair by Dr. Manmohan Suman was superb — I walked the same evening, went home next day and resumed my business in a week. Zero recurrence after 6 months. Highly recommended.',
-    initials: 'MK',
+    date: '4 months ago',
+    text: 'Had a laparoscopic gallbladder surgery. The advanced OT setup here ensures minimal pain and fast recovery. I was discharged in just two days. The hospital staff managed everything perfectly.',
+    initials: 'VK',
     verified: true,
   },
   {
-    name: 'Geeta Devi',
+    name: 'Anita Devi',
     location: 'Ara, Bihar',
-    dept: 'Jaundice (Obstructive)',
+    dept: 'Dialysis Unit',
     rating: 5,
-    date: 'January 2026',
-    text: 'My husband was diagnosed with obstructive jaundice from a CBD stone. Dr. Manmohan Suman arranged ERCP and then laparoscopic cholecystectomy. His bilirubin came back to normal in 10 days. The doctor is very calm, explains everything and the care was exceptional. Thank you!',
-    initials: 'GD',
+    date: '6 months ago',
+    text: 'My husband has been visiting the dialysis unit twice a week. The facility is extremely hygienic, the technicians are well-trained, and the nephrology department provides excellent continuous care. Best hospital in Patna.',
+    initials: 'AD',
     verified: true,
   },
 ]
@@ -128,18 +88,12 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-16"
         >
-          <span className="inline-block bg-amber-50 border border-amber-200 text-amber-600 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-            Patient Stories
-          </span>
-          <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">
-            What Our Patients{' '}
-            <span className="text-amber-500">Say</span>
+          <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800 mt-2 mb-4">
+            Testimonials
           </h2>
-          <p className="text-gray-500 text-lg mt-4 max-w-xl mx-auto">
-            Real stories from real patients who trusted us with their health.
-          </p>
+          <div className="w-16 h-0.5 bg-primary-600 mx-auto" />
         </motion.div>
 
         <div className="max-w-6xl mx-auto">

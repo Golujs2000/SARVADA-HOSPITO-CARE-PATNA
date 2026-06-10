@@ -287,8 +287,8 @@ export default function AdminDashboard() {
           i={8}
         />
         <StatCard
-          label="Total Specialities"
-          value={stats.totalSpecialities}
+          label="Total Departments"
+          value={stats.totalDepartments}
           icon={FiActivity}
           iconBg="bg-rose-50 text-rose-600"
           border="border-rose-100"

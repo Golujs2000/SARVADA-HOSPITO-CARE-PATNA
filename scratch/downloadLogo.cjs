@@ -2,12 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-const imageUrl = 'https://firebasestorage.googleapis.com/v0/b/patna-lapro-stone-healthcare.firebasestorage.app/o/gallery%2F1780641940860_Patna%20Lapro%20%26%20Stone%20Healthcare.webp?alt=media&token=6cc6bbed-efec-4826-b593-107a379307e5';
+const imageUrl = 'https://firebasestorage.googleapis.com/v0/b/nova-max-hospital.firebasestorage.app/o/gallery%2F1781112389949_logo%20(2).webp?alt=media&token=8b2be672-f9b4-4d74-bbfe-d7a0fd2b7b0a';
 
 const destPaths = [
   path.join(__dirname, '..', 'public', 'favicon.png'),
-  path.join(__dirname, '..', 'public', 'patna-lapro-logo.png'),
-  path.join(__dirname, '..', 'src', 'assets', 'patna-lapro-logo.png')
+  path.join(__dirname, '..', 'public', 'logo.png'),
+  path.join(__dirname, '..', 'src', 'assets', 'logo.png')
 ];
 
 async function downloadLogo() {

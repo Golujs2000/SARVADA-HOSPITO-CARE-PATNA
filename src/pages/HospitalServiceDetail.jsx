@@ -12,7 +12,7 @@ import {
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { getHospitalServices } from '../services/hospitalServices'
-import { getSpecialities } from '../services/specialities'
+import { getDepartments } from '../services/categories'
 import { siteData } from '../data/siteData'
 
 const CATEGORY_CONFIG = {
@@ -38,25 +38,25 @@ export default function HospitalServiceDetail() {
   const { slug } = useParams()
   const [service, setService] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [specialities, setSpecialities] = useState([])
+  const [departments, setDepartments] = useState([])
 
   useEffect(() => {
-    Promise.all([getHospitalServices(), getSpecialities()])
+    Promise.all([getHospitalServices(), getDepartments()])
       .then(([svcs, specs]) => {
         const found = svcs.find((s) => s.slug === slug || s.id === slug)
         setService(found || null)
-        setSpecialities(specs)
+        setDepartments(specs)
       })
       .catch(console.error)
       .finally(() => setLoading(false))
   }, [slug])
 
-  // Build a slug-lookup map for related specialities
+  // Build a slug-lookup map for related departments
   const slugMap = useMemo(() => {
     const map = {}
-    specialities.forEach((s) => { if (s.name && s.slug) map[s.name] = s.slug })
+    departments.forEach((s) => { if (s.name && s.slug) map[s.name] = s.slug })
     return map
-  }, [specialities])
+  }, [departments])
 
   if (loading) {
     return (
@@ -71,7 +71,7 @@ export default function HospitalServiceDetail() {
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gray-50">
         <FiAlertCircle size={40} className="text-gray-400" />
         <p className="text-gray-500 text-xl font-medium">Service not found.</p>
-        <Link to="/hospital-services" className="btn-primary">Back to Services &amp; Facilities</Link>
+        <Link to="/patient-facilities" className="btn-primary">Back to Facilities</Link>
       </div>
     )
   }
@@ -82,7 +82,7 @@ export default function HospitalServiceDetail() {
     <>
       <SEO
         title={`${service.name} - Services & Facilities`}
-        description={service.description || `Explore details about ${service.name} at Sarvada Hospital.`}
+        description={service.description || `Explore details about ${service.name} at Sarvada Hospito Care.`}
         keywords={[`${service.name} Patna`, 'hospital services Patna', 'medical facilities Patna']}
       />
 
@@ -91,7 +91,7 @@ export default function HospitalServiceDetail() {
         <div className="container-max flex items-center gap-2 text-sm text-gray-500">
           <Link to="/" className="hover:text-primary-600">Home</Link>
           <span>/</span>
-          <Link to="/hospital-services" className="hover:text-primary-600">Services</Link>
+          <Link to="/patient-facilities" className="hover:text-primary-600">Facilities</Link>
           <span>/</span>
           <span className="text-gray-800 font-medium truncate">{service.name}</span>
         </div>
@@ -100,7 +100,7 @@ export default function HospitalServiceDetail() {
       <section className="section-padding bg-slate-50/40">
         <div className="container-max max-w-5xl">
           {/* Back button */}
-          <Link to="/hospital-services" className="inline-flex items-center gap-2 text-primary-600 text-sm font-semibold mb-8 hover:gap-3 transition-all">
+          <Link to="/patient-facilities" className="inline-flex items-center gap-2 text-primary-600 text-sm font-semibold mb-8 hover:gap-3 transition-all">
             <FiArrowLeft className="w-4 h-4" /> Back to All Services
           </Link>
 
@@ -109,7 +109,7 @@ export default function HospitalServiceDetail() {
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              className="lg:col-span-8 bg-white rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8"
+              className="lg:col-span-8 bg-white rounded-[5px] border border-gray-100 shadow-sm p-6 sm:p-8"
             >
               {/* Category Badge & Availability */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -131,7 +131,7 @@ export default function HospitalServiceDetail() {
               </h1>
 
               {/* Icon Box */}
-              <div className="w-20 h-20 bg-slate-50 border border-gray-100 rounded-2xl flex items-center justify-center text-4xl mb-8 shadow-inner">
+              <div className="w-20 h-20 bg-slate-50 border border-gray-100 rounded-[5px] flex items-center justify-center text-4xl mb-8 shadow-sm">
                 {service.icon || '🏥'}
               </div>
 
@@ -141,21 +141,21 @@ export default function HospitalServiceDetail() {
                   {service.description || 'Dedicated hospital facility and medical service designed to support your treatment and ensure clinical safety.'}
                 </p>
                 <p className="text-sm">
-                  At Sarvada Hospital, our facilities are equipped to offer highly reliable clinical outcomes. Under the medical guidance of Dr. Manmohan Suman (MBBS, MD), we maintain stringent protocols for patient hygiene, comfort, and care.
+                  At Sarvada Hospito Care, our facilities are equipped to offer highly reliable clinical outcomes. Under the medical guidance of our panel of senior specialists, we maintain stringent protocols for patient hygiene, comfort, and care.
                 </p>
               </div>
 
-              {/* Related Specialities */}
+              {/* Related Departments */}
               {Array.isArray(service.relatedSpecialties) && service.relatedSpecialties.length > 0 && (
                 <div className="border-t border-gray-100 pt-6 mt-8">
                   <h3 className="text-sm font-bold uppercase tracking-widest text-navy-800 mb-4">
-                    Related Specialities &amp; Departments
+                    Related Departments &amp; Departments
                   </h3>
                   <div className="grid sm:grid-cols-2 gap-3">
                     {service.relatedSpecialties.map((name) => {
                       const slug = slugMap[name]
                       return (
-                        <div key={name} className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50/50 border border-gray-100 hover:bg-slate-50 transition-colors">
+                        <div key={name} className="flex items-center justify-between p-3.5 rounded-[5px] bg-slate-50/50 border border-gray-100 hover:bg-slate-50 transition-colors">
                           <span className="text-xs font-bold text-navy-800">{name}</span>
                           {slug && (
                             <Link
@@ -190,13 +190,13 @@ export default function HospitalServiceDetail() {
                 <div className="space-y-2.5">
                   <Link
                     to={`/book-appointment?dept=${encodeURIComponent(service.category === 'Consultation' ? 'OPD Consultation' : '')}`}
-                    className="w-full text-center py-3 bg-primary-600 hover:bg-primary-700 text-white font-extrabold rounded-xl text-xs shadow-md shadow-primary-600/25 transition-all flex items-center justify-center gap-1.5"
+                    className="w-full text-center py-3 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-[5px] text-xs transition-all flex items-center justify-center gap-1.5"
                   >
                     <FiCalendar className="w-3.5 h-3.5" /> Book Appointment
                   </Link>
                   <a
                     href={`tel:${siteData.contact.phone}`}
-                    className="w-full text-center py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-extrabold rounded-xl text-xs transition-all flex items-center justify-center gap-1.5"
+                    className="w-full text-center py-3 border border-primary-600 text-primary-600 hover:bg-primary-50 font-bold rounded-[5px] text-xs transition-all flex items-center justify-center gap-1.5"
                   >
                     <FiPhone className="w-3.5 h-3.5" /> Contact Clinic
                   </a>

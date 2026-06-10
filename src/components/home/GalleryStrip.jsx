@@ -3,7 +3,7 @@
 // Hospital infrastructure gallery section on the homepage.
 // Fetches images from the "home gallery" Firestore folder.
 // Layout:
-//   - Stats banner (beds, specialities, specialists, 24/7 ER)
+//   - Stats banner (beds, departments, specialists, 24/7 ER)
 //   - Bento mosaic grid (first 5 images, feature tile + 4 small)
 //   - Remaining images in a uniform square grid
 //   - CTA linking to the full /gallery page
@@ -121,7 +121,7 @@ const cleanTitle = (title = '') =>
     .replace(/[-_\s]+\d+$/, '')
     .replace(/[-_]/g, ' ')
     .trim()
-    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Sarvada Hospital'
+    .replace(/\b\w/g, (c) => c.toUpperCase()) || 'Sarvada Hospito Care'
 
 // ── Tiles ─────────────────────────────────────────────────────────────────────
 function MediaRender({ img, className = '', scaleClass = 'group-hover:scale-105' }) {
@@ -230,7 +230,7 @@ export default function GalleryStrip() {
               Modern Clinic <span className="text-primary-600">Infrastructure</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Sarvada Hospital provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective surgical healing.
+              Sarvada Hospito Care provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective surgical healing.
             </p>
           </motion.div>
 

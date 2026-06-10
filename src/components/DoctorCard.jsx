@@ -14,21 +14,21 @@ export default function DoctorCard({ doc, accent }) {
   const isOb = resolvedAccent === 'rose'
 
   return (
-    <div className="bg-white rounded-3xl border border-gray-100/90 shadow-card hover:shadow-card-hover overflow-hidden flex flex-col md:flex-row group hover:-translate-y-1 transition-all duration-300 p-6 gap-6 md:gap-8 w-full">
+    <div className="bg-white rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md overflow-hidden flex flex-col md:flex-row group hover:-translate-y-1 transition-all duration-300 p-6 gap-6 md:gap-8 w-full">
 
       {/* Left Column — Portrait & Buttons */}
       <div className="w-full md:w-[240px] shrink-0 flex flex-col gap-4">
-        <div className="w-full aspect-[4/5] bg-gradient-to-br from-primary-50 via-white to-accent-50 overflow-hidden rounded-[24px] border border-gray-100 relative flex items-center justify-center shadow-inner shrink-0">
+        <div className="w-full aspect-[4/5] bg-slate-50 overflow-hidden rounded-[5px] border border-gray-100 relative flex items-center justify-center shrink-0">
           {doc.image ? (
             <img
               src={doc.image}
               alt={doc.name}
               loading="lazy"
-              className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-700"
+              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center py-10">
-              <div className={`w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center shadow-lg`}>
+              <div className={`w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center shadow-md`}>
                 <span className="font-bold text-white text-3xl">{getInitials(doc.name)}</span>
               </div>
             </div>
@@ -36,8 +36,8 @@ export default function DoctorCard({ doc, accent }) {
 
           {/* Experience badge */}
           {doc.experience && (
-            <div className="absolute top-4 left-4 bg-navy-800 border border-navy-700/50 rounded-2xl px-3 py-2 flex items-center gap-2 shadow-xl z-20">
-              <div className="w-8 h-8 rounded-xl bg-amber-500 flex items-center justify-center text-white flex-shrink-0">
+            <div className="absolute top-4 left-4 bg-navy-800 border border-navy-700/50 rounded-[5px] px-3 py-2 flex items-center gap-2 shadow-md z-20">
+              <div className="w-8 h-8 rounded bg-amber-500 flex items-center justify-center text-white flex-shrink-0">
                 <FiAward className="w-4 h-4" />
               </div>
               <div>
@@ -52,13 +52,13 @@ export default function DoctorCard({ doc, accent }) {
         <div className="flex flex-col gap-2.5 w-full">
           <Link
             to={`/book-appointment?doctor=${encodeURIComponent(doc.name)}&dept=${encodeURIComponent(doc.specialty)}`}
-            className="w-full text-center py-3 bg-primary-600 hover:bg-primary-700 text-white font-extrabold rounded-xl text-xs shadow-md shadow-primary-600/25 transition-all flex items-center justify-center gap-1.5"
+            className="w-full text-center py-3 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded-[5px] text-xs transition-all flex items-center justify-center gap-1.5"
           >
             <FiCalendar className="w-3.5 h-3.5" /> Book Appointment
           </Link>
           <Link
             to={`/doctors/${doc.slug || doc.id}`}
-            className="w-full text-center py-3 border-2 border-primary-600 text-primary-600 hover:bg-primary-50 font-extrabold rounded-xl text-xs transition-all flex items-center justify-center gap-1.5"
+            className="w-full text-center py-3 border border-primary-600 text-primary-600 hover:bg-primary-50 font-bold rounded-[5px] text-xs transition-all flex items-center justify-center gap-1.5"
           >
             View Profile <FiChevronRight className="w-3.5 h-3.5" />
           </Link>
@@ -75,13 +75,13 @@ export default function DoctorCard({ doc, accent }) {
               {doc.specialty}
             </span>
             {doc.consultationFee && (
-              <span className="text-xs font-semibold text-gray-500 bg-gray-50 border border-gray-100 px-3 py-1 rounded-full">
+              <span className="text-xs font-semibold text-gray-500 bg-gray-50 border border-gray-100 px-3 py-1 rounded-[5px]">
                 Fee: ₹{doc.consultationFee}
               </span>
             )}
           </div>
 
-          <h2 className="font-heading font-black text-navy-800 text-2xl md:text-3xl leading-tight mb-2 tracking-tight group-hover:text-primary-750 transition-colors">
+          <h2 className="font-heading font-black text-navy-800 text-2xl md:text-3xl leading-tight mb-2 tracking-tight group-hover:text-primary-600 transition-colors">
             {doc.name}
           </h2>
 
@@ -90,7 +90,7 @@ export default function DoctorCard({ doc, accent }) {
           </p>
 
           {/* Quick Info Highlights */}
-          <div className="bg-slate-50/70 border border-gray-100 rounded-2xl p-4 mb-4">
+          <div className="bg-slate-50 border border-gray-100 rounded-[5px] p-4 mb-4">
             <ul className="text-xs font-bold text-navy-800 space-y-2.5">
               {doc.qualification && (
                 <li className="flex items-center gap-2">
@@ -110,7 +110,7 @@ export default function DoctorCard({ doc, accent }) {
 
         {/* Footer row — Timings */}
         {doc.availableTime && (
-          <div className="pt-4 border-t border-gray-100/80 w-full">
+          <div className="pt-4 border-t border-gray-100 w-full">
             <div className="flex items-center gap-3 text-xs text-gray-600">
               <FiClock className="w-4 h-4 text-primary-500 shrink-0" />
               <div>

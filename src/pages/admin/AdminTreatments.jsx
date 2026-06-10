@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────
 // pages/admin/AdminTreatments.jsx
 // Dedicated treatment management page.
-// Treatments are stored nested under their parent speciality's
+// Treatments are stored nested under their parent department's
 // `treatments[]` array in Firestore.
 // Rich fields: name, cost, duration, recovery, description,
 // indications, benefits, preparation, images[], videoUrl, faqs[].
@@ -16,13 +16,14 @@ import {
   FiClock,
 } from 'react-icons/fi'
 import toast from 'react-hot-toast'
-import { getSpecialities, updateSpeciality } from '../../services/specialities'
+import { getTreatments, addTreatment, updateTreatment, deleteTreatment } from '../../services/treatments'
+import { getCategoryItems, ALL_COLLECTIONS, getCollectionName } from '../../services/categories'
 import { slugify } from '../../utils/helpers'
 import GalleryPicker from '../../components/admin/GalleryPicker'
 
 const EMPTY_FORM = {
   name: '',
-  specialityId: '',
+  departmentId: '',
   duration: '',
   recovery: '',
   description: '',
@@ -40,7 +41,7 @@ const toLines = (val) => (val || '').split('\n').map((s) => s.trim()).filter(Boo
 const fromLines = (arr) => (Array.isArray(arr) ? arr.join('\n') : arr || '')
 
 export default function AdminTreatments() {
-  const [specialities, setSpecialities] = useState([])
+  const [departments, setDepartments] = useState([])
   const [loading, setLoading]         = useState(true)
   const [modalOpen, setModalOpen]     = useState(false)
   const [editingKey, setEditingKey]   = useState(null)
@@ -53,10 +54,16 @@ export default function AdminTreatments() {
   const [galleryOpen, setGalleryOpen] = useState(false)
   const [viewItem, setViewItem]       = useState(null)
 
+  const [treatmentsData, setTreatmentsData] = useState([])
+
   // ── fetch ─────────────────────────────────────────────────
   const fetchAll = async () => {
     setLoading(true)
-    try { setSpecialities(await getSpecialities()) }
+    try { 
+      const specsArrays = await Promise.all(ALL_COLLECTIONS.map(col => getCategoryItems(col)))
+      setDepartments(specsArrays.flat())
+      setTreatmentsData(await getTreatments())
+    }
     catch { toast.error('Failed to load data') }
     finally { setLoading(false) }
   }
@@ -64,12 +71,17 @@ export default function AdminTreatments() {
 
   // ── flatten all treatments ────────────────────────────────
   const allTreatments = useMemo(() =>
-    specialities.flatMap((spec) =>
-      (Array.isArray(spec.treatments) ? spec.treatments : []).map((t) => ({
-        ...t, specId: spec.id, specName: spec.name,
-        specSlug: spec.slug, specCategory: spec.category,
-      }))
-    ), [specialities])
+    treatmentsData.map((t) => {
+      const spec = departments.find((s) => s.id === t.parentId)
+      return {
+        ...t,
+        specId: t.parentId,
+        specName: spec?.name || 'Unknown',
+        specSlug: spec?.slug || '',
+        specCategory: spec?.category || 'Unknown',
+      }
+    })
+  , [treatmentsData, departments])
 
   const filtered = useMemo(() => {
     let list = allTreatments
@@ -92,10 +104,10 @@ export default function AdminTreatments() {
   }
 
   const openEdit = (t) => {
-    setEditingKey({ specId: t.specId, treatmentSlug: t.slug })
+    setEditingKey(t.id)
     setForm({
       name: t.name || '',
-      specialityId: t.specId || '',
+      departmentId: t.parentId || '',
       duration: t.duration || '',
       recovery: t.recovery || '',
       description: t.description || '',
@@ -146,13 +158,15 @@ export default function AdminTreatments() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name.trim()) { toast.error('Treatment name is required'); return }
-    if (!form.specialityId) { toast.error('Please select a speciality'); return }
-    const spec = specialities.find((s) => s.id === form.specialityId)
-    if (!spec) { toast.error('Speciality not found'); return }
+    if (!form.departmentId) { toast.error('Please select a department'); return }
+    const spec = departments.find((s) => s.id === form.departmentId)
+    if (!spec) { toast.error('Department not found'); return }
 
     const newTreatment = {
       name:        form.name.trim(),
       slug:        slugify(form.name),
+      parentId:    form.departmentId,
+      parentCollection: getCollectionName(spec.category),
       duration:    form.duration.trim(),
       recovery:    form.recovery.trim(),
       description: form.description.trim(),
@@ -168,24 +182,13 @@ export default function AdminTreatments() {
 
     setSaving(true)
     try {
-      let updated = Array.isArray(spec.treatments) ? [...spec.treatments] : []
       if (editingKey) {
-        if (editingKey.specId !== form.specialityId) {
-          const old = specialities.find((s) => s.id === editingKey.specId)
-          if (old) {
-            await updateSpeciality(editingKey.specId, {
-              treatments: (old.treatments || []).filter((t) => t.slug !== editingKey.treatmentSlug),
-            })
-          }
-          updated = [...updated, newTreatment]
-        } else {
-          updated = updated.map((t) => t.slug === editingKey.treatmentSlug ? newTreatment : t)
-        }
+        await updateTreatment(editingKey, newTreatment)
+        toast.success('Treatment updated')
       } else {
-        updated = [...updated, newTreatment]
+        await addTreatment(newTreatment)
+        toast.success('Treatment added')
       }
-      await updateSpeciality(form.specialityId, { treatments: updated })
-      toast.success(editingKey ? 'Treatment updated' : 'Treatment added')
       await fetchAll()
       closeModal()
     } catch (err) {
@@ -195,15 +198,10 @@ export default function AdminTreatments() {
       setSaving(false) }
   }
 
-  // ── delete ────────────────────────────────────────────────
   const handleDelete = async (t) => {
     if (!window.confirm(`Delete "${t.name}"?`)) return
-    const spec = specialities.find((s) => s.id === t.specId)
-    if (!spec) return
     try {
-      await updateSpeciality(spec.id, {
-        treatments: (spec.treatments || []).filter((tr) => tr.slug !== t.slug),
-      })
+      await deleteTreatment(t.id)
       toast.success('Treatment deleted')
       await fetchAll()
     } catch { toast.error('Failed to delete') }
@@ -228,7 +226,7 @@ export default function AdminTreatments() {
         <div>
           <h1 className="text-2xl font-bold text-navy-800">Treatments</h1>
           <p className="text-gray-500 text-sm mt-0.5">
-            {allTreatments.length} treatment{allTreatments.length !== 1 ? 's' : ''} across {specialities.length} specialities
+            {allTreatments.length} treatment{allTreatments.length !== 1 ? 's' : ''} across {departments.length} departments
           </p>
         </div>
         <div className="flex gap-2">
@@ -248,8 +246,8 @@ export default function AdminTreatments() {
           <FiChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
           <select value={filterSpec} onChange={(e) => setFilterSpec(e.target.value)}
             className="input-field pr-8 text-sm appearance-none min-w-[180px]">
-            <option value="all">All Specialities</option>
-            {specialities.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+            <option value="all">All Departments</option>
+            {departments.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
           </select>
         </div>
       </div>
@@ -374,10 +372,10 @@ export default function AdminTreatments() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-1">Speciality *</label>
-                      <select name="specialityId" value={form.specialityId} onChange={handleChange} required className="input-field">
-                        <option value="">Select speciality…</option>
-                        {specialities.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Department *</label>
+                      <select name="departmentId" value={form.departmentId} onChange={handleChange} required className="input-field">
+                        <option value="">Select department…</option>
+                        {departments.map((s) => <option key={s.id} value={s.id}>{s.name}</option>)}
                       </select>
                     </div>
 

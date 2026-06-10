@@ -1,4 +1,14 @@
-import { laproStoneSpecialities } from './laproStoneSpecialities.js'
+import { hospitalDepartments } from './hospitalDepartments.js';
+import { surgicalServices } from './surgicalServices.js';
+import { criticalCare } from './criticalCare.js';
+import { diagnostics } from './diagnostics.js';
+import { patientFacilities } from './patientFacilities.js';
 
-// Export the Sarvada Hospital speciality list
-export const allSpecialities = laproStoneSpecialities
+// Combine all modules into a single array for Firestore seeding
+export const allDepartments = [
+  ...hospitalDepartments,
+  ...surgicalServices,
+  ...criticalCare,
+  ...diagnostics,
+  ...patientFacilities
+];
