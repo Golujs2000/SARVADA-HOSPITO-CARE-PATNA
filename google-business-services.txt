@@ -1,0 +1,465 @@
+================================================================
+  Sarvada Hospital — GOOGLE BUSINESS PROFILE SERVICES
+  Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar 800020
+  Call: 7079001600 | 7079001700
+  https://patna-lapro-stone-healthcare.web.app
+================================================================
+
+HOW TO ADD:
+  Google Business Profile → Edit Profile → Services → Add Service
+  Each block = one service entry. Copy SERVICE NAME + DESCRIPTION.
+================================================================
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 1 — LAPAROSCOPIC SURGERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Laparoscopic Cholecystectomy (Gallbladder Removal)
+DESCRIPTION:
+Minimally invasive removal of the gallbladder through small incisions (4-port, 3-port, or single-port technique). The gold standard treatment for gallstones. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Laparoscopic Appendectomy
+DESCRIPTION:
+Emergency or elective removal of the inflamed appendix through laparoscopy. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Laparoscopic Abdominal Surgery (All Types)
+DESCRIPTION:
+Comprehensive laparoscopic surgery for all abdominal conditions — gallbladder, appendix, hernia, intestinal, liver, and gynaecological procedures. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Laparoscopic Hernia Repair (TEP/TAPP)
+DESCRIPTION:
+Advanced laparoscopic hernia repair using TEP or TAPP technique with mesh placement for inguinal, umbilical, and incisional hernias. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Bariatric (Weight Loss) Surgery
+DESCRIPTION:
+Laparoscopic bariatric surgery for morbid obesity — sleeve gastrectomy and gastric bypass for sustainable weight loss. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 2 — KIDNEY STONE & KIDNEY CANCER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: PCNL (Percutaneous Nephrolithotomy)
+DESCRIPTION:
+Minimally invasive surgical procedure to remove large kidney stones (>2 cm) through a small puncture in the back. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Kidney Cancer Surgery (Radical & Partial Nephrectomy)
+DESCRIPTION:
+Surgical removal of the entire kidney or part containing the tumor for kidney cancer. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Bladder Stone & Prostate Surgery (TURP/Open)
+DESCRIPTION:
+Surgical management of bladder stones and benign prostate enlargement (BPH) through TURP or open prostatectomy. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 3 — LIVER DISORDERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Liver Cyst & Abscess Drainage
+DESCRIPTION:
+Percutaneous or laparoscopic drainage of liver abscesses and symptomatic cysts. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Liver Surgery (Trauma, Cancer & Resection)
+DESCRIPTION:
+Major liver surgery including hepatectomy for liver cancer, liver trauma repair, and jaundice-related liver procedures. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Percutaneous Liver Biopsy
+DESCRIPTION:
+A needle is inserted under ultrasound guidance to take a tiny cylinder of liver tissue. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 4 — PANCREAS DISORDERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Chronic Pancreatitis Management
+DESCRIPTION:
+Long-term medical and enzyme replacement therapy for chronic pancreatic inflammation. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Pancreatic Cancer Surgery (Whipple/Distal Pancreatectomy)
+DESCRIPTION:
+Complex surgery for pancreatic cancer including Whipple procedure (pancreaticoduodenectomy) and distal pancreatectomy. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 5 — JAUNDICE & BILIARY DISORDERS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Biliary Stricture Reconstruction
+DESCRIPTION:
+Surgical repair (Hepaticojejunostomy) of the narrowed bile duct to restore normal bile flow into the intestine. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Common Bile Duct (CBD) Surgery
+DESCRIPTION:
+Surgery for CBD stone, CBD cancer, and CBD stricture — open and laparoscopic common bile duct exploration. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Laparoscopic Common Bile Duct Exploration
+DESCRIPTION:
+Minimally invasive laparoscopic exploration and clearance of common bile duct stones, often combined with cholecystectomy. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Jaundice Management
+DESCRIPTION:
+Detailed clinical assessment to differentiate medical vs. surgical jaundice, followed by targeted biliary decompression. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Ascites Care
+DESCRIPTION:
+Therapeutic and diagnostic paracentesis (abdominal tap) to drain fluid from the peritoneal cavity for relief of bloating and respiratory discomfort. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Biliary Disorder (Choledochal Cyst / Cholangitis)
+DESCRIPTION:
+Advanced surgeries for congenital choledochal cysts (excision and reconstruction) and emergency drainage for severe biliary tract sepsis (cholangitis). Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 6 — GENERAL & GASTROINTESTINAL SURGERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Thyroid Surgery (Thyroidectomy)
+DESCRIPTION:
+Surgical removal of the thyroid gland (total or partial) for nodules, goiter, or cancer. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: AV Fistula Surgery for Dialysis Patients
+DESCRIPTION:
+Surgical creation of an arteriovenous anastomosis in the arm to establish hemodialysis access. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: ICU & Critical Care Management
+DESCRIPTION:
+Fully equipped ICU managed by highly qualified anaesthetic doctors for post-surgical and critical care management. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Paediatric Congenital Disease Surgery
+DESCRIPTION:
+Surgical correction of congenital abnormalities in children — including hernias, undescended testis, hypospadias, and intestinal malformations. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Splenic Surgery & Splenorenal Shunt
+DESCRIPTION:
+Splenectomy for splenic trauma, splenic disorders, and splenorenal shunt surgery for portal hypertension. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Neurology & Neurosurgery Consultation
+DESCRIPTION:
+Neurology services managed by highly qualified neurosurgeon and neurophysician for brain, spine, and nerve disorders. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 7 — GASTRO-INTESTINAL DISORDER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: GI Disorder Evaluation & Treatment
+DESCRIPTION:
+Comprehensive medical assessment and therapeutic planning for general GI problems. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: GERD (Gastro-Esophageal Reflux Disease) Management
+DESCRIPTION:
+Comprehensive management of GERD including medical therapy, lifestyle modification, and anti-reflux surgery (fundoplication). Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Ulcerative Colitis & Crohn's Disease Surgery
+DESCRIPTION:
+Surgical management of complications of ulcerative colitis and Crohn's disease — colectomy, strictureplasty, and abscess drainage. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Trichobezoar & Upper GI Bleeding Management
+DESCRIPTION:
+Emergency and elective management of trichobezoar (hair ball in stomach) and upper gastrointestinal bleeding. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 8 — UPPER G.I. ENDOSCOPY / COLONOSCOPY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Diagnostic & Therapeutic Upper GI Endoscopy
+DESCRIPTION:
+A flexible endoscope is passed through the mouth to visualize the food pipe, stomach, and duodenum. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Diagnostic & Therapeutic Colonoscopy
+DESCRIPTION:
+Endoscopic examination of the entire large intestine (colon) and rectum using a flexible colonoscope. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 9 — COLORECTAL SURGEON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Cancer of Intestine (Colorectal Cancer Surgery)
+DESCRIPTION:
+Surgical resection of colon or rectal cancer (Colectomy, Anterior Resection) to achieve complete oncological clearance with lymph node dissection. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Intestinal Tumor Excision
+DESCRIPTION:
+Removal of benign or stromal tumors (GIST, lipomas) of the small and large bowel. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Intestinal Obstruction Surgery
+DESCRIPTION:
+Emergency decompression and relief of acute bowel blockage due to bands, adhesions, strictures, or tumors. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Large Bowel (Colon) Cancer Surgery
+DESCRIPTION:
+Radical surgery for colon and rectal cancer including hemicolectomy, anterior resection, and abdominoperineal resection. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Intestinal Perforation & Stricture Surgery
+DESCRIPTION:
+Emergency surgery for intestinal perforation and elective surgery for intestinal strictures causing obstruction. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 10 — PILES, FISSURE AND FISTULA IN ANO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Piles (Haemorrhoids) Surgery
+DESCRIPTION:
+Modern surgical correction of bleeding and prolapsing piles using Stapler Haemorrhoidectomy (PPH) or open/laser methods. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Fissure in Ano Repair
+DESCRIPTION:
+Lateral Internal Sphincterotomy (LIS) to relieve sphincter spasm and heal chronic painful anal tears. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Fistula-in-Ano Surgery
+DESCRIPTION:
+Surgical closure of abnormal tracts connecting the anal canal to the perianal skin using Fistulotomy, LIFT, or Seton. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Stapler Haemorrhoidectomy (MIPH)
+DESCRIPTION:
+Minimally invasive stapler haemorrhoidectomy (MIPH) for grade 3–4 piles with less pain and faster recovery than conventional surgery. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 11 — PANCREATIC STONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Pancreatic Stone Surgery
+DESCRIPTION:
+Surgical extraction of calculi from the main pancreatic duct (Frey's procedure or Lateral Pancreaticojejunostomy) to relieve severe pain of chronic pancreatitis. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Pancreatic Stricture Surgery
+DESCRIPTION:
+Reconstructive surgery to bypass narrowing (strictures) in the main pancreatic duct. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Pancreatic Pseudocyst Drainage
+DESCRIPTION:
+Laparoscopic or internal surgical drainage (Cystogastrostomy) of mature fluid collections following acute pancreatitis. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Pancreatic Necrosis Management
+DESCRIPTION:
+Intensive ICU support and necrosectomy (surgical/laparoscopic cleanup of dead pancreatic tissue) for necrotizing pancreatitis. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 12 — FISSURE LASER SURGERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Fissure Laser Surgery
+DESCRIPTION:
+Painless laser vaporization of sentinel pile and sphincterotomy to heal anal tears quickly without open wounds. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Liver Abscess Surgery
+DESCRIPTION:
+Surgical or laparoscopic drainage of large, complicated liver abscesses (pus collections) that fail needle aspiration. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Hydatid cyst of Liver
+DESCRIPTION:
+Surgical excision or marsupialization of parasitic hydatid cysts in the liver using strict scolicidal agents to prevent recurrence. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 13 — GALL BLADDER STONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Gall bladder stone Surgery
+DESCRIPTION:
+Laparoscopic removal of the gallbladder (Cholecystectomy) containing stones to treat biliary pain and prevent complications. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: CBD stone Removal
+DESCRIPTION:
+Laparoscopic Common Bile Duct Exploration (LCBDE) or surgical extraction of stones lodged in the main bile duct. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Gall bladder cancer Surgery
+DESCRIPTION:
+Radical Cholecystectomy (excision of gallbladder with adjacent liver wedge and regional lymph nodes) for early gallbladder cancer. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Advanced gall bladder cancer Care
+DESCRIPTION:
+Surgical bypass, stenting, or palliative debulking to relieve obstructive jaundice and pain in late-stage gallbladder cancer. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 14 — LIVER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Hepatitis-B Management
+DESCRIPTION:
+Detailed counseling, viral load testing, and prescription of long-term antiviral suppressive medications (Tenofovir/Entecavir) for chronic Hepatitis B. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Hepatitis-C Treatment
+DESCRIPTION:
+Curative short-course medical therapy using Direct-Acting Antivirals (DAA) (Sofosbuvir + Velpatasvir/Ledipasvir). Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 15 — ERCP — FOR CBD STONE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: ERCP for CBD stone Extraction
+DESCRIPTION:
+Endoscopic side-view scoping to cannulate the ampulla, perform sphincterotomy, and pull stones out using balloon/basket. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Jaundice / Stricture Stenting
+DESCRIPTION:
+Placement of plastic or self-expanding metal stents across benign or malignant bile duct strictures. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Malignant Biliary Stricture Care
+DESCRIPTION:
+Endoscopic placement of Metallic Stents (SEMS) for palliation of inoperable cancers. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Pancreatic Cancer (Whipple Procedure)
+DESCRIPTION:
+Pancreaticoduodenectomy (Whipple Procedure) to remove the head of the pancreas, duodenum, gallbladder, and part of the bile duct for cancer. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Advanced Ca GB (Cancer of Gallbladder) Care
+DESCRIPTION:
+Endoscopic stenting (ERCP) or bypass surgery to treat biliary obstruction in late-stage gallbladder cancer. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Koch's Abdomen & TB of Intestine
+DESCRIPTION:
+Diagnosis and medical antitubercular therapy (ATT) for abdominal tuberculosis involving the lymph nodes or intestines. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 16 — STOMACH CANCER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Stomach cancer Surgery (Radical Gastrectomy)
+DESCRIPTION:
+Surgical excision of all or part of the stomach (Total or Subtotal Gastrectomy) along with D2 lymph node clearance for gastric adenocarcinoma. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Ovarian cyst Removal (Laparoscopy)
+DESCRIPTION:
+Minimally invasive removal of ovarian cysts (dermoid, endometrioma, simple cyst) while preserving healthy ovarian tissue. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Ovarian Cancer Surgery
+DESCRIPTION:
+Staging laparotomic debulking surgery (Hysterectomy, Bilateral Salpingo-Oophorectomy, Omentectomy) for ovarian malignancies. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 17 — HERNIA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Incisional Hernia Repair
+DESCRIPTION:
+Laparoscopic (IPOM) or open sublay repair of hernias arising at previous surgical scar sites. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Umbilical Hernia Repair
+DESCRIPTION:
+Laparoscopic or open repair of hernias at the navel (belly button) with prosthetic mesh placement. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+
+---
+
+SERVICE NAME: Inguinal Hernia Repair
+DESCRIPTION:
+Minimally invasive keyhole repair of groin hernias (TAPP/TEP techniques) with mesh reinforcement. Treatment provided by Dr. Manmohan Suman (MBBS, MD) in Patna, Bihar.
+================================================================
+  GOOGLE BUSINESS — ADDITIONAL SEO TIPS
+================================================================
+
+HOSPITAL BUSINESS DESCRIPTION (for Google Profile "About" section):
+-----------------------------------------------------------------
+Sarvada Hospital is a specialized surgical clinic in
+Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar, offering advanced laparoscopic
+surgery, stone treatment, and surgical gastroenterology care. Led by
+Dr. Manmohan Suman (MBBS, MD - Consultant Physician),
+Sr. Consultant Medimax Hospital, Patna, Ex-Gastro Surgeon (IGIMS, Patna),
+Ex-Surgeon VMMC College & Safdarjung Hospital, New Delhi. 21 years of experience.
+Services: Laparoscopic Surgery, Kidney & Gallbladder Stone, Liver
+Disorders, Pancreas Surgery, Jaundice & Biliary (ERCP), Upper GI
+Endoscopy, Colonoscopy, GI Disorders, Liver Biopsy, Piles & Fistula,
+Cancer Surgery, Hernia Repair, Thyroid Surgery, and Emergency GI Surgery.
+We provide investigation, diagnosis, treatment and prevention of all
+gastrointestinal (stomach and intestines) and hepatological (liver,
+gallbladder, biliary tree and pancreas) diseases.
+Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar 800020.
+Call: 7079001600 | 7079001700 | Email: sarvadahospitocarepatna@gmail.com
+
+TOP GOOGLE BUSINESS CATEGORIES TO SELECT:
+-----------------------------------------
+Primary:   Surgical Center
+Secondary: Gastroenterologist
+           General Surgeon
+           Laparoscopic Surgeon
+           Hospital
+           Medical Clinic
+
+GOOGLE POSTS / UPDATES — suggested weekly topics:
+--------------------------------------------------
+1. "Advanced Laparoscopic Surgery — faster recovery, smaller scars — Dr. Manmohan Suman"
+2. "Kidney stone? Minimally invasive PCNL & Laser treatment available — Call: 7079001600"
+3. "Jaundice specialist in Patna — ERCP & biliary surgery by Dr. Manmohan Suman"
+4. "Upper GI Endoscopy & Colonoscopy — diagnose stomach & colon problems early"
+5. "Liver biopsy — accurate diagnosis for liver disease — book appointment today"
+6. "Piles, Fissure & Fistula — painless stapler surgery — same-day discharge"
+7. "Pancreatic surgery by Consultant Physician — 21 years experience"
+8. "Gallbladder stone? Laparoscopic removal in 45 mins — go home next day"
+
+================================================================
+  Total Services: 65  |  Categories: 17
+  Generated for: Sarvada Hospital, Patna, Bihar
+================================================================
