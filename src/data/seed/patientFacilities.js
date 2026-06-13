@@ -96,5 +96,19 @@ export const patientFacilities = [
     recoveryTime: 'N/A',
     order: 35,
     treatments: []
+  },
+  {
+    name: '24/7 Pharmacy',
+    slug: 'pharmacy',
+    icon: '💊',
+    category: 'Patient Care Facilities',
+    available: '24/7',
+    description: 'In-house pharmacy stocked with essential medicines, surgical items, and life-saving drugs.',
+    longDescription: 'Our fully stocked, 24/7 in-house pharmacy ensures that patients have immediate access to prescribed medicines, surgical consumables, vaccines, and critical care drugs at all times. It serves both indoor (IPD) and outdoor (OPD) patients.',
+    features: ['24/7 Availability', 'Genuine Medicines', 'Surgical Consumables', 'Emergency Drugs'],
+    costEstimate: 'Varies',
+    recoveryTime: 'N/A',
+    order: 36,
+    treatments: []
   }
 ];

@@ -61,7 +61,7 @@
   }
 
   .page-hero {
-    @apply bg-navy-900 text-white py-24 px-4;
+    @apply bg-gradient-to-r from-primary-600 via-primary-700 to-navy-800 text-white py-24 px-4 relative overflow-hidden shadow-inner;
   }
 
   .admin-sidebar-link {

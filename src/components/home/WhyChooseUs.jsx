@@ -15,11 +15,11 @@ export default function WhyChooseUs() {
       <div className="container-max px-4 md:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
           
-          {/* Left: Image (hidden on small screens, shown on lg) */}
-          <div className="hidden lg:block lg:w-5/12 relative">
+          {/* Image */}
+          <div className="w-full lg:w-5/12 relative mb-8 lg:mb-0">
             <img 
-              src="/gallery/hospital-3.jpg" 
-              alt="Medical Professional" 
+              src="https://firebasestorage.googleapis.com/v0/b/nova-max-hospital.firebasestorage.app/o/gallery%2F1781112398923_SARVADA%20HOSPITO%20CARE01.webp?alt=media&token=b9f5adf4-1e65-43e0-88e5-db1eb9408a4a" 
+              alt="Sarvada Hospito Care Facility" 
               className="w-full h-auto rounded-lg shadow-xl object-cover"
               style={{ maxHeight: '600px' }}
             />

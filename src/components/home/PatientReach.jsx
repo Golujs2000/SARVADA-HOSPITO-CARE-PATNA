@@ -29,13 +29,13 @@ export default function PatientReach() {
               Trusted Across <span className="text-primary-600">Borders &amp; Districts</span>
             </h2>
             <p className="text-gray-500 text-lg mt-4 max-w-3xl mx-auto leading-relaxed">
-              {siteData.name} has become a premier healthcare destination. Patients from all 38 districts of Bihar, Deoghar (Jharkhand), Siliguri (West Bengal), and Nepal travel to our Patna hospital for comprehensive medical care at our <strong className="text-navy-800 font-bold">state-of-the-art facilities</strong>.
+              {siteData.name} has become a premier healthcare destination. Patients from all 38 districts of Bihar, Deoghar (Jharkhand), and Siliguri (West Bengal) travel to our Patna hospital for comprehensive medical care at our <strong className="text-navy-800 font-bold">state-of-the-art facilities</strong>.
             </p>
           </motion.div>
         </div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {siteData.reach.map(({ region, title, description, stat, highlight, color, light }, i) => {
             const Icon = icons[i % icons.length]
             return (

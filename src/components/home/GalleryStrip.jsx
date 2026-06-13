@@ -18,10 +18,10 @@ import { FiArrowRight, FiImage, FiX, FiChevronLeft, FiChevronRight } from 'react
 import { getGalleryByFolderName } from '../../services/gallery'
 
 const STATS = [
-  { value: '50,000+',   label: 'Satisfied Patients',    emoji: '😊' },
-  { value: '21+',       label: 'Years Experience',      emoji: '👨‍⚕️' },
-  { value: '10,000+',   label: 'Successful Operations', emoji: '🩺' },
-  { value: '150+',      label: 'Awards Received',       emoji: '🏆' },
+  { value: '5,000+',    label: 'Satisfied Patients',    emoji: '😊' },
+  { value: '2018',      label: 'Year Established',      emoji: '🏥' },
+  { value: '10+',       label: 'Expert Doctors',        emoji: '👨‍⚕️' },
+  { value: '2,000+',    label: 'Successful Operations', emoji: '🩺' },
 ]
 
 // ── Lightbox ──────────────────────────────────────────────────────────────────
@@ -230,7 +230,7 @@ export default function GalleryStrip() {
               Modern Clinic <span className="text-primary-600">Infrastructure</span>
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
-              Sarvada Hospito Care provides a calm, welcoming environment designed for your comfort. Our infrastructure is optimized for focused consultation and effective surgical healing.
+              Established in 2018, Sarvada Hospito Care provides a calm, welcoming environment designed for your comfort. With a dedicated team of over 10 expert doctors, our infrastructure is optimized for focused consultation and effective surgical healing.
             </p>
           </motion.div>
 

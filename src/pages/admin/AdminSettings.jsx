@@ -84,7 +84,7 @@ export default function AdminSettings() {
   }
 
   const handleSeedClinical = async () => {
-    if (!window.confirm('WARNING: This will RESET all 28 Departments and 230 Treatments to their factory defaults. Any manual changes to categories or treatments will be LOST. Continue?')) return
+    if (!window.confirm('WARNING: This will RESET all 36 Departments and 72 Treatments to their factory defaults. Any manual changes to categories or treatments will be LOST. Continue?')) return
     setSeedingClinical(true)
     try {
       await seedDepartmentsAndServices()
@@ -248,7 +248,7 @@ export default function AdminSettings() {
                     <><FiDatabase size={15} /> Refresh Clinical Dataset</>
                   )}
                 </button>
-                <p className="text-[10px] text-gray-400 italic">Resets 18 Departments & 65 Treatments. Overwrites existing data (preserves custom thumbnails).</p>
+                <p className="text-[10px] text-gray-400 italic">Resets 36 Departments & 72 Treatments. Overwrites existing data (preserves custom thumbnails).</p>
               </div>
 
               {/* Full Site Reset Button */}

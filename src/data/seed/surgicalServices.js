@@ -11,7 +11,26 @@ export const surgicalServices = [
     costEstimate: 'Varies',
     recoveryTime: 'Varies',
     order: 9,
-    treatments: []
+    treatments: [
+      { name: 'Piles / Haemorrhoids (Stapler Haemorrhoidectomy PPH)', slug: 'piles-haemorrhoids-stapler-haemorrhoidectomy' },
+      { name: 'Piles Laser Surgery', slug: 'piles-laser-surgery' },
+      { name: 'Anal Fissure Repair (Sphincterotomy)', slug: 'anal-fissure-repair' },
+      { name: 'Fistula-in-Ano Surgery (Fistulotomy / LIFT / Flap)', slug: 'fistula-in-ano-surgery' },
+      { name: 'Stomach Cancer Surgery (Radical Gastrectomy)', slug: 'stomach-cancer-surgery' },
+      { name: 'Colorectal Cancer Surgery (Colectomy)', slug: 'colorectal-cancer-surgery' },
+      { name: 'Trichobezoar Removal', slug: 'trichobezoar-removal' },
+      { name: 'Upper GI Bleeding Management', slug: 'upper-gi-bleeding-management' },
+      { name: 'Intestinal Obstruction Surgery (Emergency)', slug: 'intestinal-obstruction-surgery' },
+      { name: 'Bowel Perforation Surgery (Emergency)', slug: 'bowel-perforation-surgery' },
+      { name: 'Intestinal Stricture Surgery', slug: 'intestinal-stricture-surgery' },
+      { name: 'Small & Large Bowel Cancer Surgery', slug: 'small-large-bowel-cancer-surgery' },
+      { name: 'Thyroid Surgery (Thyroidectomy — Total / Hemi)', slug: 'thyroid-surgery' },
+      { name: 'AV Fistula Surgery (Dialysis Access)', slug: 'av-fistula-surgery' },
+      { name: 'Ulcerative Colitis Surgery', slug: 'ulcerative-colitis-surgery' },
+      { name: 'Crohn\'s Disease Surgery', slug: 'crohns-disease-surgery' },
+      { name: 'Congenital Paediatric Hernia Repair', slug: 'congenital-paediatric-hernia-repair' },
+      { name: 'Undescended Testis Surgery (Orchidopexy)', slug: 'undescended-testis-surgery' }
+    ]
   },
   {
     name: 'Orthopedic Surgery',
@@ -81,7 +100,16 @@ export const surgicalServices = [
     costEstimate: 'Varies',
     recoveryTime: 'Varies',
     order: 14,
-    treatments: []
+    treatments: [
+      { name: 'Laparoscopic Cholecystectomy (Gallbladder Removal)', slug: 'laparoscopic-cholecystectomy-gallbladder-removal' },
+      { name: 'Laparoscopic Hernia Repair (Inguinal, Umbilical, Incisional)', slug: 'laparoscopic-hernia-repair' },
+      { name: 'Laparoscopic Appendectomy', slug: 'laparoscopic-appendectomy' },
+      { name: 'Ovarian Cyst Removal (Laparoscopy)', slug: 'ovarian-cyst-removal' },
+      { name: 'Uterus Removal / Hysterectomy (Laparoscopy)', slug: 'uterus-removal-hysterectomy' },
+      { name: 'Bariatric Surgery for Obesity (Sleeve Gastrectomy / Gastric Bypass)', slug: 'bariatric-surgery-for-obesity' },
+      { name: 'GERD / Acid Reflux Surgery (Nissen Fundoplication)', slug: 'gerd-acid-reflux-surgery' },
+      { name: 'Diagnostic Laparoscopy', slug: 'diagnostic-laparoscopy' }
+    ]
   },
   {
     name: 'Cosmetic Surgery',

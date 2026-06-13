@@ -39,7 +39,45 @@ export const hospitalDepartments = [
     costEstimate: 'Varies',
     recoveryTime: 'Varies',
     order: 3,
-    treatments: []
+    treatments: [
+      { name: 'Liver Abscess Drainage (Percutaneous / Laparoscopic)', slug: 'liver-abscess-drainage' },
+      { name: 'Liver Cyst Drainage', slug: 'liver-cyst-drainage' },
+      { name: 'Liver Surgery (Trauma Repair)', slug: 'liver-surgery-trauma-repair' },
+      { name: 'Liver Cancer Resection (Hepatic Lobectomy)', slug: 'liver-cancer-resection' },
+      { name: 'Splenectomy (Spleen Removal)', slug: 'splenectomy' },
+      { name: 'Spleno-Renal Shunt (Portal Hypertension)', slug: 'spleno-renal-shunt' },
+      { name: 'Liver Biopsy (Percutaneous / Ultrasound-Guided)', slug: 'liver-biopsy' },
+      { name: 'Acute Pancreatitis Management (ICU)', slug: 'acute-pancreatitis-management' },
+      { name: 'Pancreatic Pseudocyst Drainage', slug: 'pancreatic-pseudocyst-drainage' },
+      { name: 'Pancreatic Stone Surgery', slug: 'pancreatic-stone-surgery' },
+      { name: 'Pancreatic Cancer Surgery (Whipple Procedure / Pancreaticoduodenectomy)', slug: 'pancreatic-cancer-surgery' },
+      { name: 'Distal Pancreatectomy', slug: 'distal-pancreatectomy' },
+      { name: 'Chronic Pancreatitis Management', slug: 'chronic-pancreatitis-management' },
+      { name: 'Obstructive Jaundice Treatment', slug: 'obstructive-jaundice-treatment' },
+      { name: 'ERCP (Endoscopic Stone Removal & Stenting)', slug: 'ercp-endoscopic-stone-removal' },
+      { name: 'Laparoscopic CBD Exploration (LCBDE)', slug: 'laparoscopic-cbd-exploration' },
+      { name: 'CBD Stone Removal', slug: 'cbd-stone-removal' },
+      { name: 'Biliary Stricture Reconstruction (Hepaticojejunostomy)', slug: 'biliary-stricture-reconstruction' },
+      { name: 'Biliary Cancer / Cholangiocarcinoma Surgery', slug: 'biliary-cancer-cholangiocarcinoma-surgery' },
+      { name: 'Choledochal Cyst Surgery', slug: 'choledochal-cyst-surgery' },
+      { name: 'Cholangitis Emergency Management', slug: 'cholangitis-emergency-management' },
+      { name: 'Diagnostic Upper GI Endoscopy', slug: 'diagnostic-upper-gi-endoscopy' },
+      { name: 'Therapeutic Upper GI Endoscopy', slug: 'therapeutic-upper-gi-endoscopy' },
+      { name: 'Biopsy Collection (Endoscopic)', slug: 'biopsy-collection-endoscopic' },
+      { name: 'Polyp Removal (Endoscopic)', slug: 'polyp-removal-endoscopic' },
+      { name: 'Upper GI Bleeding Control (Endoscopic)', slug: 'upper-gi-bleeding-control-endoscopic' },
+      { name: 'Diagnostic Colonoscopy', slug: 'diagnostic-colonoscopy' },
+      { name: 'Therapeutic Colonoscopy', slug: 'therapeutic-colonoscopy' },
+      { name: 'Colon Cancer Screening', slug: 'colon-cancer-screening' },
+      { name: 'Polyp Detection & Removal', slug: 'polyp-detection-removal' },
+      { name: 'Stricture Dilation (Colonoscopic)', slug: 'stricture-dilation-colonoscopic' },
+      { name: 'Acid Reflux / GERD Management', slug: 'acid-reflux-gerd-management' },
+      { name: 'Irritable Bowel Syndrome (IBS) Treatment', slug: 'irritable-bowel-syndrome-treatment' },
+      { name: 'Peptic Ulcer Treatment', slug: 'peptic-ulcer-treatment' },
+      { name: 'Inflammatory Bowel Disease (IBD) Management', slug: 'inflammatory-bowel-disease-management' },
+      { name: 'Functional GI Disorder Evaluation', slug: 'functional-gi-disorder-evaluation' },
+      { name: 'Nutritional Counselling', slug: 'nutritional-counselling' }
+    ]
   },
   {
     name: 'Gynecology',
@@ -109,6 +147,16 @@ export const hospitalDepartments = [
     costEstimate: 'Varies',
     recoveryTime: 'Varies',
     order: 8,
-    treatments: []
+    treatments: [
+      { name: 'PCNL (Percutaneous Nephrolithotomy)', slug: 'pcnl-percutaneous-nephrolithotomy' },
+      { name: 'Kidney Cancer Surgery (Radical Nephrectomy)', slug: 'kidney-cancer-surgery-radical-nephrectomy' },
+      { name: 'Kidney Cancer Surgery (Partial Nephrectomy)', slug: 'kidney-cancer-surgery-partial-nephrectomy' },
+      { name: 'Ureteroscopy (URS) & Laser Lithotripsy', slug: 'ureteroscopy-urs-laser-lithotripsy' },
+      { name: 'Renal Colic Management (Emergency)', slug: 'renal-colic-management' },
+      { name: 'Bladder Stone Removal (Cystolitholapaxy)', slug: 'bladder-stone-removal' },
+      { name: 'Prostate Surgery (TURP / Open Prostatectomy)', slug: 'prostate-surgery-turp-open-prostatectomy' },
+      { name: 'RIRS (Flexible Ureteroscopy)', slug: 'rirs-flexible-ureteroscopy' },
+      { name: 'Stone Prevention & Medical Therapy', slug: 'stone-prevention-medical-therapy' }
+    ]
   }
 ];

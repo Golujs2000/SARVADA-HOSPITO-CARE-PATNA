@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiPhone, FiMenu, FiX, FiChevronDown, FiArrowRight, FiActivity } from 'react-icons/fi'
+import { FiPhone, FiMenu, FiX, FiChevronDown, FiArrowRight, FiActivity, FiMail } from 'react-icons/fi'
 import { siteData } from '../data/siteData'
 import { useCategories } from '../hooks/useCategories'
 import hospitalLogo from '../assets/logo.png'
@@ -39,7 +39,7 @@ const NAV_LINKS = [
   { label: 'CONTACT', to: '/contact' },
 ]
 
-// â”€â”€ Main Navbar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Main Navbar ───────────────────────────────────────────────────────────────
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [scrollPct, setScrollPct] = useState(0)
@@ -68,27 +68,43 @@ export default function Navbar() {
       <header className={`sticky top-0 z-50 transition-all duration-300 shadow-md`}>
         {/* Top bar - Desktop only */}
         <div className="hidden md:flex bg-white text-gray-600 text-sm px-8 py-3 justify-between items-center border-b border-gray-100">
-          <div className="flex-1 flex items-center justify-start gap-2">
-            <FiPhone className="text-primary-600 w-5 h-5" />
-            <a href={`tel:${siteData.contact.phone}`} className="font-semibold text-lg hover:text-primary-600 transition-colors">
-              {siteData.contact.phone}
-            </a>
+          <div className="flex-1 flex items-center justify-start gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full border-2 border-red-500 flex items-center justify-center animate-pulse shadow-sm bg-red-50">
+                <FiPhone className="text-red-600 w-4 h-4" />
+              </div>
+              <a href={`tel:${siteData.contact.phone}`} className="font-bold text-lg text-red-600 hover:text-red-700 transition-colors">
+                {siteData.contact.phone}
+              </a>
+            </div>
+            {siteData.contact.phone2 && (
+              <div className="flex items-center gap-2">
+                <FiPhone className="text-primary-600 w-5 h-5" />
+                <a href={`tel:${siteData.contact.phone2}`} className="font-semibold text-lg hover:text-primary-600 transition-colors">
+                  {siteData.contact.phone2}
+                </a>
+              </div>
+            )}
           </div>
           
           <div className="flex-1 flex justify-center">
             <Link to="/" className="flex items-center gap-3 group">
               <img src={hospitalLogo} alt="Logo" className="h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
               <div className="flex flex-col">
-                <span className="text-navy-900 font-heading font-black text-2xl uppercase tracking-wide group-hover:text-primary-600 transition-colors">
+                <span className="text-navy-900 font-heading font-black text-2xl uppercase tracking-wide group-hover:text-primary-600 transition-colors leading-none">
                   Sarvada <span className="text-primary-600">Hospito Care</span>
+                </span>
+                <span className="text-[10px] text-gray-500 font-medium tracking-wider mt-1 truncate max-w-[300px]">
+                  {siteData.tagline}
                 </span>
               </div>
             </Link>
           </div>
 
           <div className="flex-1 flex items-center justify-end gap-6">
-            <a href={`mailto:${siteData.contact.email || 'INFO@SARVADACARE.COM'}`} className="font-semibold hover:text-primary-600 transition-colors uppercase text-sm tracking-wider">
-              {siteData.contact.email || 'INFO@SARVADACARE.COM'}
+            <a href={`mailto:${siteData.contact.email || 'info@sarvadacare.com'}`} className="flex items-center gap-2 font-semibold hover:text-primary-600 transition-colors lowercase text-sm tracking-wider group">
+              <FiMail className="text-primary-600 w-5 h-5 group-hover:text-primary-600 transition-colors" />
+              <span>{siteData.contact.email || 'info@sarvadacare.com'}</span>
             </a>
             <img 
               src="https://firebasestorage.googleapis.com/v0/b/nova-max-hospital.firebasestorage.app/o/gallery%2F1781122820016_neemkroli%20baba01.webp?alt=media&token=65aea2b7-ec30-42b6-869a-149501c650f6" 
@@ -119,7 +135,7 @@ export default function Navbar() {
             </div>
 
             {/* Desktop links */}
-            <ul className="hidden md:flex items-center gap-4">
+            <ul className="hidden md:flex items-center gap-4 lg:gap-6 mr-32 lg:mr-48">
               {NAV_LINKS.map(({ label, to, end }) => (
                 <li key={to}>
                   <NavLink to={to} end={end}
@@ -136,7 +152,7 @@ export default function Navbar() {
             
             {/* Desktop CTA Absolute Right */}
             <div className="hidden md:block absolute right-8">
-               <Link to="/book-appointment" className="bg-white text-primary-600 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide hover:bg-gray-100 transition-colors shadow-sm">
+               <Link to="/book-appointment" className="bg-white text-primary-600 px-5 py-2 rounded-full text-xs font-bold tracking-wide hover:bg-gray-50 hover:text-primary-700 hover:shadow-md transform hover:-translate-y-0.5 transition-all duration-300 shadow-sm">
                  BOOK APPOINTMENT
                </Link>
             </div>

@@ -1,14 +1,14 @@
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 // App.jsx
 // Root router configuration for Sarvada Hospito Care.
 // Defines all public and admin routes.
 //
 // Route structure:
-//   /                  â†’ Public pages wrapped in PublicLayout
-//   /admin/login       â†’ Standalone login page (no layout)
-//   /admin/*           â†’ Protected admin pages wrapped in AdminLayout
-//   *                  â†’ 404 NotFound
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//   /                  → Public pages wrapped in PublicLayout
+//   /admin/login       → Standalone login page (no layout)
+//   /admin/*           → Protected admin pages wrapped in AdminLayout
+//   *                  → 404 NotFound
+// ─────────────────────────────────────────────────────────────
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useVisitTracker } from './hooks/useVisitTracker'
@@ -17,7 +17,7 @@ import { useVisitTracker } from './hooks/useVisitTracker'
 import PublicLayout from './components/PublicLayout'
 import ProtectedRoute from './components/ProtectedRoute'
 
-// â”€â”€ Public Pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Public Pages ─────────────────────────────────────────────
 import Home from './pages/Home'
 import About from './pages/About'
 import Category from './pages/Category'
@@ -38,7 +38,7 @@ import Terms from './pages/Terms'
 import DataDeletion from './pages/DataDeletion'
 import NotFound from './pages/NotFound'
 
-// â”€â”€ Admin Pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Admin Pages ──────────────────────────────────────────────
 import AdminLayout from './components/admin/AdminLayout'
 import AdminLogin from './pages/admin/AdminLogin'
 import AdminDashboard from './pages/admin/AdminDashboard'
@@ -59,7 +59,7 @@ function AppRoutes() {
 
   return (
     <Routes>
-      {/* â”€â”€ Public Routes (Navbar + Footer) â”€â”€ */}
+      {/* ── Public Routes (Navbar + Footer) ── */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -86,10 +86,10 @@ function AppRoutes() {
         <Route path="/data-deletion" element={<DataDeletion />} />
       </Route>
 
-      {/* â”€â”€ Admin Login (no sidebar layout) â”€â”€ */}
+      {/* ── Admin Login (no sidebar layout) ── */}
       <Route path="/admin/login" element={<AdminLogin />} />
 
-      {/* â”€â”€ Protected Admin Routes (requires auth + staff role) â”€â”€ */}
+      {/* ── Protected Admin Routes (requires auth + staff role) ── */}
       <Route
         path="/admin"
         element={
@@ -114,7 +114,7 @@ function AppRoutes() {
         <Route path="settings" element={<ProtectedRoute requireAdmin><AdminSettings /></ProtectedRoute>} />
       </Route>
 
-      {/* â”€â”€ 404 Fallback â”€â”€ */}
+      {/* ── 404 Fallback ── */}
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

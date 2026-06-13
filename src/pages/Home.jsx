@@ -1,7 +1,7 @@
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 // pages/Home.jsx
-// The main homepage â€” composes all home section components.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// The main homepage — composes all home section components.
+// ─────────────────────────────────────────────────────────────
 
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
@@ -11,11 +11,9 @@ import { useCategories } from '../hooks/useCategories'
 import HeroSection from '../components/home/HeroSection'
 import WhyChooseUs from '../components/home/WhyChooseUs'
 import ServicesSection from '../components/home/ServicesSection'
+import GalleryStrip from '../components/home/GalleryStrip'
 import FeaturedDoctors from '../components/home/FeaturedDoctors'
 import Testimonials from '../components/home/Testimonials'
-import BlogPreview from '../components/home/BlogPreview'
-import GalleryStrip from '../components/home/GalleryStrip'
-import TreatmentGallery from '../components/home/TreatmentGallery'
 import AppointmentForm from '../components/home/AppointmentForm'
 import PatientReach from '../components/home/PatientReach'
 import { siteData } from '../data/siteData'
@@ -52,7 +50,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        description="Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.) â€” ISO 9001:2020 Certified Hospital in Kankarbagh, Patna. Providing advanced laparoscopic surgery, ICU, ICCU, dialysis, gynecology, and 24/7 emergency care."
+        description="Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.) — ISO 9001:2020 Certified Hospital in Kankarbagh, Patna. Providing advanced laparoscopic surgery, ICU, ICCU, dialysis, gynecology, and 24/7 emergency care."
         keywords={[
           'laparoscopic surgery Patna',
           'kidney stone treatment Patna',
@@ -78,102 +76,81 @@ export default function Home() {
       {/* 1. Hero */}
       <HeroSection />
 
-      {/* 2. Why Choose Us (What Makes Us Different) */}
-      <WhyChooseUs />
-
-      {/* 4. Departments / Services */}
-      <ServicesSection />
-
-      {/* 5. Book Appointment & Timetable Split */}
+      {/* 2. Book Appointment & Timetable Split */}
       <section id="book-appointment" className="py-20 bg-slate-50 border-t border-primary-100">
-        <div className="container-max px-4 md:px-8">
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-8">
-            {/* Left: Make an Appointment */}
-            <div className="lg:w-2/3">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="mb-8"
-              >
-                <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-3">
-                  Book Now
-                </span>
-                <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800">
-                  Make An <span className="text-primary-600">Appointment</span>
-                </h2>
-                <p className="text-gray-500 mt-2 text-sm max-w-lg">
-                  Fill the form below and our team will confirm your appointment within 30 minutes.
-                </p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                <AppointmentForm />
-              </motion.div>
+        <div className="container-max px-4 md:px-8 max-w-4xl mx-auto">
+          
+          {/* 24/7 Always Open Banner */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-primary-700 text-white p-8 md:p-10 rounded-[24px] shadow-xl mb-16 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary-600/50"
+          >
+            <div className="flex-1 text-center md:text-left">
+              <h3 className="font-heading font-black text-3xl mb-4">Always Open <span className="text-accent-300">24 / 7</span></h3>
+              <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
+                Sarvada Hospito Care operates 24 hours a day, 7 days a week. Our expert team and emergency trauma center are always ready to serve you.
+              </p>
             </div>
-
-            {/* Right: Timetables */}
-            <div className="lg:w-1/3">
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="bg-primary-700 text-white p-8 md:p-10 rounded-[24px] shadow-xl sticky top-32"
-              >
-                <h3 className="font-heading font-black text-2xl mb-6">Timetables</h3>
-                <p className="text-white/80 text-sm mb-8 leading-relaxed">
-                  We are open to serve you during the following hours. For emergencies, our trauma center is available 24/7.
-                </p>
-                <ul className="space-y-4 mb-8 text-sm">
-                  <li className="flex justify-between border-b border-primary-500/50 pb-3">
-                    <span className="font-bold">Monday - Friday</span>
-                    <span className="text-primary-200">09:00 - 17:00</span>
-                  </li>
-                  <li className="flex justify-between border-b border-primary-500/50 pb-3">
-                    <span className="font-bold">Saturday</span>
-                    <span className="text-primary-200">09:00 - 14:00</span>
-                  </li>
-                  <li className="flex justify-between border-b border-primary-500/50 pb-3">
-                    <span className="font-bold">Sunday</span>
-                    <span className="text-accent-300 font-bold">Closed</span>
-                  </li>
-                </ul>
-                <div className="bg-primary-800/60 p-6 rounded-xl text-center border border-primary-600/30">
-                  <p className="text-xs font-bold tracking-widest text-primary-200 uppercase mb-2">Emergency Cases</p>
-                  <a href={`tel:${siteData.contact.phone}`} className="text-2xl font-black text-accent-300 hover:text-white transition-colors">
-                    {siteData.contact.phone}
-                  </a>
-                </div>
-              </motion.div>
+            <div className="flex-shrink-0 bg-primary-800/60 p-6 rounded-xl text-center border border-primary-600/50 shadow-inner w-full md:w-auto">
+              <p className="text-xs font-bold tracking-widest text-primary-200 uppercase mb-2">Emergency Hotline</p>
+              <a href={`tel:${siteData.contact.phone}`} className="text-3xl font-black text-white hover:text-accent-300 transition-colors block">
+                {siteData.contact.phone}
+              </a>
             </div>
+          </motion.div>
+
+          {/* Make an Appointment */}
+          <div className="bg-white p-8 md:p-12 rounded-[24px] shadow-sm border border-gray-100">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mb-10 text-center"
+            >
+              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
+                Book Now
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800">
+                Make An <span className="text-primary-600">Appointment</span>
+              </h2>
+              <p className="text-gray-500 mt-3 text-sm mx-auto max-w-lg">
+                Fill the form below and our team will confirm your appointment within 30 minutes.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+            >
+              <AppointmentForm />
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 6. Featured Doctors */}
+      {/* 3. Featured Doctors (Our Team) */}
       <FeaturedDoctors />
 
-      {/* 7. Blog / Health Tips */}
-      <BlogPreview />
+      {/* 4. Why Choose Us (What Makes Us Different) */}
+      <WhyChooseUs />
 
-      {/* 8. Patient Testimonials */}
-      <Testimonials />
+      {/* 5. Departments / Services */}
+      <ServicesSection />
 
-      {/* 9. World Class Facility */}
+      {/* 6. Facilities & Infrastructure */}
       <GalleryStrip />
 
-      {/* 10. Treatment Gallery */}
-      <TreatmentGallery />
-
-      {/* 11. Regional Patient Reach */}
+      {/* 6. Regional Patient Reach */}
       <PatientReach />
 
-      {/* 12. Location */}
+      {/* 7. Patient Testimonials */}
+      <Testimonials />
+
+      {/* 8. Location */}
       <section className="section-padding bg-gradient-to-b from-slate-50 to-white">
         <div className="container-max">
           <motion.div

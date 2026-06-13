@@ -84,7 +84,7 @@ export default function About() {
                   Managed and run by a team of senior Consultant Physicians, Gastro Surgeons, Gynecologists, Cardiologists, and Orthopedicians with decades of collective clinical experience. Our medical expertise is coupled with a genuine concern for our patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.
                 </p>
                 <p>
-                  We are proud to have served over <strong className="text-navy-800">50,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">10,000 successful operations</strong>, backed by prestigious recognitions including over <strong className="text-navy-800">150 awards</strong>.
+                  We are proud to have served over <strong className="text-navy-800">5,000 satisfied patients</strong> and performed more than <strong className="text-navy-800">2,000 successful operations</strong>.
                 </p>
                 <p>
                   Today, our reputation extends far beyond Patna. We are the preferred healthcare destination for patients traveling from <strong className="text-navy-800">Nepal</strong>, neighboring states like <strong className="text-navy-800">Jharkhand</strong> and <strong className="text-navy-800">Uttar Pradesh (UP)</strong>, as well as all <strong className="text-navy-800">38 districts of Bihar</strong>, seeking trusted laparoscopic surgeries and liver, pancreas, and stone treatments.

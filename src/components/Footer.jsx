@@ -1,12 +1,12 @@
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 // components/Footer.jsx
 // Redesigned footer with full department + treatment + doctor links.
 // Layout:
-//   Row 1 â€” Brand | Quick Links | Contact Us
-//   Row 2 â€” All Departments & Treatments (full-width grid)
-//   Row 3 â€” Our Doctors (full-width grid)
-//   Row 4 â€” Copyright / legal bar
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+//   Row 1 — Brand | Quick Links | Contact Us
+//   Row 2 — All Departments & Treatments (full-width grid)
+//   Row 3 — Our Doctors (full-width grid)
+//   Row 4 — Copyright / legal bar
+// ─────────────────────────────────────────────────────────────
 
 import { Link } from 'react-router-dom'
 import {
@@ -216,10 +216,10 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* â”€â”€ Divider â”€â”€ */}
+      {/* ── Divider ── */}
       <div className="border-t border-white/10" />
 
-      {/* â”€â”€ Row 2: Departments & Treatments â”€â”€ */}
+      {/* ── Row 2: Departments & Treatments ── */}
       {departments.length > 0 && (
         <div className="container-max px-4 md:px-8 py-10">
           <h4 className="font-heading font-semibold text-white mb-8 text-sm uppercase tracking-wider flex items-center gap-3">
@@ -269,7 +269,7 @@ export default function Footer() {
                           to={`/services/${spec.slug}`}
                           className="text-xs text-gray-600 hover:text-primary-300 transition-colors"
                         >
-                          View treatments â†’
+                          View treatments →
                         </Link>
                       </li>
                     )}
@@ -281,7 +281,7 @@ export default function Footer() {
         </div>
       )}
 
-      {/* â”€â”€ Row 3: Our Doctors â”€â”€ */}
+      {/* ── Row 3: Our Doctors ── */}
       {doctors.length > 0 && (
         <>
           <div className="border-t border-white/10" />
@@ -325,14 +325,14 @@ export default function Footer() {
 
             <div className="mt-5">
               <Link to="/doctors" className="text-xs text-primary-400 hover:text-primary-300 transition-colors">
-                View all doctors â†’
+                View all doctors →
               </Link>
             </div>
           </div>
         </>
       )}
 
-      {/* â”€â”€ Bottom bar â”€â”€ */}
+      {/* ── Bottom bar ── */}
       <div className="border-t border-white/10">
         <div className="container-max px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
           <p>Â© {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>

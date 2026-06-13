@@ -110,24 +110,15 @@ export const siteData = {
       highlight: 'Eastern Care',
       color: 'from-amber-500 to-orange-600',
       light: 'bg-amber-500/10 text-amber-600 border-amber-500/10'
-    },
-    {
-      region: 'Nepal',
-      title: 'International Care',
-      description: 'Trusted by international patients from border cities seeking advanced, affordable multi-specialty care.',
-      stat: 'Nepal Reach',
-      highlight: 'Cross-Border Care',
-      color: 'from-sky-500 to-blue-600',
-      light: 'bg-sky-500/10 text-sky-600 border-sky-500/10'
     }
   ],
 
   // ── Homepage Stats Counter ───────────────────────────────────
   stats: [
-    { label: 'Satisfied Patients', value: 50000, suffix: '+', emoji: '😊' },
-    { label: 'Years Experience', value: 21, suffix: '+', emoji: '👨‍⚕️' },
-    { label: 'Successful Operations', value: 10000, suffix: '+', emoji: '🩺' },
-    { label: 'Awards Received', value: 150, suffix: '+', emoji: '🏆' },
+    { label: 'Satisfied Patients', value: 5000, suffix: '+', emoji: '😊' },
+    { label: 'Year Established', value: 2018, suffix: '', emoji: '🏥' },
+    { label: 'Expert Doctors', value: 10, suffix: '+', emoji: '👨‍⚕️' },
+    { label: 'Successful Operations', value: 2000, suffix: '+', emoji: '🩺' },
   ],
 
   mapEmbed:

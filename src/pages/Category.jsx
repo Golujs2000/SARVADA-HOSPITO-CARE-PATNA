@@ -1,8 +1,8 @@
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 // pages/Category.jsx
 // Reusable template for separate department category pages
 // e.g. Hospital Departments, Surgical Services, etc.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 
 import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -15,7 +15,7 @@ import SEO from '../components/SEO'
 import { useCategories } from '../hooks/useCategories'
 import { useDoctors } from '../hooks/useDoctors'
 
-// â”€â”€ Config â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Config ────────────────────────────────────────────────────────────────────
 const CATEGORY_CONFIG = {
   'General':     { emoji: 'ðŸ©º', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
   'Surgery':     { emoji: 'ðŸ”¬', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
@@ -24,13 +24,13 @@ const CATEGORY_CONFIG = {
 }
 
 const AVAIL_COLOR = {
-  '24 Ã— 7':         'bg-green-100 text-green-700',
+  '24 × 7':         'bg-green-100 text-green-700',
   'OPD Hours':      'bg-blue-100 text-blue-700',
   'By Appointment': 'bg-gray-100 text-gray-600',
   'OPD & Emergency': 'bg-red-100 text-red-700'
 }
 
-// â”€â”€ Treatment Row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Treatment Row ─────────────────────────────────────────────────────────────
 function TreatmentRow({ t, idx }) {
   return (
     <motion.div
@@ -50,7 +50,7 @@ function TreatmentRow({ t, idx }) {
   )
 }
 
-// â”€â”€ Department Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Department Card ───────────────────────────────────────────────────────────
 function DepartmentCard({ spec, isOpen, onToggle, doctors = [] }) {
   const hasTreatments = Array.isArray(spec.treatments) && spec.treatments.length > 0
   const hasFeatures = Array.isArray(spec.features) && spec.features.length > 0
@@ -63,7 +63,7 @@ function DepartmentCard({ spec, isOpen, onToggle, doctors = [] }) {
       viewport={{ once: true }}
       className={`bg-white rounded-2xl border ${isOpen ? cfg.border : 'border-gray-100'} shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden`}
     >
-      {/* Card Header â€” always visible */}
+      {/* Card Header — always visible */}
       <button
         className="w-full text-left p-5 flex items-start gap-4"
         onClick={onToggle}
@@ -210,7 +210,7 @@ function DepartmentCard({ spec, isOpen, onToggle, doctors = [] }) {
   )
 }
 
-// â”€â”€ Main Page Component â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Main Page Component ───────────────────────────────────────────────────────
 export default function Category({ categoryName, title, description, keywords }) {
   const { categories: departments, loading } = useCategories()
   const { doctors } = useDoctors()
@@ -241,7 +241,7 @@ export default function Category({ categoryName, title, description, keywords })
           </h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
             {filtered.length > 0
-              ? `${filtered.length} departments Â· ${totalTreatments}+ treatments â€” all under one roof in Patna`
+              ? `${filtered.length} departments · ${totalTreatments}+ treatments — all under one roof in Patna`
               : description}
           </p>
         </motion.div>

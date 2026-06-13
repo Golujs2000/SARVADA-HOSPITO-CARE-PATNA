@@ -1,10 +1,10 @@
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 // pages/admin/AdminDepartments.jsx
 // Departments/departments management page.
 // Each department has a name, slug, icon key, description,
 // category, order, and optional treatment/cost fields.
 // Slug is auto-generated from name on add; can be manually edited.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence, Reorder, useDragControls } from 'framer-motion'
@@ -24,11 +24,11 @@ import { getHospitalServices } from '../../services/hospitalServices'
 import { slugify, compressImage } from '../../utils/helpers'
 import { getGallery, getFolders } from '../../services/gallery'
 
-const AVAILABILITY = ['By Appointment', 'OPD Hours', '24 Ã— 7']
+const AVAILABILITY = ['By Appointment', 'OPD Hours', '24 × 7']
 
 const EMPTY_FORM = {
   name: '', icon: '', thumbnail: '', category: '', available: '',
-  description: '', features: '', recoveryTime: '', order: 0,
+  description: '', longDescription: '', features: '', recoveryTime: '', order: 0,
   doctorIds: [],
 }
 const EMPTY_TREATMENT = { name: '', duration: '' }
@@ -75,7 +75,7 @@ function DepartmentItem({ spec, idx, doctors, hospitalServices, catColor, deleti
             </span>
           )}
           {spec.available && (
-            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${spec.available === '24 Ã— 7' ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
+            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${spec.available === '24 × 7' ? 'bg-green-50 text-green-700' : 'bg-gray-100 text-gray-500'}`}>
               {spec.available}
             </span>
           )}
@@ -151,7 +151,7 @@ function DepartmentItem({ spec, idx, doctors, hospitalServices, catColor, deleti
 export default function AdminCategory({ categoryName, title }) {
   const [departments, setDepartments] = useState([])
 
-  // â”€â”€ Gallery picker state â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Gallery picker state ────────────────────────────────────────────────
   const [galleryPickerOpen, setGalleryPickerOpen] = useState(false)
   const [galleryImages, setGalleryImages] = useState([])
   const [galleryLoading, setGalleryLoading] = useState(false)
@@ -192,7 +192,7 @@ export default function AdminCategory({ categoryName, title }) {
   const fileInputRef = useRef(null)
   const thumbnailInputRef = useRef(null)
 
-  // â”€â”€ Thumbnail upload handler â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Thumbnail upload handler ─────────────────────────────────────────────
   const [thumbnailUploading, setThumbnailUploading] = useState(false)
   const [thumbnailProgress, setThumbnailProgress] = useState(0)
 
@@ -291,6 +291,7 @@ export default function AdminCategory({ categoryName, title }) {
       category: spec.category || '',
       available: spec.available || '',
       description: spec.description || '',
+      longDescription: spec.longDescription || '',
       features: Array.isArray(spec.features) ? spec.features.join('\n') : spec.features || '',
       recoveryTime: spec.recoveryTime || '',
       order: spec.order ?? 0,
@@ -315,7 +316,7 @@ export default function AdminCategory({ categoryName, title }) {
     setUploadProgress({})
   }
 
-  // â”€â”€ Media upload â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Media upload ──────────────────────────────────────────────────────────
   const handleMediaSelect = async (e) => {
     const files = Array.from(e.target.files)
     if (!files.length) return
@@ -375,7 +376,7 @@ export default function AdminCategory({ categoryName, title }) {
       try {
         await deleteObject(ref(storage, item.storagePath))
       } catch {
-        // ignore â€” file may already be gone
+        // ignore — file may already be gone
       }
     }
     setMedia((prev) => prev.filter((_, i) => i !== idx))
@@ -395,7 +396,7 @@ export default function AdminCategory({ categoryName, title }) {
     setForm((prev) => ({ ...prev, [name]: name === 'order' ? Number(value) : value }))
   }
 
-  // â”€â”€ Treatment row handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Treatment row handlers ────────────────────────────────────────────────
   const addTreatmentRow = () => setTreatments((prev) => [...prev, { ...EMPTY_TREATMENT }])
 
   const updateTreatmentRow = (idx, field, value) => {
@@ -406,7 +407,7 @@ export default function AdminCategory({ categoryName, title }) {
     setTreatments((prev) => prev.filter((_, i) => i !== idx))
   }
 
-  // â”€â”€ Submit â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Submit ────────────────────────────────────────────────────────────────
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name) { toast.error('Name is required'); return }
@@ -467,7 +468,7 @@ export default function AdminCategory({ categoryName, title }) {
     }
   }
 
-  // â”€â”€ Category badge colors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // ── Category badge colors ─────────────────────────────────────────────────
   const catColor = {
     'Hospital Departments':      'bg-blue-50 text-blue-700',
     'Surgical Services':         'bg-teal-50 text-teal-700',
@@ -532,7 +533,7 @@ export default function AdminCategory({ categoryName, title }) {
         </Reorder.Group>
       )}
 
-      {/* â”€â”€ Modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* ── Modal ──────────────────────────────────────────────────────────── */}
       <AnimatePresence>
         {modalOpen && (
           <>
@@ -601,7 +602,7 @@ export default function AdminCategory({ categoryName, title }) {
                           <div className="border-2 border-dashed border-primary-200 rounded-xl p-6 text-center bg-primary-50/30">
                             <div className="space-y-2">
                               <FiRefreshCw size={24} className="mx-auto animate-spin text-primary-500" />
-                              <p className="text-sm text-primary-600 font-medium">Uploadingâ€¦ {thumbnailProgress}%</p>
+                              <p className="text-sm text-primary-600 font-medium">Uploading… {thumbnailProgress}%</p>
                               <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden max-w-[200px] mx-auto">
                                 <div className="h-full bg-primary-500 rounded-full transition-all duration-200" style={{ width: `${thumbnailProgress}%` }} />
                               </div>
@@ -640,7 +641,7 @@ export default function AdminCategory({ categoryName, title }) {
                     />
                   </div>
 
-                  {/* â”€â”€ Gallery Picker Overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                  {/* ── Gallery Picker Overlay ──────────────────────────── */}
                   <AnimatePresence>
                     {galleryPickerOpen && (
                       <motion.div
@@ -706,14 +707,14 @@ export default function AdminCategory({ categoryName, title }) {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
                       <select name="category" value={form.category} onChange={handleChange} className="input-field" disabled={!!categoryName}>
-                        <option value="">Selectâ€¦</option>
+                        <option value="">Select…</option>
                         {categoryName && <option value={categoryName}>{categoryName}</option>}
                       </select>
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Availability</label>
                       <select name="available" value={form.available} onChange={handleChange} className="input-field">
-                        <option value="">Selectâ€¦</option>
+                        <option value="">Select…</option>
                         {AVAILABILITY.map((a) => <option key={a} value={a}>{a}</option>)}
                       </select>
                     </div>
@@ -727,7 +728,7 @@ export default function AdminCategory({ categoryName, title }) {
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Recovery Time</label>
                       <input name="recoveryTime" value={form.recoveryTime} onChange={handleChange}
-                        className="input-field" placeholder="1 â€“ 3 days" />
+                        className="input-field" placeholder="1 – 3 days" />
                     </div>
 
                   {/* Description */}
@@ -735,7 +736,15 @@ export default function AdminCategory({ categoryName, title }) {
                     <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
                     <textarea name="description" value={form.description} onChange={handleChange}
                       rows={2} className="input-field resize-none"
-                      placeholder="Brief overview of this departmentâ€¦" />
+                      placeholder="Brief overview of this department…" />
+                  </div>
+
+                  {/* Detailed Description */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Detailed Description (Long Description)</label>
+                    <textarea name="longDescription" value={form.longDescription} onChange={handleChange}
+                      rows={4} className="input-field resize-none"
+                      placeholder="Detailed, multi-paragraph description of this department/service…" />
                   </div>
 
                   {/* Key Features */}
@@ -748,7 +757,7 @@ export default function AdminCategory({ categoryName, title }) {
                       placeholder={"Minimally invasive\n24/7 care\nSame-day discharge"} />
                   </div>
 
-                  {/* â”€â”€ Media (Images & Videos) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                  {/* ── Media (Images & Videos) ──────────────────────────── */}
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <label className="text-sm font-medium text-gray-700">
@@ -762,7 +771,7 @@ export default function AdminCategory({ categoryName, title }) {
                         className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors font-medium disabled:opacity-50"
                       >
                         <FiUploadCloud size={13} />
-                        {uploading ? 'Uploadingâ€¦' : 'Add Files'}
+                        {uploading ? 'Uploading…' : 'Add Files'}
                       </button>
                       <input
                         ref={fileInputRef}
@@ -847,7 +856,7 @@ export default function AdminCategory({ categoryName, title }) {
                     )}
                   </div>
 
-                  {/* â”€â”€ Linked Doctors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                  {/* ── Linked Doctors ───────────────────────────────────── */}
                   {doctors.length > 0 && (
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -887,7 +896,7 @@ export default function AdminCategory({ categoryName, title }) {
                     </div>
                   )}
 
-                  {/* â”€â”€ Linked Hospital Services (read-only info) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                  {/* ── Linked Hospital Services (read-only info) ─────────── */}
                   {hospitalServices.length > 0 && (
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -913,7 +922,7 @@ export default function AdminCategory({ categoryName, title }) {
                     </div>
                   )}
 
-                  {/* â”€â”€ Treatments Table â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+                  {/* ── Treatments Table ──────────────────────────────────── */}
                   <div>
                     <div className="flex items-center justify-between mb-2">
                       <label className="text-sm font-medium text-gray-700">
@@ -928,7 +937,7 @@ export default function AdminCategory({ categoryName, title }) {
 
                     {treatments.length === 0 ? (
                       <div className="border-2 border-dashed border-gray-100 rounded-xl p-4 text-center text-sm text-gray-400">
-                        No treatments yet â€” click "Add Row" to start
+                        No treatments yet — click "Add Row" to start
                       </div>
                     ) : (
                       <div className="border border-gray-100 rounded-xl overflow-hidden">
@@ -948,7 +957,7 @@ export default function AdminCategory({ categoryName, title }) {
                             </div>
                             <div className="bg-white px-2 py-1.5">
                               <input value={t.duration} onChange={(e) => updateTreatmentRow(idx, 'duration', e.target.value)}
-                                placeholder="45â€“60 min"
+                                placeholder="45–60 min"
                                 className="w-full text-sm border-0 outline-none focus:bg-primary-50 rounded px-1 py-0.5 text-gray-600 placeholder:text-gray-300" />
                             </div>
                             <div className="bg-white flex items-center justify-center">
@@ -977,7 +986,7 @@ export default function AdminCategory({ categoryName, title }) {
         )}
       </AnimatePresence>
 
-      {/* â”€â”€ View Modal â”€â”€ */}
+      {/* ── View Modal ── */}
       <AnimatePresence>
         {viewItem && (
           <>
@@ -1031,6 +1040,14 @@ export default function AdminCategory({ categoryName, title }) {
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Description</p>
                       <p className="text-sm text-gray-600 leading-relaxed">{viewItem.description}</p>
+                    </div>
+                  )}
+
+                  {/* Detailed Description */}
+                  {viewItem.longDescription && (
+                    <div>
+                      <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Detailed Description (Long Description)</p>
+                      <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-line">{viewItem.longDescription}</p>
                     </div>
                   )}
 
