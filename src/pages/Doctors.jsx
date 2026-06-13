@@ -9,17 +9,23 @@ import { motion } from 'framer-motion'
 import { FiSearch, FiFilter } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { useDoctors } from '../hooks/useDoctors'
+import { useCategories } from '../hooks/useCategories'
 import DoctorCard from '../components/DoctorCard'
 import { siteData } from '../data/siteData'
 
 export default function Doctors() {
   const [specialty, setSpecialty] = useState('')
   const [search, setSearch] = useState('')
-  const { doctors, loading } = useDoctors({ specialty })
+  const { doctors, loading } = useDoctors()
+  const { categories: departments } = useCategories()
 
-  const filtered = doctors.filter((d) =>
-    !search || d.name.toLowerCase().includes(search.toLowerCase())
-  )
+  const filtered = doctors.filter((d) => {
+    const matchesSearch = !search || d.name.toLowerCase().includes(search.toLowerCase())
+    const matchesSpecialty = !specialty ||
+      d.specialty === specialty ||
+      (Array.isArray(d.specialties) && d.specialties.includes(specialty))
+    return matchesSearch && matchesSpecialty
+  })
 
   return (
     <>
@@ -46,30 +52,29 @@ export default function Doctors() {
         </motion.div>
       </section>
 
-      {/* Filters */}
-      <section className="bg-white border-b border-gray-100 py-5">
-        <div className="container-max px-4 md:px-8 flex flex-col md:flex-row gap-4">
+      <section className="bg-white border-b border-gray-150 py-5">
+        <div className="container-max px-4 md:px-8 flex flex-col sm:flex-row gap-3 flex-wrap">
           {/* Search */}
-          <div className="relative flex-1 max-w-sm">
+          <div className="relative flex-1 min-w-0">
             <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search doctor name…"
-              className="input-field pl-11"
+              className="input-field pl-11 w-full"
             />
           </div>
 
           {/* Specialty filter */}
           <div className="flex items-center gap-2">
-            <FiFilter className="w-4 h-4 text-gray-400" />
+            <FiFilter className="w-4 h-4 text-gray-400 shrink-0" />
             <select
               value={specialty}
               onChange={(e) => setSpecialty(e.target.value)}
-              className="input-field w-auto min-w-[200px]"
+              className="input-field w-full sm:w-auto sm:min-w-[200px]"
             >
               <option value="">All Departments</option>
-              {siteData.departments.map((d) => <option key={d} value={d}>{d}</option>)}
+              {departments.map((d) => <option key={d.id} value={d.name}>{d.name}</option>)}
             </select>
           </div>
 

@@ -28,6 +28,11 @@ const EMPTY_FORM = {
   linkedTreatments: [],   // composite keys "specId::treatmentSlug"
   consultationFee: '',
   specializations: '',
+  currentPosition: '',
+  previousPosition: '',
+  facebook: '',
+  twitter: '',
+  instagram: '',
 }
 
 // Build composite key for a treatment
@@ -110,6 +115,11 @@ export default function AdminDoctors() {
       linkedTreatments: Array.isArray(doc.linkedTreatments) ? doc.linkedTreatments : [],
       consultationFee: doc.consultationFee || '',
       specializations: combinedExpertise.join(', '),
+      currentPosition: doc.currentPosition || '',
+      previousPosition: doc.previousPosition || '',
+      facebook: doc.facebook || '',
+      twitter: doc.twitter || '',
+      instagram: doc.instagram || '',
     })
     setImageFile(null)
     setImagePreview(doc.image || '')
@@ -590,6 +600,67 @@ export default function AdminDoctors() {
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Bio</label>
                     <textarea name="bio" value={form.bio} onChange={handleChange} rows={3} className="input-field resize-none" placeholder="Brief description about the doctor..." />
+                  </div>
+
+                  {/* Current & Previous Positions */}
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Current Position
+                        <span className="text-gray-400 font-normal ml-1 text-xs">(e.g. Director &amp; HOD, Sarvada Hospito Care)</span>
+                      </label>
+                      <input
+                        name="currentPosition"
+                        value={form.currentPosition}
+                        onChange={handleChange}
+                        className="input-field"
+                        placeholder="Director & HOD, Sarvada Hospito Care, Patna"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Previous Positions
+                        <span className="text-gray-400 font-normal ml-1 text-xs">(pipe-separated for multiple, e.g. Consultant, AIIMS Patna | Senior Resident, PMCH)</span>
+                      </label>
+                      <input
+                        name="previousPosition"
+                        value={form.previousPosition}
+                        onChange={handleChange}
+                        className="input-field"
+                        placeholder="Consultant, AIIMS Patna | Senior Resident, PMCH"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Social Media Links */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Social Media Links
+                      <span className="text-gray-400 font-normal ml-1 text-xs">(optional — shown on homepage card)</span>
+                    </label>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                      <input
+                        name="facebook"
+                        value={form.facebook}
+                        onChange={handleChange}
+                        className="input-field text-sm"
+                        placeholder="Facebook URL"
+                      />
+                      <input
+                        name="twitter"
+                        value={form.twitter}
+                        onChange={handleChange}
+                        className="input-field text-sm"
+                        placeholder="Twitter/X URL"
+                      />
+                      <input
+                        name="instagram"
+                        value={form.instagram}
+                        onChange={handleChange}
+                        className="input-field text-sm"
+                        placeholder="Instagram URL"
+                      />
+                    </div>
                   </div>
 
                   {/* Available Days */}

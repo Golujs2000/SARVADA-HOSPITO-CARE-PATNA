@@ -77,7 +77,7 @@ export default function Home() {
       <HeroSection />
 
       {/* 2. Book Appointment & Timetable Split */}
-      <section id="book-appointment" className="py-20 bg-slate-50 border-t border-primary-100">
+      <section id="book-appointment" className="py-12 md:py-20 bg-slate-50 border-t border-primary-100">
         <div className="container-max px-4 md:px-8 max-w-4xl mx-auto">
           
           {/* 24/7 Always Open Banner */}
@@ -85,17 +85,17 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary-700 text-white p-8 md:p-10 rounded-[24px] shadow-xl mb-16 flex flex-col md:flex-row items-center justify-between gap-8 border border-primary-600/50"
+            className="bg-primary-700 text-white p-6 md:p-10 rounded-[24px] shadow-xl mb-12 md:mb-16 flex flex-col items-center text-center md:flex-row md:items-center md:justify-between md:text-left gap-6 border border-primary-600/50"
           >
-            <div className="flex-1 text-center md:text-left">
-              <h3 className="font-heading font-black text-3xl mb-4">Always Open <span className="text-accent-300">24 / 7</span></h3>
+            <div className="flex-1">
+              <h3 className="font-heading font-black text-2xl md:text-3xl mb-3 md:mb-4">Always Open <span className="text-accent-300">24 / 7</span></h3>
               <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
                 Sarvada Hospito Care operates 24 hours a day, 7 days a week. Our expert team and emergency trauma center are always ready to serve you.
               </p>
             </div>
-            <div className="flex-shrink-0 bg-primary-800/60 p-6 rounded-xl text-center border border-primary-600/50 shadow-inner w-full md:w-auto">
+            <div className="flex-shrink-0 bg-primary-800/60 p-5 md:p-6 rounded-xl text-center border border-primary-600/50 shadow-inner w-full md:w-auto">
               <p className="text-xs font-bold tracking-widest text-primary-200 uppercase mb-2">Emergency Hotline</p>
-              <a href={`tel:${siteData.contact.phone}`} className="text-3xl font-black text-white hover:text-accent-300 transition-colors block">
+              <a href={`tel:${siteData.contact.phone}`} className="text-2xl md:text-3xl font-black text-white hover:text-accent-300 transition-colors block">
                 {siteData.contact.phone}
               </a>
             </div>

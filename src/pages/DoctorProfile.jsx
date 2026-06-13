@@ -115,13 +115,13 @@ export default function DoctorProfile() {
       />
 
       {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-100 py-3 px-4">
-        <div className="container-max flex items-center gap-2 text-sm text-gray-500">
+      <div className="bg-gray-50 border-b border-gray-100 py-3 px-4 overflow-x-auto">
+        <div className="container-max flex items-center gap-2 text-sm text-gray-500 whitespace-nowrap">
           <Link to="/" className="hover:text-primary-600">Home</Link>
           <span>/</span>
           <Link to="/doctors" className="hover:text-primary-600">Doctors</Link>
           <span>/</span>
-          <span className="text-gray-800">{doctor.name}</span>
+          <span className="text-gray-800 truncate max-w-[160px] sm:max-w-none">{doctor.name}</span>
         </div>
       </div>
 
@@ -131,16 +131,16 @@ export default function DoctorProfile() {
             <FiArrowLeft /> Back to All Doctors
           </Link>
 
-          <div className="grid lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10">
             {/* Left: profile card */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="lg:col-span-1"
             >
-              <div className="card p-8 text-center sticky top-24">
+              <div className="card p-6 md:p-8 text-center lg:sticky lg:top-24">
                 {/* Avatar */}
-                <div className="w-36 h-36 rounded-[5px] mx-auto mb-5 overflow-hidden bg-primary-50 flex items-center justify-center border border-primary-100">
+                <div className="w-28 h-28 md:w-36 md:h-36 rounded-[5px] mx-auto mb-5 overflow-hidden bg-primary-50 flex items-center justify-center border border-primary-100">
                   {doctor.image ? (
                     <img src={doctor.image} alt={doctor.name} className="w-full h-full object-cover" />
                   ) : (
@@ -210,7 +210,7 @@ export default function DoctorProfile() {
                     {dayOrder.map((day) => (
                       <span
                         key={day}
-                        className={`px-4 py-2 rounded-[5px] text-sm font-medium ${
+                        className={`px-3 py-1.5 rounded-[5px] text-xs font-medium ${
                           sortedDays.includes(day)
                             ? 'bg-primary-600 text-white'
                             : 'bg-gray-100 text-gray-400'

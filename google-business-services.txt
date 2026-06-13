@@ -11,481 +11,951 @@ HOW TO ADD:
 ================================================================
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 1 — LAPAROSCOPIC SURGERY
+  CATEGORY 1 — CARDIOLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Laparoscopic Cholecystectomy (Gallbladder Removal)
+SERVICE NAME: Electrocardiogram (ECG)
 DESCRIPTION:
-Minimally invasive removal of the gallbladder through small incisions (4-port, 3-port, or single-port technique). The gold standard treatment for gallstones. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+An Electrocardiogram (ECG) is a rapid, non-invasive diagnostic test used to evaluate the electrical activity of the heart. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
 
 ---
 
-SERVICE NAME: Laparoscopic Appendectomy
+SERVICE NAME: 2D Echocardiography
 DESCRIPTION:
-Emergency or elective removal of the inflamed appendix through laparoscopy. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+2D Echocardiography is a critical imaging technique that uses ultrasound waves to create a real-time, moving picture of your heart. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
 
 ---
 
-SERVICE NAME: Laparoscopic Abdominal Surgery (All Types)
+SERVICE NAME: Hypertension Management
 DESCRIPTION:
-Comprehensive laparoscopic surgery for all abdominal conditions — gallbladder, appendix, hernia, intestinal, liver, and gynaecological procedures. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Chronic high blood pressure (hypertension) is a major risk factor for heart attacks and strokes. Our dedicated Hypertension Clinic at Sarvada Hospito Care offers comprehensive management plans tailored to individual patient profiles. Consult top specialists at Sarvada Hospito Care in Patna.
 
 ---
 
-SERVICE NAME: Laparoscopic Hernia Repair (TEP/TAPP)
+SERVICE NAME: Heart Failure Treatment
 DESCRIPTION:
-Advanced laparoscopic hernia repair using TEP or TAPP technique with mesh placement for inguinal, umbilical, and incisional hernias. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Bariatric (Weight Loss) Surgery
-DESCRIPTION:
-Laparoscopic bariatric surgery for morbid obesity — sleeve gastrectomy and gastric bypass for sustainable weight loss. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Heart failure requires meticulous, ongoing medical management. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 2 — KIDNEY STONE & KIDNEY CANCER
+  CATEGORY 2 — PULMONOLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Asthma Management
+DESCRIPTION:
+Asthma is a chronic inflammatory disease of the airways that requires precise management. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: COPD Treatment
+DESCRIPTION:
+Chronic Obstructive Pulmonary Disease (COPD) significantly impacts breathing and daily activities. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Pulmonary Function Testing (PFT)
+DESCRIPTION:
+Pulmonary Function Testing (PFT) is a critical diagnostic tool used to measure lung volume, capacity, rates of flow, and gas exchange. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Tuberculosis (TB) Care
+DESCRIPTION:
+Tuberculosis remains a significant public health challenge, requiring rigorous and sustained medical intervention. Best surgical center and ICU facility in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 3 — GASTROENTEROLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Upper GI Endoscopy
+DESCRIPTION:
+Upper GI Endoscopy is a vital diagnostic and therapeutic procedure used to examine the lining of the esophagus, stomach, and duodenum. Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Liver Cirrhosis Management
+DESCRIPTION:
+Liver cirrhosis is a chronic condition requiring expert, multidisciplinary care. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Acute Pancreatitis Treatment
+DESCRIPTION:
+Acute pancreatitis is a severe, often life-threatening inflammation of the pancreas that requires immediate hospital admission. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Colonoscopy
+DESCRIPTION:
+Colonoscopy is the gold-standard procedure for screening colon cancer and diagnosing lower intestinal issues like colitis and polyps. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 4 — GYNECOLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Normal Delivery (Vaginal Birth)
+DESCRIPTION:
+We believe in supporting safe, natural childbirth whenever medically possible. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Cesarean Section (C-Section)
+DESCRIPTION:
+When a vaginal delivery is not safe for the mother or baby, our highly skilled surgical team performs Cesarean sections (C-sections) with the utmost precision. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+
+---
+
+SERVICE NAME: Ovarian Cyst Removal (Laparoscopic)
+DESCRIPTION:
+Ovarian cysts can cause significant pain and reproductive complications. We offer advanced laparoscopic (keyhole) surgery for the safe removal of ovarian cysts. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Infertility Evaluation & Treatment
+DESCRIPTION:
+Struggling to conceive can be emotionally challenging. Our dedicated fertility specialists in Patna provide comprehensive evaluations to identify underlying causes of infertility for both partners. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 5 — NEPHROLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Hemodialysis
+DESCRIPTION:
+Hemodialysis is a life-saving treatment for patients with advanced kidney failure. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Chronic Kidney Disease (CKD) Management
+DESCRIPTION:
+Chronic Kidney Disease requires proactive, long-term management to slow progression and delay the need for dialysis. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Acute Kidney Injury (AKI) Treatment
+DESCRIPTION:
+Acute Kidney Injury is a sudden, critical loss of kidney function that requires emergency medical intervention. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Kidney Stone Medical Therapy
+DESCRIPTION:
+Not all kidney stones require surgery. For smaller stones, our nephrology department offers Medical Expulsive Therapy (MET) to help pass the stones naturally with the aid of specific medications. Best surgical center and ICU facility in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 6 — GENERAL MEDICINE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Diabetes Management
+DESCRIPTION:
+Diabetes is a complex metabolic disorder that requires continuous, expert care. Our physicians provide comprehensive diabetes management, including blood sugar monitoring, insulin therapy, and vital lifestyle counseling. Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Infectious Disease Treatment
+DESCRIPTION:
+From seasonal flu and dengue to complex bacterial infections and typhoid, our general medicine team is equipped to handle all infectious diseases. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Thyroid Disorder Management
+DESCRIPTION:
+Thyroid imbalances, including hypothyroidism and hyperthyroidism, can significantly disrupt your metabolism, energy levels, and weight. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Comprehensive Health Check-ups
+DESCRIPTION:
+Preventive healthcare is vital for early disease detection. Sarvada Hospito Care offers tailored, comprehensive health check-up packages that include extensive blood tests, cardiovascular screening, and physician consultations. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 7 — PSYCHIATRY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Depression & Anxiety Treatment
+DESCRIPTION:
+Depression and anxiety are debilitating conditions that require professional, empathetic care. Our psychiatrists provide comprehensive assessments to determine the most effective combination of psychotherapy and medical management. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Stress Management Counseling
+DESCRIPTION:
+Chronic stress can manifest as severe physical and emotional health issues. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 8 — UROLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 SERVICE NAME: PCNL (Percutaneous Nephrolithotomy)
 DESCRIPTION:
-Minimally invasive surgical procedure to remove large kidney stones (>2 cm) through a small puncture in the back. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+PCNL is a highly advanced, minimally invasive keyhole surgery used to remove large or complex kidney stones. Consult top specialists at Sarvada Hospito Care in Patna.
 
 ---
 
-SERVICE NAME: Kidney Cancer Surgery (Radical & Partial Nephrectomy)
+SERVICE NAME: Laser Lithotripsy (URS/RIRS)
 DESCRIPTION:
-Surgical removal of the entire kidney or part containing the tumor for kidney cancer. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+For stones stuck in the ureter or deep inside the kidney, we utilize Ureteroscopy (URS) and Retrograde Intrarenal Surgery (RIRS). Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
 
 ---
 
-SERVICE NAME: Bladder Stone & Prostate Surgery (TURP/Open)
+SERVICE NAME: Prostate Surgery (TURP)
 DESCRIPTION:
-Surgical management of bladder stones and benign prostate enlargement (BPH) through TURP or open prostatectomy. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Transurethral Resection of the Prostate (TURP) is the gold standard surgical treatment for severe benign prostatic hyperplasia (BPH) or enlarged prostate. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Urinary Tract Infection (UTI) Treatment
+DESCRIPTION:
+Recurrent or severe Urinary Tract Infections (UTIs) require expert medical evaluation to prevent kidney damage. High-quality patient care at Sarvada Hospito Care, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 3 — LIVER DISORDERS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Liver Cyst & Abscess Drainage
-DESCRIPTION:
-Percutaneous or laparoscopic drainage of liver abscesses and symptomatic cysts. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Liver Surgery (Trauma, Cancer & Resection)
-DESCRIPTION:
-Major liver surgery including hepatectomy for liver cancer, liver trauma repair, and jaundice-related liver procedures. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Percutaneous Liver Biopsy
-DESCRIPTION:
-A needle is inserted under ultrasound guidance to take a tiny cylinder of liver tissue. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 4 — PANCREAS DISORDERS
+  CATEGORY 9 — CONSULTANT PHYSICIAN
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Chronic Pancreatitis Management
+SERVICE NAME: Diabetes Management
 DESCRIPTION:
-Long-term medical and enzyme replacement therapy for chronic pancreatic inflammation. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Comprehensive diabetes care including accurate diagnosis, individualized glycemic control plans, insulin therapy optimization, and monitoring of complications affecting the kidneys, eyes, and nerves. Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: Pancreatic Cancer Surgery (Whipple/Distal Pancreatectomy)
+SERVICE NAME: Hypertension and Blood Pressure Management
 DESCRIPTION:
-Complex surgery for pancreatic cancer including Whipple procedure (pancreaticoduodenectomy) and distal pancreatectomy. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Expert diagnosis, accurate risk stratification, and individualized antihypertensive therapy plans for patients with hypertension. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Fever and Infectious Disease Workup
+DESCRIPTION:
+Systematic, comprehensive fever workups using advanced blood cultures, serology panels, and imaging studies to detect typhoid, malaria, dengue, tuberculosis, and other systemic infections. Best surgical center and ICU facility in Patna, Bihar.
+
+---
+
+SERVICE NAME: Pre-operative Medical Assessment
+DESCRIPTION:
+Comprehensive pre-operative evaluations including cardiovascular risk assessment, pulmonary function review, metabolic optimization for diabetes and thyroid conditions, and anesthesia fitness certification. Emergency and elective medical care in Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 5 — JAUNDICE & BILIARY DISORDERS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Biliary Stricture Reconstruction
-DESCRIPTION:
-Surgical repair (Hepaticojejunostomy) of the narrowed bile duct to restore normal bile flow into the intestine. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Common Bile Duct (CBD) Surgery
-DESCRIPTION:
-Surgery for CBD stone, CBD cancer, and CBD stricture — open and laparoscopic common bile duct exploration. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Laparoscopic Common Bile Duct Exploration
-DESCRIPTION:
-Minimally invasive laparoscopic exploration and clearance of common bile duct stones, often combined with cholecystectomy. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Jaundice Management
-DESCRIPTION:
-Detailed clinical assessment to differentiate medical vs. surgical jaundice, followed by targeted biliary decompression. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Ascites Care
-DESCRIPTION:
-Therapeutic and diagnostic paracentesis (abdominal tap) to drain fluid from the peritoneal cavity for relief of bloating and respiratory discomfort. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Biliary Disorder (Choledochal Cyst / Cholangitis)
-DESCRIPTION:
-Advanced surgeries for congenital choledochal cysts (excision and reconstruction) and emergency drainage for severe biliary tract sepsis (cholangitis). Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 6 — GENERAL & GASTROINTESTINAL SURGERY
+  CATEGORY 10 — GENERAL PHYSICIAN
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Thyroid Surgery (Thyroidectomy)
+SERVICE NAME: Viral Fever and Seasonal Illness Treatment
 DESCRIPTION:
-Surgical removal of the thyroid gland (total or partial) for nodules, goiter, or cancer. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Accurate clinical assessment and targeted investigations to differentiate between viral and bacterial infections. Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: AV Fistula Surgery for Dialysis Patients
+SERVICE NAME: Thyroid Disorder Management
 DESCRIPTION:
-Surgical creation of an arteriovenous anastomosis in the arm to establish hemodialysis access. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Expert evaluation with thyroid function tests (TFT), thyroid antibody panels, and ultrasound examinations to accurately diagnose hypothyroidism, hyperthyroidism, and thyroid nodules. State-of-the-art medical services at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: ICU & Critical Care Management
+SERVICE NAME: Anaemia Diagnosis and Treatment
 DESCRIPTION:
-Fully equipped ICU managed by highly qualified anaesthetic doctors for post-surgical and critical care management. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Comprehensive anaemia evaluation including complete blood counts, peripheral blood smears, iron studies, and Vitamin B12 levels to identify the underlying cause of anaemia—whether iron deficiency, B12/folate deficiency, haemolyt... Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
 
 ---
 
-SERVICE NAME: Paediatric Congenital Disease Surgery
+SERVICE NAME: General Health Checkup and Preventive Care
 DESCRIPTION:
-Surgical correction of congenital abnormalities in children — including hernias, undescended testis, hypospadias, and intestinal malformations. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Splenic Surgery & Splenorenal Shunt
-DESCRIPTION:
-Splenectomy for splenic trauma, splenic disorders, and splenorenal shunt surgery for portal hypertension. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Neurology & Neurosurgery Consultation
-DESCRIPTION:
-Neurology services managed by highly qualified neurosurgeon and neurophysician for brain, spine, and nerve disorders. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Comprehensive screening packages with thorough physical examinations and age-appropriate laboratory investigations including blood glucose, lipid profiles, kidney and liver function tests, thyroid panels, complete blood counts,... Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 7 — GASTRO-INTESTINAL DISORDER
+  CATEGORY 11 — CRITICAL CARE MEDICINE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: GI Disorder Evaluation & Treatment
+SERVICE NAME: Mechanical Ventilation and Respiratory Failure Management
 DESCRIPTION:
-Comprehensive medical assessment and therapeutic planning for general GI problems. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Expert initiation and management of invasive mechanical ventilation using lung-protective strategies that minimize ventilator-induced lung injury for patients with severe pneumonia, ARDS, or post-surgical respiratory fail... Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: GERD (Gastro-Esophageal Reflux Disease) Management
+SERVICE NAME: Sepsis and Multi-Organ Dysfunction Management
 DESCRIPTION:
-Comprehensive management of GERD including medical therapy, lifestyle modification, and anti-reflux surgery (fundoplication). Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Aggressive management following internationally validated Surviving Sepsis Campaign guidelines, initiating targeted fluid resuscitation, broad-spectrum IV antibiotics, vasopressors, and source control within the critical one-hour... Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
 
 ---
 
-SERVICE NAME: Ulcerative Colitis & Crohn's Disease Surgery
+SERVICE NAME: Acute Liver Failure and Hepatic Encephalopathy Management
 DESCRIPTION:
-Surgical management of complications of ulcerative colitis and Crohn's disease — colectomy, strictureplasty, and abscess drainage. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Expert multidisciplinary management for acute liver failure including aggressive treatment of hepatic encephalopathy, correction of coagulopathy, prevention of acute kidney injury, management of infections, and careful hemodynamic sup... Consult top specialists at Sarvada Hospito Care in Patna.
 
 ---
 
-SERVICE NAME: Trichobezoar & Upper GI Bleeding Management
+SERVICE NAME: Post-operative Critical Care
 DESCRIPTION:
-Emergency and elective management of trichobezoar (hair ball in stomach) and upper gastrointestinal bleeding. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+24/7 specialist intensivist oversight, continuous hemodynamic monitoring, expert pain management, and specialized nutritional support for patients recovering from major gastrointestinal, hepatobiliary, and emergency surgeries. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 8 — UPPER G.I. ENDOSCOPY / COLONOSCOPY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Diagnostic & Therapeutic Upper GI Endoscopy
-DESCRIPTION:
-A flexible endoscope is passed through the mouth to visualize the food pipe, stomach, and duodenum. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Diagnostic & Therapeutic Colonoscopy
-DESCRIPTION:
-Endoscopic examination of the entire large intestine (colon) and rectum using a flexible colonoscope. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 9 — COLORECTAL SURGEON
+  CATEGORY 12 — GENERAL SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Cancer of Intestine (Colorectal Cancer Surgery)
+SERVICE NAME: Stapler Haemorrhoidectomy (Piles Surgery)
 DESCRIPTION:
-Surgical resection of colon or rectal cancer (Colectomy, Anterior Resection) to achieve complete oncological clearance with lymph node dissection. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+An advanced, minimally invasive technique for treating internal hemorrhoids (piles). Leading general & laparoscopic surgery hospital in Patna, Bihar.
 
 ---
 
-SERVICE NAME: Intestinal Tumor Excision
+SERVICE NAME: Laser Surgery for Piles & Fissures
 DESCRIPTION:
-Removal of benign or stromal tumors (GIST, lipomas) of the small and large bowel. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Laser Hemorrhoidoplasty is a cutting-edge day-care procedure that uses focused laser energy to shrink hemorrhoidal tissue. High-quality patient care at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: Intestinal Obstruction Surgery
+SERVICE NAME: Anal Fissure Repair (Sphincterotomy)
 DESCRIPTION:
-Emergency decompression and relief of acute bowel blockage due to bands, adhesions, strictures, or tumors. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Large Bowel (Colon) Cancer Surgery
-DESCRIPTION:
-Radical surgery for colon and rectal cancer including hemicolectomy, anterior resection, and abdominoperineal resection. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Intestinal Perforation & Stricture Surgery
-DESCRIPTION:
-Emergency surgery for intestinal perforation and elective surgery for intestinal strictures causing obstruction. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 10 — PILES, FISSURE AND FISTULA IN ANO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Piles (Haemorrhoids) Surgery
-DESCRIPTION:
-Modern surgical correction of bleeding and prolapsing piles using Stapler Haemorrhoidectomy (PPH) or open/laser methods. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Fissure in Ano Repair
-DESCRIPTION:
-Lateral Internal Sphincterotomy (LIS) to relieve sphincter spasm and heal chronic painful anal tears. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+The gold-standard surgical treatment for chronic anal fissures. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
 
 ---
 
 SERVICE NAME: Fistula-in-Ano Surgery
 DESCRIPTION:
-Surgical closure of abnormal tracts connecting the anal canal to the perianal skin using Fistulotomy, LIFT, or Seton. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Complex fistulas are treated using techniques ranging from simple fistulotomy to advanced sphincter-saving procedures like LIFT. Best surgical center and ICU facility in Patna, Bihar.
 
 ---
 
-SERVICE NAME: Stapler Haemorrhoidectomy (MIPH)
+SERVICE NAME: Open Appendectomy
 DESCRIPTION:
-Minimally invasive stapler haemorrhoidectomy (MIPH) for grade 3–4 piles with less pain and faster recovery than conventional surgery. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+A critical emergency procedure to remove an infected appendix. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Open Hernia Repair
+DESCRIPTION:
+For complex or massive hernias, our surgeons perform open repair using durable, tension-free surgical mesh. This reinforces the weakened abdominal wall, preventing recurrence and safely restoring abdominal integrity. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Exploratory Laparotomy
+DESCRIPTION:
+An emergency diagnostic and therapeutic surgery used for severe abdominal trauma, undiagnosed severe pain, or internal bleeding. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+
+---
+
+SERVICE NAME: Thyroidectomy
+DESCRIPTION:
+The surgical removal of part or all of the thyroid gland, typically performed to treat thyroid cancer, severe hyperthyroidism, or large goiters. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 11 — PANCREATIC STONE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Pancreatic Stone Surgery
-DESCRIPTION:
-Surgical extraction of calculi from the main pancreatic duct (Frey's procedure or Lateral Pancreaticojejunostomy) to relieve severe pain of chronic pancreatitis. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Pancreatic Stricture Surgery
-DESCRIPTION:
-Reconstructive surgery to bypass narrowing (strictures) in the main pancreatic duct. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Pancreatic Pseudocyst Drainage
-DESCRIPTION:
-Laparoscopic or internal surgical drainage (Cystogastrostomy) of mature fluid collections following acute pancreatitis. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Pancreatic Necrosis Management
-DESCRIPTION:
-Intensive ICU support and necrosectomy (surgical/laparoscopic cleanup of dead pancreatic tissue) for necrotizing pancreatitis. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 12 — FISSURE LASER SURGERY
+  CATEGORY 13 — ORTHOPEDIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Fissure Laser Surgery
+SERVICE NAME: Total Knee Replacement (TKR)
 DESCRIPTION:
-Painless laser vaporization of sentinel pile and sphincterotomy to heal anal tears quickly without open wounds. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+A transformative procedure to relieve severe arthritis pain. We meticulously replace the damaged cartilage with high-quality artificial implants, significantly improving knee mobility and allowing patients to walk pain-free. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
 
 ---
 
-SERVICE NAME: Liver Abscess Surgery
+SERVICE NAME: Total Hip Replacement (THR)
 DESCRIPTION:
-Surgical or laparoscopic drainage of large, complicated liver abscesses (pus collections) that fail needle aspiration. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Highly successful intervention for debilitating hip pain caused by arthritis or fractures. We replace the worn hip joint with a sophisticated prosthetic, restoring normal mechanics and allowing a return to an active lifestyle. Consult top specialists at Sarvada Hospito Care in Patna.
 
 ---
 
-SERVICE NAME: Hydatid cyst of Liver
+SERVICE NAME: ACL Reconstruction Surgery
 DESCRIPTION:
-Surgical excision or marsupialization of parasitic hydatid cysts in the liver using strict scolicidal agents to prevent recurrence. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+A specialized arthroscopic procedure to repair a torn ACL ligament. We reconstruct the ligament using a biological tissue graft, restoring critical knee stability for athletes and highly active individuals. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Arthroscopic Meniscus Repair
+DESCRIPTION:
+A minimally invasive "keyhole" surgery to repair torn meniscus cartilage. Using a tiny camera, the surgeon precisely sutures the damaged tissue, preserving joint health and preventing early-onset osteoarthritis. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Complex Fracture Fixation
+DESCRIPTION:
+Emergency trauma surgery to stabilize severe bone fractures resulting from accidents. Our surgeons use advanced titanium plates, intramedullary nails, and screws to ensure proper anatomical healing. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Spinal Disc Surgery (Microdiscectomy)
+DESCRIPTION:
+Minimally invasive spine surgery to remove herniated disc material pressing on nerves (sciatica). Using an operating microscope, this targeted approach provides immediate, profound relief from radiating leg pain. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Shoulder Replacement Surgery
+DESCRIPTION:
+For severe shoulder arthritis or complex fractures, we replace the damaged joint with an artificial implant, effectively alleviating debilitating pain and restoring functional arm movement. Best surgical center and ICU facility in Patna, Bihar.
+
+---
+
+SERVICE NAME: Carpal Tunnel Release
+DESCRIPTION:
+A minor surgical procedure to relieve pressure on the median nerve in the wrist. This provides immediate relief from the chronic pain, numbness, and tingling associated with severe carpal tunnel syndrome. Emergency and elective medical care in Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 13 — GALL BLADDER STONE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Gall bladder stone Surgery
-DESCRIPTION:
-Laparoscopic removal of the gallbladder (Cholecystectomy) containing stones to treat biliary pain and prevent complications. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: CBD stone Removal
-DESCRIPTION:
-Laparoscopic Common Bile Duct Exploration (LCBDE) or surgical extraction of stones lodged in the main bile duct. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Gall bladder cancer Surgery
-DESCRIPTION:
-Radical Cholecystectomy (excision of gallbladder with adjacent liver wedge and regional lymph nodes) for early gallbladder cancer. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Advanced gall bladder cancer Care
-DESCRIPTION:
-Surgical bypass, stenting, or palliative debulking to relieve obstructive jaundice and pain in late-stage gallbladder cancer. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 14 — LIVER
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Hepatitis-B Management
-DESCRIPTION:
-Detailed counseling, viral load testing, and prescription of long-term antiviral suppressive medications (Tenofovir/Entecavir) for chronic Hepatitis B. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Hepatitis-C Treatment
-DESCRIPTION:
-Curative short-course medical therapy using Direct-Acting Antivirals (DAA) (Sofosbuvir + Velpatasvir/Ledipasvir). Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 15 — ERCP — FOR CBD STONE
+  CATEGORY 14 — NEUROSURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: ERCP for CBD stone Extraction
+SERVICE NAME: Brain Tumor Excision (Craniotomy)
 DESCRIPTION:
-Endoscopic side-view scoping to cannulate the ampulla, perform sphincterotomy, and pull stones out using balloon/basket. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+A delicate procedure to achieve maximum safe resection of brain tumors. Using advanced neuro-navigation and surgical microscopes, our neurosurgeons meticulously remove the tumor while preserving vital surrounding brain functions. State-of-the-art medical services at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: Jaundice / Stricture Stenting
+SERVICE NAME: Traumatic Brain Injury Surgery (Hematoma Evacuation)
 DESCRIPTION:
-Placement of plastic or self-expanding metal stents across benign or malignant bile duct strictures. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Emergency life-saving surgery for severe head trauma. We rapidly open the skull to evacuate life-threatening blood clots (hematomas) and relieve dangerously high intracranial pressure, minimizing permanent brain damage. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
 
 ---
 
-SERVICE NAME: Malignant Biliary Stricture Care
+SERVICE NAME: Spinal Laminectomy (Decompression)
 DESCRIPTION:
-Endoscopic placement of Metallic Stents (SEMS) for palliation of inoperable cancers. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Surgery to alleviate debilitating pressure on the spinal cord caused by severe spinal stenosis. By removing the bony arch of the vertebra, we create space for the nerves, dramatically improving pain and mobility. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
 
 ---
 
-SERVICE NAME: Pancreatic Cancer (Whipple Procedure)
+SERVICE NAME: Endoscopic Pituitary Surgery
 DESCRIPTION:
-Pancreaticoduodenectomy (Whipple Procedure) to remove the head of the pancreas, duodenum, gallbladder, and part of the bile duct for cancer. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+A minimally invasive approach to remove pituitary tumors through the nasal pathways using an endoscope. This avoids external facial incisions, ensuring faster recovery and less postoperative discomfort. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
 
 ---
 
-SERVICE NAME: Advanced Ca GB (Cancer of Gallbladder) Care
+SERVICE NAME: Aneurysm Clipping
 DESCRIPTION:
-Endoscopic stenting (ERCP) or bypass surgery to treat biliary obstruction in late-stage gallbladder cancer. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+A highly complex micro-neurosurgical procedure to place a tiny metal clip across the neck of a brain aneurysm, stopping blood flow to it and preventing a catastrophic, life-threatening rupture. Consult top specialists at Sarvada Hospito Care in Patna.
 
 ---
 
-SERVICE NAME: Koch's Abdomen & TB of Intestine
+SERVICE NAME: Ventriculoperitoneal (VP) Shunt Placement
 DESCRIPTION:
-Diagnosis and medical antitubercular therapy (ATT) for abdominal tuberculosis involving the lymph nodes or intestines. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Surgical placement of a thin tube to drain excess cerebrospinal fluid from the brain to the abdomen. It is the primary, life-saving treatment for hydrocephalus (fluid accumulation in the brain). Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Peripheral Nerve Repair
+DESCRIPTION:
+Delicate microsurgery to reconnect severed or severely damaged peripheral nerves in the limbs following severe trauma, aiming to restore critical sensory and motor functions. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Cervical Spine Fusion
+DESCRIPTION:
+Surgical stabilization of the neck vertebrae to treat severe degenerative disc disease or instability. We use bone grafts and titanium plates to permanently fuse the bones, eliminating severe neck and arm pain. High-quality patient care at Sarvada Hospito Care, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 16 — STOMACH CANCER
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Stomach cancer Surgery (Radical Gastrectomy)
-DESCRIPTION:
-Surgical excision of all or part of the stomach (Total or Subtotal Gastrectomy) along with D2 lymph node clearance for gastric adenocarcinoma. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Ovarian cyst Removal (Laparoscopy)
-DESCRIPTION:
-Minimally invasive removal of ovarian cysts (dermoid, endometrioma, simple cyst) while preserving healthy ovarian tissue. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-
----
-
-SERVICE NAME: Ovarian Cancer Surgery
-DESCRIPTION:
-Staging laparotomic debulking surgery (Hysterectomy, Bilateral Salpingo-Oophorectomy, Omentectomy) for ovarian malignancies. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 17 — HERNIA
+  CATEGORY 15 — PLASTIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Incisional Hernia Repair
+SERVICE NAME: Burn Reconstruction & Skin Grafting
 DESCRIPTION:
-Laparoscopic (IPOM) or open sublay repair of hernias arising at previous surgical scar sites. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Specialized surgery to improve the function and appearance of severe burn scars. We utilize split-thickness skin grafts and tissue expansion to release tight contractures, dramatically restoring joint mobility. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
 
 ---
 
-SERVICE NAME: Umbilical Hernia Repair
+SERVICE NAME: Cleft Lip and Palate Repair
 DESCRIPTION:
-Laparoscopic or open repair of hernias at the navel (belly button) with prosthetic mesh placement. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Transformative reconstructive surgery for infants to correct congenital facial deformities. This critical intervention restores normal facial aesthetics and is essential for proper feeding and speech development. Best surgical center and ICU facility in Patna, Bihar.
 
 ---
 
-SERVICE NAME: Inguinal Hernia Repair
+SERVICE NAME: Complex Scar Revision
 DESCRIPTION:
-Minimally invasive keyhole repair of groin hernias (TAPP/TEP techniques) with mesh reinforcement. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Surgical procedures like Z-plasty or W-plasty to minimize prominent or restrictive scars resulting from trauma. This meticulous approach significantly improves the cosmetic appearance and flexibility of the skin. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Microsurgical Free Flap Transfer
+DESCRIPTION:
+An advanced technique to repair massive tissue defects. We harvest a block of tissue with its blood vessels from a donor site and meticulously reconnect it under a microscope at the injury site. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Maxillofacial Trauma Reconstruction
+DESCRIPTION:
+Complex reconstructive surgery using specialized titanium plates to realign and stabilize fractured facial bones (jaw, cheekbones) following severe trauma, restoring both aesthetics and essential chewing functions. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+
+---
+
+SERVICE NAME: Breast Reconstruction (Post-Mastectomy)
+DESCRIPTION:
+A deeply restorative procedure to rebuild the breast shape following cancer surgery. Utilizing advanced silicone implants or the patient's own tissue flaps, this surgery plays a vital role in psychological recovery. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Hand Trauma & Tendon Repair
+DESCRIPTION:
+Intricate microsurgery to repair severed tendons, nerves, and blood vessels in the hand following severe lacerations or crush injuries, crucially restoring the complex dexterity of the hand. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+
+---
+
+SERVICE NAME: Rhinoplasty (Functional & Aesthetic)
+DESCRIPTION:
+A highly intricate procedure to reshape the nose. We correct prominent humps or structural abnormalities like a deviated septum, delivering both exceptional aesthetic enhancements and crucial breathing improvements. Consult top specialists at Sarvada Hospito Care in Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 18 — PULMONOLOGY
+  CATEGORY 16 — LAPAROSCOPIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Asthma & COPD Consultation
+SERVICE NAME: Laparoscopic Cholecystectomy (Gallbladder Removal)
 DESCRIPTION:
-Expert evaluation, lung function assessment, and inhaler/nebulisation therapy planning. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+The gold-standard keyhole surgery for symptomatic gallstones. Utilizing four tiny incisions, our surgeons safely remove the diseased gallbladder. Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: Tuberculosis (TB) Management
+SERVICE NAME: Laparoscopic Hernia Repair
 DESCRIPTION:
-Definitive diagnosis and long-term anti-tubercular therapy (ATT) monitoring. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+An advanced technique for repairing inguinal or umbilical hernias from the inside of the abdomen. The weakened wall is reinforced with a tension-free mesh, allowing for exceptionally strong repairs with minimal scarring. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Laparoscopic Appendectomy
+DESCRIPTION:
+The modern, minimally invasive approach for the surgical removal of an infected appendix. Utilizing a laparoscope, the appendix is extracted safely, offering a lower risk of infection and a much faster overall recovery. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Bariatric Surgery (Sleeve Gastrectomy)
+DESCRIPTION:
+A life-changing, minimally invasive weight-loss surgery for severe obesity. By reducing the stomach size, it induces significant long-term weight loss and frequently resolves life-threatening conditions like Type 2 diabetes. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Laparoscopic Fundoplication (GERD Surgery)
+DESCRIPTION:
+A highly effective surgical treatment for severe, chronic acid reflux (GERD) and large hiatal hernias. The upper stomach is wrapped around the esophagus, strengthening the valve and eliminating the lifelong need for antacids. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Laparoscopic Splenectomy
+DESCRIPTION:
+Advanced keyhole procedure to safely remove a diseased or massively enlarged spleen. This highly skilled approach significantly reduces massive surgical blood loss and minimizes severe postoperative pain. Best surgical center and ICU facility in Patna, Bihar.
+
+---
+
+SERVICE NAME: Diagnostic Laparoscopy
+DESCRIPTION:
+A minor surgical procedure used to examine the internal abdominal organs directly when other diagnostic tests are inconclusive. It is crucial for pinpointing the exact cause of unexplained, severe abdominal or pelvic pain. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Laparoscopic Colectomy (Bowel Resection)
+DESCRIPTION:
+Complex minimally invasive surgery to remove a diseased portion of the large intestine, commonly for colon cancer or severe diverticulitis. It offers a significantly faster bowel recovery compared to major open abdominal surgery. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 17 — COSMETIC SURGERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Liposuction (Body Contouring)
+DESCRIPTION:
+An incredibly precise cosmetic procedure designed to permanently remove stubborn, localized pockets of excess fat. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+
+---
+
+SERVICE NAME: Abdominoplasty (Tummy Tuck)
+DESCRIPTION:
+A comprehensive procedure to flatten and firm the abdominal profile. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Breast Augmentation
+DESCRIPTION:
+A transformative procedure to enhance the size and shape of the breasts. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+
+---
+
+SERVICE NAME: Facelift (Rhytidectomy)
+DESCRIPTION:
+The ultimate surgical procedure to reverse severe facial aging. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Blepharoplasty (Eyelid Surgery)
+DESCRIPTION:
+A highly refined surgery to remove excess skin and bulging fat pads from the upper or lower eyelids. This significantly rejuvenates tired-looking eyes, making patients look remarkably refreshed and vibrant. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Gynecomastia Surgery (Male Breast Reduction)
+DESCRIPTION:
+A highly effective surgical treatment for enlarged male breasts. Using a combination of liposuction and glandular excision, we permanently restore a flatter, firmer, and more masculine chest contour. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Otoplasty (Ear Pinning)
+DESCRIPTION:
+A specialized cosmetic procedure to alter the shape, position, or proportion of the ears. Commonly performed to "pin back" prominent ears, it brings the ears into beautiful proportion with the rest of the face. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Hair Transplant Surgery (FUE)
+DESCRIPTION:
+Advanced Follicular Unit Extraction (FUE) involves harvesting individual hair follicles from the back of the scalp and meticulously implanting them into bald areas, delivering a completely natural-looking, permanent solution to h... Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 18 — DENTAL & MAXILLOFACIAL SURGERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Dental Implants Placement
+DESCRIPTION:
+The most advanced, permanent surgical solution for missing teeth. A biocompatible titanium post is inserted into the jawbone to act as an artificial root, flawlessly restoring your beautiful smile and essential chewing function. Best surgical center and ICU facility in Patna, Bihar.
+
+---
+
+SERVICE NAME: Wisdom Tooth Extraction (Surgical Disimpaction)
+DESCRIPTION:
+A specialized oral surgery to safely remove severely impacted third molars. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Orthognathic (Corrective Jaw) Surgery
+DESCRIPTION:
+Major reconstructive surgery to correct severe abnormalities of the jawbones. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Maxillofacial Trauma Reconstruction
+DESCRIPTION:
+Complex emergency surgery to expertly treat severe fractures of the facial bones (jaw, cheekbones) following high-impact trauma. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+
+---
+
+SERVICE NAME: Advanced Root Canal Treatment (Surgical)
+DESCRIPTION:
+A crucial, tooth-saving surgical procedure (Apicoectomy) utilized when a standard root canal fails. We surgically remove the infected tip of the tooth root, perfectly sealing it to eliminate agonizing pain and save the tooth. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Bone Grafting & Sinus Lifts
+DESCRIPTION:
+Advanced surgical preparatory procedures required when a patient lacks sufficient jawbone density for dental implants. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+
+---
+
+SERVICE NAME: Gingivectomy (Gum Surgery)
+DESCRIPTION:
+A precise surgical procedure to remove diseased or overgrown gum tissue. It is essential for treating severe periodontal disease or aesthetically correcting a "gummy smile" to reveal beautifully proportioned teeth. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Cyst and Tumor Excision (Oral Cavity)
+DESCRIPTION:
+The highly specialized surgical removal of benign or malignant growths within the mouth, jaw, or lips. Our surgeons ensure complete removal while prioritizing the preservation of critical oral functions and facial nerves. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 19 — TRAUMA CARE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Emergency Resuscitation & Stabilisation
+SERVICE NAME: Emergency Resuscitation (ACLS/ATLS)
 DESCRIPTION:
-Immediate airway management, fluid resuscitation, and critical stabilization for trauma patients. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Advanced Cardiac Life Support (ACLS) and Advanced Trauma Life Support (ATLS) are critical, immediate interventions provided by our expert emergency team. Leading general & laparoscopic surgery hospital in Patna, Bihar.
 
 ---
 
-SERVICE NAME: Fracture & Poly-trauma Surgery
+SERVICE NAME: Polytrauma Management
 DESCRIPTION:
-Urgent fixation of fractures, internal bleeding control, and multi-specialty trauma operations. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 20 — DAY CARE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-SERVICE NAME: Minor Surgical Procedures
-DESCRIPTION:
-Excision of skin cysts, lipomas, abscess incision & drainage, and minor wound debridements. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Polytrauma involves severe, multiple injuries typically resulting from high-impact accidents. High-quality patient care at Sarvada Hospito Care, Patna.
 
 ---
 
-SERVICE NAME: Day-care Observation & Therapy
+SERVICE NAME: Emergency Fracture Stabilization
 DESCRIPTION:
-Short-stay observation, blood transfusions, or high-dose intravenous drug infusions. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Severe bone fractures require immediate stabilization to prevent further tissue damage and massive blood loss. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  CATEGORY 21 — BURN CARE
+  CATEGORY 20 — INTENSIVE CARE UNIT (ICU)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-SERVICE NAME: Burn Dressing & Debridement
+SERVICE NAME: Mechanical Ventilation Support
 DESCRIPTION:
-Meticulous cleaning, removal of dead tissue, and application of specialized antimicrobial burn dressings. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+For patients unable to breathe adequately on their own due to severe lung infections or acute respiratory failure, our ICU provides life-saving mechanical ventilation. Best surgical center and ICU facility in Patna, Bihar.
 
 ---
 
-SERVICE NAME: Skin Grafting & Contracture Release
+SERVICE NAME: Sepsis & Shock Management
 DESCRIPTION:
-Surgical skin grafting for deep burns and correction of post-burn contractures to restore movement. Care at Sarvada Hospito Care, Patna, under Director Dr. Manmohan Suman.
+Sepsis is a life-threatening, overwhelming immune response to infection leading to shock and organ failure. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Continuous Hemodynamic Monitoring
+DESCRIPTION:
+Critically ill patients require precise, continuous monitoring of their cardiovascular system. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 21 — INTENSIVE CORONARY CARE UNIT (ICCU)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Acute Myocardial Infarction (Heart Attack) Care
+DESCRIPTION:
+A heart attack requires immediate, aggressive medical intervention to restore blood flow and minimize permanent heart muscle damage. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+
+---
+
+SERVICE NAME: Management of Severe Arrhythmias
+DESCRIPTION:
+Life-threatening irregular heartbeats (arrhythmias) can cause sudden cardiac arrest. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Temporary Pacemaker Insertion
+DESCRIPTION:
+For patients experiencing dangerously slow heart rates (bradycardia) or severe heart blocks, our cardiologists perform emergency insertion of temporary pacemakers. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 22 — HIGH DEPENDENCY UNIT (HDU)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Major Post-Surgical Monitoring
+DESCRIPTION:
+Patients recovering from extensive, complex surgeries (like major GI or spine procedures) often require careful, continuous monitoring of vital signs and fluid balances for the first 24-48 hours. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Step-down Respiratory Support
+DESCRIPTION:
+For patients recently weaned off mechanical ventilators in the ICU, the HDU offers an essential transitional environment. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 23 — EMERGENCY CARE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Acute Asthma & COPD Exacerbation Relief
+DESCRIPTION:
+Severe asthma attacks or COPD flare-ups cause terrifying breathing difficulties. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Poisoning & Toxicology Management
+DESCRIPTION:
+Accidental poisonings or deliberate overdoses require incredibly rapid, specialized medical intervention. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Minor Trauma & Laceration Repair
+DESCRIPTION:
+For severe cuts, deep lacerations, and minor burns, our ER provides immediate, meticulous wound care. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 24 — BURN UNIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Burn Fluid Resuscitation
+DESCRIPTION:
+Severe burns cause massive, life-threatening fluid loss from the body. Best surgical center and ICU facility in Patna, Bihar.
+
+---
+
+SERVICE NAME: Advanced Wound Debridement & Dressing
+DESCRIPTION:
+Burn wounds are highly susceptible to severe infections. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Burn Pain Management
+DESCRIPTION:
+Burn injuries are agonizingly painful, especially during dressing changes. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 25 — CRITICAL CARE PHYSICIAN (INTENSIVIST) CONSULTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: ICU Daily Rounds and Treatment Optimization
+DESCRIPTION:
+Comprehensive daily ICU rounds conducted by our dedicated intensivists at Sarvada Hospito Care involve systematic review of all critically ill patients, meticulous analysis of vital sign trends, laboratory results, imagin... Care under Director Dr. Manmohan Suman at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Central Venous Access and Invasive Monitoring
+DESCRIPTION:
+Central venous catheter insertion and arterial line placement are essential ICU procedures that enable accurate hemodynamic monitoring and safe administration of concentrated medications, IV nutrition, and blood products. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+
+---
+
+SERVICE NAME: Palliative and Goal-Directed ICU Care
+DESCRIPTION:
+For some critically ill patients, the focus of care may appropriately shift toward comfort-centered management and symptom control rather than aggressive life-prolonging interventions. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: ICU-acquired Infection Prevention and Antimicrobial Stewardship
+DESCRIPTION:
+ICU-acquired infections including ventilator-associated pneumonia (VAP), catheter-related bloodstream infections (CRBSI), and Clostridioides difficile colitis significantly increase ICU mortality. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 26 — PATHOLOGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Complete Blood Count (CBC) & Hematology
+DESCRIPTION:
+A CBC is a fundamental diagnostic test that evaluates overall health and detects a wide range of disorders, including anemia, severe infections, and leukemia. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Comprehensive Metabolic Panel (Biochemistry)
+DESCRIPTION:
+Our advanced biochemistry lab performs extensive panels to measure glucose levels, electrolyte and fluid balance, and vital kidney and liver function markers. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Clinical Microbiology & Cultures
+DESCRIPTION:
+Accurate identification of infectious agents is critical for effective treatment. We perform detailed blood, urine, and tissue cultures to isolate bacteria and fungi. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 27 — ULTRASOUND
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Whole Abdomen Ultrasound
+DESCRIPTION:
+A whole abdomen ultrasound provides a comprehensive, real-time view of major internal organs including the liver, gallbladder, spleen, pancreas, and kidneys. High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Obstetric & Fetal Anomaly Scans
+DESCRIPTION:
+Routine obstetric ultrasounds are vital for monitoring the health and development of the fetus during pregnancy. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Ultrasound-Guided Procedures
+DESCRIPTION:
+Our interventional radiologists utilize real-time ultrasound guidance to perform highly precise, minimally invasive procedures. Best surgical center and ICU facility in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 28 — DIGITAL X-RAY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Digital Chest X-Ray
+DESCRIPTION:
+A digital chest X-ray is a fast, painless test used to meticulously evaluate the lungs, heart, and chest wall. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Skeletal & Orthopedic Radiography
+DESCRIPTION:
+Following a trauma or injury, immediate skeletal radiography is crucial. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Fluoroscopy & Contrast Studies
+DESCRIPTION:
+Fluoroscopy utilizes a continuous X-ray beam to create a real-time moving image of internal structures. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 29 — ECG
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Resting 12-Lead ECG
+DESCRIPTION:
+The standard 12-lead resting ECG provides a comprehensive electrical map of the heart from multiple angles. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Holter Monitoring (24-Hour ECG)
+DESCRIPTION:
+Some dangerous heart rhythm irregularities only occur sporadically and may be missed during a brief resting ECG. Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 30 — 2D ECHO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Transthoracic Echocardiogram (TTE)
+DESCRIPTION:
+The standard Transthoracic Echocardiogram (TTE) is a painless, non-invasive ultrasound test where a transducer is moved across the chest. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Stress Echocardiography
+DESCRIPTION:
+Stress echocardiography combines a traditional ultrasound of the heart with an exercise test (usually on a treadmill). Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 31 — COLOR DOPPLER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Venous Doppler Study (Lower Limbs)
+DESCRIPTION:
+A Venous Doppler ultrasound of the legs is the definitive diagnostic test for detecting Deep Vein Thrombosis (DVT) — dangerous blood clots in the deep veins that can be fatal if they travel to the lungs. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: Carotid Doppler Ultrasound
+DESCRIPTION:
+The carotid arteries in the neck supply the brain with essential, oxygen-rich blood. A Carotid Doppler study meticulously evaluates these vital arteries for the buildup of dangerous cholesterol plaques (atherosclerosis). High-quality patient care at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Obstetric Color Doppler
+DESCRIPTION:
+During a high-risk pregnancy, an Obstetric Color Doppler ultrasound is utilized to precisely measure the blood flow within the umbilical cord, the fetal heart, and the fetal brain. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 32 — OUTPATIENT DEPARTMENT (OPD)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Specialist Medical Consultation
+DESCRIPTION:
+Schedule a one-on-one consultation with our highly experienced doctors. Best surgical center and ICU facility in Patna, Bihar.
+
+---
+
+SERVICE NAME: Post-Surgical Follow-up
+DESCRIPTION:
+Crucial for a successful recovery, our post-surgical follow-up visits in the OPD allow your surgeon to monitor wound healing, remove stitches or staples, adjust medications, and ensure you are safely returning to your normal daily act... Emergency and elective medical care in Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 33 — INPATIENT DEPARTMENT (IPD)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Medical Admission & Observation
+DESCRIPTION:
+For patients suffering from severe infections, high fevers, or undiagnosed acute conditions, our IPD provides a safe environment for continuous medical observation. State-of-the-art medical services at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Pre & Post-Operative Care
+DESCRIPTION:
+Patients scheduled for major surgeries are admitted to the IPD for essential pre-operative preparation. Compassionate patient care at Sarvada Hospito Care, Kankarbagh.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 34 — DAY CARE SERVICES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Day Care Surgery
+DESCRIPTION:
+Many minimally invasive procedures, such as cataract surgery, minor hernia repairs, or cyst removals, are performed as day-care surgeries. Expert medical care at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Intravenous (IV) Therapy
+DESCRIPTION:
+For patients requiring prolonged antibiotic therapies, iron infusions, or specialized biological medications, our Day Care unit provides a comfortable, medically supervised environment to receive treatments safely and efficiently... Available at Sarvada Hospito Care, Bypass Road, Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 35 — DIALYSIS UNIT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Maintenance Hemodialysis
+DESCRIPTION:
+For patients with End-Stage Renal Disease (ESRD), we provide scheduled, routine hemodialysis to artificially filter waste and excess fluid from the blood. Consult top specialists at Sarvada Hospito Care in Patna.
+
+---
+
+SERVICE NAME: Emergency Dialysis
+DESCRIPTION:
+In cases of Acute Kidney Injury or severe electrolyte imbalances, our dialysis unit operates in tandem with the ICU to provide immediate, life-saving emergency dialysis, rapidly restoring the body’s internal chemical balance. Advanced treatment at Sarvada Hospito Care, Kankarbagh, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 36 — AC ROOMS & GENERAL WARDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Private Room Care
+DESCRIPTION:
+Our private AC rooms offer the utmost privacy and comfort for patients and their families. Leading general & laparoscopic surgery hospital in Patna, Bihar.
+
+---
+
+SERVICE NAME: General Ward Admission
+DESCRIPTION:
+Our AC General Wards provide highly cost-effective yet exceptionally comfortable inpatient care. High-quality patient care at Sarvada Hospito Care, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 37 — AMBULANCE SERVICE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Emergency Medical Transport
+DESCRIPTION:
+In a medical crisis, our rapid-response ambulances are dispatched immediately. Comprehensive diagnostic & clinical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Inter-Hospital Patient Transfer
+DESCRIPTION:
+We safely transport critically ill patients who require specialized care from other facilities or home to Sarvada Hospito Care. Best surgical center and ICU facility in Patna, Bihar.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 38 — 24/7 PHARMACY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SERVICE NAME: Prescription Dispensing
+DESCRIPTION:
+Our licensed pharmacists accurately dispense medications prescribed by our doctors. Emergency and elective medical care in Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Critical Care Drug Supply
+DESCRIPTION:
+The pharmacy works in close coordination with the ICU and Emergency departments, maintaining an extensive inventory of critical life-saving drugs, emergency antidotes, and specialized intravenous fluids, ready for immediate di... State-of-the-art medical services at Sarvada Hospito Care, Patna.
 ================================================================
   GOOGLE BUSINESS — ADDITIONAL SEO TIPS
 ================================================================
 
 HOSPITAL BUSINESS DESCRIPTION (for Google Profile "About" section):
 -----------------------------------------------------------------
-Sarvada Hospito Care is a specialized surgical clinic in
+Sarvada Hospito Care is a specialized surgical and medical center in
 Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar, offering advanced laparoscopic
-surgery, stone treatment, and surgical gastroenterology care. Led by Director
-Dr. Manmohan Suman (MBBS, MD - Consultant Physician) along with our expert medical team of specialists.
+surgery, stone treatment, internal medicine, and critical care. Led by Director
+Dr. Manmohan Suman (MBBS, MD - Senior Consultant Physician) along with an expert medical team.
 Services: Laparoscopic Surgery, Kidney & Gallbladder Stone, Liver
 Disorders, Pancreas Surgery, Jaundice & Biliary (ERCP), Upper GI
 Endoscopy, Colonoscopy, GI Disorders, Liver Biopsy, Piles & Fistula,
-Cancer Surgery, Hernia Repair, Thyroid Surgery, and Emergency GI Surgery.
-We provide investigation, diagnosis, treatment and prevention of all
-gastrointestinal (stomach and intestines) and hepatological (liver,
-gallbladder, biliary tree and pancreas) diseases.
+Cancer Surgery, Hernia Repair, Thyroid Surgery, and Emergency Care.
 Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar 800020.
 Call: 7079001600 | 7079001700 | Email: sarvadahospitocarepatna@gmail.com
 
@@ -497,19 +967,20 @@ Secondary: Gastroenterologist
            Laparoscopic Surgeon
            Hospital
            Medical Clinic
+           Internist (Internal Medicine Specialist)
 
 GOOGLE POSTS / UPDATES — suggested weekly topics:
 --------------------------------------------------
-1. "Advanced Laparoscopic Surgery — faster recovery, smaller scars — Sarvada Hospito Care"
+1. "Advanced Laparoscopic Surgery — faster recovery, smaller scars — Sarvada Hospito Care Patna"
 2. "Kidney stone? Minimally invasive PCNL & Laser treatment available — Call: 7079001600"
 3. "Jaundice specialist in Patna — ERCP & biliary surgery under Director Dr. Manmohan Suman"
-4. "Upper GI Endoscopy & Colonoscopy — diagnose stomach & colon problems early"
-5. "Liver biopsy — accurate diagnosis for liver disease — book appointment today"
-6. "Piles, Fissure & Fistula — painless stapler surgery — same-day discharge"
-7. "Pancreatic surgery under Director Dr. Manmohan Suman — 21+ years experience"
-8. "Gallbladder stone? Laparoscopic removal in 45 mins — go home next day"
+4. "Upper GI Endoscopy & Colonoscopy — diagnose stomach & colon problems early at Kankarbagh"
+5. "Liver biopsy — accurate diagnosis for liver disease — book appointment today in Patna"
+6. "Piles, Fissure & Fistula — painless laser and stapler surgery in Patna"
+7. "Pancreatic care under Director Dr. Manmohan Suman — 21+ years experience in internal medicine"
+8. "Gallbladder stone? Laparoscopic removal in Kankarbagh — go home next day"
 
 ================================================================
-  Total Services: 73  |  Categories: 21
+  Total Services: 149  |  Categories: 38
   Generated for: Sarvada Hospito Care, Patna, Bihar
 ================================================================

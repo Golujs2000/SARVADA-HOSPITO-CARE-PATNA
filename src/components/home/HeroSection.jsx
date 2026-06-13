@@ -4,7 +4,7 @@ import { FaUserMd, FaPlus, FaHeartbeat, FaHandsHelping } from 'react-icons/fa'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-white pb-12">
+    <section className="relative bg-white pb-12 pt-14 md:pt-0">
       {/* Hero background */}
       <div 
         className="relative h-[600px] md:h-[750px] w-full bg-cover bg-center bg-[image:var(--hero-bg-mobile)] md:bg-[image:var(--hero-bg-desktop)]" 
@@ -16,12 +16,12 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-white/85 md:bg-transparent" />
         
         {/* Main Content */}
-        <div className="absolute inset-0 flex items-center pb-28 md:pb-24">
-          <div className="container-max px-6 md:px-12 w-full max-w-3xl">
-            <p className="text-primary-600 font-bold tracking-wide mb-2 flex items-center gap-2">
+        <div className="absolute inset-0 flex items-center pb-28 md:pb-24 pt-14 md:pt-0">
+          <div className="container-max px-4 md:px-12 w-full max-w-3xl">
+            <p className="text-primary-600 font-bold tracking-wide mb-2 flex items-center gap-2 text-sm md:text-base">
               <span className="w-6 h-0.5 bg-primary-600 inline-block"></span> Welcome to
             </p>
-            <h1 className="font-heading font-black text-5xl md:text-6xl lg:text-[5rem] uppercase leading-[1.05] drop-shadow-sm mb-4">
+            <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-[5rem] uppercase leading-[1.05] drop-shadow-sm mb-4">
               <span className="text-navy-900 block">SARVADA</span>
               <span className="text-accent-500 block">HOSPITO CARE</span>
             </h1>
@@ -35,7 +35,7 @@ export default function HeroSection() {
             </p>
             
             {/* Features Row */}
-            <div className="flex flex-wrap items-center gap-4 md:gap-8 mb-8">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8 mb-8">
               {[
                 { label: 'EXPERT DOCTORS', icon: <FaUserMd className="w-6 h-6" /> },
                 { label: 'ADVANCED CARE', icon: <FaPlus className="w-6 h-6" /> },
@@ -63,7 +63,7 @@ export default function HeroSection() {
 
       {/* 3 Quick Action Blocks overlapping */}
       <div className="container-max px-4 md:px-8 relative z-20 -mt-16 md:-mt-24 mb-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 shadow-2xl">
+        <div className="grid grid-cols-1 sm:grid-cols-3 shadow-2xl">
           
           <Link to="/hospital-departments" className="bg-primary-700 hover:bg-primary-800 transition-colors text-white p-8 md:p-10 flex flex-col items-center justify-center text-center group">
             <FiActivity className="w-10 h-10 md:w-12 md:h-12 mb-4 opacity-80 group-hover:scale-110 transition-transform" />

@@ -189,10 +189,10 @@ export default function AppointmentForm() {
     <form onSubmit={handleSubmit} noValidate>
       <input type="text" name="_hp" value={form._hp} onChange={handleChange} className="hidden" tabIndex="-1" autoComplete="off" />
 
-      <div className="grid lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-gray-100 shadow-card">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-gray-100 shadow-card">
 
         {/* ── LEFT PANEL: Patient Details ──────────────────────────── */}
-        <div className="lg:col-span-3 bg-white p-6 md:p-8 space-y-5">
+        <div className="lg:col-span-3 bg-white p-4 sm:p-6 md:p-8 space-y-5">
           <div className="pb-4 border-b border-gray-100">
             <h3 className="font-heading font-bold text-navy-800 text-xl">Patient Information</h3>
             <p className="text-gray-400 text-sm mt-0.5">Fields marked <span className="text-primary-500 font-bold">*</span> are required</p>
@@ -341,7 +341,7 @@ export default function AppointmentForm() {
         </div>
 
         {/* ── RIGHT PANEL: Calendar + Time Slots ───────────────────── */}
-        <div className="lg:col-span-2 bg-primary-50 border-l border-primary-100 p-6 md:p-7 flex flex-col gap-6">
+        <div className="lg:col-span-2 bg-primary-50 border-t border-primary-100 lg:border-t-0 lg:border-l lg:border-primary-100 p-4 sm:p-6 md:p-7 flex flex-col gap-6">
 
           {/* Calendar */}
           <div>
@@ -353,7 +353,7 @@ export default function AppointmentForm() {
               <FiCalendar className="w-3.5 h-3.5" /> Select Date
               {errors.date && <span className="text-red-500 normal-case font-medium tracking-normal">- {errors.date}</span>}
             </p>
-            <div className="rounded-2xl overflow-hidden booking-calendar">
+            <div className="rounded-2xl overflow-hidden booking-calendar overflow-x-auto">
               <DatePicker
                 selected={form.date}
                 onChange={(d) => {

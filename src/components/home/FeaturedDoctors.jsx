@@ -6,11 +6,11 @@ export default function FeaturedDoctors() {
   const { doctors: featured, loading } = useFeaturedDoctors()
 
   return (
-    <section className="py-20 md:py-28 bg-white border-t border-gray-100">
+    <section className="py-12 md:py-20 bg-white border-t border-gray-100">
       <div className="container-max px-4 md:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <h2 className="font-heading text-3xl md:text-4xl font-black text-navy-800 mb-4">
             Our Team
           </h2>
@@ -50,16 +50,36 @@ export default function FeaturedDoctors() {
                   <Link to={`/doctors/${doc.slug || doc.id}`}>{doc.name}</Link>
                 </h3>
                 
-                <p className="text-gray-500 text-xs font-bold mb-4 uppercase tracking-widest">
+                <p className="text-gray-500 text-xs font-bold mb-1 uppercase tracking-widest">
                   {doc.specialty || 'Surgeon'}
                 </p>
 
-                {/* Optional Social Icons */}
-                <div className="flex items-center gap-5 text-gray-400">
-                  <a href="#" className="hover:text-primary-600 transition-colors"><FiFacebook className="w-4 h-4" /></a>
-                  <a href="#" className="hover:text-primary-600 transition-colors"><FiTwitter className="w-4 h-4" /></a>
-                  <a href="#" className="hover:text-primary-600 transition-colors"><FiInstagram className="w-4 h-4" /></a>
-                </div>
+                {(doc.qualification || doc.experience) && (
+                  <p className="text-gray-400 text-xs mb-4">
+                    {[doc.qualification, doc.experience ? `${doc.experience}+ yrs` : ''].filter(Boolean).join(' · ')}
+                  </p>
+                )}
+
+                {/* Dynamic Social Icons – only shown when URL is set */}
+                {(doc.facebook || doc.twitter || doc.instagram) && (
+                  <div className="flex items-center gap-5 text-gray-400">
+                    {doc.facebook && (
+                      <a href={doc.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
+                        <FiFacebook className="w-4 h-4" />
+                      </a>
+                    )}
+                    {doc.twitter && (
+                      <a href={doc.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
+                        <FiTwitter className="w-4 h-4" />
+                      </a>
+                    )}
+                    {doc.instagram && (
+                      <a href={doc.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
+                        <FiInstagram className="w-4 h-4" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>

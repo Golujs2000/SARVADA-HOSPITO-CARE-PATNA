@@ -14,11 +14,11 @@ export default function DoctorCard({ doc, accent }) {
   const isOb = resolvedAccent === 'rose'
 
   return (
-    <div className="bg-white rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md overflow-hidden flex flex-col md:flex-row group hover:-translate-y-1 transition-all duration-300 p-6 gap-6 md:gap-8 w-full">
+    <div className="bg-white rounded-[5px] border border-gray-100 shadow-sm hover:shadow-md overflow-hidden flex flex-col md:flex-row group hover:-translate-y-1 transition-all duration-300 p-4 md:p-6 gap-4 md:gap-8 w-full">
 
       {/* Left Column — Portrait & Buttons */}
       <div className="w-full md:w-[240px] shrink-0 flex flex-col gap-4">
-        <div className="w-full aspect-[4/5] bg-slate-50 overflow-hidden rounded-[5px] border border-gray-100 relative flex items-center justify-center shrink-0">
+        <div className="w-full aspect-[4/3] md:aspect-[4/5] bg-slate-50 overflow-hidden rounded-[5px] border border-gray-100 relative flex items-center justify-center shrink-0">
           {doc.image ? (
             <img
               src={doc.image}
@@ -86,7 +86,12 @@ export default function DoctorCard({ doc, accent }) {
           </h2>
 
           <p className="text-gray-500 text-sm leading-relaxed mb-4">
-            Senior Consultant with {doc.experience}+ years of expertise in {doc.specialty}. Click on **View Profile** to read their full qualifications, affiliations, and experience record.
+            {doc.bio
+              ? doc.bio.length > 180
+                ? doc.bio.slice(0, 177) + '...'
+                : doc.bio
+              : `${doc.experience ? doc.experience + '+ years' : ''} ${doc.experience ? 'of expertise in ' : 'Expert in '}${doc.specialty}. View profile for full qualifications and experience details.`.trim()
+            }
           </p>
 
           {/* Quick Info Highlights */}
