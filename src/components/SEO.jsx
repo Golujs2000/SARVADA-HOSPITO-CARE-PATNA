@@ -33,11 +33,47 @@ export default function SEO({ title, description, image, type = 'website', keywo
   const fullTitle = title
     ? `${title} | ${siteData.name}`
     : `${siteData.name} – ${siteData.tagline}`
-  const desc = description || siteData.description
+
+  // 1. Dynamic Description Local/Geo-Targeting
+  let desc = description || siteData.description
+  if (desc && !desc.toLowerCase().includes('patna')) {
+    desc = `${desc.trim()} Available at Sarvada Hospito Care in Kankarbagh, Patna, Bihar.`
+  }
+
   const img  = image || `${siteData.url}${siteData.seo.ogImage}`
-  const kw   = keywords
-    ? [...siteData.seo.keywords, ...keywords].join(', ')
-    : siteData.seo.keywords.join(', ')
+
+  // 2. Dynamic Local SEO Keyword Generator
+  const dynamicLocalKeywords = []
+  if (title) {
+    // Strip common clean suffixes/prefixes to get the pure core name
+    const coreName = title
+      .split('—')[0]
+      .split('|')[0]
+      .replace(/(Department of|Services|Service|Category|Details|Detail|Treatment)/i, '')
+      .trim();
+
+    if (coreName.length > 2) {
+      dynamicLocalKeywords.push(
+        coreName,
+        `${coreName} Patna`,
+        `${coreName} Kankarbagh`,
+        `${coreName} Bihar`,
+        `best ${coreName} in Patna`,
+        `top ${coreName} in Kankarbagh`,
+        `${coreName} treatment Patna`,
+        `${coreName} hospital Patna`
+      )
+    }
+  }
+
+  // Merge, clean, and de-duplicate keywords
+  const mergedKeywords = [
+    ...(keywords || []),
+    ...dynamicLocalKeywords,
+    ...siteData.seo.keywords
+  ]
+  const uniqueKeywords = [...new Set(mergedKeywords.filter(k => typeof k === 'string' && k.trim().length > 0))]
+  const kw = uniqueKeywords.join(', ')
 
   // Normalise jsonLd to an array so we can inject multiple schemas
   const schemas = jsonLd
