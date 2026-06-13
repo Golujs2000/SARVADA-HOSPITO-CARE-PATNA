@@ -24,8 +24,7 @@ const quickLinks = [
   { label: 'Hospital Depts',    to: '/hospital-departments' },
   { label: 'Surgical Services', to: '/surgical-services' },
   { label: 'Critical Care',     to: '/critical-care' },
-  { label: 'Patient Facilities',to: '/patient-facilities' },
-  { label: 'Diagnostics',       to: '/diagnostics' },
+  { label: 'Facilities & Diagnostics',to: '/facilities-diagnostics' },
   { label: 'Book Appointment',  to: '/book-appointment' },
   { label: 'Gallery',           to: '/gallery' },
   { label: 'Blog',              to: '/blog' },
@@ -74,13 +73,13 @@ export default function Footer() {
         <div className="container-max px-4 md:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left text-white divide-y md:divide-y-0 md:divide-x divide-primary-400">
             
-            {/* Newsletter */}
+            {/* Emergency Helpline */}
             <div className="md:pr-8 pt-4 md:pt-0">
-              <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-4">Newsletter Signup</h4>
-              <div className="flex bg-white/10 rounded overflow-hidden p-1">
-                <input type="email" placeholder="Enter your email" className="bg-transparent border-none text-white px-3 py-2 w-full focus:outline-none placeholder-white/60 text-sm" />
-                <button className="bg-white text-primary-600 px-4 font-bold text-sm hover:bg-gray-100 transition-colors rounded-sm">JOIN</button>
-              </div>
+              <h4 className="font-heading font-bold text-lg uppercase tracking-wider mb-4">24/7 Emergency Helpline</h4>
+              <p className="text-white/80 text-sm mb-3">For immediate medical assistance, call our emergency ward.</p>
+              <a href={`tel:${siteData.contact.phone}`} className="inline-block bg-white text-red-600 px-6 py-2.5 font-black text-sm tracking-widest hover:bg-red-50 transition-colors rounded-sm">
+                CALL {siteData.contact.phone}
+              </a>
             </div>
 
             {/* Map */}
@@ -130,7 +129,7 @@ export default function Footer() {
                 to="/book-appointment"
                 className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white text-sm font-semibold py-2.5 px-5 rounded-xl transition-colors"
               >
-                ðŸ“… Book Appointment
+                📅 Book Appointment
               </Link>
               <a
                 href={`tel:${siteData.contact.phone}`}
@@ -335,7 +334,7 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="border-t border-white/10">
         <div className="container-max px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
-          <p>Â© {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-4">
             {legalLinks.map(({ label, to }) => (
               <Link key={to} to={to} className="hover:text-white transition-colors">{label}</Link>

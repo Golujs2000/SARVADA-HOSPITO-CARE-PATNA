@@ -7,7 +7,7 @@ import { useCategories } from '../hooks/useCategories'
 import hospitalLogo from '../assets/logo.png'
 
 const renderNavbarIcon = (icon, alt = '', className = 'w-5 h-5 object-contain') => {
-  if (!icon) return 'ðŸ¥'
+  if (!icon) return '🏥'
   const isUrl = icon.startsWith('http') || icon.startsWith('/') || icon.includes('.')
   if (isUrl) {
     return <img src={icon} alt={alt} className={`${className} inline-block`} />
@@ -21,8 +21,7 @@ const mainLinks = [
   { label: 'Hospital Depts', to: '/hospital-departments' },
   { label: 'Surgical Services', to: '/surgical-services' },
   { label: 'Critical Care', to: '/critical-care' },
-  { label: 'Facilities', to: '/patient-facilities' },
-  { label: 'Diagnostics', to: '/diagnostics' },
+  { label: 'Facilities & Diagnostics', to: '/facilities-diagnostics' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -31,11 +30,11 @@ const mainLinks = [
 const NAV_LINKS = [
   { label: 'HOME', to: '/', end: true },
   { label: 'ABOUT US', to: '/about' },
+  { label: 'DOCTORS', to: '/doctors' },
   { label: 'DEPARTMENTS', to: '/hospital-departments' },
   { label: 'SURGERY', to: '/surgical-services' },
   { label: 'CRITICAL CARE', to: '/critical-care' },
-  { label: 'FACILITIES', to: '/patient-facilities' },
-  { label: 'DIAGNOSTICS', to: '/diagnostics' },
+  { label: 'FACILITIES/DIAGNOSTICS', to: '/facilities-diagnostics' },
   { label: 'CONTACT', to: '/contact' },
 ]
 
@@ -135,12 +134,12 @@ export default function Navbar() {
             </div>
 
             {/* Desktop links */}
-            <ul className="hidden md:flex items-center gap-4 lg:gap-6 mr-32 lg:mr-48">
+            <ul className="hidden md:flex items-center gap-2 lg:gap-3 mr-24 lg:mr-36">
               {NAV_LINKS.map(({ label, to, end }) => (
                 <li key={to}>
                   <NavLink to={to} end={end}
                     className={({ isActive }) =>
-                      `px-3 py-2 text-xs lg:text-sm font-bold tracking-wider transition-colors duration-200 block ${isActive ? 'text-accent-300' : 'text-white hover:text-accent-300'
+                      `px-2 lg:px-2.5 py-2 text-xs lg:text-sm font-bold tracking-wider transition-colors duration-200 block ${isActive ? 'text-accent-300' : 'text-white hover:text-accent-300'
                       }`
                     }
                   >

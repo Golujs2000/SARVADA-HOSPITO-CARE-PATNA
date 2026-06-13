@@ -37,12 +37,37 @@ service cloud.firestore {
       allow write: if isStaff();
     }
 
-    match /specialities/{doc} {
+    match /hospitalDepartments/{doc} {
       allow read: if true;
       allow write: if isStaff();
     }
 
     match /hospitalServices/{doc} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    match /surgicalServices/{doc} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    match /criticalCare/{doc} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    match /patientFacilities/{doc} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    match /diagnostics/{doc} {
+      allow read: if true;
+      allow write: if isStaff();
+    }
+
+    match /treatments/{doc} {
       allow read: if true;
       allow write: if isStaff();
     }

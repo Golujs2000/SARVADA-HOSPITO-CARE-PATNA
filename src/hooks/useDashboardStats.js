@@ -75,11 +75,12 @@ export function useDashboardStats() {
         const last12Keys = last12Dates.map(toMonthKey)
 
         // ── Fetch base collections ────────────────────────────
-        const [apptSnap, msgSnap, docSnap, specSnap] = await Promise.all([
+        const [apptSnap, msgSnap, docSnap, hospSnap, surgSnap] = await Promise.all([
           getDocs(collection(db, 'appointments')),
           getDocs(collection(db, 'messages')),
           getDocs(collection(db, 'doctors')),
-          getDocs(collection(db, 'departments')),
+          getDocs(collection(db, 'hospitalDepartments')),
+          getDocs(collection(db, 'surgicalServices')),
         ])
 
         const appointments = apptSnap.docs.map(d => ({ id: d.id, ...d.data() }))
@@ -142,7 +143,7 @@ export function useDashboardStats() {
           totalAppointments:    appointments.length,
           unreadMessages:       messages.filter(m => !m.read).length,
           totalDoctors:         docSnap.size,
-          totalDepartments:    specSnap.size,
+          totalDepartments:    hospSnap.size + surgSnap.size,
         })
 
         setChartData({

@@ -3,9 +3,9 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   FiArrowLeft, FiClock, FiCalendar, FiCheck,
-  FiPhone, FiArrowRight, FiAlertCircle, FiActivity,
-  FiShield, FiList, FiImage, FiYoutube, FiHelpCircle,
-  FiChevronDown, FiChevronUp, FiX, FiUser,
+  FiPhone, FiAlertCircle, FiActivity,
+  FiImage, FiYoutube, FiHelpCircle,
+  FiChevronDown, FiX, FiInfo, FiUser
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { getCategoryItemBySlug as getDepartmentBySlug } from '../services/categories'
@@ -13,47 +13,28 @@ import { getDoctors } from '../services/doctors'
 import { getInitials } from '../utils/helpers'
 import { siteData } from '../data/siteData'
 
-// Convert any YouTube URL to embed URL
 function toEmbedUrl(url) {
   if (!url) return null
   try {
     const u = new URL(url)
-    if (u.hostname === 'youtu.be') {
-      return `https://www.youtube.com/embed${u.pathname}`
-    }
-    if (u.hostname.includes('youtube.com') && u.searchParams.get('v')) {
-      return `https://www.youtube.com/embed/${u.searchParams.get('v')}`
-    }
-    if (u.hostname.includes('youtube.com') && u.pathname.startsWith('/embed/')) {
-      return url
-    }
-  } catch {
-    // Not a valid URL, return as-is (could be embed URL already)
-  }
+    if (u.hostname === 'youtu.be') return `https://www.youtube.com/embed${u.pathname}`
+    if (u.hostname.includes('youtube.com') && u.searchParams.get('v')) return `https://www.youtube.com/embed/${u.searchParams.get('v')}`
+    if (u.hostname.includes('youtube.com') && u.pathname.startsWith('/embed/')) return url
+  } catch { /* ignore */ }
   return url
 }
 
-const CATEGORY_CONFIG = {
-  'Surgical':      { bg: 'bg-blue-600',   light: 'bg-blue-50',   text: 'text-blue-700',   border: 'border-blue-200' },
-  'Women & Child': { bg: 'bg-pink-600',   light: 'bg-pink-50',   text: 'text-pink-700',   border: 'border-pink-200' },
-  'Emergency':     { bg: 'bg-red-600',    light: 'bg-red-50',    text: 'text-red-700',    border: 'border-red-200' },
-  'Critical Care': { bg: 'bg-purple-600', light: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200' },
-  'Diagnostics':   { bg: 'bg-teal-600',   light: 'bg-teal-50',   text: 'text-teal-700',   border: 'border-teal-200' },
-  'Support':       { bg: 'bg-amber-600',  light: 'bg-amber-50',  text: 'text-amber-700',  border: 'border-amber-200' },
-}
-
-// Generic steps shown for every treatment
 const PROCESS_STEPS = [
-  { step: '01', title: 'Consultation', desc: 'Meet our specialist for an initial assessment and medical history review.' },
-  { step: '02', title: 'Diagnosis & Planning', desc: 'Tests or imaging if required. Our doctor explains the procedure and answers your questions.' },
-  { step: '03', title: 'Procedure / Treatment', desc: 'The treatment is performed by our experienced medical team with full care and safety protocols.' },
-  { step: '04', title: 'Recovery & Follow-up', desc: 'Post-treatment monitoring, discharge instructions, and scheduled follow-up visits.' },
+  { step: '01', title: 'Consultation', desc: 'Initial assessment and medical history review with our specialist.' },
+  { step: '02', title: 'Diagnosis & Planning', desc: 'Diagnostic tests and a clear explanation of the procedure.' },
+  { step: '03', title: 'Treatment', desc: 'Expert medical care following international safety protocols.' },
+  { step: '04', title: 'Recovery', desc: 'Post-treatment monitoring and scheduled follow-up visits.' },
 ]
 
 export default function TreatmentDetail() {
   const { slug, treatmentSlug } = useParams()
   const navigate = useNavigate()
-  const [department, setdepartment] = useState(null)
+  const [department, setDepartment] = useState(null)
   const [loading, setLoading] = useState(true)
   const [activeImg, setActiveImg] = useState(0)
   const [lightbox, setLightbox] = useState(null)
@@ -65,19 +46,17 @@ export default function TreatmentDetail() {
     getDepartmentBySlug(slug)
       .then((data) => {
         if (!data) navigate('/hospital-departments', { replace: true })
-        else setdepartment(data)
+        else setDepartment(data)
       })
       .finally(() => setLoading(false))
   }, [slug])
 
-  // Fetch doctors and filter to those linked to this treatment
   useEffect(() => {
     if (!department) return
     getDoctors().then((all) => {
       const treatmentsList = Array.isArray(department.treatments) ? department.treatments : []
       const foundTreatment = treatmentsList.find((t, i) => (t.slug || String(i)) === treatmentSlug)
       const resolvedSlug = foundTreatment?.slug || treatmentSlug
-
       const key = `${department.id}::${resolvedSlug}`
       const filtered = all.filter((d) =>
         (d.linkedTreatments || []).includes(key) ||
@@ -92,10 +71,13 @@ export default function TreatmentDetail() {
   if (loading) {
     return (
       <div className="section-padding container-max">
-        <div className="animate-pulse space-y-6">
-          <div className="h-48 bg-gray-100 rounded-[5px]" />
-          <div className="h-6 bg-gray-100 rounded w-1/3" />
-          <div className="h-32 bg-gray-100 rounded-[5px]" />
+        <div className="animate-pulse space-y-8">
+          <div className="h-48 bg-slate-100 rounded-2xl" />
+          <div className="h-6 bg-slate-100 rounded w-1/3" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2 h-96 bg-slate-100 rounded-2xl" />
+            <div className="h-96 bg-slate-100 rounded-2xl" />
+          </div>
         </div>
       </div>
     )
@@ -108,512 +90,283 @@ export default function TreatmentDetail() {
 
   if (!treatment) {
     return (
-      <div className="section-padding container-max text-center">
-        <FiAlertCircle className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-        <h2 className="font-heading text-xl font-bold text-navy-800 mb-2">Treatment not found</h2>
-        <Link to={`/services/${slug}`} className="btn-primary mt-4">Back to {department.name}</Link>
+      <div className="section-padding container-max text-center py-24">
+        <FiAlertCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+        <h2 className="font-heading text-2xl font-bold text-navy-900 mb-6">Treatment not found</h2>
+        <Link to={`/services/${slug}`} className="bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+          Back to {department.name}
+        </Link>
       </div>
     )
   }
 
-  const cfg = CATEGORY_CONFIG[department.category] || CATEGORY_CONFIG['Support']
-  const otherTreatments = treatments.filter((t, i) => (t.slug || String(i)) !== treatmentSlug)
+  const hasImages = Array.isArray(treatment.images) && treatment.images.length > 0
+  const hasFaqs = Array.isArray(treatment.faqs) && treatment.faqs.length > 0
 
   return (
-    <>
+    <div className="bg-white min-h-screen font-sans text-gray-800">
       <SEO
-        title={`${treatment.name} — ${department.name}`}
-        description={
-          `${treatment.name} at Sarvada Hospito Care, Patna. ` +
-          (treatment.description ? treatment.description.slice(0, 120) + '… ' : '') +
-          `Recovery: ${treatment.recovery || 'Varies'}.`
-        }
-        keywords={[treatment.name, department.name, `${treatment.name} Patna`, department.category].filter(Boolean)}
-        type="article"
-        jsonLd={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'MedicalProcedure',
-            name: treatment.name,
-            description: treatment.description || '',
-            procedureType: 'https://schema.org/SurgicalProcedure',
-            status: 'https://schema.org/ActiveActionStatus',
-            preparation: Array.isArray(treatment.preparation) ? treatment.preparation.join(' ') : '',
-            followup: `Recovery time: ${treatment.recovery || 'Varies'}. Follow-up as advised by your doctor.`,
-            recognizingAuthority: { '@type': 'Organization', name: 'Sarvada Hospito Care', url: siteData.url },
-          },
-          ...(treatment.faqs?.length ? [{
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: treatment.faqs.map((f) => ({
-              '@type': 'Question',
-              name: f.question,
-              acceptedAnswer: { '@type': 'Answer', text: f.answer },
-            })),
-          }] : []),
-          {
-            '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            itemListElement: [
-              { '@type': 'ListItem', position: 1, name: 'Home', item: siteData.url },
-              { '@type': 'ListItem', position: 2, name: 'Hospital Departments', item: `${siteData.url}/hospital-departments` },
-              { '@type': 'ListItem', position: 3, name: department.name, item: `${siteData.url}/services/${department.slug}` },
-              { '@type': 'ListItem', position: 4, name: treatment.name },
-            ],
-          },
-        ]}
+        title={`${treatment.name} - ${department.name}`}
+        description={`${treatment.name} at Sarvada Hospito Care, Patna.`}
+        keywords={[treatment.name, department.name, `${treatment.name} Patna`]}
       />
 
-      {/* Hero */}
-      <section className="bg-hero-gradient text-white py-16 px-4">
-        <div className="container-max">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-white/60 text-sm mb-6 flex-wrap">
-            <Link to="/hospital-departments" className="hover:text-white transition-colors">Departments</Link>
-            <span>/</span>
-            <Link to={`/services/${slug}`} className="hover:text-white transition-colors">{department.name}</Link>
-            <span>/</span>
-            <span className="text-white">{treatment.name}</span>
+      {/* Hero Section — Clean & Minimalist */}
+      <section className="bg-slate-50 border-b border-gray-200 pt-16 pb-12 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+             style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
+        
+        <div className="container-max relative z-10">
+          <div className="flex items-center gap-3 text-sm mb-6 flex-wrap font-medium">
+            <Link to="/hospital-departments" className="text-gray-500 hover:text-primary-600 transition-colors">Departments</Link>
+            <span className="text-gray-300">/</span>
+            <Link to={`/services/${slug}`} className="text-gray-500 hover:text-primary-600 transition-colors">{department.name}</Link>
+            <span className="text-gray-300">/</span>
+            <span className="text-navy-900 font-semibold">{treatment.name}</span>
           </div>
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className={`text-xs font-bold uppercase tracking-widest ${cfg.light} ${cfg.text} px-3 py-1 rounded-full`}>
-              {department.category}
-            </span>
-            <span className="text-xs text-white/50">{department.name}</span>
-          </div>
+          <h1 className="font-heading text-4xl md:text-5xl font-extrabold text-navy-900 mb-6 tracking-tight max-w-4xl">
+            {treatment.name}
+          </h1>
 
-          <h1 className="font-heading text-4xl md:text-5xl font-black mb-6">{treatment.name}</h1>
-
-          {/* Key info pills */}
-          <div className="flex flex-wrap gap-4">
-
+          <div className="flex flex-wrap gap-4 lg:gap-8">
             {treatment.duration && (
-              <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Duration</p>
-                <p className="text-white font-bold text-xl flex items-center gap-2">
-                  <FiClock className="w-4 h-4" /> {treatment.duration}
+              <div>
+                <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Duration</p>
+                <p className="text-navy-900 font-bold text-lg flex items-center gap-2">
+                  <FiClock className="w-4 h-4 text-primary-500" /> {treatment.duration}
                 </p>
               </div>
             )}
             {(treatment.recovery || department.recoveryTime) && (
-              <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Recovery</p>
-                <p className="text-white font-bold text-xl flex items-center gap-2">
-                  <FiActivity className="w-4 h-4" /> {treatment.recovery || department.recoveryTime}
+              <div>
+                <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Recovery</p>
+                <p className="text-navy-900 font-bold text-lg flex items-center gap-2">
+                  <FiActivity className="w-4 h-4 text-primary-500" /> {treatment.recovery || department.recoveryTime}
                 </p>
               </div>
             )}
-            <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
-              <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Cost / Price</p>
-              <p className="text-white font-bold text-xl">As per Consultation</p>
+            <div>
+              <p className="text-gray-500 text-xs font-bold uppercase tracking-widest mb-1">Cost / Price</p>
+              <p className="text-navy-900 font-bold text-lg">Consultation</p>
             </div>
-            {department.available && (
-              <div className="bg-white/10 backdrop-blur-sm rounded-[5px] px-5 py-3">
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-wider">Availability</p>
-                <p className="text-white font-bold text-xl">{department.available}</p>
-              </div>
-            )}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-gray-50">
+      {/* Main Content */}
+      <section className="py-12 md:py-16">
         <div className="container-max">
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-10 xl:gap-16">
 
-            {/* Main content */}
-            <div className="lg:col-span-2 space-y-8">
+            {/* Left Column */}
+            <div className="lg:col-span-2 space-y-14">
 
               {/* About */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                <h2 className="font-heading font-bold text-navy-800 text-xl mb-3">About This Procedure</h2>
-                <p className="text-gray-600 leading-relaxed">
-                  {treatment.description || (
-                    <><span className="font-semibold">{treatment.name}</span> is treated at Sarvada Hospito Care under the{' '}
-                    <Link to={`/services/${slug}`} className="text-primary-600 hover:underline">{department.name}</Link> department
-                    by our experienced medical team. We follow international safety protocols to ensure the best outcomes for every patient.</>
+              <div className="prose max-w-none">
+                <h2 className="flex items-center gap-3 text-2xl font-heading font-bold text-navy-900 mb-6 pb-2 border-b border-gray-100">
+                  <FiInfo className="text-primary-500 w-6 h-6" /> About This Procedure
+                </h2>
+                <div className="text-gray-700 text-lg leading-relaxed space-y-6 font-light">
+                  {treatment.description ? (
+                    treatment.description.split('\\n').filter(p => p.trim()).map((paragraph, i) => (
+                      <p key={i}>{paragraph}</p>
+                    ))
+                  ) : (
+                    <p><span className="font-semibold text-navy-900">{treatment.name}</span> is expertly performed at Sarvada Hospito Care under the specialized <Link to={`/services/${slug}`} className="text-primary-600 hover:underline">{department.name}</Link> department by our highly experienced medical team. We adhere to rigorous international safety protocols to ensure optimal clinical outcomes and the highest standard of patient care.</p>
                   )}
-                </p>
-                {(treatment.recovery || department.recoveryTime) && (
-                  <div className={`mt-4 inline-flex items-center gap-2 ${cfg.light} ${cfg.text} rounded-[5px] px-4 py-2 text-sm font-medium`}>
-                    <FiClock className="w-4 h-4" />
-                    Typical recovery: {treatment.recovery || department.recoveryTime}
-                  </div>
-                )}
-              </motion.div>
+                </div>
+              </div>
 
               {/* Detailed Overview */}
               {treatment.longDescription && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">Detailed Overview</h2>
-                  <div className="text-gray-600 leading-relaxed space-y-4">
-                    {treatment.longDescription.split('\n').filter(p => p.trim()).map((paragraph, i) => (
+                <div className="prose max-w-none">
+                  <h2 className="text-2xl font-heading font-bold text-navy-900 mb-6 pb-2 border-b border-gray-100">
+                    Detailed Overview
+                  </h2>
+                  <div className="text-gray-700 text-lg leading-relaxed space-y-6 font-light">
+                    {treatment.longDescription.split('\\n').filter(p => p.trim()).map((paragraph, i) => (
                       <p key={i}>{paragraph}</p>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               )}
 
+              {/* Indications */}
+              {(Array.isArray(treatment.indications) && treatment.indications.length > 0) && (
+                <div>
+                  <h2 className="flex items-center gap-3 text-2xl font-heading font-bold text-navy-900 mb-6 pb-2 border-b border-gray-100">
+                    <FiActivity className="text-primary-500 w-6 h-6" /> When Is This Needed?
+                  </h2>
+                  <ul className="space-y-4">
+                    {treatment.indications.map((item, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <div className="mt-2 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary-500" />
+                        <span className="text-gray-700 text-lg leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Process Steps — Clean Timeline */}
+              <div>
+                <h2 className="text-2xl font-heading font-bold text-navy-900 mb-8 pb-2 border-b border-gray-100">
+                  What to Expect
+                </h2>
+                <div className="relative border-l-2 border-gray-200 ml-3 md:ml-4 space-y-8 py-2">
+                  {(treatment.steps || PROCESS_STEPS).map(({ step, title, desc }, i) => (
+                    <div key={step} className="relative pl-8 md:pl-10">
+                      <div className="absolute -left-[17px] top-0.5 w-8 h-8 rounded-full bg-white border-2 border-primary-500 flex items-center justify-center text-xs font-bold text-primary-600">
+                        {parseInt(step, 10)}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-navy-900 text-lg mb-2">{title}</h3>
+                        <p className="text-gray-600 text-base leading-relaxed">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Image Gallery */}
-              {Array.isArray(treatment.images) && treatment.images.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FiImage className={`w-5 h-5 ${cfg.text}`} />
-                    <h2 className="font-heading font-bold text-navy-800 text-xl">Photos</h2>
-                  </div>
-                  {/* Main image */}
-                  <div
-                    className="relative w-full aspect-video rounded-[5px] overflow-hidden bg-gray-100 cursor-pointer mb-3"
-                    onClick={() => setLightbox(treatment.images[activeImg])}
-                  >
+              {hasImages && (
+                <div>
+                  <h2 className="flex items-center gap-3 text-2xl font-heading font-bold text-navy-900 mb-6 pb-2 border-b border-gray-100">
+                    <FiImage className="text-primary-500 w-6 h-6" /> Procedure Gallery
+                  </h2>
+                  
+                  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-gray-100 cursor-zoom-in mb-4 border border-gray-200"
+                       onClick={() => setLightbox(treatment.images[activeImg])}>
                     <img
                       src={treatment.images[activeImg]}
-                      alt={`${treatment.name} ${activeImg + 1}`}
-                      className="w-full h-full object-cover transition-opacity duration-300"
+                      alt={`${treatment.name} preview`}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/20">
-                      <span className="bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-full">View full size</span>
-                    </div>
-                    {treatment.images.length > 1 && (
-                      <span className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-0.5 rounded-full">
-                        {activeImg + 1} / {treatment.images.length}
-                      </span>
-                    )}
                   </div>
-                  {/* Thumbnails */}
+                  
                   {treatment.images.length > 1 && (
-                    <div className="flex gap-2 overflow-x-auto pb-1">
+                    <div className="flex gap-3 overflow-x-auto pb-2 custom-scrollbar">
                       {treatment.images.map((img, i) => (
                         <button
                           key={i}
                           onClick={() => setActiveImg(i)}
-                          className={`flex-shrink-0 w-16 h-16 rounded-[5px] overflow-hidden border-2 transition-all ${
-                            i === activeImg ? `${cfg.border.replace('border-', 'border-')} border-2 opacity-100` : 'border-transparent opacity-60 hover:opacity-90'
+                          className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden transition-all border-2 ${
+                            i === activeImg ? 'border-primary-500 opacity-100' : 'border-transparent opacity-60 hover:opacity-100'
                           }`}
                         >
-                          <img src={img} alt={`thumb ${i + 1}`} className="w-full h-full object-cover" />
+                          <img src={img} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover" />
                         </button>
                       ))}
                     </div>
                   )}
-                </motion.div>
-              )}
-
-              {/* Video */}
-              {treatment.videoUrl && toEmbedUrl(treatment.videoUrl) && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FiYoutube className="w-5 h-5 text-red-500" />
-                    <h2 className="font-heading font-bold text-navy-800 text-xl">Procedure Video</h2>
-                  </div>
-                  <div className="relative w-full aspect-video rounded-[5px] overflow-hidden bg-black">
-                    <iframe
-                      src={toEmbedUrl(treatment.videoUrl)}
-                      title={`${treatment.name} video`}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
-                    />
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Indications */}
-              {Array.isArray(treatment.indications) && treatment.indications.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FiActivity className={`w-5 h-5 ${cfg.text}`} />
-                    <h2 className="font-heading font-bold text-navy-800 text-xl">When Is This Needed?</h2>
-                  </div>
-                  <ul className="space-y-2">
-                    {treatment.indications.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                        <span className={`w-1.5 h-1.5 rounded-full ${cfg.bg} mt-2 flex-shrink-0`} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )}
-
-              {/* Benefits */}
-              {Array.isArray(treatment.benefits) && treatment.benefits.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FiShield className={`w-5 h-5 ${cfg.text}`} />
-                    <h2 className="font-heading font-bold text-navy-800 text-xl">Benefits</h2>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {treatment.benefits.map((b, i) => (
-                      <div key={i} className={`flex items-center gap-3 ${cfg.light} rounded-[5px] px-4 py-3`}>
-                        <FiCheck className={`w-4 h-4 ${cfg.text} flex-shrink-0`} />
-                        <span className="text-sm font-medium text-gray-700">{b}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Preparation */}
-              {Array.isArray(treatment.preparation) && treatment.preparation.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <div className="flex items-center gap-2 mb-4">
-                    <FiList className={`w-5 h-5 ${cfg.text}`} />
-                    <h2 className="font-heading font-bold text-navy-800 text-xl">How to Prepare</h2>
-                  </div>
-                  <ul className="space-y-2">
-                    {treatment.preparation.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-600 text-sm">
-                        <span className={`w-5 h-5 rounded-full ${cfg.bg} text-white text-xs font-bold flex items-center justify-center flex-shrink-0`}>{i + 1}</span>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+                </div>
               )}
 
               {/* FAQs */}
-              {Array.isArray(treatment.faqs) && treatment.faqs.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <div className="flex items-center gap-2 mb-5">
-                    <FiHelpCircle className={`w-5 h-5 ${cfg.text}`} />
-                    <h2 className="font-heading font-bold text-navy-800 text-xl">Frequently Asked Questions</h2>
-                  </div>
-                  <div className="space-y-3">
+              {hasFaqs && (
+                <div>
+                  <h2 className="flex items-center gap-3 text-2xl font-heading font-bold text-navy-900 mb-6 pb-2 border-b border-gray-100">
+                    <FiHelpCircle className="text-primary-500 w-6 h-6" /> Frequently Asked Questions
+                  </h2>
+                  <div className="space-y-4">
                     {treatment.faqs.map((faq, i) => (
-                      <div key={i} className={`border ${cfg.border} rounded-[5px] overflow-hidden`}>
+                      <div key={i} className="border border-gray-200 rounded-xl overflow-hidden bg-white">
                         <button
                           onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                          className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left"
+                          className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left hover:bg-slate-50 transition-colors"
                         >
-                          <span className="font-semibold text-navy-800 text-sm">{faq.question}</span>
-                          {openFaq === i
-                            ? <FiChevronUp className={`w-4 h-4 ${cfg.text} flex-shrink-0`} />
-                            : <FiChevronDown className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                          }
+                          <span className={`font-semibold text-base ${openFaq === i ? 'text-primary-600' : 'text-navy-900'}`}>
+                            {faq.question}
+                          </span>
+                          <FiChevronDown className={`w-5 h-5 flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-180 text-primary-500' : 'text-gray-400'}`} />
                         </button>
                         <AnimatePresence initial={false}>
                           {openFaq === i && (
                             <motion.div
-                              key="content"
                               initial={{ height: 0, opacity: 0 }}
                               animate={{ height: 'auto', opacity: 1 }}
                               exit={{ height: 0, opacity: 0 }}
                               transition={{ duration: 0.2 }}
-                              className="overflow-hidden"
                             >
-                              <p className={`px-5 pb-4 text-sm text-gray-600 leading-relaxed border-t ${cfg.border} pt-3`}>
-                                {faq.answer}
-                              </p>
+                              <div className="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p className="text-base text-gray-600 leading-relaxed font-light">
+                                  {faq.answer}
+                                </p>
+                              </div>
                             </motion.div>
                           )}
                         </AnimatePresence>
                       </div>
                     ))}
                   </div>
-                </motion.div>
-              )}
-
-              {/* Process Steps */}
-              <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                <h2 className="font-heading font-bold text-navy-800 text-xl mb-6">What to Expect</h2>
-                <div className="space-y-5">
-                  {(treatment.steps || PROCESS_STEPS).map(({ step, title, desc }, i) => (
-                    <motion.div
-                      key={step}
-                      initial={{ opacity: 0, x: -12 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.1 }}
-                      className="flex gap-4"
-                    >
-                      <div className={`w-10 h-10 rounded-[5px] ${cfg.bg} text-white font-black text-sm flex items-center justify-center flex-shrink-0`}>
-                        {step}
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-navy-800 mb-1">{title}</h3>
-                        <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                      </div>
-                    </motion.div>
-                  ))}
                 </div>
-              </motion.div>
-
-              {/* Department features */}
-              {Array.isArray(department.features) && department.features.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">
-                    Why Choose Sarvada Hospito Care for {department.name}
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {department.features.map((f, i) => (
-                      <div key={i} className={`flex items-center gap-3 ${cfg.light} rounded-[5px] px-4 py-3`}>
-                        <FiCheck className={`w-4 h-4 ${cfg.text} flex-shrink-0`} />
-                        <span className="text-sm font-medium text-gray-700">{f}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Other treatments in this department */}
-              {otherTreatments.length > 0 && (
-                <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  className="bg-white rounded-[5px] border border-gray-100 shadow-card p-6">
-                  <h2 className="font-heading font-bold text-navy-800 text-xl mb-4">
-                    Other Treatments in {department.name}
-                  </h2>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {otherTreatments.slice(0, 6).map((t, i) => (
-                        <Link
-                          key={i}
-                          to={`/services/${slug}/treatment/${t.slug}`}
-                          className={`flex items-center justify-between gap-2 border ${cfg.border} rounded-[5px] px-4 py-3 hover:${cfg.light} transition-colors group`}
-                        >
-                          <div>
-                            <p className="font-medium text-navy-800 text-sm group-hover:text-primary-700 transition-colors">{t.name}</p>
-                          </div>
-                          <FiArrowRight className={`w-4 h-4 ${cfg.text} flex-shrink-0`} />
-                        </Link>
-                    ))}
-                  </div>
-                  <Link to={`/services/${slug}`} className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold ${cfg.text}`}>
-                    View all {treatments.length} treatments <FiArrowRight className="w-4 h-4" />
-                  </Link>
-                </motion.div>
               )}
             </div>
 
-            {/* Sidebar */}
-            <div className="space-y-4 sticky top-24 self-start">
-
-              {/* Book CTA */}
-              <div className="bg-primary-600 rounded-xl p-5 text-white shadow-lg">
-                <p className="text-white/70 text-xs font-semibold uppercase tracking-widest mb-1">Ready to proceed?</p>
-                <h3 className="font-heading font-bold text-lg mb-2 leading-tight">Book This Procedure</h3>
-                <p className="text-white/80 text-sm mb-4 flex items-center gap-1.5">
-                  💰 Cost / Price: <span className="font-bold text-white">As per Consultation</span>
-                </p>
-                <Link
-                  to={`/book-appointment?dept=${encodeURIComponent(department.name)}&treatment=${encodeURIComponent(treatment.name)}`}
-                  className="w-full flex items-center justify-center gap-2 bg-white text-primary-700 font-bold text-sm py-3 rounded-lg hover:bg-primary-50 transition-colors mb-2"
-                >
-                  <FiCalendar className="w-4 h-4" /> Book Appointment
-                </Link>
-                <a
-                  href={`tel:${siteData.contact.phone}`}
-                  className="w-full flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white font-semibold text-sm py-2.5 rounded-lg transition-colors"
-                >
-                  <FiPhone className="w-4 h-4" /> {siteData.contact.phone}
-                </a>
-              </div>
-
-              {/* Related Doctors */}
-              {relatedDoctors.length > 0 && (
-                <div className="bg-white rounded-xl border border-gray-100 shadow-card overflow-hidden">
-                  {/* Header */}
-                  <div className={`px-5 py-3 ${cfg.light} border-b ${cfg.border}`}>
-                    <p className={`text-xs font-bold uppercase tracking-widest ${cfg.text}`}>
-                      Specialists for this Procedure
-                    </p>
-                  </div>
-
-                  {/* Doctor cards */}
-                  <div className="divide-y divide-gray-50">
+            {/* Right Sidebar — Specialists */}
+            <div className="space-y-8 lg:sticky lg:top-24 self-start">
+              
+              <div className="bg-slate-50 rounded-2xl border border-gray-200 p-6 md:p-8">
+                <h3 className="font-heading font-bold text-xl text-navy-900 mb-2">Book This Procedure</h3>
+                <p className="text-sm text-gray-600 mb-6">Select a specialist below to schedule your consultation.</p>
+                
+                {relatedDoctors.length > 0 ? (
+                  <div className="space-y-6">
                     {relatedDoctors.map((doc) => (
-                      <Link
-                        key={doc.id}
-                        to={`/doctors/${doc.slug || doc.id}`}
-                        className="flex items-start gap-4 px-5 py-4 hover:bg-gray-50 transition-colors group"
-                      >
-                        {/* Photo */}
-                        <div className="relative flex-shrink-0">
-                          {doc.image ? (
-                            <img
-                              src={doc.image}
-                              alt={doc.name}
-                              className="w-16 h-16 rounded-xl object-cover border-2 border-gray-100 group-hover:border-primary-200 transition-colors"
-                            />
-                          ) : (
-                            <div className={`w-16 h-16 rounded-xl flex items-center justify-center border-2 ${cfg.border} ${cfg.light}`}>
-                              <span className={`font-black text-lg ${cfg.text}`}>{getInitials(doc.name)}</span>
-                            </div>
-                          )}
-                          {/* Online dot */}
-                          <span className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-green-400 border-2 border-white rounded-full" />
-                        </div>
-
-                        {/* Info */}
-                        <div className="flex-1 min-w-0 pt-0.5">
-                          <p className="font-bold text-navy-800 text-sm leading-tight group-hover:text-primary-700 transition-colors">
-                            {doc.name}
-                          </p>
-                          {doc.specialty && (
-                            <p className={`text-xs font-semibold mt-0.5 ${cfg.text}`}>{doc.specialty}</p>
-                          )}
-                          {doc.qualification && (
-                            <p className="text-xs text-gray-400 mt-0.5 truncate">{doc.qualification}</p>
-                          )}
-
-                          {/* Stats row */}
-                          <div className="flex items-center gap-3 mt-2 flex-wrap">
-                            {doc.experience && (
-                              <span className="inline-flex items-center gap-1 text-[11px] bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full font-medium">
-                                {doc.experience} yrs exp
-                              </span>
+                      <div key={doc.id} className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="relative flex-shrink-0">
+                            {doc.image ? (
+                              <img src={doc.image} alt={doc.name} className="w-14 h-14 rounded-full object-cover border border-gray-100" />
+                            ) : (
+                              <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center border border-gray-200">
+                                <span className="font-bold text-gray-500 text-lg">{getInitials(doc.name)}</span>
+                              </div>
                             )}
-
+                            <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-2 border-white rounded-full" />
                           </div>
-
-                          {/* Available days short */}
-                          {doc.availableDays?.length > 0 && (
-                            <div className="flex gap-1 mt-2 flex-wrap">
-                              {['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map((short, i) => {
-                                const full = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'][i]
-                                const active = doc.availableDays.includes(full)
-                                return active ? (
-                                  <span key={short} className={`text-[10px] px-1.5 py-0.5 rounded font-semibold ${cfg.light} ${cfg.text}`}>
-                                    {short}
-                                  </span>
-                                ) : null
-                              })}
-                            </div>
-                          )}
+                          
+                          <div className="flex-1 min-w-0 pt-1">
+                            <Link to={`/doctors/${doc.slug || doc.id}`} className="font-bold text-navy-900 text-base truncate hover:text-primary-600 transition-colors block">
+                              {doc.name}
+                            </Link>
+                            <p className="text-xs text-gray-500 mt-0.5 truncate">{doc.qualification}</p>
+                            {doc.experience && (
+                              <p className="text-[11px] font-semibold text-primary-600 mt-1 uppercase tracking-wider">{doc.experience} Exp</p>
+                            )}
+                          </div>
                         </div>
 
-                        <FiArrowRight className={`w-4 h-4 ${cfg.text} flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity`} />
-                      </Link>
+                        {/* Direct Booking Button for this Doctor & Procedure */}
+                        <Link
+                          to={`/book-appointment?dept=${encodeURIComponent(department.name)}&treatment=${encodeURIComponent(treatment.name)}&doctor=${encodeURIComponent(doc.name)}`}
+                          className="w-full flex items-center justify-center gap-2 bg-navy-900 text-white font-semibold text-sm py-2.5 rounded-lg hover:bg-primary-600 transition-colors"
+                        >
+                          <FiCalendar className="w-4 h-4" /> Book Appointment
+                        </Link>
+                      </div>
                     ))}
                   </div>
-
-                  {/* Footer CTA */}
-                  <div className="px-5 py-4 bg-gray-50 border-t border-gray-100">
-                    <Link
-                      to={`/book-appointment?dept=${encodeURIComponent(department.name)}&treatment=${encodeURIComponent(treatment.name)}`}
-                      className={`w-full flex items-center justify-center gap-2 ${cfg.bg} text-white text-xs font-bold py-2.5 rounded-lg hover:opacity-90 transition-opacity`}
-                    >
-                      <FiCalendar className="w-3.5 h-3.5" /> Book with a Specialist
-                    </Link>
+                ) : (
+                  <div className="text-center py-6 bg-white rounded-xl border border-gray-200 mb-6">
+                    <FiUser className="w-8 h-8 text-gray-300 mx-auto mb-2" />
+                    <p className="text-sm text-gray-500">No specialists explicitly assigned to this treatment.</p>
                   </div>
+                )}
+                
+                {/* Fallback general booking */}
+                <div className="mt-6 pt-6 border-t border-gray-200">
+                  <p className="text-xs text-gray-500 text-center mb-3">Don't have a preference?</p>
+                  <Link
+                    to={`/book-appointment?dept=${encodeURIComponent(department.name)}&treatment=${encodeURIComponent(treatment.name)}`}
+                    className="w-full flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 font-bold text-sm py-3 rounded-lg hover:bg-gray-50 transition-colors"
+                  >
+                    General Booking
+                  </Link>
                 </div>
-              )}
+              </div>
 
-              {/* Back to department */}
-              <Link to={`/services/${slug}`}
-                className="flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-800 transition-colors px-1">
-                <FiArrowLeft className="w-4 h-4" /> All {department.name} treatments
-              </Link>
             </div>
           </div>
         </div>
@@ -631,19 +384,19 @@ export default function TreatmentDetail() {
           >
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-4 right-4 text-white/70 hover:text-white transition-colors"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-colors"
             >
               <FiX size={28} />
             </button>
             <img
               src={lightbox}
               alt="Full size"
-              className="max-w-full max-h-[90vh] rounded-[5px] object-contain"
+              className="max-w-full max-h-[90vh] rounded-xl shadow-2xl object-contain"
               onClick={(e) => e.stopPropagation()}
             />
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   )
 }

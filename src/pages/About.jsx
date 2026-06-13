@@ -112,7 +112,6 @@ export default function About() {
         <section className="section-padding bg-white border-b border-gray-100">
           <div className="container-max">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-              <span className="inline-block bg-primary-100 text-primary-700 text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">Our Purpose</span>
               <h2 className="font-heading text-4xl md:text-5xl font-black text-navy-800 mt-2 leading-tight">Mission & <span className="text-primary-600">Vision</span></h2>
             </motion.div>
             <div className="grid md:grid-cols-2 gap-8">

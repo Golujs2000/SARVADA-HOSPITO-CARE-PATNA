@@ -67,8 +67,7 @@ function AppRoutes() {
         <Route path="/hospital-departments" element={<Category categoryName="Hospital Departments" title="Hospital Departments" description="Our clinical and hospital departments providing specialized medical care." />} />
         <Route path="/surgical-services" element={<Category categoryName="Surgical Services" title="Surgical Services" description="Advanced surgical treatments, laparoscopic surgery, and general surgical procedures." />} />
         <Route path="/critical-care" element={<Category categoryName="Critical & Emergency Care" title="Critical & Emergency Care" description="24/7 ICU, ICCU and emergency trauma care facilities managed by expert intensivists." />} />
-        <Route path="/patient-facilities" element={<Category categoryName="Patient Care Facilities" title="Patient Care Facilities" description="Comprehensive facilities including deluxe wards, pharmacy, and ambulance services." />} />
-        <Route path="/diagnostics" element={<Category categoryName="Diagnostics" title="Diagnostics & Imaging" description="State-of-the-art laboratory and imaging services including X-Ray, Ultrasound, and full body checkups." />} />
+        <Route path="/facilities-diagnostics" element={<Category categoryNames={["Patient Care Facilities", "Diagnostics"]} title="Facilities & Diagnostics" description="Comprehensive patient care facilities and state-of-the-art laboratory and imaging services." />} />
         <Route path="/services/:slug" element={<ServiceDetail />} />
         <Route path="/services/:slug/treatment/:treatmentSlug" element={<TreatmentDetail />} />
         {/* <Route path="/hospital-services" element={<HospitalServices />} /> */}

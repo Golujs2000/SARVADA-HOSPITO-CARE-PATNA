@@ -27,7 +27,7 @@ import { getGallery, getFolders } from '../../services/gallery'
 const AVAILABILITY = ['By Appointment', 'OPD Hours', '24 × 7']
 
 const EMPTY_FORM = {
-  name: '', icon: '', thumbnail: '', category: '', available: '',
+  name: '', icon: '', thumbnail: '', heroImage: '', heroImageStorage: '', category: '', available: '',
   description: '', longDescription: '', features: '', recoveryTime: '', order: 0,
   doctorIds: [],
 }
@@ -92,7 +92,7 @@ function DepartmentItem({ spec, idx, doctors, hospitalServices, catColor, deleti
           )}
           {Array.isArray(spec.doctorIds) && spec.doctorIds.length > 0 && (
             <span className="text-teal-600 font-medium flex items-center gap-1">
-              ðŸ‘¨â€âš•ï¸ {spec.doctorIds.length} doctor{spec.doctorIds.length !== 1 ? 's' : ''}
+              👨‍⚕️ {spec.doctorIds.length} doctor{spec.doctorIds.length !== 1 ? 's' : ''}
             </span>
           )}
           {(() => {
@@ -101,7 +101,7 @@ function DepartmentItem({ spec, idx, doctors, hospitalServices, catColor, deleti
             )
             return linked.length > 0 ? (
               <span className="text-amber-600 font-medium flex items-center gap-1">
-                ðŸ¥ {linked.length} service{linked.length !== 1 ? 's' : ''}
+                🏥 {linked.length} service{linked.length !== 1 ? 's' : ''}
               </span>
             ) : null
           })()}
@@ -191,6 +191,7 @@ export default function AdminCategory({ categoryName, title }) {
   const [uploadProgress, setUploadProgress] = useState({}) // { filename: 0-100 }
   const fileInputRef = useRef(null)
   const thumbnailInputRef = useRef(null)
+  const heroImageInputRef = useRef(null)
 
   // ── Thumbnail upload handler ─────────────────────────────────────────────
   const [thumbnailUploading, setThumbnailUploading] = useState(false)
@@ -243,16 +244,72 @@ export default function AdminCategory({ categoryName, title }) {
   }, [])
 
   const handleRemoveThumbnail = useCallback(async () => {
-    // Delete from storage if path exists
     if (form.thumbnail) {
       try {
         await deleteObject(ref(storage, form.thumbnail))
-      } catch {
-        // file may already be removed
-      }
+      } catch {}
     }
     setForm((prev) => ({ ...prev, icon: '', thumbnail: '' }))
   }, [form.thumbnail])
+
+  // ── Hero Image upload handler ─────────────────────────────────────────────
+  const [heroImageUploading, setHeroImageUploading] = useState(false)
+  const [heroImageProgress, setHeroImageProgress] = useState(0)
+
+  const handleHeroImageSelect = useCallback(async (e) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+    e.target.value = ''
+
+    if (!file.type.startsWith('image/')) {
+      toast.error('Only image files are allowed for hero images')
+      return
+    }
+
+    setHeroImageUploading(true)
+    setHeroImageProgress(0)
+
+    try {
+      const compressed = await compressImage(file)
+      const timestamp = Date.now()
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_')
+      const storagePath = `departments/heroImages/${timestamp}_${safeName}`
+      const storageRef = ref(storage, storagePath)
+
+      await new Promise((resolve, reject) => {
+        const task = uploadBytesResumable(storageRef, compressed)
+        task.on(
+          'state_changed',
+          (snap) => {
+            const pct = Math.round((snap.bytesTransferred / snap.totalBytes) * 100)
+            setHeroImageProgress(pct)
+          },
+          reject,
+          async () => {
+            const url = await getDownloadURL(task.snapshot.ref)
+            setForm((prev) => ({ ...prev, heroImage: url, heroImageStorage: storagePath }))
+            setHeroImageProgress(0)
+            resolve()
+          }
+        )
+      })
+      toast.success('Hero image uploaded!')
+    } catch (err) {
+      console.error(err)
+      toast.error('Failed to upload hero image')
+    } finally {
+      setHeroImageUploading(false)
+    }
+  }, [])
+
+  const handleRemoveHeroImage = useCallback(async () => {
+    if (form.heroImageStorage) {
+      try {
+        await deleteObject(ref(storage, form.heroImageStorage))
+      } catch {}
+    }
+    setForm((prev) => ({ ...prev, heroImage: '', heroImageStorage: '' }))
+  }, [form.heroImageStorage])
 
   const fetchDepartments = async () => {
     setLoading(true)
@@ -275,7 +332,7 @@ export default function AdminCategory({ categoryName, title }) {
 
   const openAddModal = () => {
     setEditingId(null)
-    setForm({ ...EMPTY_FORM, category: categoryName || '', order: departments.length + 1, icon: '', thumbnail: '' })
+    setForm({ ...EMPTY_FORM, category: categoryName || '', order: departments.length + 1, icon: '', thumbnail: '', heroImage: '', heroImageStorage: '' })
     setTreatments([])
     setMedia([])
     setUploadProgress({})
@@ -288,6 +345,8 @@ export default function AdminCategory({ categoryName, title }) {
       name: spec.name || '',
       icon: spec.icon || '',
       thumbnail: spec.thumbnail || '',
+      heroImage: spec.heroImage || '',
+      heroImageStorage: spec.heroImageStorage || '',
       category: spec.category || '',
       available: spec.available || '',
       description: spec.description || '',
@@ -563,82 +622,139 @@ export default function AdminCategory({ categoryName, title }) {
                       className="input-field" placeholder="General Surgery" />
                   </div>
 
-                  {/* Thumbnail Upload / Gallery Picker */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Thumbnail</label>
-                    {form.icon && (form.icon.startsWith('http') || form.icon.startsWith('/') || form.icon.includes('.')) ? (
-                      <div className="flex items-center gap-4">
-                        <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border-2 border-primary-100 flex items-center justify-center">
-                          <img src={form.icon} alt="Thumbnail" className="w-full h-full object-contain" />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Thumbnail Upload / Gallery Picker */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Thumbnail / Icon</label>
+                      {form.icon && (form.icon.startsWith('http') || form.icon.startsWith('/') || form.icon.includes('.')) ? (
+                        <div className="flex items-center gap-4">
+                          <div className="w-20 h-20 rounded-xl overflow-hidden bg-gray-100 border-2 border-primary-100 flex items-center justify-center">
+                            <img src={form.icon} alt="Thumbnail" className="w-full h-full object-contain" />
+                          </div>
+                          <div className="flex flex-col gap-2">
+                            <button
+                              type="button"
+                              onClick={() => thumbnailInputRef.current?.click()}
+                              disabled={thumbnailUploading}
+                              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors font-medium"
+                            >
+                              <FiUploadCloud size={13} /> Upload New
+                            </button>
+                            <button
+                              type="button"
+                              onClick={openGalleryPicker}
+                              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors font-medium"
+                            >
+                              <FiGrid size={12} /> Choose from Gallery
+                            </button>
+                            <button
+                              type="button"
+                              onClick={handleRemoveThumbnail}
+                              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors font-medium"
+                            >
+                              <FiTrash2 size={12} /> Remove
+                            </button>
+                          </div>
                         </div>
-                        <div className="flex flex-col gap-2">
-                          <button
-                            type="button"
-                            onClick={() => thumbnailInputRef.current?.click()}
-                            disabled={thumbnailUploading}
-                            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors font-medium"
-                          >
-                            <FiUploadCloud size={13} /> Upload New
-                          </button>
-                          <button
-                            type="button"
-                            onClick={openGalleryPicker}
-                            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-teal-50 text-teal-700 hover:bg-teal-100 transition-colors font-medium"
-                          >
-                            <FiGrid size={12} /> Choose from Gallery
-                          </button>
-                          <button
-                            type="button"
-                            onClick={handleRemoveThumbnail}
-                            className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors font-medium"
-                          >
-                            <FiTrash2 size={12} /> Remove
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <div>
-                        {thumbnailUploading ? (
-                          <div className="border-2 border-dashed border-primary-200 rounded-xl p-6 text-center bg-primary-50/30">
-                            <div className="space-y-2">
-                              <FiRefreshCw size={24} className="mx-auto animate-spin text-primary-500" />
-                              <p className="text-sm text-primary-600 font-medium">Uploading… {thumbnailProgress}%</p>
-                              <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden max-w-[200px] mx-auto">
-                                <div className="h-full bg-primary-500 rounded-full transition-all duration-200" style={{ width: `${thumbnailProgress}%` }} />
+                      ) : (
+                        <div>
+                          {thumbnailUploading ? (
+                            <div className="border-2 border-dashed border-primary-200 rounded-xl p-6 text-center bg-primary-50/30">
+                              <div className="space-y-2">
+                                <FiRefreshCw size={24} className="mx-auto animate-spin text-primary-500" />
+                                <p className="text-sm text-primary-600 font-medium">Uploading… {thumbnailProgress}%</p>
+                                <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden max-w-[200px] mx-auto">
+                                  <div className="h-full bg-primary-500 rounded-full transition-all duration-200" style={{ width: `${thumbnailProgress}%` }} />
+                                </div>
                               </div>
                             </div>
+                          ) : (
+                            <div className="grid grid-cols-2 gap-3">
+                              <div
+                                className="border-2 border-dashed border-gray-200 rounded-xl p-5 text-center cursor-pointer hover:border-primary-300 hover:bg-primary-50/30 transition-colors"
+                                onClick={() => thumbnailInputRef.current?.click()}
+                              >
+                                <FiUploadCloud size={26} className="mx-auto mb-2 text-primary-400" />
+                                <p className="text-sm font-medium text-gray-600">Upload Icon</p>
+                              </div>
+                              <div
+                                className="border-2 border-dashed border-gray-200 rounded-xl p-5 text-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-colors"
+                                onClick={openGalleryPicker}
+                              >
+                                <FiGrid size={26} className="mx-auto mb-2 text-teal-400" />
+                                <p className="text-sm font-medium text-gray-600">From Gallery</p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                      <input
+                        ref={thumbnailInputRef}
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleThumbnailSelect}
+                      />
+                    </div>
+
+                    {/* Hero Image Upload */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-2">Hero Image (Optional)</label>
+                      {form.heroImage ? (
+                        <div className="flex items-center gap-4">
+                          <div className="w-32 h-20 rounded-xl overflow-hidden bg-gray-100 border-2 border-primary-100 flex items-center justify-center">
+                            <img src={form.heroImage} alt="Hero" className="w-full h-full object-cover" />
                           </div>
-                        ) : (
-                          <div className="grid grid-cols-2 gap-3">
-                            {/* Upload option */}
+                          <div className="flex flex-col gap-2">
+                            <button
+                              type="button"
+                              onClick={() => heroImageInputRef.current?.click()}
+                              disabled={heroImageUploading}
+                              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-primary-50 text-primary-700 hover:bg-primary-100 transition-colors font-medium"
+                            >
+                              <FiUploadCloud size={13} /> Change Image
+                            </button>
+                            <button
+                              type="button"
+                              onClick={handleRemoveHeroImage}
+                              className="flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors font-medium"
+                            >
+                              <FiTrash2 size={12} /> Remove
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div>
+                          {heroImageUploading ? (
+                            <div className="border-2 border-dashed border-primary-200 rounded-xl p-6 text-center bg-primary-50/30">
+                              <div className="space-y-2">
+                                <FiRefreshCw size={24} className="mx-auto animate-spin text-primary-500" />
+                                <p className="text-sm text-primary-600 font-medium">Uploading… {heroImageProgress}%</p>
+                                <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden max-w-[200px] mx-auto">
+                                  <div className="h-full bg-primary-500 rounded-full transition-all duration-200" style={{ width: `${heroImageProgress}%` }} />
+                                </div>
+                              </div>
+                            </div>
+                          ) : (
                             <div
                               className="border-2 border-dashed border-gray-200 rounded-xl p-5 text-center cursor-pointer hover:border-primary-300 hover:bg-primary-50/30 transition-colors"
-                              onClick={() => thumbnailInputRef.current?.click()}
+                              onClick={() => heroImageInputRef.current?.click()}
                             >
-                              <FiUploadCloud size={26} className="mx-auto mb-2 text-primary-400" />
-                              <p className="text-sm font-medium text-gray-600">Upload Image</p>
-                              <p className="text-xs text-gray-400 mt-1">PNG, JPG, WebP</p>
+                              <FiImage size={26} className="mx-auto mb-2 text-primary-400" />
+                              <p className="text-sm font-medium text-gray-600">Upload Hero Image</p>
+                              <p className="text-xs text-gray-400 mt-1">Wide image for the banner</p>
                             </div>
-                            {/* Gallery option */}
-                            <div
-                              className="border-2 border-dashed border-gray-200 rounded-xl p-5 text-center cursor-pointer hover:border-teal-300 hover:bg-teal-50/30 transition-colors"
-                              onClick={openGalleryPicker}
-                            >
-                              <FiGrid size={26} className="mx-auto mb-2 text-teal-400" />
-                              <p className="text-sm font-medium text-gray-600">From Gallery</p>
-                              <p className="text-xs text-gray-400 mt-1">Choose existing</p>
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    )}
-                    <input
-                      ref={thumbnailInputRef}
-                      type="file"
-                      accept="image/*"
-                      className="hidden"
-                      onChange={handleThumbnailSelect}
-                    />
+                          )}
+                        </div>
+                      )}
+                      <input
+                        ref={heroImageInputRef}
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleHeroImageSelect}
+                      />
+                    </div>
                   </div>
 
                   {/* ── Gallery Picker Overlay ──────────────────────────── */}
@@ -1005,7 +1121,7 @@ export default function AdminCategory({ categoryName, title }) {
                         <img src={viewItem.icon} alt={viewItem.name} className="w-full h-full object-contain" />
                       </div>
                     ) : (
-                      <span className="text-3xl">{viewItem.icon || 'ðŸ¥'}</span>
+                      <span className="text-3xl">{viewItem.icon || '🏥'}</span>
                     )}
                     <div>
                       <div className="flex items-center gap-2 mb-0.5">

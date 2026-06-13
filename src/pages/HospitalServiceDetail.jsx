@@ -71,7 +71,7 @@ export default function HospitalServiceDetail() {
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 bg-gray-50">
         <FiAlertCircle size={40} className="text-gray-400" />
         <p className="text-gray-500 text-xl font-medium">Service not found.</p>
-        <Link to="/patient-facilities" className="btn-primary">Back to Facilities</Link>
+        <Link to="/facilities-diagnostics" className="btn-primary">Back to Facilities</Link>
       </div>
     )
   }
@@ -91,7 +91,7 @@ export default function HospitalServiceDetail() {
         <div className="container-max flex items-center gap-2 text-sm text-gray-500">
           <Link to="/" className="hover:text-primary-600">Home</Link>
           <span>/</span>
-          <Link to="/patient-facilities" className="hover:text-primary-600">Facilities</Link>
+          <Link to="/facilities-diagnostics" className="hover:text-primary-600">Facilities & Diagnostics</Link>
           <span>/</span>
           <span className="text-gray-800 font-medium truncate">{service.name}</span>
         </div>
@@ -100,7 +100,7 @@ export default function HospitalServiceDetail() {
       <section className="section-padding bg-slate-50/40">
         <div className="container-max max-w-5xl">
           {/* Back button */}
-          <Link to="/patient-facilities" className="inline-flex items-center gap-2 text-primary-600 text-sm font-semibold mb-8 hover:gap-3 transition-all">
+          <Link to="/facilities-diagnostics" className="inline-flex items-center gap-2 text-primary-600 text-sm font-semibold mb-8 hover:gap-3 transition-all">
             <FiArrowLeft className="w-4 h-4" /> Back to All Services
           </Link>
 

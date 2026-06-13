@@ -17,10 +17,10 @@ import { useDoctors } from '../hooks/useDoctors'
 
 // ── Config ────────────────────────────────────────────────────────────────────
 const CATEGORY_CONFIG = {
-  'General':     { emoji: 'ðŸ©º', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
-  'Surgery':     { emoji: 'ðŸ”¬', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
-  'Support':     { emoji: 'ðŸ¤', bg: 'bg-amber-600',    light: 'bg-amber-50',    text: 'text-amber-700',    border: 'border-amber-200' },
-  'Department':  { emoji: 'ðŸ¥', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
+  'General':     { emoji: '🩺', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
+  'Surgery':     { emoji: '🔬', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
+  'Support':     { emoji: '🤝', bg: 'bg-amber-600',    light: 'bg-amber-50',    text: 'text-amber-700',    border: 'border-amber-200' },
+  'Department':  { emoji: '🏥', bg: 'bg-primary-600',  light: 'bg-primary-50',  text: 'text-primary-700',  border: 'border-primary-200' },
 }
 
 const AVAIL_COLOR = {
@@ -211,15 +211,18 @@ function DepartmentCard({ spec, isOpen, onToggle, doctors = [] }) {
 }
 
 // ── Main Page Component ───────────────────────────────────────────────────────
-export default function Category({ categoryName, title, description, keywords }) {
+export default function Category({ categoryName, categoryNames, title, description, keywords }) {
   const { categories: departments, loading } = useCategories()
   const { doctors } = useDoctors()
   const [openId, setOpenId] = useState(null)
 
-  // Filter departments strictly by the categoryName
+  // Filter departments strictly by the categoryName or categoryNames
   const filtered = useMemo(() => {
+    if (categoryNames && Array.isArray(categoryNames)) {
+      return departments.filter((s) => categoryNames.includes(s.category))
+    }
     return departments.filter((s) => s.category === categoryName)
-  }, [departments, categoryName])
+  }, [departments, categoryName, categoryNames])
 
   const totalTreatments = filtered.reduce(
     (sum, s) => sum + (Array.isArray(s.treatments) ? s.treatments.length : 0), 0
