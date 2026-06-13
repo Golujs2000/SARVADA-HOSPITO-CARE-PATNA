@@ -27,6 +27,7 @@ const EMPTY_FORM = {
   availableDays: [], availableTime: '', featured: false, image: '',
   linkedTreatments: [],   // composite keys "specId::treatmentSlug"
   consultationFee: '',
+  specializations: '',
 }
 
 // Build composite key for a treatment
@@ -71,14 +72,32 @@ export default function AdminDoctors() {
 
   const openEditModal = (doc) => {
     setEditingId(doc.id)
+    // Get valid department names from our departments state
+    const validDeptNames = departments.map((d) => d.name)
+
     // Normalise: old records have specialty (string), new records have specialties (array)
-    const existingSpecialties = Array.isArray(doc.specialties) && doc.specialties.length > 0
+    const docSpecs = Array.isArray(doc.specialties) && doc.specialties.length > 0
       ? doc.specialties
       : doc.specialty ? [doc.specialty] : []
+
+    // Filter specialties: valid departments go to specialties
+    const depts = docSpecs.filter((s) => validDeptNames.includes(s))
+
+    // Non-valid department names (legacy expertises) go to specializations
+    const legacyExpertises = docSpecs.filter((s) => !validDeptNames.includes(s))
+
+    // Combine with doc.specializations (if any)
+    const existingSpecializations = Array.isArray(doc.specializations)
+      ? doc.specializations
+      : doc.specializations ? [doc.specializations] : []
+
+    const combinedExpertise = [...legacyExpertises, ...existingSpecializations]
+      .filter((val, id, self) => self.indexOf(val) === id) // deduplicate
+
     setForm({
       name: doc.name || '',
       specialty: doc.specialty || '',
-      specialties: existingSpecialties,
+      specialties: depts,
       qualification: doc.qualification || '',
       experience: doc.experience || '',
       bio: doc.bio || '',
@@ -90,6 +109,7 @@ export default function AdminDoctors() {
       image: doc.image || '',
       linkedTreatments: Array.isArray(doc.linkedTreatments) ? doc.linkedTreatments : [],
       consultationFee: doc.consultationFee || '',
+      specializations: combinedExpertise.join(', '),
     })
     setImageFile(null)
     setImagePreview(doc.image || '')
@@ -127,8 +147,6 @@ export default function AdminDoctors() {
       return {
         ...prev,
         specialties: next,
-        // primary specialty = first selected; clear if none
-        specialty: next[0] || '',
       }
     })
   }
@@ -162,13 +180,16 @@ export default function AdminDoctors() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!form.name || !form.specialty) {
-      toast.error('Name and specialty are required')
+      toast.error('Name and designation/specialty are required')
       return
     }
     setSaving(true)
     try {
       const docData = {
         ...form,
+        specializations: typeof form.specializations === 'string'
+          ? form.specializations.split(',').map((s) => s.trim()).filter(Boolean)
+          : Array.isArray(form.specializations) ? form.specializations : [],
         slug: slugify(form.name),
       }
       if (editingId) {
@@ -469,17 +490,21 @@ export default function AdminDoctors() {
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="sm:col-span-2">
+                    <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
                       <input name="name" value={form.name} onChange={handleChange} required className="input-field" placeholder="Dr. Ravi Kumar" />
                     </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Designation / Title *</label>
+                      <input name="specialty" value={form.specialty} onChange={handleChange} required className="input-field" placeholder="Director & Consultant Physician" />
+                    </div>
                   </div>
 
-                  {/* Specialties multi-select */}
+                  {/* Specialties (Departments) multi-select */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Departments *
-                      <span className="text-gray-400 font-normal ml-1 text-xs">(select one or more)</span>
+                      <span className="text-gray-400 font-normal ml-1 text-xs">(select one or more departments)</span>
                     </label>
                     {departments.length > 0 ? (
                       <div className="flex flex-wrap gap-2">
@@ -513,12 +538,25 @@ export default function AdminDoctors() {
                         })}
                       </div>
                     ) : (
-                      <input name="specialty" value={form.specialty} onChange={handleChange} required
-                        className="input-field" placeholder="Cardiology (add departments first for picker)" />
+                      <p className="text-sm text-amber-600 bg-amber-50 border border-amber-100 rounded-lg p-3">
+                        No departments found. Please add departments first under category management.
+                      </p>
                     )}
-                    {form.specialty && (
-                      <p className="text-xs text-gray-400 mt-1">Primary: <strong className="text-primary-600">{form.specialty}</strong></p>
-                    )}
+                  </div>
+
+                  {/* Expertise / Specializations */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Expertise / Specializations
+                      <span className="text-gray-400 font-normal ml-1 text-xs">(comma-separated list)</span>
+                    </label>
+                    <input
+                      name="specializations"
+                      value={form.specializations}
+                      onChange={handleChange}
+                      className="input-field"
+                      placeholder="Laparoscopic Surgery, Kidney Stone & Kidney Cancer, Liver Disorders"
+                    />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
