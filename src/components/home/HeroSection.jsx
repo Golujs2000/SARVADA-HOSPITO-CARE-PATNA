@@ -13,7 +13,7 @@ export default function HeroSection() {
           '--hero-bg-desktop': 'url("https://firebasestorage.googleapis.com/v0/b/nova-max-hospital.firebasestorage.app/o/gallery%2F1781313426729_hero%20background%20image.webp?alt=media&token=687cba46-1b9b-4cb7-a8e5-09439bbe1df4")' 
         }}
       >
-        <div className="absolute inset-0 bg-white/85 md:bg-transparent" />
+        <div className="absolute inset-0 bg-white/50 md:bg-white/20" />
         
         {/* Main Content */}
         <div className="absolute inset-0 flex items-center pb-28 md:pb-24 pt-14 md:pt-0">
