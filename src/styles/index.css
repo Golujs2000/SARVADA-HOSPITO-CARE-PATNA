@@ -5,10 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Prevent horizontal scroll on all devices */
+    overflow-x: hidden;
   }
 
   body {
     @apply font-sans text-gray-800 antialiased;
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -239,6 +242,28 @@
 }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Mobile calendar full-width fix */
+@media (max-width: 640px) {
+  .booking-calendar .react-datepicker {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 0.8rem;
+  }
+  .booking-calendar .react-datepicker__month-container {
+    width: 100% !important;
+    float: none;
+  }
+  .booking-calendar .react-datepicker__day {
+    width: calc((100% - 64px) / 7) !important;
+    height: 2rem;
+    line-height: 2rem;
+    margin: 1px;
+  }
+  .booking-calendar .react-datepicker__day-name {
+    width: calc((100% - 64px) / 7) !important;
+  }
+}
 
 /* Scroll progress bar */
 .scroll-progress {

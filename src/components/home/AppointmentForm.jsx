@@ -189,10 +189,10 @@ export default function AppointmentForm() {
     <form onSubmit={handleSubmit} noValidate>
       <input type="text" name="_hp" value={form._hp} onChange={handleChange} className="hidden" tabIndex="-1" autoComplete="off" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-gray-100 shadow-card">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-0 rounded-2xl overflow-hidden border border-gray-100 shadow-card w-full min-w-0">
 
         {/* ── LEFT PANEL: Patient Details ──────────────────────────── */}
-        <div className="lg:col-span-3 bg-white p-4 sm:p-6 md:p-8 space-y-5">
+        <div className="lg:col-span-3 bg-white p-3 sm:p-5 md:p-8 space-y-4">
           <div className="pb-4 border-b border-gray-100">
             <h3 className="font-heading font-bold text-navy-800 text-xl">Patient Information</h3>
             <p className="text-gray-400 text-sm mt-0.5">Fields marked <span className="text-primary-500 font-bold">*</span> are required</p>
@@ -220,12 +220,12 @@ export default function AppointmentForm() {
             </Field>
 
             <Field label="Sex" required error={errors.sex}>
-              <div className="flex gap-2">
+              <div className="flex flex-wrap gap-2">
                 {SEX_OPTIONS.map((s) => (
                   <button
                     key={s} type="button"
                     onClick={() => set('sex', s)}
-                    className={`flex-1 py-2.5 rounded-xl text-xs font-bold border-2 transition-all ${
+                    className={`flex-1 min-w-[60px] py-2.5 rounded-xl text-xs font-bold border-2 transition-all ${
                       form.sex === s
                         ? 'bg-primary-600 border-primary-600 text-white shadow-sm'
                         : 'bg-white border-gray-100 text-gray-400 hover:border-primary-300 hover:text-primary-600'
@@ -341,19 +341,19 @@ export default function AppointmentForm() {
         </div>
 
         {/* ── RIGHT PANEL: Calendar + Time Slots ───────────────────── */}
-        <div className="lg:col-span-2 bg-primary-50 border-t border-primary-100 lg:border-t-0 lg:border-l lg:border-primary-100 p-4 sm:p-6 md:p-7 flex flex-col gap-6">
+        <div className="lg:col-span-2 bg-primary-50 border-t border-primary-100 lg:border-t-0 lg:border-l lg:border-primary-100 p-3 sm:p-5 md:p-7 flex flex-col gap-5">
 
           {/* Calendar */}
           <div>
             <div className="bg-amber-100/50 border border-amber-200 text-amber-800 text-xs font-semibold px-3 py-2.5 rounded-lg flex items-start gap-2 mb-4">
               <FiAlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
-              <p>Please book your appointment at least <strong>48 hours</strong> in advance.</p>
+              <p className="break-words">Please book your appointment at least <strong>48 hours</strong> in advance.</p>
             </div>
-            <p className="text-primary-700 text-xs font-bold uppercase tracking-widest mb-3 flex items-center gap-2">
-              <FiCalendar className="w-3.5 h-3.5" /> Select Date
+            <p className="text-primary-700 text-xs font-bold uppercase tracking-widest mb-3 flex flex-wrap items-center gap-2">
+              <span className="flex items-center gap-2"><FiCalendar className="w-3.5 h-3.5" /> Select Date</span>
               {errors.date && <span className="text-red-500 normal-case font-medium tracking-normal">- {errors.date}</span>}
             </p>
-            <div className="rounded-2xl overflow-hidden booking-calendar overflow-x-auto">
+            <div className="rounded-2xl overflow-hidden booking-calendar w-full">
               <DatePicker
                 selected={form.date}
                 onChange={(d) => {

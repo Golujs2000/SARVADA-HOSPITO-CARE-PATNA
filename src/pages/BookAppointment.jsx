@@ -51,8 +51,8 @@ export default function BookAppointment() {
         </motion.div>
       </section>
 
-      <section className="section-padding bg-section-gradient">
-        <div className="container-max space-y-6">
+      <section className="section-padding bg-section-gradient overflow-x-hidden">
+        <div className="container-max space-y-6 overflow-x-hidden px-3 sm:px-4">
 
           {/* Booking Form — full width */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>

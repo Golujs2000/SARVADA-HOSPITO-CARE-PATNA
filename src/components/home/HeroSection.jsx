@@ -4,7 +4,7 @@ import { FaUserMd, FaPlus, FaHeartbeat, FaHandsHelping } from 'react-icons/fa'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-white pb-12 pt-14 md:pt-0">
+    <section className="relative bg-white pb-12 pt-14 md:pt-0 overflow-x-hidden">
       {/* Hero background */}
       <div 
         className="relative h-[600px] md:h-[750px] w-full bg-cover bg-center bg-[image:var(--hero-bg-mobile)] md:bg-[image:var(--hero-bg-desktop)]" 
@@ -35,14 +35,14 @@ export default function HeroSection() {
             </p>
             
             {/* Features Row */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-8 mb-8">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 mb-8">
               {[
                 { label: 'EXPERT DOCTORS', icon: <FaUserMd className="w-6 h-6" /> },
                 { label: 'ADVANCED CARE', icon: <FaPlus className="w-6 h-6" /> },
                 { label: 'PATIENT FIRST', icon: <FaHeartbeat className="w-6 h-6" /> },
                 { label: 'COMPASSIONATE SERVICE', icon: <FaHandsHelping className="w-6 h-6" /> }
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center gap-2 text-center max-w-[80px]">
+                <div key={i} className="flex flex-col items-center gap-2 text-center w-[70px]">
                   <div className="w-12 h-12 rounded-full border-2 border-primary-600 flex items-center justify-center text-primary-600 hover:bg-primary-600 hover:text-white transition-colors">
                     {item.icon}
                   </div>

@@ -13,6 +13,8 @@ HOW TO ADD:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 1 — CARDIOLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+At Sarvada Hospito Care in Patna, we offer comprehensive cardiology and heart care services, including ECGs, 2D Echo scans, and expert treatment for blood pressure and heart failure.
 
 SERVICE NAME: Electrocardiogram (ECG)
 DESCRIPTION:
@@ -38,6 +40,8 @@ Heart failure requires meticulous, ongoing medical management. Advanced treatmen
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 2 — PULMONOLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital provides specialized pulmonology services for respiratory illnesses, including asthma care, COPD management, TB treatment, and pulmonary function testing (PFT).
 
 SERVICE NAME: Asthma Management
 DESCRIPTION:
@@ -63,6 +67,8 @@ Tuberculosis remains a significant public health challenge, requiring rigorous a
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 3 — GASTROENTEROLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide advanced gastroenterology services in Patna, including endoscopy, colonoscopy, and specialist treatment for liver cirrhosis, pancreatitis, and stomach disorders.
 
 SERVICE NAME: Upper GI Endoscopy
 DESCRIPTION:
@@ -88,6 +94,8 @@ Colonoscopy is the gold-standard procedure for screening colon cancer and diagno
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 4 — GYNECOLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Sarvada Hospito Care offers complete gynecology and maternity services, including safe normal deliveries, C-sections, laparoscopic cyst removals, and infertility treatments.
 
 SERVICE NAME: Normal Delivery (Vaginal Birth)
 DESCRIPTION:
@@ -113,6 +121,8 @@ Struggling to conceive can be emotionally challenging. Our dedicated fertility s
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 5 — NEPHROLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide expert kidney care and nephrology services, including hemodialysis, chronic kidney disease (CKD) management, and non-surgical treatments for kidney stones.
 
 SERVICE NAME: Hemodialysis
 DESCRIPTION:
@@ -138,6 +148,8 @@ Not all kidney stones require surgery. For smaller stones, our nephrology depart
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 6 — GENERAL MEDICINE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our general medicine department provides treatment for chronic health conditions, including diabetes care, thyroid management, infectious diseases, and executive health packages.
 
 SERVICE NAME: Diabetes Management
 DESCRIPTION:
@@ -163,6 +175,8 @@ Preventive healthcare is vital for early disease detection. Sarvada Hospito Care
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 7 — PSYCHIATRY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We offer compassionate psychiatric and mental health services, providing expert medical care and counseling for depression, anxiety, and stress management.
 
 SERVICE NAME: Depression & Anxiety Treatment
 DESCRIPTION:
@@ -176,6 +190,8 @@ Chronic stress can manifest as severe physical and emotional health issues. Avai
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 8 — UROLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital provides advanced urology treatments, including laser lithotripsy, PCNL surgery for large kidney stones, prostate surgery (TURP), and UTI treatments.
 
 SERVICE NAME: PCNL (Percutaneous Nephrolithotomy)
 DESCRIPTION:
@@ -201,6 +217,8 @@ Recurrent or severe Urinary Tract Infections (UTIs) require expert medical evalu
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 9 — CONSULTANT PHYSICIAN
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We offer specialist internal medicine consultations for diagnosing complex symptoms, fever workups, diabetes control, and pre-operative health assessments.
 
 SERVICE NAME: Diabetes Management
 DESCRIPTION:
@@ -226,6 +244,8 @@ Comprehensive pre-operative evaluations including cardiovascular risk assessment
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 10 — GENERAL PHYSICIAN
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our general physicians offer everyday healthcare services, including viral fever treatments, thyroid checks, anemia management, and general wellness checkups.
 
 SERVICE NAME: Viral Fever and Seasonal Illness Treatment
 DESCRIPTION:
@@ -251,6 +271,8 @@ Comprehensive screening packages with thorough physical examinations and age-app
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 11 — CRITICAL CARE MEDICINE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Sarvada Hospito Care features a state-of-the-art critical care department providing 24/7 mechanical ventilation, sepsis control, and post-operative ICU monitoring.
 
 SERVICE NAME: Mechanical Ventilation and Respiratory Failure Management
 DESCRIPTION:
@@ -276,6 +298,8 @@ DESCRIPTION:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 12 — GENERAL SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We offer complete general surgery services, including advanced laser and stapler surgery for piles and fissures, hernia repairs, appendectomies, and thyroid removals.
 
 SERVICE NAME: Stapler Haemorrhoidectomy (Piles Surgery)
 DESCRIPTION:
@@ -325,6 +349,8 @@ The surgical removal of part or all of the thyroid gland, typically performed to
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 13 — ORTHOPEDIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our orthopedic center provides advanced bone and joint surgeries, including total knee and hip replacements, fracture treatment, and arthroscopic ligament repairs.
 
 SERVICE NAME: Total Knee Replacement (TKR)
 DESCRIPTION:
@@ -374,6 +400,8 @@ A minor surgical procedure to relieve pressure on the median nerve in the wrist.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 14 — NEUROSURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide highly specialized neurosurgery services, including brain tumor removal, spinal decompression, skull trauma surgery, and nerve repair under expert surgeons.
 
 SERVICE NAME: Brain Tumor Excision (Craniotomy)
 DESCRIPTION:
@@ -423,6 +451,8 @@ Surgical stabilization of the neck vertebrae to treat severe degenerative disc d
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 15 — PLASTIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our plastic and reconstructive surgery unit offers burn reconstruction, skin grafting, cleft lip repair, scar correction, and cosmetic/hand trauma surgery.
 
 SERVICE NAME: Burn Reconstruction & Skin Grafting
 DESCRIPTION:
@@ -472,6 +502,8 @@ A highly intricate procedure to reshape the nose. We correct prominent humps or 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 16 — LAPAROSCOPIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We specialize in minimally invasive laparoscopic surgeries (keyhole surgery) for gallbladder removal, hernias, appendix removal, and weight loss (bariatric) procedures.
 
 SERVICE NAME: Laparoscopic Cholecystectomy (Gallbladder Removal)
 DESCRIPTION:
@@ -521,6 +553,8 @@ Complex minimally invasive surgery to remove a diseased portion of the large int
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 17 — COSMETIC SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Sarvada Hospito Care offers professional cosmetic and aesthetic surgery, including liposuction, tummy tucks, breast enhancement, and hair transplant (FUE) procedures.
 
 SERVICE NAME: Liposuction (Body Contouring)
 DESCRIPTION:
@@ -570,6 +604,8 @@ Advanced Follicular Unit Extraction (FUE) involves harvesting individual hair fo
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 18 — DENTAL & MAXILLOFACIAL SURGERY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our dental and maxillofacial department offers advanced dental implants, wisdom tooth extraction, corrective jaw surgery, and reconstructive facial trauma care.
 
 SERVICE NAME: Dental Implants Placement
 DESCRIPTION:
@@ -619,6 +655,8 @@ The highly specialized surgical removal of benign or malignant growths within th
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 19 — TRAUMA CARE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide 24/7 emergency trauma care in Patna, with immediate resuscitation (ACLS/ATLS), fracture stabilization, and polytrauma management for accident victims.
 
 SERVICE NAME: Emergency Resuscitation (ACLS/ATLS)
 DESCRIPTION:
@@ -638,6 +676,8 @@ Severe bone fractures require immediate stabilization to prevent further tissue 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 20 — INTENSIVE CARE UNIT (ICU)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital operates a fully equipped, modern Intensive Care Unit (ICU) providing 24/7 life support, ventilator systems, and continuous monitoring for critical patients.
 
 SERVICE NAME: Mechanical Ventilation Support
 DESCRIPTION:
@@ -657,6 +697,8 @@ Critically ill patients require precise, continuous monitoring of their cardiova
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 21 — INTENSIVE CORONARY CARE UNIT (ICCU)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide dedicated ICCU services for heart emergencies, offering continuous cardiac monitoring, heart attack management, and temporary pacemaker insertion.
 
 SERVICE NAME: Acute Myocardial Infarction (Heart Attack) Care
 DESCRIPTION:
@@ -676,6 +718,8 @@ For patients experiencing dangerously slow heart rates (bradycardia) or severe h
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 22 — HIGH DEPENDENCY UNIT (HDU)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our High Dependency Unit (HDU) provides intermediate close-monitoring care for patients transitioning out of the ICU or recovering from major surgeries.
 
 SERVICE NAME: Major Post-Surgical Monitoring
 DESCRIPTION:
@@ -689,6 +733,8 @@ For patients recently weaned off mechanical ventilators in the ICU, the HDU offe
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 23 — EMERGENCY CARE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We offer 24/7 emergency medical care for acute asthma attacks, poisoning/toxicology cases, chest pain, and minor trauma/wound dressing.
 
 SERVICE NAME: Acute Asthma & COPD Exacerbation Relief
 DESCRIPTION:
@@ -708,6 +754,8 @@ For severe cuts, deep lacerations, and minor burns, our ER provides immediate, m
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 24 — BURN UNIT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our specialized burn unit provides sterile environment, expert fluid resuscitation, wound debridement, and pain management for patients with burn injuries.
 
 SERVICE NAME: Burn Fluid Resuscitation
 DESCRIPTION:
@@ -727,6 +775,8 @@ Burn injuries are agonizingly painful, especially during dressing changes. State
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 25 — CRITICAL CARE PHYSICIAN (INTENSIVIST) CONSULTATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide expert consultation from resident ICU specialists/intensivists to optimize critical treatments, perform line placements, and monitor high-risk patients.
 
 SERVICE NAME: ICU Daily Rounds and Treatment Optimization
 DESCRIPTION:
@@ -752,6 +802,8 @@ ICU-acquired infections including ventilator-associated pneumonia (VAP), cathete
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 26 — PATHOLOGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital features a 24/7 pathology lab offering complete diagnostic tests, including CBC blood tests, biochemistry profiles, and microbiology cultures.
 
 SERVICE NAME: Complete Blood Count (CBC) & Hematology
 DESCRIPTION:
@@ -771,6 +823,8 @@ Accurate identification of infectious agents is critical for effective treatment
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 27 — ULTRASOUND
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide comprehensive ultrasound scan services, including whole abdomen ultrasounds, pregnancy scans, and ultrasound-guided clinical procedures.
 
 SERVICE NAME: Whole Abdomen Ultrasound
 DESCRIPTION:
@@ -790,6 +844,8 @@ Our interventional radiologists utilize real-time ultrasound guidance to perform
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 28 — DIGITAL X-RAY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Sarvada Hospito Care offers advanced digital X-ray imaging for diagnostic chest scans, orthopedic/bone fracture checks, and contrast studies.
 
 SERVICE NAME: Digital Chest X-Ray
 DESCRIPTION:
@@ -809,6 +865,8 @@ Fluoroscopy utilizes a continuous X-ray beam to create a real-time moving image 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 29 — ECG
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide cardiac diagnostics including resting 12-lead ECGs and 24-hour Holter monitoring to detect irregular heartbeats and assess heart activity.
 
 SERVICE NAME: Resting 12-Lead ECG
 DESCRIPTION:
@@ -822,6 +880,8 @@ Some dangerous heart rhythm irregularities only occur sporadically and may be mi
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 30 — 2D ECHO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital offers transthoracic 2D Echo scans and stress echocardiography to visualize heart structures, valves, and overall cardiac function.
 
 SERVICE NAME: Transthoracic Echocardiogram (TTE)
 DESCRIPTION:
@@ -835,6 +895,8 @@ Stress echocardiography combines a traditional ultrasound of the heart with an e
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 31 — COLOR DOPPLER
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide high-resolution Color Doppler ultrasound studies, including lower limb venous scans for DVT, carotid artery scans, and obstetric doppler.
 
 SERVICE NAME: Venous Doppler Study (Lower Limbs)
 DESCRIPTION:
@@ -854,6 +916,8 @@ During a high-risk pregnancy, an Obstetric Color Doppler ultrasound is utilized 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 32 — OUTPATIENT DEPARTMENT (OPD)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our outpatient department provides doctor consultations, medical checkups, and post-surgical follow-ups across all specialties without admission.
 
 SERVICE NAME: Specialist Medical Consultation
 DESCRIPTION:
@@ -867,6 +931,8 @@ Crucial for a successful recovery, our post-surgical follow-up visits in the OPD
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 33 — INPATIENT DEPARTMENT (IPD)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital IPD offers comfortable room accommodations, general wards, dedicated round-the-clock nursing care, and pre/post-operative observation.
 
 SERVICE NAME: Medical Admission & Observation
 DESCRIPTION:
@@ -880,6 +946,8 @@ Patients scheduled for major surgeries are admitted to the IPD for essential pre
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 34 — DAY CARE SERVICES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide day care services for minor surgeries, cataract removals, and intravenous (IV) therapies that allow patients to return home the same day.
 
 SERVICE NAME: Day Care Surgery
 DESCRIPTION:
@@ -893,6 +961,8 @@ For patients requiring prolonged antibiotic therapies, iron infusions, or specia
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 35 — DIALYSIS UNIT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Sarvada Hospito Care features a modern dialysis unit offering scheduled maintenance hemodialysis and emergency dialysis for acute kidney issues.
 
 SERVICE NAME: Maintenance Hemodialysis
 DESCRIPTION:
@@ -906,6 +976,8 @@ In cases of Acute Kidney Injury or severe electrolyte imbalances, our dialysis u
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 36 — AC ROOMS & GENERAL WARDS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We offer hygienic, air-conditioned inpatient accommodations, including comfortable private AC rooms and affordable general ward admissions.
 
 SERVICE NAME: Private Room Care
 DESCRIPTION:
@@ -919,6 +991,8 @@ Our AC General Wards provide highly cost-effective yet exceptionally comfortable
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 37 — AMBULANCE SERVICE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+We provide 24/7 ambulance services in Patna for rapid emergency response, patient resuscitation, and safe inter-hospital patient transfers.
 
 SERVICE NAME: Emergency Medical Transport
 DESCRIPTION:
@@ -932,6 +1006,8 @@ We safely transport critically ill patients who require specialized care from ot
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   CATEGORY 38 — 24/7 PHARMACY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+Our hospital has a fully stocked 24/7 pharmacy on-site, providing prompt prescription dispensing and immediate access to critical life-saving medications.
 
 SERVICE NAME: Prescription Dispensing
 DESCRIPTION:
@@ -942,6 +1018,28 @@ Our licensed pharmacists accurately dispense medications prescribed by our docto
 SERVICE NAME: Critical Care Drug Supply
 DESCRIPTION:
 The pharmacy works in close coordination with the ICU and Emergency departments, maintaining an extensive inventory of critical life-saving drugs, emergency antidotes, and specialized intravenous fluids, ready for immediate di... State-of-the-art medical services at Sarvada Hospito Care, Patna.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  CATEGORY 39 — PAEDIATRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESCRIPTION:
+At Sarvada Hospito Care, Kankarbagh, Patna, we provide specialized paediatric and child care services, offering expert consultations, essential immunizations, growth monitoring, and advanced paediatric surgical care.
+
+SERVICE NAME: General Paediatric Consultation
+DESCRIPTION:
+Expert medical consultation for infants, children, and adolescents, covering general health checkups, growth monitoring, and child nutrition counseling. Available at Sarvada Hospito Care, Patna.
+
+---
+
+SERVICE NAME: Paediatric Vaccination & Immunization
+DESCRIPTION:
+Comprehensive vaccination and immunization services for newborns and children to protect against critical childhood diseases. Available at Sarvada Hospito Care, Kankarbagh, Patna.
+
+---
+
+SERVICE NAME: Paediatric Surgery (Hernia & Orchidopexy)
+DESCRIPTION:
+Specialized surgical procedures for children, including congenital hernia repairs and undescended testis correction (orchidopexy), performed by expert pediatric surgeons. Available at Sarvada Hospito Care, Bypass Road, Patna.
+
 ================================================================
   GOOGLE BUSINESS — ADDITIONAL SEO TIPS
 ================================================================
@@ -968,6 +1066,8 @@ Secondary: Gastroenterologist
            Hospital
            Medical Clinic
            Internist (Internal Medicine Specialist)
+           Pediatrician
+           Pediatric Surgeon
 
 GOOGLE POSTS / UPDATES — suggested weekly topics:
 --------------------------------------------------
@@ -981,6 +1081,6 @@ GOOGLE POSTS / UPDATES — suggested weekly topics:
 8. "Gallbladder stone? Laparoscopic removal in Kankarbagh — go home next day"
 
 ================================================================
-  Total Services: 149  |  Categories: 38
+  Total Services: 152  |  Categories: 39
   Generated for: Sarvada Hospito Care, Patna, Bihar
 ================================================================

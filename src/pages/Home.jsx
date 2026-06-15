@@ -77,8 +77,8 @@ export default function Home() {
       <HeroSection />
 
       {/* 2. Book Appointment & Timetable Split */}
-      <section id="book-appointment" className="py-12 md:py-20 bg-slate-50 border-t border-primary-100">
-        <div className="container-max px-4 md:px-8 max-w-4xl mx-auto">
+      <section id="book-appointment" className="py-10 md:py-20 bg-slate-50 border-t border-primary-100">
+        <div className="container-max px-3 sm:px-4 md:px-8 max-w-4xl mx-auto w-full overflow-x-hidden">
           
           {/* 24/7 Always Open Banner */}
           <motion.div 
@@ -102,7 +102,7 @@ export default function Home() {
           </motion.div>
 
           {/* Make an Appointment */}
-          <div className="bg-white p-8 md:p-12 rounded-[24px] shadow-sm border border-gray-100">
+          <div className="bg-white p-4 sm:p-8 md:p-12 rounded-[24px] shadow-sm border border-gray-100 overflow-x-hidden">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
