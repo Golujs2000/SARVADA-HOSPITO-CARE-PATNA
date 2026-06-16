@@ -9,6 +9,7 @@ import { FiMapPin, FiPhone, FiMail, FiCalendar } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { useCategories } from '../hooks/useCategories'
 import HeroSection from '../components/home/HeroSection'
+import StatsCounter from '../components/home/StatsCounter'
 import WhyChooseUs from '../components/home/WhyChooseUs'
 import ServicesSection from '../components/home/ServicesSection'
 import GalleryStrip from '../components/home/GalleryStrip'
@@ -75,6 +76,9 @@ export default function Home() {
 
       {/* 1. Hero */}
       <HeroSection />
+
+      {/* Stats Counter */}
+      <StatsCounter />
 
       {/* 2. Book Appointment & Timetable Split */}
       <section id="book-appointment" className="py-10 md:py-20 bg-slate-50 border-t border-primary-100">
