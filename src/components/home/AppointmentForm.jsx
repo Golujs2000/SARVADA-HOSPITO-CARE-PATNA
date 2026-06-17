@@ -81,17 +81,34 @@ export default function AppointmentForm() {
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const { categories: departments } = useCategories()
-  const { doctors } = useDoctors()
+  const { doctors, loading: loadingDoctors } = useDoctors()
   const departmentList = departments.length > 0
     ? departments.map((s) => s.name)
     : siteData.departments
 
   const set = (name, value) => {
-    setForm((p) => ({ ...p, [name]: value }))
+    setForm((p) => {
+      const next = { ...p, [name]: value }
+      if (name === 'department') {
+        next.doctorId = ''
+        next.doctorName = ''
+      }
+      return next
+    })
     if (errors[name]) setErrors((p) => ({ ...p, [name]: '' }))
   }
 
   const handleChange = (e) => set(e.target.name, e.target.value)
+
+  const filteredDoctors = doctors.filter((doc) => {
+    if (!form.department) return false
+    const specialties = Array.isArray(doc.specialties) ? doc.specialties : []
+    const primarySpecialty = doc.specialty || ''
+    return (
+      specialties.includes(form.department) ||
+      primarySpecialty.toLowerCase() === form.department.toLowerCase()
+    )
+  })
 
   const validate = () => {
     const e = {}
@@ -102,7 +119,7 @@ export default function AppointmentForm() {
     if (!form.age)                                    e.age        = 'Age is required'
     if (!form.sex)                                    e.sex        = 'Please select'
     if (!form.department)                             e.department = 'Select a department'
-    if (!form.doctorId)                               e.doctorId   = 'Select a doctor'
+    else if (!form.doctorId)                          e.doctorId   = 'Select a doctor'
     if (!form.date)                                   e.date       = 'Pick a date'
     if (!form.timeSlot)                               e.timeSlot   = 'Pick a time slot'
     setErrors(e)
@@ -284,50 +301,59 @@ export default function AppointmentForm() {
           </Field>
 
           {/* Doctor Selector */}
-          <Field label="Select Doctor" required error={errors.doctorId}>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
-              {doctors.length === 0 ? (
-                <div className="text-xs text-gray-400 py-1 sm:col-span-2">Loading doctors...</div>
-              ) : (
-                doctors.map((doc) => {
-                  const isSelected = form.doctorId === doc.id
-                  return (
-                    <button
-                      key={doc.id}
-                      type="button"
-                      onClick={() => {
-                        set('doctorId', doc.id)
-                        set('doctorName', doc.name)
-                      }}
-                      className={`flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all ${
-                        isSelected
-                          ? 'border-primary-600 bg-primary-50/50 ring-2 ring-primary-100'
-                          : 'border-gray-100 bg-white hover:border-primary-200'
-                      }`}
-                    >
-                      {doc.image ? (
-                        <img
-                          src={doc.image}
-                          alt={doc.name}
-                          className="w-10 h-10 rounded-full object-cover shrink-0 border border-gray-100"
-                        />
-                      ) : (
-                        <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">
-                          <FiUser className="w-5 h-5 text-gray-400" />
+          {form.department && (
+            <Field label="Select Doctor" required error={errors.doctorId}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-1">
+                {loadingDoctors ? (
+                  <div className="text-xs text-gray-400 py-1 sm:col-span-2 flex items-center gap-2">
+                    <span className="w-3.5 h-3.5 border-2 border-gray-300 border-t-transparent rounded-full animate-spin" />
+                    Loading doctors...
+                  </div>
+                ) : filteredDoctors.length === 0 ? (
+                  <div className="text-xs text-amber-600 bg-amber-50 border border-amber-200/50 p-3 rounded-xl font-medium sm:col-span-2">
+                    No doctors are currently listed for this department. Please contact us directly.
+                  </div>
+                ) : (
+                  filteredDoctors.map((doc) => {
+                    const isSelected = form.doctorId === doc.id
+                    return (
+                      <button
+                        key={doc.id}
+                        type="button"
+                        onClick={() => {
+                          set('doctorId', doc.id)
+                          set('doctorName', doc.name)
+                        }}
+                        className={`flex items-center gap-3 p-3 rounded-xl border-2 text-left transition-all ${
+                          isSelected
+                            ? 'border-primary-600 bg-primary-50/50 ring-2 ring-primary-100'
+                            : 'border-gray-100 bg-white hover:border-primary-200'
+                        }`}
+                      >
+                        {doc.image ? (
+                          <img
+                            src={doc.image}
+                            alt={doc.name}
+                            className="w-10 h-10 rounded-full object-cover shrink-0 border border-gray-100"
+                          />
+                        ) : (
+                          <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center shrink-0 border border-gray-100">
+                            <FiUser className="w-5 h-5 text-gray-400" />
+                          </div>
+                        )}
+                        <div className="min-w-0">
+                          <p className={`text-sm font-bold truncate ${isSelected ? 'text-primary-800' : 'text-gray-800'}`}>
+                            {doc.name}
+                          </p>
+                          <p className="text-xs text-gray-400 truncate">{doc.specialty}</p>
                         </div>
-                      )}
-                      <div className="min-w-0">
-                        <p className={`text-sm font-bold truncate ${isSelected ? 'text-primary-800' : 'text-gray-800'}`}>
-                          {doc.name}
-                        </p>
-                        <p className="text-xs text-gray-400 truncate">{doc.specialty}</p>
-                      </div>
-                    </button>
-                  )
-                })
-              )}
-            </div>
-          </Field>
+                      </button>
+                    )
+                  })
+                )}
+              </div>
+            </Field>
+          )}
 
           {/* Message */}
           <Field label="Message / Symptoms (Optional)" error={null}>

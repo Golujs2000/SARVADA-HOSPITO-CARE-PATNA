@@ -9,7 +9,23 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
+import { FaHeartbeat, FaUserMd, FaAmbulance, FaAward } from 'react-icons/fa'
 import { siteData } from '../../data/siteData'
+
+const getIcon = (iconId) => {
+  switch (iconId) {
+    case 'heartbeat':
+      return <FaHeartbeat className="w-6 h-6 md:w-7 md:h-7 text-white" />
+    case 'doctor':
+      return <FaUserMd className="w-6 h-6 md:w-7 md:h-7 text-white" />
+    case 'operations':
+      return <FaAmbulance className="w-6 h-6 md:w-7 md:h-7 text-white" />
+    case 'established':
+      return <FaAward className="w-6 h-6 md:w-7 md:h-7 text-white" />
+    default:
+      return null
+  }
+}
 
 function Counter({ value, suffix, duration = 2000 }) {
   const [count, setCount] = useState(0)
@@ -39,23 +55,29 @@ function Counter({ value, suffix, duration = 2000 }) {
 
 export default function StatsCounter() {
   return (
-    <section className="relative z-30 max-w-5xl mx-auto px-4 -mt-12 md:-mt-16">
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="bg-navy-800 rounded-3xl py-8 md:py-10 px-6 md:px-10 shadow-2xl shadow-navy-950/45 border border-navy-700/50 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 divide-x divide-white/10 text-center"
-      >
-        {siteData.stats.map(({ label, value, suffix, emoji }, i) => (
-          <div key={label} className="px-4">
-            <div className="text-3xl md:text-4xl mb-2.5 filter drop-shadow-sm select-none">{emoji}</div>
-            <h3 className="font-heading font-bold text-4xl lg:text-5xl text-white mb-2">
-              <Counter value={value} suffix={suffix} />
-            </h3>
-            <p className="text-primary-300 font-semibold text-[10px] lg:text-xs uppercase tracking-wider">{label}</p>
-          </div>
-        ))}
-      </motion.div>
+    <section className="relative z-30 w-full bg-[#0071d9] py-8 md:py-10 border-y border-white/10 shadow-lg">
+      <div className="container-max px-4 md:px-8 mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-y-0 lg:divide-x divide-white/20"
+        >
+          {siteData.stats.map(({ label, value, suffix, iconId }, i) => (
+            <div key={label} className="flex items-center justify-center lg:justify-center gap-3 md:gap-4 px-2 md:px-6">
+              <div className="w-11 h-11 md:w-14 md:h-14 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0 shadow-inner">
+                {getIcon(iconId)}
+              </div>
+              <div className="flex flex-col text-left">
+                <h3 className="font-heading font-black text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-none mb-1">
+                  <Counter value={value} suffix={suffix} />
+                </h3>
+                <p className="text-white/80 font-bold text-[10px] md:text-xs tracking-wide uppercase">{label}</p>
+              </div>
+            </div>
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }

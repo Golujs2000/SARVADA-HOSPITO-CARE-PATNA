@@ -125,10 +125,10 @@ export const siteData = {
 
   // ── Homepage Stats Counter ───────────────────────────────────
   stats: [
-    { label: 'Satisfied Patients', value: 5000, suffix: '+', emoji: '😊' },
-    { label: 'Year Established', value: 2018, suffix: '', emoji: '🏥' },
-    { label: 'Expert Doctors', value: 10, suffix: '+', emoji: '👨‍⚕️' },
-    { label: 'Successful Operations', value: 2000, suffix: '+', emoji: '🩺' },
+    { label: 'Happy Patients', value: 5000, suffix: '+', iconId: 'heartbeat' },
+    { label: 'Expert Doctors', value: 10, suffix: '+', iconId: 'doctor' },
+    { label: 'Operations', value: 2000, suffix: '+', iconId: 'operations' },
+    { label: 'Established', value: 2018, suffix: '', iconId: 'established' },
   ],
 
   mapEmbed:
@@ -144,16 +144,20 @@ export const siteData = {
     'Burn Care',
     'General Surgery',
     'Laparoscopy',
-    'Ortho & Spinal Surgery',
-    'Neuro Surgery',
+    'Orthopedics',
+    'Neuro & Spine Surgery',
     'Plastic & Cosmetic Surgery',
-    'Gynecology & Obstetrics',
+    'Obstetrics & Gynecology',
+    'Paediatrics',
     'General Medicine',
     'Gastroenterology',
     'Cardiology',
     'Nephrology & Dialysis',
+    'Urology',
+    'Critical Care',
     'Psychiatry',
     'Dental & Ortho Dental Surgery',
+    'ENT & Head & Neck Surgery',
     'Pathology & Radiology (Ultrasound, X-Ray, Doppler)',
     'Burn Unit Care'
   ],

@@ -93,9 +93,14 @@ export default function Doctors() {
       <section className="section-padding bg-section-gradient">
         <div className="container-max">
           {loading ? (
-            <div className="flex flex-col gap-4 w-full">
-              {[...Array(2)].map((_, i) => (
-                <div key={i} className="h-96 bg-gray-100 rounded-2xl animate-pulse" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="bg-white rounded-[12px] border border-gray-150 p-4 h-[500px] flex flex-col gap-4 animate-pulse">
+                  <div className="w-full aspect-[4/5] bg-gray-200 rounded-[8px]" />
+                  <div className="h-6 bg-gray-200 rounded w-3/4 mt-2" />
+                  <div className="h-4 bg-gray-200 rounded w-1/2" />
+                  <div className="h-12 bg-gray-200 rounded w-full mt-auto" />
+                </div>
               ))}
             </div>
           ) : filtered.length === 0 ? (
@@ -106,7 +111,7 @@ export default function Doctors() {
               </button>
             </div>
           ) : (
-            <div className="flex flex-col gap-4 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               {filtered.map((doc, i) => (
                 <motion.div
                   key={doc.id}
@@ -114,6 +119,7 @@ export default function Doctors() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: (i % 6) * 0.06 }}
+                  className="h-full"
                 >
                   <DoctorCard doc={doc} />
                 </motion.div>
