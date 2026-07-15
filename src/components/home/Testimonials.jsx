@@ -122,7 +122,11 @@ export default function Testimonials() {
 
           {/* Controls */}
           <div className="flex items-center justify-center gap-4 mt-8">
-            <button onClick={prev} className="w-11 h-11 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <button 
+              onClick={prev} 
+              aria-label="Previous testimonial"
+              className="w-11 h-11 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+            >
               <FiChevronLeft className="w-5 h-5 text-gray-700" />
             </button>
             <div className="flex gap-2">
@@ -130,11 +134,16 @@ export default function Testimonials() {
                 <button
                   key={i}
                   onClick={() => setActive(i)}
+                  aria-label={`Go to page ${i + 1}`}
                   className={`h-2 rounded-full transition-all duration-300 ${i === active ? 'w-8 bg-amber-400' : 'w-2 bg-gray-300 hover:bg-gray-400'}`}
                 />
               ))}
             </div>
-            <button onClick={next} className="w-11 h-11 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors">
+            <button 
+              onClick={next} 
+              aria-label="Next testimonial"
+              className="w-11 h-11 bg-gray-100 border border-gray-200 rounded-full flex items-center justify-center hover:bg-gray-200 transition-colors"
+            >
               <FiChevronRight className="w-5 h-5 text-gray-700" />
             </button>
           </div>

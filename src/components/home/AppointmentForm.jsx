@@ -292,6 +292,7 @@ export default function AppointmentForm() {
             <div className="relative">
               <FiActivity className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-300 z-10" />
               <select name="department" value={form.department} onChange={handleChange}
+                aria-label="Select department"
                 className={`${inp(errors.department)} pl-10 appearance-none cursor-pointer`}>
                 <option value="">Select department</option>
                 {departmentList.map((d) => <option key={d} value={d}>{d}</option>)}

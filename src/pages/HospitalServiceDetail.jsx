@@ -11,6 +11,7 @@ import {
   FiArrowLeft, FiClock, FiCalendar, FiPhone, FiAlertCircle, FiCheck, FiChevronRight
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
+import AyushmanBanner from '../components/home/AyushmanBanner'
 import { getHospitalServices } from '../services/hospitalServices'
 import { getDepartments } from '../services/categories'
 import { siteData } from '../data/siteData'
@@ -85,6 +86,8 @@ export default function HospitalServiceDetail() {
         description={service.description || `Explore details about ${service.name} at Sarvada Hospito Care.`}
         keywords={[`${service.name} Patna`, 'hospital services Patna', 'medical facilities Patna']}
       />
+
+      <AyushmanBanner />
 
       {/* Breadcrumb */}
       <div className="bg-gray-50 border-b border-gray-100 py-3 px-4">

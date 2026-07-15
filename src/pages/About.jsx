@@ -6,6 +6,7 @@ import {
   FiShield, FiStar,
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
+import AyushmanBanner from '../components/home/AyushmanBanner'
 import { siteData } from '../data/siteData'
 
 export default function About() {
@@ -27,6 +28,8 @@ export default function About() {
           'patients from UP'
         ]}
       />
+
+      <AyushmanBanner />
 
       <main className="flex-1 bg-white">
         {/* ── Hero ──────────────────────────────────────────────── */}

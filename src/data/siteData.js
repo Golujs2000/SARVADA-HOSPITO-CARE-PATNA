@@ -175,6 +175,7 @@ export const siteData = {
     { name: 'X-Ray, Ultrasound & Doppler', icon: '🩻' },
     { name: '24/7 AC HDU & Emergency Care', icon: '🚨' },
     { name: '24/7 Ambulance Service', icon: '🚑' },
+    { name: 'Ayushman Bharat Card (PM-JAY) Accepted', icon: '💳' },
   ],
 }
 

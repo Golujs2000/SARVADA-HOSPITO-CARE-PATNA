@@ -15,7 +15,7 @@ import {
 } from 'react-icons/fi'
 import toast from 'react-hot-toast'
 import { getSettings, updateSettings } from '../../services/settings'
-import { seedDepartmentsAndServices, seedFirestore } from '../../data/seedData'
+import { seedDepartmentsAndServices, seedFirestore, syncAyushmanFacility } from '../../data/seedData'
 
 const EMPTY_FORM = {
   siteName: 'Sarvada Hospito Care',
@@ -62,7 +62,6 @@ export default function AdminSettings() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [seedingClinical, setSeedingClinical] = useState(false)
-  const [seedingFull, setSeedingFull] = useState(false)
   const [savedAt, setSavedAt] = useState(null)
 
   const fetchSettings = async () => {
@@ -93,19 +92,6 @@ export default function AdminSettings() {
       toast.error('Seeding failed: ' + err.message)
     } finally {
       setSeedingClinical(false)
-    }
-  }
-
-  const handleSeedFull = async () => {
-    if (!window.confirm('WARNING: This will RESET default Doctors and Blogs to their defaults. Any manual changes to doctor profiles or blog posts will be LOST. Continue?')) return
-    setSeedingFull(true)
-    try {
-      await seedFirestore()
-      toast.success('Doctor and Blog data reset successfully!')
-    } catch (err) {
-      toast.error('Full seeding failed: ' + err.message)
-    } finally {
-      setSeedingFull(false)
     }
   }
 
@@ -232,7 +218,7 @@ export default function AdminSettings() {
               <span className="text-amber-700 font-medium"> Actions are destructive and overwrite existing database records.</span>
             </p>
             
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="max-w-md">
               {/* Clinical Dataset Button */}
               <div className="space-y-3">
                 <p className="text-xs font-semibold text-navy-800 uppercase tracking-wider">Clinical Content</p>
@@ -240,33 +226,15 @@ export default function AdminSettings() {
                   type="button"
                   onClick={handleSeedClinical}
                   disabled={seedingClinical}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-amber-500 hover:bg-amber-600 disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-amber-500 hover:bg-amber-600 disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm"
                 >
                   {seedingClinical ? (
-                    <><FiRefreshCw size={15} className="animate-spin" /> Updating Treatments…</>
+                    <><FiRefreshCw size={15} className="animate-spin" /> Updating...</>
                   ) : (
                     <><FiDatabase size={15} /> Refresh Clinical Dataset</>
                   )}
                 </button>
-                <p className="text-[10px] text-gray-400 italic">Resets 36 Departments & 72 Treatments. Overwrites existing data (preserves custom thumbnails).</p>
-              </div>
-
-              {/* Full Site Reset Button */}
-              <div className="space-y-3">
-                <p className="text-xs font-semibold text-navy-800 uppercase tracking-wider">Site-wide Defaults</p>
-                <button
-                  type="button"
-                  onClick={handleSeedFull}
-                  disabled={seedingFull}
-                  className="w-full inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-navy-600 hover:bg-navy-700 disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm"
-                >
-                  {seedingFull ? (
-                    <><FiRefreshCw size={15} className="animate-spin" /> Resetting Data…</>
-                  ) : (
-                    <><FiDatabase size={15} /> Seed Doctors & Blogs</>
-                  )}
-                </button>
-                <p className="text-[10px] text-gray-400 italic">Resets Doctor profile and Blog posts. Overwrites existing data.</p>
+                <p className="text-[10px] text-gray-400 italic">Resets 36 Departments & 72 Treatments (including the Ayushman Bharat facility and sub-treatments). Overwrites existing clinical records.</p>
               </div>
             </div>
 

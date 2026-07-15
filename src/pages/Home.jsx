@@ -9,6 +9,7 @@ import { FiMapPin, FiPhone, FiMail, FiCalendar } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import { useCategories } from '../hooks/useCategories'
 import HeroSection from '../components/home/HeroSection'
+import AyushmanBanner from '../components/home/AyushmanBanner'
 import StatsCounter from '../components/home/StatsCounter'
 import WhyChooseUs from '../components/home/WhyChooseUs'
 import ServicesSection from '../components/home/ServicesSection'
@@ -74,6 +75,9 @@ export default function Home() {
 
       />
 
+      {/* Ayushman Bharat Banner */}
+      <AyushmanBanner />
+
       {/* 1. Hero */}
       <HeroSection />
 
@@ -92,7 +96,7 @@ export default function Home() {
             className="bg-primary-700 text-white p-6 md:p-10 rounded-[24px] shadow-xl mb-12 md:mb-16 flex flex-col items-center text-center md:flex-row md:items-center md:justify-between md:text-left gap-6 border border-primary-600/50"
           >
             <div className="flex-1">
-              <h3 className="font-heading font-black text-2xl md:text-3xl mb-3 md:mb-4">Always Open <span className="text-accent-300">24 / 7</span></h3>
+              <h2 className="font-heading font-black text-2xl md:text-3xl mb-3 md:mb-4">Always Open <span className="text-accent-300">24 / 7</span></h2>
               <p className="text-white/90 text-sm md:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
                 Sarvada Hospito Care operates 24 hours a day, 7 days a week. Our expert team and emergency trauma center are always ready to serve you.
               </p>

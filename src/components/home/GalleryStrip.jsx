@@ -55,6 +55,7 @@ function Lightbox({ images, index, onClose }) {
         {/* Close */}
         <button
           onClick={onClose}
+          aria-label="Close lightbox"
           className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10"
         >
           <FiX className="w-5 h-5" />
@@ -64,6 +65,7 @@ function Lightbox({ images, index, onClose }) {
         {images.length > 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); prev() }}
+            aria-label="Previous image"
             className="absolute left-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10"
           >
             <FiChevronLeft className="w-6 h-6" />
@@ -85,7 +87,9 @@ function Lightbox({ images, index, onClose }) {
               controls
               autoPlay
               className="max-h-[78vh] max-w-full object-contain rounded-xl shadow-2xl"
-            />
+            >
+              <track kind="captions" srcLang="en" label="English captions" />
+            </video>
           ) : (
             <img
               src={img.image}
@@ -105,6 +109,7 @@ function Lightbox({ images, index, onClose }) {
         {images.length > 1 && (
           <button
             onClick={(e) => { e.stopPropagation(); next() }}
+            aria-label="Next image"
             className="absolute right-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10"
           >
             <FiChevronRight className="w-6 h-6" />
@@ -133,7 +138,10 @@ function MediaRender({ img, className = '', scaleClass = 'group-hover:scale-105'
           className={`w-full h-full object-cover transition-transform duration-500 ${scaleClass}`}
           muted
           playsInline
-        />
+          preload="none"
+        >
+          <track kind="captions" srcLang="en" label="English captions" />
+        </video>
         <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/35 transition-colors duration-300">
           <span className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/20 shadow-md group-hover:scale-110 transition-transform duration-300">
             <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">

@@ -7,6 +7,7 @@ import {
   FiHeart, FiShield
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
+import AyushmanBanner from '../components/home/AyushmanBanner'
 import { getCategoryItemBySlug as getDepartmentBySlug } from '../services/categories'
 import { useDoctors } from '../hooks/useDoctors'
 import { getInitials } from '../utils/helpers'
@@ -158,6 +159,8 @@ export default function ServiceDetail() {
         description={`${department.description} Recovery: ${department.recoveryTime || 'Varies'}.`}
         keywords={[department.name, `${department.name} Patna`, `${department.name} hospital Bihar`, ...(department.features || [])]}
       />
+
+      <AyushmanBanner />
 
       {/* Hero Section — Dynamic Color-Themed Reference Mockup */}
       <section className="relative border-b border-gray-200 py-16 md:py-20 lg:py-24 px-6 md:px-12 overflow-hidden bg-slate-50 min-h-[480px] lg:min-h-[580px] flex items-center">

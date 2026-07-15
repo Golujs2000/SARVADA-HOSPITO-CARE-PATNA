@@ -30,11 +30,19 @@ function Lightbox({ images, index, onClose }) {
         className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
         onClick={onClose}
       >
-        <button onClick={onClose} className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10">
+        <button 
+          onClick={onClose} 
+          aria-label="Close lightbox"
+          className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10"
+        >
           <FiX className="w-5 h-5" />
         </button>
         {images.length > 1 && (
-          <button onClick={(e) => { e.stopPropagation(); prev() }} className="absolute left-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10">
+          <button 
+            onClick={(e) => { e.stopPropagation(); prev() }} 
+            aria-label="Previous image"
+            className="absolute left-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10"
+          >
             <FiChevronLeft className="w-6 h-6" />
           </button>
         )}
@@ -51,7 +59,11 @@ function Lightbox({ images, index, onClose }) {
           {images.length > 1 && <p className="text-white/40 text-xs mt-1">{current + 1} / {images.length}</p>}
         </motion.div>
         {images.length > 1 && (
-          <button onClick={(e) => { e.stopPropagation(); next() }} className="absolute right-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10">
+          <button 
+            onClick={(e) => { e.stopPropagation(); next() }} 
+            aria-label="Next image"
+            className="absolute right-4 w-11 h-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors z-10"
+          >
             <FiChevronRight className="w-6 h-6" />
           </button>
         )}

@@ -8,6 +8,7 @@ import {
   FiChevronDown, FiX, FiInfo, FiUser
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
+import AyushmanBanner from '../components/home/AyushmanBanner'
 import { getCategoryItemBySlug as getDepartmentBySlug } from '../services/categories'
 import { getDoctors } from '../services/doctors'
 import { getInitials } from '../utils/helpers'
@@ -110,6 +111,8 @@ export default function TreatmentDetail() {
         description={`${treatment.name} at Sarvada Hospito Care, Patna.`}
         keywords={[treatment.name, department.name, `${treatment.name} Patna`]}
       />
+
+      <AyushmanBanner />
 
       {/* Hero Section — Clean & Minimalist */}
       <section className="bg-slate-50 border-b border-gray-200 pt-16 pb-12 px-4 relative overflow-hidden">

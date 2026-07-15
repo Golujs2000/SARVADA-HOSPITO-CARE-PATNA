@@ -88,7 +88,7 @@ export default function Navbar() {
           
           <div className="flex-1 flex justify-center">
             <Link to="/" className="flex items-center gap-3 group">
-              <img src={hospitalLogo} alt="Logo" className="h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
+              <img src={hospitalLogo} alt="Logo" width="56" height="56" className="h-14 w-auto object-contain group-hover:scale-105 transition-transform" />
               <div className="flex flex-col">
                 <span className="text-navy-900 font-heading font-black text-2xl uppercase tracking-wide group-hover:text-primary-600 transition-colors leading-none">
                   Sarvada <span className="text-primary-600">Hospito Care</span>
@@ -108,6 +108,8 @@ export default function Navbar() {
             <img 
               src="https://firebasestorage.googleapis.com/v0/b/nova-max-hospital.firebasestorage.app/o/gallery%2F1781122820016_neemkroli%20baba01.webp?alt=media&token=65aea2b7-ec30-42b6-869a-149501c650f6" 
               alt="Neem Karoli Baba" 
+              width="48"
+              height="48"
               className="w-12 h-12 rounded-full object-cover shadow border border-gray-200"
             />
           </div>
@@ -120,10 +122,14 @@ export default function Navbar() {
             {/* Mobile Logo & Toggle */}
             <div className="flex md:hidden items-center justify-between w-full">
               <Link to="/" className="flex items-center gap-2">
-                <img src={hospitalLogo} alt="Logo" className="h-8 bg-white p-1 rounded" />
+                <img src={hospitalLogo} alt="Logo" width="32" height="32" className="h-8 bg-white p-1 rounded" />
                 <span className="font-bold text-sm tracking-wider">SARVADA CARE</span>
               </Link>
-              <button onClick={() => setMobileOpen(!mobileOpen)} className="p-2 text-white hover:text-accent-300">
+              <button 
+                onClick={() => setMobileOpen(!mobileOpen)} 
+                className="p-2 text-white hover:text-accent-300"
+                aria-label="Toggle mobile menu"
+              >
                 <AnimatePresence mode="wait" initial={false}>
                   {mobileOpen
                     ? <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.18 }}><FiX size={24} /></motion.span>

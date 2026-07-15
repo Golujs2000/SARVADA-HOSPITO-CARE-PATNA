@@ -99,27 +99,27 @@ export default function FeaturedDoctors() {
                   </p>
 
                   {(doc.qualification || doc.experience) && (
-                    <p className="text-gray-400 text-xs mb-4">
+                    <p className="text-gray-500 text-xs mb-4">
                       {[doc.qualification, doc.experience ? `${doc.experience}+ yrs` : ''].filter(Boolean).join(' · ')}
                     </p>
                   )}
 
                   {/* Dynamic Social Icons – only shown when URL is set */}
                   {(doc.facebook || doc.twitter || doc.instagram) && (
-                    <div className="flex items-center gap-5 text-gray-400">
+                    <div className="flex items-center gap-5 text-gray-400 mt-1">
                       {doc.facebook && (
-                        <a href={doc.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
-                          <FiFacebook className="w-4 h-4" />
+                        <a href={doc.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors p-2.5 -m-2.5" aria-label="Facebook">
+                          <FiFacebook className="w-4.5 h-4.5" />
                         </a>
                       )}
                       {doc.twitter && (
-                        <a href={doc.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
-                          <FiTwitter className="w-4 h-4" />
+                        <a href={doc.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors p-2.5 -m-2.5" aria-label="Twitter">
+                          <FiTwitter className="w-4.5 h-4.5" />
                         </a>
                       )}
                       {doc.instagram && (
-                        <a href={doc.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors">
-                          <FiInstagram className="w-4 h-4" />
+                        <a href={doc.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-primary-600 transition-colors p-2.5 -m-2.5" aria-label="Instagram">
+                          <FiInstagram className="w-4.5 h-4.5" />
                         </a>
                       )}
                     </div>

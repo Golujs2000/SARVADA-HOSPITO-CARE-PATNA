@@ -11,46 +11,56 @@
 // ─────────────────────────────────────────────────────────────
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
 import { useVisitTracker } from './hooks/useVisitTracker'
 
-// Layout & Route Guards
+// Layout & Route Guards (Statically loaded)
 import PublicLayout from './components/PublicLayout'
 import ProtectedRoute from './components/ProtectedRoute'
 
-// ── Public Pages ─────────────────────────────────────────────
-import Home from './pages/Home'
-import About from './pages/About'
-import Category from './pages/Category'
-import Doctors from './pages/Doctors'
-import DoctorProfile from './pages/DoctorProfile'
-import Gallery from './pages/Gallery'
-import Blog from './pages/Blog'
-import BlogPost from './pages/BlogPost'
-import Contact from './pages/Contact'
-import ServiceDetail from './pages/ServiceDetail'
-// import HospitalServices from './pages/HospitalServices'
-import HospitalServiceDetail from './pages/HospitalServiceDetail'
-import TreatmentDetail from './pages/TreatmentDetail'
-import BookAppointment from './pages/BookAppointment'
-import AppointmentSuccess from './pages/AppointmentSuccess'
-import PrivacyPolicy from './pages/PrivacyPolicy'
-import Terms from './pages/Terms'
-import DataDeletion from './pages/DataDeletion'
-import NotFound from './pages/NotFound'
+// Premium loading skeleton for route transitions
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-slate-50">
+    <div className="flex flex-col items-center gap-4">
+      <div className="w-12 h-12 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin" />
+      <p className="text-gray-500 font-semibold text-sm tracking-wider">Loading...</p>
+    </div>
+  </div>
+)
 
-// ── Admin Pages ──────────────────────────────────────────────
-import AdminLayout from './components/admin/AdminLayout'
-import AdminLogin from './pages/admin/AdminLogin'
-import AdminDashboard from './pages/admin/AdminDashboard'
-import AdminAppointments from './pages/admin/AdminAppointments'
-import AdminDoctors from './pages/admin/AdminDoctors'
-import AdminBlog from './pages/admin/AdminBlog'
-import AdminGallery from './pages/admin/AdminGallery'
-import AdminMessages from './pages/admin/AdminMessages'
-import AdminStaff from './pages/admin/AdminStaff'
-import AdminCategory from './pages/admin/AdminCategory'
-import AdminTreatments from './pages/admin/AdminTreatments'
-import AdminSettings from './pages/admin/AdminSettings'
+// ── Lazy-loaded Public Pages ─────────────────────────────────
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Category = lazy(() => import('./pages/Category'))
+const Doctors = lazy(() => import('./pages/Doctors'))
+const DoctorProfile = lazy(() => import('./pages/DoctorProfile'))
+const Gallery = lazy(() => import('./pages/Gallery'))
+const Blog = lazy(() => import('./pages/Blog'))
+const BlogPost = lazy(() => import('./pages/BlogPost'))
+const Contact = lazy(() => import('./pages/Contact'))
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'))
+const HospitalServiceDetail = lazy(() => import('./pages/HospitalServiceDetail'))
+const TreatmentDetail = lazy(() => import('./pages/TreatmentDetail'))
+const BookAppointment = lazy(() => import('./pages/BookAppointment'))
+const AppointmentSuccess = lazy(() => import('./pages/AppointmentSuccess'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const Terms = lazy(() => import('./pages/Terms'))
+const DataDeletion = lazy(() => import('./pages/DataDeletion'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+
+// ── Lazy-loaded Admin Pages ──────────────────────────────────
+const AdminLayout = lazy(() => import('./components/admin/AdminLayout'))
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'))
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'))
+const AdminAppointments = lazy(() => import('./pages/admin/AdminAppointments'))
+const AdminDoctors = lazy(() => import('./pages/admin/AdminDoctors'))
+const AdminBlog = lazy(() => import('./pages/admin/AdminBlog'))
+const AdminGallery = lazy(() => import('./pages/admin/AdminGallery'))
+const AdminMessages = lazy(() => import('./pages/admin/AdminMessages'))
+const AdminStaff = lazy(() => import('./pages/admin/AdminStaff'))
+const AdminCategory = lazy(() => import('./pages/admin/AdminCategory'))
+const AdminTreatments = lazy(() => import('./pages/admin/AdminTreatments'))
+const AdminSettings = lazy(() => import('./pages/admin/AdminSettings'))
 
 // Inner component so useVisitTracker runs inside BrowserRouter context
 function AppRoutes() {
@@ -58,7 +68,8 @@ function AppRoutes() {
   useVisitTracker()
 
   return (
-    <Routes>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
       {/* ── Public Routes (Navbar + Footer) ── */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
@@ -116,6 +127,7 @@ function AppRoutes() {
       {/* ── 404 Fallback ── */}
       <Route path="*" element={<NotFound />} />
     </Routes>
+    </Suspense>
   )
 }
 

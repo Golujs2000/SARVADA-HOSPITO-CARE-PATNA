@@ -30,6 +30,10 @@ export function useDashboardStats() {
     todayVisits: 0,
     monthlyVisits: 0,
     yearlyVisits: 0,
+    // Phone Clicks
+    todayPhoneClicks: 0,
+    monthlyPhoneClicks: 0,
+    yearlyPhoneClicks: 0,
     // Appointments
     todayAppointments: 0,
     monthlyAppointments: 0,
@@ -42,8 +46,8 @@ export function useDashboardStats() {
   })
 
   const [chartData, setChartData] = useState({
-    // 30-day line chart (appointments + visits)
-    daily: { labels: [], appointments: [], visits: [] },
+    // 30-day line chart (appointments + visits + phone clicks)
+    daily: { labels: [], appointments: [], visits: [], phoneClicks: [] },
     // 12-month bar chart (appointments only)
     monthly: { labels: [], appointments: [] },
   })
@@ -129,14 +133,18 @@ export function useDashboardStats() {
           return d ? toMonthKey(d) === thisMonth : false
         })
 
-        // ── Visit counts ──────────────────────────────────────
+        // ── Visit / Phone counts ──────────────────────────────────────
         const count = docSnap => (docSnap.exists() ? (docSnap.data().count ?? 0) : 0)
+        const getPhoneClicks = docSnap => (docSnap.exists() ? (docSnap.data().phoneClicks ?? 0) : 0)
 
         // ── Set state ─────────────────────────────────────────
         setStats({
           todayVisits:          count(todayVisitDoc),
           monthlyVisits:        count(monthlyVisitDoc),
           yearlyVisits:         count(yearlyVisitDoc),
+          todayPhoneClicks:     getPhoneClicks(todayVisitDoc),
+          monthlyPhoneClicks:   getPhoneClicks(monthlyVisitDoc),
+          yearlyPhoneClicks:    getPhoneClicks(yearlyVisitDoc),
           todayAppointments:    todayAppts.length,
           monthlyAppointments:  monthlyAppts.length,
           pendingAppointments:  appointments.filter(a => a.status === 'pending').length,
@@ -151,6 +159,7 @@ export function useDashboardStats() {
             labels:       last30Dates.map(d => d.toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })),
             appointments: last30Keys.map(k => apptByDay[k]),
             visits:       dailyVisitDocs.map(d => count(d)),
+            phoneClicks:  dailyVisitDocs.map(d => getPhoneClicks(d)),
           },
           monthly: {
             labels:       last12Dates.map(d => d.toLocaleDateString('en-IN', { month: 'short', year: '2-digit' })),

@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import AyushmanBanner from '../components/home/AyushmanBanner'
 import { useCategories } from '../hooks/useCategories'
 import { useDoctors } from '../hooks/useDoctors'
 
@@ -235,6 +236,8 @@ export default function Category({ categoryName, categoryNames, title, descripti
         description={description}
         keywords={keywords}
       />
+
+      <AyushmanBanner />
 
       {/* Hero */}
       <section className="page-hero text-center">

@@ -4,7 +4,7 @@
 import { db } from '../firebase/config'
 import { 
   collection, addDoc, getDocs, deleteDoc, serverTimestamp,
-  query, where, updateDoc 
+  query, where, updateDoc, doc
 } from 'firebase/firestore'
 
 export const seedDoctors = [
@@ -738,3 +738,49 @@ export async function seedNewDepts() {
   console.log('Done! Added: ' + added + ', Skipped: ' + skipped)
   return { added, skipped }
 }
+
+export async function syncAyushmanFacility() {
+  const ayushmanItem = patientFacilities.find(f => f.slug === 'ayushman-bharat-card')
+  if (!ayushmanItem) {
+    throw new Error('Ayushman Bharat facility data not found in seed file')
+  }
+
+  const q = query(collection(db, 'patientFacilities'), where('slug', '==', 'ayushman-bharat-card'))
+  const snap = await getDocs(q)
+
+  let docId
+  const { treatments, ...docData } = ayushmanItem
+
+  if (snap.empty) {
+    const docRef = await addDoc(collection(db, 'patientFacilities'), {
+      ...docData,
+      createdAt: serverTimestamp()
+    })
+    docId = docRef.id
+  } else {
+    docId = snap.docs[0].id
+    await updateDoc(doc(db, 'patientFacilities', docId), {
+      ...docData,
+      updatedAt: serverTimestamp()
+    })
+  }
+
+  const tQ = query(collection(db, 'treatments'), where('parentId', '==', docId))
+  const tSnap = await getDocs(tQ)
+
+  for (const d of tSnap.docs) {
+    await deleteDoc(d.ref)
+  }
+
+  if (Array.isArray(treatments) && treatments.length > 0) {
+    for (const t of treatments) {
+      await addDoc(collection(db, 'treatments'), {
+        ...t,
+        parentId: docId,
+        parentCollection: 'patientFacilities',
+        createdAt: serverTimestamp()
+      })
+    }
+  }
+}
+

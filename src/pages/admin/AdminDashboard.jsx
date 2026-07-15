@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   FiCalendar, FiClock, FiMail, FiUsers,
-  FiTrendingUp, FiRefreshCw, FiEye, FiBarChart2, FiActivity,
+  FiTrendingUp, FiRefreshCw, FiEye, FiBarChart2, FiActivity, FiPhone,
 } from 'react-icons/fi'
 import {
   Chart as ChartJS,
@@ -109,6 +109,13 @@ export default function AdminDashboard() {
     { label: 'Yearly Visits',  value: stats.yearlyVisits,  icon: FiBarChart2,  iconBg: 'bg-indigo-50 text-indigo-600', border: 'border-indigo-100' },
   ]
 
+  // ── Phone click / Call tracking cards ──────────────────────────
+  const CALL_CARDS = [
+    { label: 'Today Calls/Clicks',   value: stats.todayPhoneClicks,   icon: FiPhone, iconBg: 'bg-rose-50 text-rose-600',   border: 'border-rose-100' },
+    { label: 'Monthly Calls/Clicks', value: stats.monthlyPhoneClicks, icon: FiPhone, iconBg: 'bg-red-50 text-red-600',    border: 'border-red-100' },
+    { label: 'Yearly Calls/Clicks',  value: stats.yearlyPhoneClicks,  icon: FiPhone, iconBg: 'bg-orange-50 text-orange-600', border: 'border-orange-100' },
+  ]
+
   // ── Appointment stat cards ────────────────────────────────────
   const APPT_CARDS = [
     { label: 'Today Appointments',   value: stats.todayAppointments,   icon: FiCalendar, iconBg: 'bg-blue-50 text-blue-600',   border: 'border-blue-100' },
@@ -139,6 +146,17 @@ export default function AdminDashboard() {
         borderWidth: 2.5,
         pointRadius: 3,
         pointBackgroundColor: '#0891b2',
+        tension: 0.4,
+        fill: true,
+      },
+      {
+        label: 'Phone Clicks',
+        data: chartData.daily.phoneClicks,
+        borderColor: '#f43f5e',
+        backgroundColor: 'rgba(244,63,94,0.09)',
+        borderWidth: 2.5,
+        pointRadius: 3,
+        pointBackgroundColor: '#f43f5e',
         tension: 0.4,
         fill: true,
       },
@@ -190,6 +208,18 @@ export default function AdminDashboard() {
         </div>
       </div>
 
+      {/* ── Call Tracking Stats ── */}
+      <div>
+        <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
+          <FiPhone size={13} /> Phone Clicks (Call Tracking)
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          {CALL_CARDS.map((card, i) => (
+            <StatCard key={card.label} {...card} loading={loading} i={i + 3} />
+          ))}
+        </div>
+      </div>
+
       {/* ── Appointment Stats ── */}
       <div>
         <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3 flex items-center gap-2">
@@ -197,7 +227,7 @@ export default function AdminDashboard() {
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {APPT_CARDS.map((card, i) => (
-            <StatCard key={card.label} {...card} loading={loading} i={i + 3} />
+            <StatCard key={card.label} {...card} loading={loading} i={i + 6} />
           ))}
         </div>
       </div>

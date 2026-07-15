@@ -162,7 +162,10 @@ export default function Gallery() {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           muted
                           playsInline
-                        />
+                          preload="none"
+                        >
+                          <track kind="captions" srcLang="en" label="English captions" />
+                        </video>
                         <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/30 transition-colors duration-300">
                           <span className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white border border-white/30 shadow-lg group-hover:scale-110 transition-transform duration-300">
                             <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -232,7 +235,9 @@ export default function Gallery() {
                   controls
                   autoPlay
                   className="w-full h-full object-contain rounded-xl max-h-[80vh]"
-                />
+                >
+                  <track kind="captions" srcLang="en" label="English captions" />
+                </video>
               ) : displayImages[lightbox]?.image ? (
                 <img
                   src={displayImages[lightbox].image}
