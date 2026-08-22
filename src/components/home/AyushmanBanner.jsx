@@ -80,7 +80,7 @@ export default function AyushmanBanner() {
             <div className="space-y-1">
               <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                 <span className="bg-amber-400 text-emerald-950 text-[10px] font-black tracking-widest uppercase px-2 py-0.5 rounded border border-amber-300">
-                  EMPANELLED HOSPITAL · सरकार द्वारा अधिकृत
+                  EMPANELLED FOR ORTHOPEDICS & GENERAL SURGERY · सरकार द्वारा अधिकृत
                 </span>
               </div>
 
@@ -89,7 +89,7 @@ export default function AyushmanBanner() {
               </h2>
 
               <p className="text-emerald-100 text-xs sm:text-sm font-medium leading-relaxed">
-                Free Cashless Treatment up to <span className="text-amber-300 font-bold">₹5,00,000</span> for eligible families · <span className="font-hindi text-amber-200">यहाँ आयुष्मान कार्ड से मुफ़्त इलाज (5 लाख तक) होता है।</span>
+                Free Cashless Treatment up to <span className="text-amber-300 font-bold">₹5,00,000</span> for <span className="text-amber-200 font-semibold underline decoration-amber-400/50">Orthopedics & General Surgery</span> · <span className="font-hindi text-amber-200">हड्डी रोग एवं जनरल सर्जरी का आयुष्मान कार्ड से मुफ़्त इलाज।</span>
               </p>
             </div>
           </Link>

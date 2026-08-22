@@ -1,369 +1,288 @@
-# Meta Ads (Facebook & Instagram) Campaign Mega Plan - Sarvada Hospito Care
+# 🏥 Ayushman Bharat (PM-JAY) Meta Ads Master Plan
+## Sarvada Hospito Care — Orthopedics & General Surgery
 
-This plan outlines the strategic roadmap for launching and scaling high-converting Facebook and Instagram Ads for **Sarvada Hospito Care** (Patna). Unlike Google Ads which captures active search intent, Meta Ads are visual and disruptive. They are highly effective for driving brand awareness, promoting specialized surgical packages (Maternity, Laser Stone, Piles), and capturing high-intent leads via instant forms, WhatsApp chats, and direct calls.
-
----
-
-## 🎯 Phase 1: Meta Ads Strategy & Funnel Setup
-
-Healthcare acquisition on Meta requires a multi-stage funnel to build trust, overcome skepticism, and drive action.
-
-```mermaid
-graph TD
-    A[Cold Audience: Patna + 20km Radius] -->|Top of Funnel: Video Ads / Single Image| B(TOF: Brand Awareness & Education)
-    B -->|Warm Audience: Video Viewers & Page Engagers| C(MOF: Retargeting & Trust Building)
-    B -->|Direct Lead Generation| D(BOF: Lead Forms & Call Ads)
-    C -->|Trust Established: Testimonials & Facility Tours| D
-    D -->|Conversion| E[OPD Appointments & Surgery Inquiries]
-```
-
-### 1. The Three-Tier Funnel
-1.  **Top of Funnel (TOF) - Awareness & Education (30% Budget)**
-    *   **Objective**: Video Views, Post Engagement, or Traffic.
-    *   **Focus**: Educate on medical symptoms (e.g., "Signs of Gallbladder Stones") or showcase advanced technology (e.g., "100% Blade-free Laser URS/PCNL").
-    *   **Creative**: Brief video reels of doctors explaining conditions, or high-quality graphics showing state-of-the-art facilities.
-2.  **Middle of Funnel (MOF) - Trust & Consideration (20% Budget)**
-    *   **Objective**: Lead Generation (Instant Forms) or Messages (WhatsApp/Messenger).
-    *   **Focus**: Patient success stories, testimonials, and detailed treatment USPs.
-    *   **Audience**: Retargeting users who watched >50% of TOF videos or engaged with the Instagram/Facebook page in the last 60 days.
-3.  **Bottom of Funnel (BOF) - Direct Conversion (50% Budget)**
-    *   **Objective**: Lead Generation (Meta Instant Forms), Call Ads, or Conversions (Website Appointment Bookings).
-    *   **Focus**: Irresistible offers, package pricing (e.g., "Safe Delivery Packages"), and immediate call-to-actions ("Consult Patna's Leading Surgeon Today").
-    *   **Audience**: Retargeting website visitors, page engagers, and lookalikes of past leads + broad local targeting.
+> **Hospital**: Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.)  
+> **Location**: Anand Palace, Bypass Rd, Changer, Kankarbagh, Patna, Bihar 800020  
+> **Ayushman Empanelled Specialties**: **Orthopedic Surgery (हड्डी एवं जोड़ रोग)** & **General / Laparoscopic Surgery (सामान्य एवं दूरबीन सर्जरी)**  
+> **Coverage**: 100% Free / Cashless Treatment up to **₹5,00,000 per family/year** under PM-JAY  
+> **Helpline**: 7079001600 | 7079001700  
 
 ---
 
-## 🏗️ Phase 2: Campaign Architecture
+## 🎯 Executive Strategy & Campaign Funnel
 
-To ensure clean budgeting and performance tracking, we divide the ad accounts into 5 primary Meta Campaigns:
+In Bihar, millions of families hold **Ayushman Bharat (PM-JAY) Golden Cards** but are either unaware that private multi-specialty hospitals in Patna accept them for major surgeries, or fear hidden charges. 
+
+This Meta Ads campaign is strategically engineered to establish **trust, transparency, and immediate lead capture** for high-volume, 100% cashless surgeries in **Orthopedics** and **General Surgery**.
 
 ```mermaid
 graph TD
-    A[Sarvada Hospito Care Meta Ads] --> B["Campaign 1: Urology & Kidney Stone Care"]
-    A --> C["Campaign 2: Laparoscopic & GI Surgery"]
-    A --> D["Campaign 3: Gynecology & Maternity Packages"]
-    A --> E["Campaign 4: General Surgery & Proctology (Piles/Fissures)"]
-    A --> F["Campaign 5: Orthopedics & Joint Replacement"]
-
-    B --> B1["Ad Set 1: Patna Local (25-65+) - Interests: Kidney Stone, Health"]
-    B --> B2["Ad Set 2: Broad/No Targeting (Patna + 20km)"]
-    
-    C --> C1["Ad Set 1: Patna Local (30-60) - Interests: Gastric, Health"]
-    C --> C2["Ad Set 2: Broad/No Targeting (Patna + 20km)"]
-    
-    D --> D1["Ad Set 1: Patna Local (22-40, Female/Male) - Interests: Pregnancy, Baby Care"]
-    D --> D2["Ad Set 2: Broad Maternity Targeting"]
-
-    E --> E1["Ad Set 1: Patna Local (25-60) - Interests: Hemorrhoids, Digestion"]
-    
-    F --> F1["Ad Set 1: Patna Local (40-65+) - Interests: Joint Pain, Arthritis"]
+    A["Cold Audience: Patna + 50km Bihar (4.5M+ Reach)"] -->|Top of Funnel: Video Reels & Doctor Explainers| B(TOF: Ayushman Awareness & Trust)
+    B -->|Engaged Viewers & Card Holders| C(MOF: Patient Testimonials & OT Facility)
+    A -->|Direct Surgical Inquiries| D(BOF: Instant Lead Forms & WhatsApp Helpline)
+    C -->|High Conversion Probability| D
+    D -->|Instant Lead Push < 5 Mins| E[Hospital Ayushman Helpdesk Calling]
+    E --> F[Free OPD Evaluation & Cashless Hospitalization / Surgery]
 ```
 
 ---
 
-## 📂 Phase 3: Detailed Campaign Setup & Copywriting
+## 🏗️ Campaign Architecture
 
-This section contains targeting setups, creative briefs, and high-converting ad copy (optimized in Hinglish/English for maximum local resonance in Patna and Bihar).
+We structure the ad account into **3 Dedicated Campaigns**:
 
----
+```mermaid
+graph TD
+    A[Sarvada Hospito Care: Ayushman Meta Ads] --> B["Campaign 1: Ayushman Orthopedics & Joint Replacement"]
+    A --> C["Campaign 2: Ayushman General & Laparoscopic Surgery"]
+    A --> D["Campaign 3: Ayushman Helpdesk & Card Eligibility Check"]
 
-### 🫘 Campaign 1: Urology & Laser Kidney Stone Care
-*   **Campaign Objective**: Lead Generation (Instant Forms for phone numbers and locations).
-*   **Geo-Targeting**: Patna + 20 km radius (Kankarbagh, Bypass Road, Anisabad, Danapur, Bailey Road, etc.).
-*   **Demographic Focus**: Males and Females, Age 25–65+.
-*   **Detailed Targeting (Interests)**: Kidney stone, Nephrology, Urology, Health & wellness, or Broad targeting with high-intent ad copy.
-*   **Offer/Hook**: Relief from sudden flank pain. 100% Blade-free Laser Stone Surgery (RIRS/PCNL) starting with quick recovery and discharge in 24 hours.
+    B --> B1["Ad Set 1: Parents Care (Adult Children 28-48 yrs) - Knee/Hip/Arthritis"]
+    B --> B2["Ad Set 2: Direct Patients (40-65+ yrs) - Joint Pain & Fractures"]
+    B --> B3["Ad Set 3: Regional Bihar Broad (Patna + 50km Radius)"]
 
-#### Creative Visual Ideas:
-1.  **Image/Graphic**: High-quality photo of Dr. Manmohan Suman or a urologist next to a modern laser stone removal machine. Bold text overlay: *"बिना चीरा, बिना टांका - लेजर द्वारा गुर्दे की पथरी का सफल इलाज"* (No incision, no stitches - successful treatment of kidney stones by laser).
-2.  **Video**: 45-second reel explaining the difference between traditional stone surgery (open) and advanced Laser Lithotripsy/RIRS.
+    C --> C1["Ad Set 1: Gallstone & Laparoscopy (25-55 yrs)"]
+    C --> C2["Ad Set 2: Hernia & Appendix Surgery (22-60 yrs)"]
+    C --> C3["Ad Set 3: Piles, Fissure & Fistula (25-55 yrs)"]
 
-#### Ad Copy Variations:
-##### Ad Copy 1: Problem-Solution Focused (Hinglish/Hindi)
-*   **Primary Text**:
-    क्या आप गुर्दे की पथरी (Kidney Stone) के असहनीय दर्द से परेशान हैं? दवाइयां खाने के बाद भी बार-बार दर्द लौट आता है?
-    
-    अब और दर्द सहने की जरूरत नहीं! Sarvada Hospito Care (कंकड़बाग, पटना) में पाइए पथरी का आधुनिक और सुरक्षित इलाज।
-    
-    ✅ **100% ब्लेड-मुक्त लेजर सर्जरी (RIRS/PCNL)**
-    ✅ **बिना चीरा, बिना टांका और दर्द-रहित इलाज**
-    ✅ **मात्र 24 घंटे में अस्पताल से छुट्टी (Same Day Discharge)**
-    ✅ **वरिष्ठ यूरोलॉजिस्ट द्वारा उपचार**
-    
-    देर न करें, आज ही परामर्श के लिए फॉर्म भरें या कॉल करें।
-*   **Headline**: 🏥 पटना में लेजर द्वारा पथरी का इलाज | 24 घंटे में छुट्टी
-*   **Description**: ₹500/- OPD Consultation Slot Book करें
-*   **Call to Action**: Book Now (अभी बुक करें)
-
-##### Ad Copy 2: Tech-driven & Trust (English)
-*   **Primary Text**:
-    Suffering from severe flank pain? Don't ignore the warning signs of Kidney Stones.
-    
-    Get advanced, blade-free laser stone removal at Sarvada Hospito Care, Patna. Our state-of-the-art Holmium Laser technology ensures complete stone clearance with no stitches, minimal discomfort, and faster recovery.
-    
-    Why Choose Sarvada Hospito Care?
-    👉 Led by senior Urologists & MD Physicians
-    👉 Ultra-modern Modular OT & ICU support
-    👉 Quick discharge in 24–48 hours
-    👉 Cashless TPA & Insurance Options Available
-    
-    Click below to check pricing & book your appointment.
-*   **Headline**: Advanced Laser Stone Surgery in Patna (Stitch-free)
-*   **Description**: Get Relief from Kidney Stone Pain Today!
-*   **Call to Action**: Learn More
+    D --> D1["Ad Set 1: Broad Ayushman Cardholders in Patna & Surrounding Districts"]
+```
 
 ---
 
-### 🤰 Campaign 2: Gynecology & Maternity Care (Normal Delivery Focus)
-*   **Campaign Objective**: Lead Generation (Instant Forms / WhatsApp Messages).
-*   **Geo-Targeting**: Patna + 15 km radius.
-*   **Demographic Focus**: Females and Males (Expectant Parents/Spouses), Age 20–40.
-*   **Detailed Targeting (Interests)**: Pregnancy, Newborn baby, Baby shower, Diaper, Parenting, Motherhood, Infant care.
-*   **Offer/Hook**: Safe & Affordable Normal Delivery Packages with 24/7 Neonatal and ICU support.
+## 💰 Recommended Budget Allocation
 
-#### Creative Visual Ideas:
-1.  **Image/Graphic**: Warm, emotional image of a mother holding her newborn baby with a female doctor smiling in the background. Soft pink/gold theme. Text overlay: *"सुरक्षित प्रसव, स्वस्थ शिशु - सर्वदा हॉस्पिटल केयर"* (Safe delivery, healthy baby - Sarvada Hospito Care).
-2.  **Carousel**:
-    *   *Slide 1*: Safe Delivery Suites (Image of clean private AC rooms).
-    *   *Slide 2*: 24/7 Maternity Emergency (Equipped OT).
-    *   *Slide 3*: Newborn Care & ICU/NICU support.
-    *   *Slide 4*: Expert Gynecologists team.
+| Tier | Monthly Budget | Daily Spend | Campaign 1 (Ortho) | Campaign 2 (Gen Surgery) | Campaign 3 (Helpdesk) | Expected Leads / Mo |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **Starter** | **₹30,000** | ~₹1,000 / day | 45% (₹450/d) | 40% (₹400/d) | 15% (₹150/d) | **200 – 350 Leads** |
+| **Growth** | **₹60,000** | ~₹2,000 / day | 45% (₹900/d) | 40% (₹800/d) | 15% (₹300/d) | **450 – 750 Leads** |
+| **Scale** | **₹1,00,000** | ~₹3,300 / day | 45% (₹1,500/d) | 40% (₹1,300/d) | 15% (₹500/d) | **900 – 1,500+ Leads** |
 
-#### Ad Copy Variations:
-##### Ad Copy 1: Emotional & Safety Angle (Hinglish)
-*   **Primary Text**:
-    मां बनना हर महिला के जीवन का सबसे खूबसूरत अहसास है। इस सफर को सुरक्षित और सुखद बनाइए Sarvada Hospito Care के साथ।
-    
-    पटना के बाईपास रोड, कंकड़बाग में स्थित सर्वदा हॉस्पिटल लाया है गर्भवती महिलाओं के लिए बेहतरीन और किफायती डिलीवरी पैकेज।
-    
-    🌸 **नॉर्मल डिलीवरी (Normal Delivery) को प्राथमिकता**
-    🌸 **24x7 अनुभवी महिला स्त्री रोग विशेषज्ञ (Gynecologists)**
-    🌸 **नवजात शिशु के लिए एडवांस NICU/ICU बैकअप**
-    🌸 **साफ-सुथरे AC रूम्स और कुशल नर्सिंग स्टाफ**
-    
-    अपने बच्चे के स्वागत के लिए सबसे सुरक्षित अस्पताल चुनें। आज ही कंसल्टेशन बुक करें।
-*   **Headline**: 🤰 पटना में सुरक्षित नॉर्मल डिलीवरी पैकेज
-*   **Description**: 24/7 इमरजेंसी प्रसूति सहायता उपलब्ध
-*   **Call to Action**: Send Message (WhatsApp)
-
-##### Ad Copy 2: Package & Facility Focus (English)
-*   **Primary Text**:
-    Plan a safe, comfortable, and memorable birth experience for your little one at Sarvada Hospito Care, Patna.
-    
-    From comprehensive antenatal check-ups to post-delivery care, our expert obstetrics team is here for you 24/7.
-    
-    Our Maternity Features:
-    ✨ Experienced Female Gynecologists & Pediatricians
-    ✨ High-end Labor Rooms & Advanced OT Setup
-    ✨ Emergency C-Section facility & Critical Care backup
-    ✨ Clean, hygienic private AC Rooms for your family
-    
-    Schedule a tour of our maternity wing today. Fill out the form below.
-*   **Headline**: Comprehensive Safe Delivery Packages in Patna
-*   **Description**: Book your OPD consultation with our expert Gynecologists
-*   **Call to Action**: Learn More
+*Target Cost Per Lead (CPL): ₹70 – ₹130 (Ayushman campaigns achieve low CPL due to high state-wide resonance).*
 
 ---
 
-### 🔬 Campaign 3: Laparoscopic Surgery (Gallbladder, Hernia, Appendix)
-*   **Campaign Objective**: Lead Generation (Instant Forms / Direct Calls).
-*   **Geo-Targeting**: Patna + 25 km radius.
-*   **Demographic Focus**: Adults, Age 25–60.
-*   **Detailed Targeting (Interests)**: Gallstone, Abdominal pain, Hernia, Laparoscopic surgery, Gastrointestinal tract, General health.
-*   **Offer/Hook**: Minimally invasive keyhole surgery with tiny incisions, minimal scarring, and quick recovery.
-
-#### Creative Visual Ideas:
-1.  **Image/Graphic**: Split screen. Left side: An icon showing a large incision (Traditional surgery). Right side: 3 tiny dots (Laparoscopy). Text overlay: *"दूरबीन द्वारा ऑपरेशन (Laparoscopy) - छोटा कट, जल्दी रिकवरी"* (Keyhole surgery - small cut, quick recovery).
-2.  **Video**: Animated or whiteboard video showing how laparoscopic cholecystectomy (gallbladder removal) is performed safely and why it prevents future emergency blockages.
-
-#### Ad Copy Variations:
-##### Ad Copy 1: Gallstones focus (Hinglish/Hindi)
-*   **Primary Text**:
-    क्या आपको पेट के दाहिने हिस्से में तेज दर्द होता है? या गैस और अपच की समस्या से परेशान हैं? यह पित्त की थैली की पथरी (Gallbladder Stone) के लक्षण हो सकते हैं।
-    
-    पित्त की पथरी का एकमात्र सुरक्षित इलाज है सर्जरी। Sarvada Hospito Care (पटना) में पाइए आधुनिक दूरबीन विधि (Laparoscopic Surgery) द्वारा इलाज।
-    
-    ✅ **दूरबीन द्वारा छोटा चीरा (Keyhole Surgery)**
-    ✅ **न्यूनतम दर्द और कोई बड़ा दाग नहीं**
-    ✅ **24 से 48 घंटे में अस्पताल से छुट्टी**
-    ✅ **अनुभवी लैप्रोस्कोपिक सर्जन्स की टीम**
-    
-    बिना देरी किए आज ही हमारे सर्जन्स से परामर्श लें। फॉर्म भरें।
-*   **Headline**: 🔬 पित्ताशय की पथरी (Gallstone) का दूरबीन द्वारा ऑपरेशन
-*   **Description**: कंकड़बाग बाईपास, पटना | TPA कैशलेस उपलब्ध
-*   **Call to Action**: Book Now
-
-##### Ad Copy 2: Hernia & Appendix focus (English)
-*   **Primary Text**:
-    Diagnosed with a Hernia or Appendicitis? Don't delay the treatment. Delays can lead to emergency complications.
-    
-    Sarvada Hospito Care provides advanced Minimally Invasive Laparoscopic Surgery for Hernia and Appendix in Patna.
-    
-    Why choose Laparoscopy at Sarvada?
-    🔹 Smaller incisions mean faster healing & less pain
-    🔹 Minimal blood loss and cosmetically superior (no big scars)
-    🔹 Return to work in just a few days
-    🔹 Led by highly skilled gastrointestinal surgeons
-    
-    Book an appointment today to discuss your treatment options.
-*   **Headline**: Laparoscopic Hernia & Appendix Surgery | Patna
-*   **Description**: Modern Modular OT & Experienced Surgeons
-*   **Call to Action**: Learn More
+## 📂 Detailed Campaigns, Creatives & Copywriting
 
 ---
 
-### ✂️ Campaign 4: General Surgery & Proctology (Laser Piles & Fistula)
-*   **Campaign Objective**: Lead Generation (Instant Forms / Direct Calls).
-*   **Geo-Targeting**: Patna + 30 km radius.
-*   **Demographic Focus**: Genders (All), Age 25–60.
-*   **Detailed Targeting (Interests)**: Hemorrhoids (Piles), Anal fissure, Constipation, Digestive health, Laser surgery, Pain relief.
-*   **Offer/Hook**: 100% painless laser surgery for Piles, Fissures, and Fistula. No painful dressings, daycare procedure.
+### 🦴 CAMPAIGN 1: Ayushman Orthopedics & Joint Replacement
 
-#### Creative Visual Ideas:
-1.  **Graphic**: Abstract, non-graphic medical illustration indicating pain relief in the lower back/sitting area. Text overlay: *"बवासीर (Piles/Fissure) से हमेशा के लिए छुटकारा - एडवांस लेजर तकनीक"* (Get rid of piles forever - advanced laser technology).
-2.  **Video**: A reassuring interview style video with a general surgeon explaining how laser proctology avoids the painful recovery of open piles surgery.
+* **Objective**: Lead Generation (Instant Forms / Direct Calls).
+* **Target Surgeries**: Total Knee Replacement (TKR), Total Hip Replacement (THR), Fracture Fixation, Trauma Surgery, Arthroscopic ACL/Meniscus Repair, Spinal Disc Decompression.
+* **Targeting Demographics**:
+  * **Ad Set 1 (Family Decision Makers)**: Age 28–48 | Men & Women | Patna + 50 km (Patna, Hajipur, Danapur, Bihta, Fatuha, Vaishali, Chapra, Arrah).
+  * **Ad Set 2 (Elderly Patients)**: Age 45–65+ | Interests: Arthritis, Knee pain, Osteoarthritis, Joint replacement.
+* **Offer Hook**: **100% Free Total Knee / Hip Replacement under Ayushman Bharat Card (up to ₹5,00,000)**.
 
-#### Ad Copy Variations:
-##### Ad Copy 1: Empathy & Quick Recovery (Hinglish/Hindi)
-*   **Primary Text**:
-    बवासीर (Piles), भगंदर (Fistula) या फिशर (Fissure) का दर्द आपकी रोज़मर्रा की ज़िंदगी को मुश्किल बना रहा है? लोक-लाज के कारण दर्द मत सहिए।
-    
-    Sarvada Hospito Care (पटना) में पाइए दर्द-रहित एडवांस लेजर ट्रीटमेंट। अब पुरानी दर्देनाक सर्जरी की जगह चुनें आधुनिक लेजर तकनीक।
-    
-    ✅ **पूरी तरह से दर्द-रहित लेजर ऑपरेशन (Painless Laser Surgery)**
-    ✅ **कोई चीरा नहीं, कोई टांका नहीं, कोई खून नहीं**
-    ✅ **रोजाना ड्रेसिंग के दर्द से मुक्ति**
-    ✅ **उसी दिन डिस्चार्ज और जल्द रिकवरी**
-    
-    गोपनीय और सुरक्षित परामर्श के लिए आज ही अपनी जानकारी सबमिट करें।
-*   **Headline**: 🏥 बवासीर, फिशर और भगंदर का आधुनिक लेजर इलाज
-*   **Description**: बिना चीर-फाड़ सफल सर्जरी | Call: 7079001600
-*   **Call to Action**: Get Offer
+#### Creative Concepts:
+1. **Static Graphic / Banner**:
+   * *Visual*: Smiling elderly couple walking comfortably with Doctor + Golden Ayushman Card badge.
+   * *Bold Overlay Text*: *"माता-पिता के घुटने का मुफ़्त ऑपरेशन (Total Knee Replacement) — आयुष्मान भारत कार्ड द्वारा (₹5 लाख तक मुफ़्त)"*.
+2. **Video / Reel (Doctor Explainer)**:
+   * *Script*: Orthopedic surgeon explaining how modern knee replacement is done at Sarvada Hospito Care with zero out-of-pocket expenses for Ayushman cardholders, including imported implants and physiotherapy.
 
-##### Ad Copy 2: Direct Clinical Pitch (English)
-*   **Primary Text**:
-    Get permanent relief from Piles, Fissure, and Fistula with advanced Laser Proctology at Sarvada Hospito Care, Patna.
-    
-    Traditional open surgeries are painful and require weeks of recovery. Our modern laser treatment ensures you return to normal life in just 24–48 hours.
-    
-    Medical Advantages:
-    📍 Highly targeted laser fiber technique
-    📍 Safe, bloodless, and painless daycare procedure
-    📍 Zero risk of recurrence with experienced general surgeons
-    📍 Fully private consultations and premium post-op wards
-    
-    Take the first step towards a pain-free life. Schedule your consultation.
-*   **Headline**: 100% Painless Laser Piles & Fistula Surgery
-*   **Description**: Patna's Leading Multi-specialty Care Centre
-*   **Call to Action**: Book Now
+#### High-Converting Ad Copies:
 
----
+##### Variation 1: Focus on Parents' Knee Pain (Hindi / Hinglish - Highest Converting)
+* **Primary Text**:
+  क्या आपके माता-पिता घुटनों के असहनीय दर्द (Arthritis) से परेशान हैं और चलने-फिरने में असमर्थ हो चुके हैं? खर्च की चिंता के कारण ऑपरेशन टाल रहे हैं?
+  
+  अब ऑपरेशन के खर्च की चिंता छोड़िए! **Sarvada Hospito Care (कंकड़बाग बाईपास, पटना)** में करवाएं विश्वस्तरीय **Total Knee & Hip Replacement (जोड़ प्रत्यारोपण)** एवं हड्डी रोग का 100% मुफ़्त इलाज।
+  
+  💳 **आयुष्मान भारत कार्ड (PM-JAY) द्वारा ₹5,00,000 तक पूरी तरह मुफ़्त ऑपरेशन**
+  👵 **जर्मन तकनीक के प्रीमियम इम्प्लांट्स का उपयोग**
+  👴 **वरिष्ठ ऑर्थोपेडिक व स्पाइन सर्जन्स द्वारा ऑपरेशन**
+  👵 **ऑपरेशन के तुरंत बाद से ही फिजियोथेरेपी व विशेष देखभाल**
+  👴 **दवाइयां, बेड, ऑपरेशन व जांच सब कुछ आयुष्मान कार्ड में शामिल**
+  
+  माता-पिता को दर्द-मुक्त जीवन का उपहार दें। आज ही आयुष्मान कार्ड की पात्रता जांचने एवं परामर्श के लिए फॉर्म भरें।
+* **Headline**: 🦴 आयुष्मान भारत कार्ड से घुटने का मुफ़्त ऑपरेशन (₹5 लाख तक)
+* **Description**: सर्वदा हॉस्पिटल, कंकड़बाग बाईपास, पटना | Call: 7079001600
+* **CTA Button**: Apply Now (अभी आवेदन करें)
 
-### 🦴 Campaign 5: Orthopedics & Joint Replacement
-*   **Campaign Objective**: Lead Generation (Instant Forms targeting family decision-makers - e.g., adult children of elderly patients).
-*   **Geo-Targeting**: Patna + 40 km radius.
-*   **Demographic Focus**: Age 35–65+ (Targeting individuals looking for knee replacement for parents, or older adults suffering from arthritis).
-*   **Detailed Targeting (Interests)**: Joint replacement, Knee replacement, Arthritis, Knee pain, Osteoarthritis, Spine, Back pain, Physiotherapy.
-*   **Offer/Hook**: Total Knee/Hip Replacement with advanced physiotherapy and post-op care. Get back on your feet quickly.
+##### Variation 2: Bone Fractures & Trauma Emergency (Hindi / Hinglish)
+* **Primary Text**:
+  हड्डी टूटने (Fracture) या गंभीर चोट लगने पर तुरंत चाहिए अनुभवी हड्डी रोग विशेषज्ञ की देखरेख।
+  
+  **Sarvada Hospito Care (पटना)** में 24 घंटे उपलब्ध है इमरजेंसी ट्रॉमा एवं ऑर्थोपेडिक सर्जरी — **आयुष्मान भारत कार्ड द्वारा 100% कैशलेस**।
+  
+  🔹 सभी प्रकार के फ्रैक्चर व प्लेटिंग सर्जरी  
+  🔹 दूरबीन द्वारा लिगामेंट (ACL / Meniscus) रिपेयर  
+  🔹 रीढ़ की हड्डी (Spine) का आधुनिक ऑपरेशन  
+  🔹 आयुष्मान कार्ड से ₹5 लाख तक का संपूर्ण इलाज मुफ़्त  
+  
+  नीचे दिए गए बटन पर क्लिक करके अपने आयुष्मान कार्ड की जानकारी सबमिट करें।
+* **Headline**: 🏥 हड्डी एवं फ्रैक्चर का मुफ़्त ऑपरेशन | आयुष्मान कार्ड मान्य
+* **Description**: 24/7 इमरजेंसी ट्रॉमा एवं ऑर्थोपेडिक केयर, पटना
+* **CTA Button**: Book Now
 
-#### Creative Visual Ideas:
-1.  **Image/Graphic**: Before/After style photo. Left: Elderly person holding knee in pain. Right: Smiling elderly couple walking in a park comfortably. Text overlay: *"घुटने के दर्द से मुक्ति - Total Knee Replacement"* (Freedom from knee pain - Total Knee Replacement).
-2.  **Video**: Video testimonial showing an elderly patient walking comfortably on day 2 or 3 post-op at Sarvada Hospito Care.
-
-#### Ad Copy Variations:
-##### Ad Copy 1: Focus on Parents' Health (Hinglish/Hindi)
-*   **Primary Text**:
-    क्या आपके माता-पिता घुटनों के पुराने दर्द (Arthritis) के कारण चलने-फिरने या सीढ़ियां चढ़ने में असमर्थ हो चुके हैं? उन्हें फिर से वही आज़ादी और मुस्कान दीजिए!
-    
-    Sarvada Hospito Care (कंकड़बाग, पटना) में उपलब्ध है विश्वस्तरीय **Total Knee & Hip Replacement (जोड़ प्रत्यारोपण)** सर्जरी।
-    
-    👵 **जर्मन तकनीक के प्रीमियम इम्प्लांट्स का उपयोग**
-    👴 **अनुभवी ऑर्थोपेडिक एवं स्पाइन सर्जन्स की देखरेख**
-    👵 **ऑपरेशन के तुरंत बाद से ही फिजियोथेरेपी और विशेष देखभाल**
-    👴 **उचित खर्च और सभी प्रमुख इंश्योरेंस/TPA कंपनियों से कैशलेस सुविधा**
-    
-    आज ही हमारे हड्डी रोग विशेषज्ञ से मिलने के लिए अपॉइंटमेंट बुक करें।
-*   **Headline**: 🦴 पटना में सफल घुटना और कूल्हा प्रत्यारोपण
-*   **Description**: माता-पिता को घुटने के दर्द से दिलाएं हमेशा की राहत
-*   **Call to Action**: Learn More
-
-##### Ad Copy 2: Clinical Excellence (English)
-*   **Primary Text**:
-    Regain your mobility and live pain-free. Sarvada Hospito Care offers advanced Orthopedic & Joint Replacement Surgeries in Patna.
-    
-    Whether it's severe Osteoarthritis, a sports ACL tear, or spine issues, our highly qualified orthopedic surgeons utilize cutting-edge medical protocols.
-    
-    Our Orthopedic Services:
-    👉 Total Knee Replacement (TKR) & Hip Replacement (THR)
-    👉 Arthroscopic Meniscus & ACL Reconstruction
-    👉 Complex fracture fixation & Trauma care
-    👉 Microdiscectomy for Spinal Disc problems
-    
-    Consult our specialists today to restore your active lifestyle.
-*   **Headline**: Advanced Joint Replacement Surgery | Patna
-*   **Description**: High-success rate, premium implants & post-op rehab
-*   **Call to Action**: Book Now
+##### Variation 3: Clinical Trust (English)
+* **Primary Text**:
+  Regain mobility and live pain-free. Sarvada Hospito Care, Patna offers Advanced Joint Replacement (TKR/THR) & Orthopedic Surgeries.
+  
+  ✅ **100% Cashless Treatment under Ayushman Bharat (PM-JAY) up to ₹5 Lakhs**  
+  ✅ Modern Modular OT & Premium Prosthetic Implants  
+  ✅ Post-operative Physiotherapy & Fast Recovery Protocol  
+  
+  Book a consultation today to check your Ayushman eligibility.
+* **Headline**: Cashless Knee & Hip Replacement in Patna | PM-JAY Empanelled
+* **Description**: Free Treatment up to ₹5,00,000 for Eligible Families
+* **CTA Button**: Learn More
 
 ---
 
-## ⚙️ Phase 4: Local Target Audience Customization
+### 🔬 CAMPAIGN 2: Ayushman General & Laparoscopic Surgery
 
-To prevent wasting budget in a highly competitive market like Patna, apply these detailed audience parameters on the Meta Ads Manager:
+* **Objective**: Lead Generation (Instant Forms / Direct Calls / WhatsApp).
+* **Target Surgeries**: Laparoscopic Gallbladder Removal (Cholecystectomy), Hernia Repair (Open/Lap), Laparoscopic Appendectomy, Laser & Stapler Piles/Fissure/Fistula Surgery, Exploratory Surgery.
+* **Targeting Demographics**:
+  * Age 22–60 | Men & Women | Patna + 40 km radius.
+  * Interests: Abdominal pain, Gallstone, Hernia, Laparoscopic surgery, Gastrointestinal health, Hemorrhoids.
+* **Offer Hook**: **100% Free Keyhole / Laparoscopic Surgery under Ayushman Bharat (PM-JAY) with 24-hr discharge**.
 
-### 📍 1. Geo-Location Settings
-*   **Core Area (High Density)**: Target a **15 km radius** around `Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar 800020`.
-*   **Peripheral Area (Surgical Reach)**: For high-value surgical procedures (Knee Replacement, Laser Stone, Laparoscopy), expand targeting to a **40 km radius** or target adjacent regions like Hajipur, Danapur, Bihta, Fatuha, and Sonpur.
-*   **Location Setting**: Set to **"People living in this location"** (Do not choose "living in or recently in" to avoid targeting commuters/passersby).
+#### Creative Concepts:
+1. **Split-Screen Infographic**:
+   * *Left*: "पित्त की थैली में पथरी / हर्निया का दर्द"
+   * *Right*: "दूरबीन द्वारा ऑपरेशन (छोटा चीरा, 24 घंटे में छुट्टी) + आयुष्मान भारत ₹5 लाख मुफ़्त इलाज"
+2. **Reel / Video Testimonial**:
+   * Video of a patient from Bihar sharing their experience of undergoing successful gallbladder stone / hernia surgery at Sarvada Hospito Care without paying a single rupee under the Ayushman card.
 
-### 👥 2. Demographics & Lookalikes
-*   **The Family Decision Maker Angle**: Since medical decisions are usually collective family decisions, target two distinct age profiles:
-    1.  **The Patient (45–65+)**: Direct targeting for Urology, Orthopedics, and General Medicine.
-    2.  **The Adult Child (28–45)**: Target them with copy structured around caring for parents (e.g. "Save your parents from knee pain..."). Highly effective for Knee Replacement and Health Check-ups.
-*   **Exclude**: Exclude teenagers (under 20) as they do not make healthcare decisions.
+#### High-Converting Ad Copies:
 
-### 🎯 3. Meta Ad Set Audiences
-| Ad Set Name | Targeting Type | Detailed Parameters |
-| :--- | :--- | :--- |
-| **Urology - Stones** | Interest-Based | Interests: Kidney stone, Urology, Nephrology, Urination, Health & wellness. |
-| **Maternity - Parents** | Interest-Based | Interests: Pregnancy, Infant care, Baby shop, Motherhood, Parenting, Diapers. |
-| **Laparoscopy - Surgery** | Interest-Based | Interests: Gallstone, Abdomen, Surgeon, Hernia, Indigestion. |
-| **Orthopedics - Seniors** | Interest-Based & Demographics | Age: 40-65+. Interests: Joint replacement, Arthritis, Back pain, Osteoarthritis. |
-| **Lookalike - Warm Leads** | Lookalike Audience | 1% to 2% Lookalike of past lead form submissions & website appointment page visits. |
+##### Variation 1: Gallbladder Stone Focus (Hinglish/Hindi - High Volume)
+* **Primary Text**:
+  क्या आपको पेट के ऊपरी हिस्से में तेज दर्द, गैस या उल्टी की शिकायत है? यह पित्त की थैली में पथरी (Gallbladder Stone) के लक्षण हो सकते हैं।
+  
+  पित्त की पथरी का एकमात्र सुरक्षित और स्थायी इलाज है सर्जरी। **Sarvada Hospito Care (कंकड़बाग, पटना)** में करवाएं आधुनिक **दूरबीन विधि (Laparoscopic Surgery)** द्वारा ऑपरेशन।
+  
+  💳 **आयुष्मान भारत कार्ड (PM-JAY) द्वारा 100% मुफ़्त ऑपरेशन (₹5 लाख तक)**
+  ✅ **दूरबीन द्वारा छोटा चीरा (Keyhole Surgery) — कोई बड़ा निशान नहीं**
+  ✅ **न्यूनतम दर्द और मात्र 24 से 48 घंटे में अस्पताल से छुट्टी**
+  ✅ **वरिष्ठ लैप्रोस्कोपिक एवं जनरल सर्जन्स द्वारा ऑपरेशन**
+  ✅ **दवाइयां, जांच, बेड चार्ज सब कुछ आयुष्मान में शामिल**
+  
+  देर न करें, इन्फेक्शन बढ़ने से पहले इलाज कराएं। आज ही अपना नाम और नंबर दर्ज करें।
+* **Headline**: 🔬 पित्त की पथरी का दूरबीन ऑपरेशन | आयुष्मान कार्ड से मुफ़्त इलाज
+* **Description**: ₹5 लाख तक कैशलेस सर्जरी | कंकड़बाग बाईपास, पटना
+* **CTA Button**: Book Now (अभी बुक करें)
+
+##### Variation 2: Hernia & Appendix Focus (Hinglish/Hindi)
+* **Primary Text**:
+  हर्निया (Hernia) या अपेंडिक्स (Appendix) के दर्द को नजरअंदाज न करें। समय पर ऑपरेशन न कराने से यह गंभीर रूप ले सकता है।
+  
+  **Sarvada Hospito Care (पटना)** में उपलब्ध है आधुनिक दूरबीन एवं जनरल सर्जरी की सुविधा — **आयुष्मान भारत कार्ड धारकों के लिए बिल्कुल मुफ़्त**।
+  
+  🌟 **100% कैशलेस इलाज (₹5,00,000 तक)**  
+  🔹 एडवांस मेश रिपेयर तकनीक (No Recurrence)  
+  🔹 संक्रमण-मुक्त मॉड्यूलर ऑपरेशन थिएटर  
+  🔹 अनुभवी जनरल सर्जन्स की टीम  
+  
+  हॉस्पिटल आने से पहले अपने आयुष्मान कार्ड की जांच करवाएं। नीचे फॉर्म भरें।
+* **Headline**: 🏥 हर्निया एवं अपेंडिक्स का सफल ऑपरेशन | आयुष्मान भारत कार्ड मान्य
+* **Description**: पटना में मुफ़्त सर्जरी सुविधा | Sarvada Hospito Care
+* **CTA Button**: Apply Now
+
+##### Variation 3: Piles, Fissure & Fistula (Hindi / Hinglish)
+* **Primary Text**:
+  बवासीर (Piles), भगंदर (Fistula) या फिशर का दर्द आपकी जिंदगी को मुश्किल बना रहा है? 
+  
+  **Sarvada Hospito Care (कंकड़बाग बाईपास, पटना)** के जनरल सर्जरी विभाग में पाइए दर्द-रहित आधुनिक इलाज।
+  
+  💳 **आयुष्मान भारत कार्ड (PM-JAY) द्वारा सर्जरी की सुविधा उपलब्ध**  
+  ✅ बिना किसी झिझक के गोपनीय परामर्श  
+  ✅ अनुभवी जनरल सर्जन्स द्वारा सुरक्षित उपचार  
+  ✅ उसी दिन या 24 घंटे में डिस्चार्ज  
+  
+  गोपनीय परामर्श के लिए आज ही संपर्क करें।
+* **Headline**: 🏥 बवासीर, फिशर और भगंदर का सुरक्षित इलाज | आयुष्मान कार्ड मान्य
+* **Description**: गोपनीय परामर्श एवं कैशलेस सुविधा | कॉल करें: 7079001600
+* **CTA Button**: Get Offer
 
 ---
 
-## 🛡️ Phase 5: Healthcare Compliance & Policy Guardrails
+### 💳 CAMPAIGN 3: Ayushman Helpdesk & Card Eligibility Check
 
-Meta has strict advertising policies regarding **Personal Health** and **Prescription Drugs**. To prevent ad rejection or account suspension, follow these guidelines:
+* **Objective**: High-Volume Lead Generation / WhatsApp Chat Flow.
+* **Target Audience**: All Adults 22–65+ in Patna, Vaishali, Saran, Nalanda, Bhojpur.
+* **Offer Hook**: **"Check if your Ayushman Card is active for Free Surgery at Sarvada Hospito Care"**.
 
-1.  **Avoid "Before & After" Body Part Close-ups**: Do not show close-up photos of surgical sites, blood, or body parts. Instead, use icons, patient smiling faces, or generic hospital machinery.
-2.  **Do Not Imply Personal Attributes**: Do not write copy that aggressively calls out the user's specific disease.
-    *   *Bad*: "Do you have piles? Are you embarrassed by bleeding?" (Meta might flag this as personal attribute calling).
-    *   *Good*: "Get advanced laser treatment for Piles and Fissures. Painless daycare procedures available."
-3.  **No Unrealistic Guarantees**: Avoid words like "100% Guaranteed Cure" or "Zero Risk". Use terms like "High Success Rate", "Permanent surgical repair", or "Advanced clinical protocols".
-4.  **TPA / Cashless Disclosures**: When highlighting Insurance/TPA cashless benefits, ensure it clearly lists that approvals are subject to policy terms.
+#### Ad Copy:
+* **Primary Text**:
+  क्या आपके पास **आयुष्मान भारत कार्ड (PM-JAY)** या राशन कार्ड है?
+  
+  अगर आपको या आपके परिवार में किसी को **हड्डी रोग (घुटने/कूल्हे का दर्द, फ्रैक्चर)** या **जनरल सर्जरी (पित्त की पथरी, हर्निया, अपेंडिक्स, बवासीर)** की समस्या है, तो आप **Sarvada Hospito Care (कंकड़बाग, पटना)** में ₹5,00,000 तक का मुफ़्त इलाज करवा सकते हैं!
+  
+  🔍 **घर बैठे अपने आयुष्मान कार्ड की पात्रता जांचें:**
+  1. नीचे दिए गए फॉर्म में अपना नाम, मोबाइल नंबर और जिला भरें।
+  2. हमारा आयुष्मान हेल्पडेस्क 10 मिनट में आपको कॉल करके कार्ड की स्थिति और मुफ़्त इलाज की पूरी जानकारी देगा।
+  
+  📍 आनंद पैलेस, बाईपास रोड, कंकड़बाग, पटना  
+  📞 आयुष्मान हेल्पडेस्क: 7079001600 / 7079001700  
+* **Headline**: 💳 आयुष्मान कार्ड से मुफ़्त ऑपरेशन की पात्रता जांचें (₹5 लाख तक)
+* **Description**: हड्डी रोग एवं जनरल सर्जरी हेतु सरकार द्वारा अधिकृत अस्पताल
+* **CTA Button**: Check Eligibility / Send WhatsApp Message
 
 ---
 
-## 📈 Phase 6: Tracking, Pixel & Lead Form Optimization
+## ⚙️ Geo-Targeting & Location Settings
 
-To scale Meta Ads successfully, conversions must be tracked accurately:
+To maximize surgical admissions from across Bihar:
 
-### 1. Meta Pixel & Conversions API (CAPI)
-Implement the Meta Pixel on the React app ([sarvada-hospito-care.web.app](https://sarvada-hospito-care.web.app)).
-*   **Page View Event**: Track visitors on all informational pages.
-*   **Lead Event**: Triggered when a user fills out the `/book-appointment` form or submits a contact inquiry.
-*   **WhatsApp Click Event**: Track custom events when a user clicks the "Chat on WhatsApp" floating button.
+1. **Core Patna Metro (High Conversion)**:
+   * 15 km radius around `Anand Palace, Bypass Rd, Kankarbagh, Patna 800020`.
+   * Key areas: Kankarbagh, Bypass, Anisabad, Bailey Road, Danapur, Phulwari Sharif, Rajendra Nagar, Patna City.
+2. **Regional Bihar Surgical Radius (High Volume Ayushman Inflow)**:
+   * 50 km radius covering:
+     * **Vaishali / Hajipur / Lalganj** (Directly connected via Gandhi Setu)
+     * **Saran / Chapra / Sonpur**
+     * **Bhojpur / Arrah / Bihta**
+     * **Nalanda / Bihar Sharif / Fatuha / Bakhtiyarpur**
+3. **Location Parameter**: Select **"People living in this location"** in Meta Ads Manager.
 
-### 2. Lead Form Optimization (Instant Forms)
-When running Lead Generation campaigns:
-*   Use **"More Volume"** for maximum numbers, but switch to **"Higher Intent"** (which adds a review step) if lead quality is low.
-*   **Custom Questions to Filter Junk Leads**:
-    1.  *"Which treatment/specialty are you looking for?"* (Dropdown: Kidney Stone, Maternity/Delivery, Piles/Fistula, Joint Pain, General Medicine, Others)
-    2.  *"Do you need Cashless TPA / Insurance support?"* (Dropdown: Yes / No / Not Sure)
-*   Adding these questions forces the user to interact, significantly reducing accidental submissions.
+---
 
-### 3. Immediate Lead Nurturing Protocol
-Leads generated via Meta Ads turn cold within **15 minutes**.
-*   **CRM Integration**: Connect Meta Lead Forms to a CRM (e.g., Zoho, HubSpot) or set up a Zapier hook to send lead details directly to the hospital's reception WhatsApp/SMS.
-*   **First-Touch Call**: The front-desk team should call the lead immediately (within 10-15 minutes during working hours: 9 AM to 8 PM) to schedule the OPD appointment.
+## 📋 Lead Form Architecture (Quality Filter)
+
+Use Meta **Higher Intent** Instant Forms to prevent accidental clicks:
+
+* **Header Title**: *"Sarvada Hospito Care — आयुष्मान भारत मुफ़्त सर्जरी हेल्पडेस्क"*
+* **Form Questions**:
+  1. **Full Name** (Auto-filled)
+  2. **Phone Number / WhatsApp** (Auto-filled)
+  3. **Patient's District / Area** (e.g. Patna, Hajipur, Arrah, Chapra, Nalanda)
+  4. **Which surgery / treatment is needed?** *(Required Dropdown)*:
+     * 🦴 घुटने / कूल्हे का प्रत्यारोपण (Knee / Hip Replacement)
+     * 🦴 हड्डी फ्रैक्चर व जोड़ दर्द (Fractures / Joint Trauma)
+     * 🔬 पित्त की थैली में पथरी (Gallbladder Stone)
+     * 🔬 हर्निया / अपेंडिक्स (Hernia / Appendix)
+     * ✂️ बवासीर / भगंदर / फिशर (Piles / Fistula)
+     * ❓ अन्य समस्या (Other)
+  5. **Do you have an active Ayushman Bharat Card (PM-JAY)?** *(Required Dropdown)*:
+     * ✅ हाँ, आयुष्मान कार्ड उपलब्ध है (Yes - Ayushman Card Holder)
+     * 🪪 राशन कार्ड है / चेक करवाना है (Ration Card Holder)
+     * ❌ नहीं, प्राइवेट इंश्योरेंस / सेल्फ पे (No Ayushman)
+
+---
+
+## ⚡ 5-Minute Lead Nurturing SOP (Front-Desk / Helpdesk)
+
+Ayushman leads convert into actual OPD visits when contacted **within 5–15 minutes**.
+
+### Step 1: Immediate Phone Call Script
+> *"नमस्ते [मरीज/अभिभावक का नाम] जी, मैं सर्वदा हॉस्पिटल केयर (कंकड़बाग बाईपास, पटना) के **आयुष्मान भारत हेल्पडेस्क** से बात कर रहा/रही हूँ। आपने हमारे यहाँ आयुष्मान कार्ड से [हड्डी रोग / पित्त की पथरी / हर्निया] के मुफ़्त इलाज के लिए फॉर्म भरा था।  
+> क्या आपके पास मरीज का आयुष्मान कार्ड या राशन कार्ड उपलब्ध है? हम आपके डॉक्टर परामर्श का स्लॉट बुक कर रहे हैं, आप किस दिन हॉस्पिटल आ रहे हैं?"*
+
+### Step 2: Automated WhatsApp Confirmation
+Immediately send a WhatsApp message containing:
+* Hospital Location Map Link (Bypass Rd, Kankarbagh)
+* Required Documents List: (1) Ayushman Card / E-Card (2) Aadhaar Card (3) Previous Doctor Prescriptions / Ultrasound / X-Rays
+* Direct Ayushman Coordinator Contact: 7079001600
+
+---
+
+## 🛡️ Meta Advertising Policy Compliance Guardrails
+
+* ✅ **Do**: Use phrases like *"Empanelled Hospital under Ayushman Bharat (PM-JAY)"*, *"Cashless treatment up to ₹5 Lakhs for eligible beneficiaries as per government guidelines"*.
+* ❌ **Don't**: Do not guarantee 100% cure; always state that admission is subject to card eligibility and clinical evaluation.
+* ❌ **Don't**: Never display graphic open wounds, surgical incisions, or blood in ad creatives. Always use hospital infrastructure, doctor photos, clean medical vector graphics, and happy recovered patients.

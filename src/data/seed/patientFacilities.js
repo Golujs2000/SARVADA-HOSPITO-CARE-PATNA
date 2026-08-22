@@ -215,27 +215,28 @@ export const patientFacilities = [
     "icon": "💳",
     "category": "Patient Care Facilities",
     "available": "24/7",
-    "description": "Cashless hospitalization under the Pradhan Mantri Jan Arogya Yojana for eligible beneficiaries.",
-    "longDescription": "Sarvada Hospito Care in Patna is a proud empanelled provider for the Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY). Eligible cardholders can access free, high-quality medical and surgical care up to ₹5 Lakhs per family per year, completely cashless. Our dedicated helpdesk assists you with eligibility verification, documentation, and prompt admissions.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar.",
+    "description": "Cashless hospitalization under PM-JAY up to ₹5 Lakhs empanelled specifically for Orthopedics and General Surgery.",
+    "longDescription": "Sarvada Hospito Care in Patna is a proud empanelled provider for the Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY), specifically approved for Orthopedics (हड्डी रोग, Total Knee & Hip Replacement, Fracture Surgery, Spine Care) and General & Laparoscopic Surgery (सामान्य एवं दूरबीन सर्जरी जैसे Gallbladder, Hernia, Appendix, Piles, Fissures, Fistula). Eligible cardholders can access free, high-quality medical and surgical care up to ₹5 Lakhs per family per year, completely cashless. Our dedicated helpdesk assists you with eligibility verification, documentation, and prompt admissions.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar.",
     "features": [
       "Cashless Treatment up to ₹5 Lakhs",
+      "Empanelled for Orthopedics (हड्डी रोग)",
+      "Empanelled for General & Laparoscopic Surgery",
       "Dedicated Ayushman Bharat Helpdesk",
-      "Easy Eligibility Verification",
-      "Wide Range of Approved Procedures"
+      "Instant Eligibility Verification"
     ],
-    "costEstimate": "Free / Cashless (Eligible Beneficiaries)",
+    "costEstimate": "Free / Cashless (Eligible Beneficiaries for Ortho & General Surgery)",
     "recoveryTime": "N/A",
     "order": 36,
     "treatments": [
       {
-        "name": "Ayushman Beneficiary Verification",
+        "name": "Ayushman Beneficiary Verification & Registration",
         "slug": "ayushman-beneficiary-verification",
-        "description": "Visit our dedicated Ayushman Bharat counter at the hospital entrance. Our staff will check your e-card or Aadhaar card against the PM-JAY database to confirm your eligibility and handle all registration requirements seamlessly.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar."
+        "description": "Visit our dedicated Ayushman Bharat counter at the hospital entrance. Our staff will check your PM-JAY e-card or Aadhaar card against the national portal to confirm your eligibility for Orthopedic and General Surgery procedures and handle all registration requirements seamlessly.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar."
       },
       {
-        "name": "Cashless Admission & Treatment",
+        "name": "Cashless Orthopedic & General Surgery Admission",
         "slug": "cashless-admission-treatment",
-        "description": "Once eligibility is confirmed, all doctor consultations, diagnostic tests, surgeries, medicines, ICU stays, and post-hospitalization check-ups are covered under the scheme. The hospital processes everything directly, so you don't pay anything out of pocket.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar."
+        "description": "Once eligibility is confirmed for Orthopedics (Joint Replacement, Fracture Trauma, Spine) or General Surgery (Gallbladder, Hernia, Appendix, Piles/Fistula), all surgical procedures, implants, medicines, bed charges, and post-op care are covered up to ₹5,00,000 completely free of cost.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar."
       }
     ]
   }

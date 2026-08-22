@@ -5,15 +5,16 @@ export const surgicalServices = [
     "icon": "✂️",
     "category": "Surgical Services",
     "available": "24/7",
-    "description": "Expert general surgical procedures including appendectomy, hernia repair, and GI surgeries.",
-    "longDescription": "The General Surgery department at Sarvada Hospito Care in Patna offers a vast array of essential surgical interventions. Our highly skilled surgeons, including experts like Dr. R. K. Prasad, manage complex conditions affecting the abdomen, digestive tract, and soft tissues. Prioritizing minimally invasive techniques, we ensure reduced postoperative pain and rapid recovery for patients across Bihar, handling both elective procedures and 24/7 life-saving trauma surgeries.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar.",
+    "description": "Expert general surgical procedures including appendectomy, hernia repair, piles/fistula, and GI surgeries. 100% Cashless under Ayushman Bharat (PM-JAY).",
+    "longDescription": "The General Surgery department at Sarvada Hospito Care in Patna offers a vast array of essential surgical interventions. Fully empanelled under the Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY), eligible beneficiaries can avail 100% cashless surgeries up to ₹5 Lakhs. Our highly skilled surgeons manage complex conditions affecting the abdomen, digestive tract, and soft tissues, prioritizing minimally invasive techniques for rapid recovery.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar.",
     "features": [
+      "Ayushman Bharat (PM-JAY) Empanelled",
       "Hernia & Appendix Repair",
       "Gastrointestinal Surgery",
-      "Piles & Fistula Treatment",
+      "Piles & Fistula Laser Surgery",
       "24/7 Trauma Surgery"
     ],
-    "costEstimate": "Varies",
+    "costEstimate": "Cashless under Ayushman / Varies",
     "recoveryTime": "Varies",
     "order": 9,
     "treatments": [
@@ -65,15 +66,16 @@ export const surgicalServices = [
     "icon": "🦴",
     "category": "Surgical Services",
     "available": "24/7",
-    "description": "Advanced bone, joint, and trauma care including joint replacements and arthroscopy.",
-    "longDescription": "Our Orthopedics department is a premier destination in Patna for comprehensive musculoskeletal care. From complex joint replacements and advanced sports arthroscopy to emergency trauma fracture fixation, our expert surgeons utilize modern implants and minimally invasive techniques to restore mobility, alleviate severe joint pain, and dramatically enhance the quality of life for our patients.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar.",
+    "description": "Advanced bone, joint, and trauma care including joint replacements and arthroscopy. 100% Cashless under Ayushman Bharat (PM-JAY).",
+    "longDescription": "Our Orthopedics department is a premier destination in Patna for comprehensive musculoskeletal care. Fully empanelled under the Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY), eligible beneficiaries can receive 100% cashless joint replacements (Total Knee & Hip Replacement), complex fracture surgeries, and trauma care up to ₹5 Lakhs. Our expert surgeons utilize modern implants and minimally invasive techniques to restore mobility and alleviate joint pain.\n\nAt Sarvada Hospito Care, Kankarbagh, Patna, we combine world-class clinical expertise with state-of-the-art medical technology to ensure the highest standards of safety and care. Our dedicated coordinators provide round-the-clock support for hassle-free admissions, cashless hospitalization, and direct TPA insurance processing for patients across Bihar.",
     "features": [
-      "Total Joint Replacement",
+      "Ayushman Bharat (PM-JAY) Empanelled",
+      "Total Knee & Hip Replacement",
       "Arthroscopic Surgery",
       "Complex Fracture Care",
       "Sports Injury Treatment"
     ],
-    "costEstimate": "Varies",
+    "costEstimate": "Cashless under Ayushman / Varies",
     "recoveryTime": "Varies",
     "order": 10,
     "treatments": [

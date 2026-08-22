@@ -10,7 +10,7 @@ export const siteData = {
   shortName: 'Sarvada Hospito Care',
   tagline: 'A Unit of Servada Hospito Care Pvt. Ltd. — ISO 9001:2020 Certified Hospital',
   description:
-    'Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.) is an ISO 9001:2020 certified premier multi-specialty hospital located at Anand Palace, Bypass Road, Changer, Kankarbagh, Patna, Bihar 800020. We offer comprehensive medical care including 24/7 Emergency & Trauma, ICU/ICCU, advanced Surgical Services, Cardiology, Orthopedics, Gynecology, and in-house Diagnostics.',
+    'Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.) is an ISO 9001:2020 certified premier multi-specialty hospital located at Anand Palace, Bypass Road, Changer, Kankarbagh, Patna, Bihar 800020. We offer 24/7 Emergency & Trauma, ICU, advanced Surgical Services, Urology, Gynecology, and cashless treatments for Orthopedics and General Surgery under the Ayushman Bharat Card (PM-JAY) scheme.',
   founded: '2018',
   url: 'https://sarvada-hospito-care.web.app',
   logo: '/favicon.png',
@@ -50,6 +50,14 @@ export const siteData = {
   seo: {
     keywords: [
       'Sarvada Hospito Care',
+      'Ayushman Card hospital Patna',
+      'Ayushman Bharat hospital Kankarbagh',
+      'PMJAY empanelled hospital Patna',
+      'cashless treatment Ayushman card Patna',
+      'best Ayushman hospital in Patna Bihar',
+      'PM-JAY cashless hospital Kankarbagh',
+      'Ayushman card hospital list Patna',
+      'Sarvada hospital Ayushman card approved',
       'multi-specialty hospital Patna',
       'best hospital in Patna Bihar',
       'emergency care hospital Patna',
