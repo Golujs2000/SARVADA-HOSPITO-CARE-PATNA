@@ -169,7 +169,7 @@ export default function TreatmentGallery() {
             <span className="text-primary-600">Procedures</span>
           </h2>
           <p className="text-gray-500 mt-4 text-lg max-w-2xl mx-auto">
-            A glimpse into the healing environment, diagnostics, and treatments at Sarvada Hospito Care, Anand palace, Bypass Rd, changer, Kankarbagh, Patna.
+            A glimpse into the healing environment, diagnostics, and treatments at Sarvada Hospito Care, Anand palace, Bypass Rd, Pillar no 55, Kankarbagh, Patna.
           </p>
         </motion.div>
 

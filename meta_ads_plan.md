@@ -2,7 +2,7 @@
 ## Sarvada Hospito Care — Orthopedics & General Surgery
 
 > **Hospital**: Sarvada Hospito Care (A Unit of Servada Hospito Care Pvt. Ltd.)  
-> **Location**: Anand Palace, Bypass Rd, Changer, Kankarbagh, Patna, Bihar 800020  
+> **Location**: Anand Palace, Bypass Rd, Pillar no 55, Kankarbagh, Patna, Bihar 800020  
 > **Ayushman Empanelled Specialties**: **Orthopedic Surgery (हड्डी एवं जोड़ रोग)** & **General / Laparoscopic Surgery (सामान्य एवं दूरबीन सर्जरी)**  
 > **Coverage**: 100% Free / Cashless Treatment up to **₹5,00,000 per family/year** under PM-JAY  
 > **Helpline**: 7079001600 | 7079001700  

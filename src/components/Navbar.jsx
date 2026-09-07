@@ -123,7 +123,7 @@ export default function Navbar() {
             <div className="flex md:hidden items-center justify-between w-full">
               <Link to="/" className="flex items-center gap-2">
                 <img src={hospitalLogo} alt="Logo" width="32" height="32" className="h-8 bg-white p-1 rounded" />
-                <span className="font-bold text-sm tracking-wider">SARVADA CARE</span>
+                <span className="font-bold text-sm tracking-wide">SARVADA HOSPITO CARE</span>
               </Link>
               <button 
                 onClick={() => setMobileOpen(!mobileOpen)} 

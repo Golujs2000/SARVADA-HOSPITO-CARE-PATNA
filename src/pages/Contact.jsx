@@ -73,7 +73,7 @@ export default function Contact() {
           email: siteData.contact.email,
           address: {
             '@type': 'PostalAddress',
-            streetAddress: 'Anand palace, Bypass Rd, changer, Kankarbagh',
+            streetAddress: 'Anand palace, Bypass Rd, Pillar no 55, Kankarbagh',
             addressLocality: 'Patna',
             addressRegion: 'Bihar',
             postalCode: '800020',

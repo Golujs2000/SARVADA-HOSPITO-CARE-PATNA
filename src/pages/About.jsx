@@ -81,7 +81,7 @@ export default function About() {
               
               <div className="space-y-4 text-gray-600 leading-relaxed text-base sm:text-lg">
                 <p>
-                  Sarvada Hospito Care was established at Anand Palace, Bypass Road, Changer, Kankarbagh, Patna with a focused mission — to bring world-class healthcare, advanced laparoscopic surgeries, and multi-specialty treatments to Bihar.
+                  Sarvada Hospito Care was established at Anand Palace, Bypass Road, Pillar no 55, Kankarbagh, Patna with a focused mission — to bring world-class healthcare, advanced laparoscopic surgeries, and multi-specialty treatments to Bihar.
                 </p>
                 <p>
                   Managed and run by a team of senior Consultant Physicians, Gastro Surgeons, Gynecologists, Cardiologists, and Orthopedicians with decades of collective clinical experience. Our medical expertise is coupled with a genuine concern for our patients' well-being, supported by a staff dedicated to patient comfort and prompt attention.

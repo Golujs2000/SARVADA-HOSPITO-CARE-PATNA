@@ -4,12 +4,13 @@ import { motion } from 'framer-motion'
 import {
   FiArrowLeft, FiClock, FiCalendar, FiCheck, FiActivity,
   FiUser, FiArrowRight, FiMapPin, FiInfo, FiChevronRight,
-  FiHeart, FiShield
+  FiHeart, FiShield, FiPhoneCall
 } from 'react-icons/fi'
 import SEO from '../components/SEO'
 import AyushmanBanner from '../components/home/AyushmanBanner'
 import { getCategoryItemBySlug as getDepartmentBySlug } from '../services/categories'
 import { useDoctors } from '../hooks/useDoctors'
+import { seedDoctors } from '../data/seedData'
 import { getInitials } from '../utils/helpers'
 import { siteData } from '../data/siteData'
 
@@ -78,6 +79,14 @@ const getDepartmentTheme = (slug) => {
       btn: 'bg-teal-700 hover:bg-teal-800 focus:ring-teal-550 text-white',
       border: 'border-teal-200',
       gradientTo: 'to-teal-50/20'
+    },
+    'ayushman-bharat-card': {
+      bg: 'bg-emerald-50/50',
+      tagline: 'text-emerald-700 font-black',
+      iconColor: 'text-emerald-600',
+      btn: 'bg-emerald-800 hover:bg-emerald-900 focus:ring-emerald-600 text-white',
+      border: 'border-emerald-200',
+      gradientTo: 'to-emerald-50/30'
     }
   };
 
@@ -141,14 +150,70 @@ export default function ServiceDetail() {
 
   if (!department) return null
 
+  const isAyushman = (department.slug === 'ayushman-bharat-card' || slug === 'ayushman-bharat-card')
   const treatments = Array.isArray(department.treatments) ? department.treatments : []
   const features = Array.isArray(department.features) ? department.features : []
-  const byId = doctors.filter((d) => (department.doctorIds || []).includes(d.id))
-  const byName = doctors.filter((d) =>
-    d.specialty === department.name ||
-    (Array.isArray(d.specialties) && d.specialties.includes(department.name))
-  )
-  const relatedDoctors = [...new Map([...byId, ...byName].map((d) => [d.id, d])).values()]
+  
+  let relatedDoctors = []
+  if (isAyushman) {
+    // Strictly filter Orthopedics and General/Laparoscopic Surgeons only
+    // Live Firestore database doctors take highest priority
+    const dbDoctors = Array.isArray(doctors) ? doctors : []
+    const pool = [...dbDoctors, ...seedDoctors]
+    
+    const matched = []
+    const seenNames = new Set()
+
+    for (const d of pool) {
+      const name = (d.name || '').toLowerCase().trim()
+      if (seenNames.has(name)) continue
+
+      const specialty = (d.specialty || '').toLowerCase()
+      const specs = (Array.isArray(d.specialties) ? d.specialties : []).map((s) => s.toLowerCase())
+
+      // Explicit whitelist for exact empanelled surgeons
+      const isWhitelisted = 
+        name.includes('ankit pranjal') ||
+        name.includes('r. k. prasad') || 
+        name.includes('rk prasad') || 
+        name.includes('prasad') || 
+        name.includes('amarnath') || 
+        name.includes('nirmal')
+
+      // Strict exclusions
+      const isExcluded = 
+        specialty.includes('ent') || 
+        specialty.includes('dental') || 
+        specialty.includes('maxillo') || 
+        specialty.includes('nephro') || 
+        specialty.includes('neuro') || 
+        specialty.includes('physician') ||
+        specialty.includes('critical care')
+
+      const isOrthoOrGeneral = 
+        specialty.includes('ortho') || 
+        specialty.includes('general surgeon') || 
+        specialty.includes('laparoscopic') ||
+        specs.includes('orthopedics') ||
+        specs.includes('general surgery')
+
+      if (isWhitelisted || (!isExcluded && isOrthoOrGeneral)) {
+        // If from seed, check if a live Firestore document exists for this doctor and merge with database profile
+        const dbMatch = dbDoctors.find((dbDoc) => (dbDoc.name || '').toLowerCase().trim() === name)
+        const finalDoc = dbMatch ? { ...d, ...dbMatch, image: dbMatch.image || d.image } : d
+        matched.push(finalDoc)
+        seenNames.add(name)
+      }
+    }
+    relatedDoctors = matched
+  } else {
+    const byId = doctors.filter((d) => (department.doctorIds || []).includes(d.id))
+    const byName = doctors.filter((d) =>
+      d.specialty === department.name ||
+      (Array.isArray(d.specialties) && d.specialties.includes(department.name))
+    )
+    relatedDoctors = [...new Map([...byId, ...byName].map((d) => [d.id || d.name, d])).values()]
+  }
 
   const theme = getDepartmentTheme(department.slug || slug)
 
@@ -191,15 +256,27 @@ export default function ServiceDetail() {
           <div className={`w-full ${department.heroImage ? 'lg:max-w-[55%] xl:max-w-[60%]' : 'max-w-4xl'}`}>
             {/* Tagline / Category details */}
             <p className={`font-extrabold uppercase tracking-widest text-xs md:text-sm mb-3 ${theme.tagline}`}>
-              COMPASSIONATE CARE. POWERED BY INNOVATION.
+              {isAyushman 
+                ? 'GOVERNMENT APPROVED · 100% CASHLESS SURGERY (PM-JAY)'
+                : 'COMPASSIONATE CARE. POWERED BY INNOVATION.'}
             </p>
 
             <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-navy-800 mb-4 leading-tight tracking-tight">
-              Experts in <span className={theme.tagline}>{department.name.replace(/(Department of|Services|Service)/i, '').trim()}</span>. Focused on You.
+              {isAyushman ? (
+                <>
+                  Ayushman Bharat <span className="text-emerald-700 font-hindi">(PM-JAY)</span> Empanelled Hospital
+                </>
+              ) : (
+                <>
+                  Experts in <span className={theme.tagline}>{department.name.replace(/(Department of|Services|Service)/i, '').trim()}</span>. Focused on You.
+                </>
+              )}
             </h1>
 
             <p className="text-gray-600 text-base md:text-lg max-w-2xl leading-relaxed font-light mb-6">
-              {department.description}
+              {isAyushman
+                ? 'Free cashless surgical hospitalization up to ₹5,00,000 per family per year, specifically approved and empanelled for Orthopedics (हड्डी एवं जोड़ रोग) and General & Laparoscopic Surgery (सामान्य एवं दूरबीन सर्जरी).'
+                : department.description}
             </p>
 
             {/* Mobile Hero Image */}
@@ -217,23 +294,39 @@ export default function ServiceDetail() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6 border-t border-b border-gray-200/80 my-8">
               <div className="flex flex-col items-start gap-1 pr-2 md:border-r border-gray-200 last:border-r-0">
                 <FiActivity className={`w-6 h-6 mb-1 ${theme.iconColor}`} />
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Advanced</span>
-                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">Technology</span>
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  {isAyushman ? 'Coverage' : 'Advanced'}
+                </span>
+                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">
+                  {isAyushman ? '₹5 Lakhs Free' : 'Technology'}
+                </span>
               </div>
               <div className="flex flex-col items-start gap-1 pr-2 md:border-r border-gray-200 last:border-r-0">
                 <FiUser className={`w-6 h-6 mb-1 ${theme.iconColor}`} />
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Expert</span>
-                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">{getSpecialistLabel(department.name)}</span>
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  {isAyushman ? 'Specialty 1' : 'Expert'}
+                </span>
+                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">
+                  {isAyushman ? 'Orthopedics (हड्डी)' : getSpecialistLabel(department.name)}
+                </span>
               </div>
               <div className="flex flex-col items-start gap-1 pr-2 md:border-r border-gray-200 last:border-r-0">
                 <FiHeart className={`w-6 h-6 mb-1 ${theme.iconColor}`} />
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Comprehensive</span>
-                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">Care</span>
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  {isAyushman ? 'Specialty 2' : 'Comprehensive'}
+                </span>
+                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">
+                  {isAyushman ? 'General Surgery' : 'Care'}
+                </span>
               </div>
               <div className="flex flex-col items-start gap-1 pr-2 last:border-r-0">
                 <FiShield className={`w-6 h-6 mb-1 ${theme.iconColor}`} />
-                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Patient First</span>
-                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">Approach</span>
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                  {isAyushman ? 'Hospitalization' : 'Patient First'}
+                </span>
+                <span className="text-sm font-extrabold text-[#1a2e40] -mt-1">
+                  {isAyushman ? '100% Cashless' : 'Approach'}
+                </span>
               </div>
             </div>
 
@@ -270,6 +363,162 @@ export default function ServiceDetail() {
 
             {/* Left — Main Content Area */}
             <div className="lg:col-span-2 space-y-12">
+
+              {/* Specialized Ayushman Bharat Empanelled Verticals */}
+              {(department.slug === 'ayushman-bharat-card' || slug === 'ayushman-bharat-card') && (
+                <div className="space-y-8 bg-gradient-to-br from-emerald-50/80 via-teal-50/40 to-emerald-50/80 p-6 md:p-8 rounded-3xl border border-emerald-200 shadow-sm">
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2 mb-3">
+                      <span className="bg-amber-400 text-emerald-950 text-[10px] font-black tracking-widest uppercase px-2.5 py-1 rounded border border-amber-300">
+                        OFFICIALLY EMPANELLED SPECIALTIES · PM-JAY
+                      </span>
+                      <span className="bg-emerald-800 text-white text-[10px] font-bold tracking-wider uppercase px-2 py-1 rounded">
+                        100% CASHLESS UP TO ₹5,00,000
+                      </span>
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-heading font-black text-emerald-950">
+                      Surgeries Covered Under Ayushman Bharat
+                    </h2>
+                    <p className="text-emerald-800 text-sm mt-1 leading-relaxed">
+                      Eligible cardholders can receive 100% free surgical care, modular OT hospitalization, certified implants, medicines, and post-operative recovery up to ₹5,00,000 per family per year.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Vertical 1: Orthopedics */}
+                    <div className="bg-white p-6 rounded-2xl border border-emerald-200/80 shadow-sm hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl">🦴</span>
+                          <div>
+                            <h3 className="font-heading font-black text-lg text-emerald-950">Orthopedic Surgery</h3>
+                            <span className="text-xs text-amber-700 font-bold font-hindi">हड्डी एवं जोड़ प्रत्यारोपण</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          Complete cashless joint replacement and emergency trauma procedures with imported quality implants and post-operative physiotherapy.
+                        </p>
+                        <ul className="space-y-2 text-xs text-gray-700 font-medium">
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Total Knee Replacement (TKR)</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Total Hip Replacement (THR)</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Complex Fracture Fixation & 24/7 Trauma</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Arthroscopic Ligament (ACL/Meniscus) Care</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Spinal Decompression & Disc Surgery</li>
+                        </ul>
+                      </div>
+                      <Link to="/services/orthopedics" className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-900 pt-2 border-t border-gray-100">
+                        View Orthopedics Department <FiChevronRight />
+                      </Link>
+                    </div>
+
+                    {/* Vertical 2: General Surgery */}
+                    <div className="bg-white p-6 rounded-2xl border border-emerald-200/80 shadow-sm hover:shadow-md transition-all space-y-4 flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl">✂️</span>
+                          <div>
+                            <h3 className="font-heading font-black text-lg text-emerald-950">General & Laparoscopic Surgery</h3>
+                            <span className="text-xs text-amber-700 font-bold font-hindi">सामान्य एवं दूरबीन विधि सर्जरी</span>
+                          </div>
+                        </div>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          Advanced minimally invasive keyhole operations with minimal blood loss, minimal scarring, and quick 24–48 hour hospital discharge.
+                        </p>
+                        <ul className="space-y-2 text-xs text-gray-700 font-medium">
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Laparoscopic Gallbladder Stone Removal</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Laparoscopic & Open Hernia Repair</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Emergency Appendectomy</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Stapler & Laser Surgery for Piles/Fistula</li>
+                          <li className="flex items-center gap-2"><FiCheck className="text-emerald-600 w-4 h-4 flex-shrink-0" /> Gastrointestinal & Soft Tissue Surgery</li>
+                        </ul>
+                      </div>
+                      <Link to="/services/general-surgery" className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-900 pt-2 border-t border-gray-100">
+                        View General Surgery Department <FiChevronRight />
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* Documents & Helpdesk Box */}
+                  <div className="bg-emerald-950 text-white p-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 border border-emerald-800/60 shadow-inner">
+                    <div className="space-y-1 text-center md:text-left">
+                      <span className="text-xs text-amber-300 font-bold uppercase tracking-wider">Required Documents for Instant Cashless Admission</span>
+                      <h4 className="text-lg font-bold text-white">Ayushman Card / E-Card + Aadhaar Card</h4>
+                      <p className="text-xs text-emerald-200 font-light">Visit our 24/7 Ayushman Bharat Helpdesk counter at the main hospital entrance for instant verification.</p>
+                    </div>
+                    <div className="flex flex-wrap gap-3">
+                      <a href={`tel:${siteData.contact.phone}`} className="px-5 py-3 bg-amber-400 hover:bg-amber-300 text-emerald-950 text-xs font-black rounded-xl transition-all shadow-md flex items-center gap-2">
+                        <FiPhoneCall /> Call: {siteData.contact.phone}
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Empanelled Doctors Grid */}
+                  <div className="space-y-4 pt-4 border-t border-emerald-200/80">
+                    <div>
+                      <span className="text-[10px] font-black text-emerald-800 uppercase tracking-widest bg-emerald-100/80 px-2.5 py-0.5 rounded border border-emerald-200 inline-block mb-1">
+                        CLINICAL TEAM · SURGEONS
+                      </span>
+                      <h3 className="font-heading font-black text-xl text-emerald-950">
+                        Empanelled Orthopedic & General Surgery Specialists
+                      </h3>
+                      <p className="text-xs text-gray-600">
+                        Consult our senior empanelled surgeons for 100% cashless PM-JAY treatment, consultations, and operations.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {relatedDoctors.map((doc) => {
+                        const isOrtho = (doc.specialty || '').toLowerCase().includes('ortho') || 
+                          (Array.isArray(doc.specialties) && doc.specialties.some(s => s.toLowerCase().includes('ortho')))
+                        return (
+                          <div key={doc.id || doc.name} className="bg-white p-5 rounded-2xl border border-emerald-200/80 shadow-sm hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+                            <div className="flex items-start gap-4">
+                              <div className="relative flex-shrink-0">
+                                {doc.image ? (
+                                  <img src={doc.image} alt={doc.name} className="w-14 h-14 rounded-2xl object-cover border border-emerald-100 shadow-sm" />
+                                ) : (
+                                  <div className="w-14 h-14 rounded-2xl bg-emerald-50 flex items-center justify-center border border-emerald-200">
+                                    <span className="font-bold text-emerald-800 text-lg">{getInitials(doc.name)}</span>
+                                  </div>
+                                )}
+                                <span className="absolute -top-1.5 -right-1.5 text-base">
+                                  {isOrtho ? '🦴' : '✂️'}
+                                </span>
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded inline-block mb-1 ${
+                                  isOrtho ? 'bg-amber-100 text-amber-900 border border-amber-200' : 'bg-teal-100 text-teal-900 border border-teal-200'
+                                }`}>
+                                  {isOrtho ? 'Orthopedics' : 'General & Laparoscopic Surgery'}
+                                </span>
+                                <h4 className="font-heading font-black text-navy-950 text-base leading-tight">
+                                  {doc.name}
+                                </h4>
+                                <p className="text-xs text-gray-500 mt-0.5">{doc.qualification}</p>
+                                <p className="text-[11px] font-bold text-emerald-700 mt-1">
+                                  {doc.specialty}
+                                </p>
+                              </div>
+                            </div>
+
+                            <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+                              <div className="text-[11px] text-gray-500 font-medium">
+                                <span className="font-bold text-emerald-800">100% Cashless</span> Surgery with Card
+                              </div>
+                              <Link
+                                to={`/book-appointment?dept=${encodeURIComponent(isOrtho ? 'Orthopedics' : 'General Surgery')}&doctor=${encodeURIComponent(doc.name)}`}
+                                className="px-4 py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs font-bold rounded-lg transition-colors flex items-center gap-1.5 shadow-sm"
+                              >
+                                <FiCalendar className="w-3.5 h-3.5" /> Book Appointment
+                              </Link>
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
+              )}
 
               {/* Department Overview */}
               {department.longDescription && (
@@ -339,8 +588,14 @@ export default function ServiceDetail() {
             {/* Right Sidebar — Specialists */}
             <div className="space-y-8 lg:sticky lg:top-24 self-start">
               <div className="bg-slate-50 rounded-2xl border border-gray-200 p-6 md:p-8">
-                <h3 className="font-heading font-bold text-xl text-navy-900 mb-2">Our Specialists</h3>
-                <p className="text-sm text-gray-600 mb-6">Book a direct consultation with our experts in {department.name}.</p>
+                <h3 className="font-heading font-bold text-xl text-navy-900 mb-2">
+                  {isAyushman ? 'Ayushman Empanelled Surgeons' : 'Our Specialists'}
+                </h3>
+                <p className="text-sm text-gray-600 mb-6">
+                  {isAyushman 
+                    ? 'Consult our senior Orthopedic & General Surgeons for 100% cashless PM-JAY treatment.' 
+                    : `Book a direct consultation with our experts in ${department.name}.`}
+                </p>
                 
                 {relatedDoctors.length > 0 ? (
                   <div className="space-y-6">

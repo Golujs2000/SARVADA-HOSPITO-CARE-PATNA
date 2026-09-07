@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://sarvada-hospito-care.web.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <!-- Core Pages -->
+  <url><loc>https://sarvada-hospito-care.web.app/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
   <url><loc>https://sarvada-hospito-care.web.app/about</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://sarvada-hospito-care.web.app/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sarvada-hospito-care.web.app/hospital-services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://sarvada-hospito-care.web.app/doctors</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://sarvada-hospito-care.web.app/gallery</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/book-appointment</loc><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://sarvada-hospito-care.web.app/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://sarvada-hospito-care.web.app/contact</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://sarvada-hospito-care.web.app/book-appointment</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/gallery</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
+  <!-- Category Hubs -->
+  <url><loc>https://sarvada-hospito-care.web.app/hospital-departments</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/surgical-services</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/critical-care</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/facilities-diagnostics</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+
+  <!-- Ayushman Bharat & Major Surgical Services -->
+  <url><loc>https://sarvada-hospito-care.web.app/services/ayushman-bharat-card</loc><changefreq>daily</changefreq><priority>0.95</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/orthopedics</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/general-surgery</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/laparoscopic-surgery</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/cardiology</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/gynecology</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/urology</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/nephrology</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/gastroenterology</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/pulmonology</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://sarvada-hospito-care.web.app/services/critical-care-medicine</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Legal -->
   <url><loc>https://sarvada-hospito-care.web.app/privacy-policy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://sarvada-hospito-care.web.app/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

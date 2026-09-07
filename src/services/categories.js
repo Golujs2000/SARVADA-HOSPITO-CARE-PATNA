@@ -45,29 +45,52 @@ export async function getCategoryItemById(collectionName, id) {
   return { ...snap.data(), id: snap.id }
 }
 
+import { patientFacilities } from '../data/seed/patientFacilities'
+
 // Search ALL category collections for an item with a matching slug
 export async function getCategoryItemBySlug(slug) {
-  // Run queries across all 5 collections concurrently
-  const promises = ALL_COLLECTIONS.map(async (colName) => {
-    const q = query(collection(db, colName), where('slug', '==', slug), limit(1))
-    const snap = await getDocs(q)
-    if (!snap.empty) {
-      return { ...snap.docs[0].data(), id: snap.docs[0].id, _collection: colName }
+  try {
+    // Run queries across all 5 collections concurrently
+    const promises = ALL_COLLECTIONS.map(async (colName) => {
+      const q = query(collection(db, colName), where('slug', '==', slug), limit(1))
+      const snap = await getDocs(q)
+      if (!snap.empty) {
+        return { ...snap.docs[0].data(), id: snap.docs[0].id, _collection: colName }
+      }
+      return null
+    })
+
+    const results = await Promise.all(promises)
+    let found = results.find(res => res !== null) || null
+    
+    if (slug === 'ayushman-bharat-card') {
+      const seedAyushman = patientFacilities.find(f => f.slug === 'ayushman-bharat-card')
+      if (seedAyushman) {
+        found = {
+          ...(found || {}),
+          ...seedAyushman,
+          id: found?.id || 'ayushman-bharat-card',
+          treatments: seedAyushman.treatments || []
+        }
+      }
+    } else if (found) {
+      // Attach treatments to the item
+      const tQ = query(collection(db, 'treatments'), where('parentId', '==', found.id))
+      const tSnap = await getDocs(tQ)
+      found.treatments = tSnap.docs.map(d => ({ ...d.data(), id: d.id }))
+    }
+    
+    return found
+  } catch (err) {
+    console.error('Error fetching category item by slug:', err)
+    if (slug === 'ayushman-bharat-card') {
+      const seedAyushman = patientFacilities.find(f => f.slug === 'ayushman-bharat-card')
+      if (seedAyushman) {
+        return { ...seedAyushman, id: 'ayushman-bharat-card' }
+      }
     }
     return null
-  })
-
-  const results = await Promise.all(promises)
-  const found = results.find(res => res !== null) || null
-  
-  if (found) {
-    // Attach treatments to the item
-    const tQ = query(collection(db, 'treatments'), where('parentId', '==', found.id))
-    const tSnap = await getDocs(tQ)
-    found.treatments = tSnap.docs.map(d => ({ ...d.data(), id: d.id }))
   }
-  
-  return found
 }
 
 // Add a new item to a specific category collection

@@ -44,7 +44,7 @@ const FIELD_GROUPS = [
       { name: 'phone', label: 'Contact Phone', placeholder: '7079001600', icon: FiPhone },
       { name: 'emergencyPhone', label: 'Emergency Phone', placeholder: '7079001700', icon: FiPhone },
       { name: 'email', label: 'Email Address', placeholder: 'sarvadahospitocarepatna@gmail.com', icon: FiMail, type: 'email' },
-      { name: 'address', label: 'Address', placeholder: 'Anand palace, Bypass Rd, changer, Kankarbagh, Patna, Bihar 800020', icon: FiMapPin },
+      { name: 'address', label: 'Address', placeholder: 'Anand palace, Bypass Rd, Pillar no 55, Kankarbagh, Patna, Bihar 800020', icon: FiMapPin },
     ],
   },
   {
@@ -82,6 +82,8 @@ export default function AdminSettings() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
+  const [syncingAyushman, setSyncingAyushman] = useState(false)
+
   const handleSeedClinical = async () => {
     if (!window.confirm('WARNING: This will RESET all 36 Departments and 72 Treatments to their factory defaults. Any manual changes to categories or treatments will be LOST. Continue?')) return
     setSeedingClinical(true)
@@ -92,6 +94,18 @@ export default function AdminSettings() {
       toast.error('Seeding failed: ' + err.message)
     } finally {
       setSeedingClinical(false)
+    }
+  }
+
+  const handleSyncAyushman = async () => {
+    setSyncingAyushman(true)
+    try {
+      await syncAyushmanFacility()
+      toast.success('Ayushman Bharat facility & Ortho/General Surgery synced to Firestore!')
+    } catch (err) {
+      toast.error('Ayushman sync failed: ' + err.message)
+    } finally {
+      setSyncingAyushman(false)
     }
   }
 
@@ -218,10 +232,28 @@ export default function AdminSettings() {
               <span className="text-amber-700 font-medium"> Actions are destructive and overwrite existing database records.</span>
             </p>
             
-            <div className="max-w-md">
+            <div className="max-w-md space-y-6">
+              {/* Ayushman Bharat Sync Button (Non-destructive) */}
+              <div className="space-y-3 bg-emerald-50/70 border border-emerald-200 p-4 rounded-xl">
+                <p className="text-xs font-semibold text-emerald-950 uppercase tracking-wider">Ayushman Bharat (PM-JAY) Sync</p>
+                <button
+                  type="button"
+                  onClick={handleSyncAyushman}
+                  disabled={syncingAyushman}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 disabled:opacity-60 text-white font-semibold rounded-xl transition-colors text-sm shadow-sm"
+                >
+                  {syncingAyushman ? (
+                    <><FiRefreshCw size={15} className="animate-spin" /> Syncing to Firestore...</>
+                  ) : (
+                    <><FiRefreshCw size={15} /> Sync Ayushman Bharat Data to Firestore</>
+                  )}
+                </button>
+                <p className="text-[10px] text-emerald-800 italic">Safely updates the Ayushman Bharat facility, treatments, and Orthopedics/General Surgery empanelment in Firestore without overwriting other departments.</p>
+              </div>
+
               {/* Clinical Dataset Button */}
               <div className="space-y-3">
-                <p className="text-xs font-semibold text-navy-800 uppercase tracking-wider">Clinical Content</p>
+                <p className="text-xs font-semibold text-navy-800 uppercase tracking-wider">Full Factory Reset</p>
                 <button
                   type="button"
                   onClick={handleSeedClinical}
@@ -231,10 +263,10 @@ export default function AdminSettings() {
                   {seedingClinical ? (
                     <><FiRefreshCw size={15} className="animate-spin" /> Updating...</>
                   ) : (
-                    <><FiDatabase size={15} /> Refresh Clinical Dataset</>
+                    <><FiDatabase size={15} /> Refresh Full Clinical Dataset</>
                   )}
                 </button>
-                <p className="text-[10px] text-gray-400 italic">Resets 36 Departments & 72 Treatments (including the Ayushman Bharat facility and sub-treatments). Overwrites existing clinical records.</p>
+                <p className="text-[10px] text-gray-400 italic">Resets all 36 Departments & 72 Treatments to initial factory seed in Firestore.</p>
               </div>
             </div>
 

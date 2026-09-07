@@ -510,7 +510,7 @@ export const seedBlogs = [
     title: 'Laparoscopic Surgery: What You Need to Know Before Your Procedure',
     slug: 'laparoscopic-surgery-what-to-know',
     excerpt: 'Dr. Manmohan Suman explains how laparoscopic (keyhole) surgery works, its advantages over open surgery, and what patients should expect before, during, and after the procedure.',
-    content: `<h2>What is Laparoscopic Surgery?</h2><p>Laparoscopic surgery, also called keyhole surgery or minimally invasive surgery, is a modern surgical technique where operations are performed through small incisions (0.5–1.5 cm) using a camera (laparoscope) and specialized instruments. The surgeon views the operation on a monitor.</p><h2>Advantages Over Open Surgery</h2><ul><li><strong>Smaller incisions</strong> — 3–4 small cuts instead of one large one</li><li><strong>Less pain</strong> after surgery</li><li><strong>Shorter hospital stay</strong> — often go home next day</li><li><strong>Faster recovery</strong> — back to normal in days, not weeks</li><li><strong>Less blood loss</strong> and lower risk of infection</li><li><strong>Better cosmetic result</strong> — minimal scarring</li></ul><h2>Common Laparoscopic Procedures We Perform</h2><ul><li>Gallbladder removal (Cholecystectomy)</li><li>Hernia repair</li><li>Appendix removal (Appendectomy)</li><li>Liver cyst & abscess drainage</li><li>Colectomy (partial bowel removal)</li></ul><h2>What to Expect</h2><p>You will receive general anesthesia. The procedure typically takes 30–90 minutes. Most patients are walking the same evening and discharged the next morning. Full recovery takes 1–2 weeks compared to 4–6 weeks for open surgery.</p><p>Book a consultation at Sarvada Hospito Care, Anand palace, Bypass Rd, changer, Kankarbagh, Patna. Call: <strong>7079001600 / 7079001700</strong>.</p>`,
+    content: `<h2>What is Laparoscopic Surgery?</h2><p>Laparoscopic surgery, also called keyhole surgery or minimally invasive surgery, is a modern surgical technique where operations are performed through small incisions (0.5–1.5 cm) using a camera (laparoscope) and specialized instruments. The surgeon views the operation on a monitor.</p><h2>Advantages Over Open Surgery</h2><ul><li><strong>Smaller incisions</strong> — 3–4 small cuts instead of one large one</li><li><strong>Less pain</strong> after surgery</li><li><strong>Shorter hospital stay</strong> — often go home next day</li><li><strong>Faster recovery</strong> — back to normal in days, not weeks</li><li><strong>Less blood loss</strong> and lower risk of infection</li><li><strong>Better cosmetic result</strong> — minimal scarring</li></ul><h2>Common Laparoscopic Procedures We Perform</h2><ul><li>Gallbladder removal (Cholecystectomy)</li><li>Hernia repair</li><li>Appendix removal (Appendectomy)</li><li>Liver cyst & abscess drainage</li><li>Colectomy (partial bowel removal)</li></ul><h2>What to Expect</h2><p>You will receive general anesthesia. The procedure typically takes 30–90 minutes. Most patients are walking the same evening and discharged the next morning. Full recovery takes 1–2 weeks compared to 4–6 weeks for open surgery.</p><p>Book a consultation at Sarvada Hospito Care, Anand palace, Bypass Rd, Pillar no 55, Kankarbagh, Patna. Call: <strong>7079001600 / 7079001700</strong>.</p>`,
     author: 'Dr. Manmohan Suman',
     category: 'Laparoscopic Surgery',
     image: '',
@@ -745,6 +745,7 @@ export async function syncAyushmanFacility() {
     throw new Error('Ayushman Bharat facility data not found in seed file')
   }
 
+  // 1. Sync patientFacilities/ayushman-bharat-card
   const q = query(collection(db, 'patientFacilities'), where('slug', '==', 'ayushman-bharat-card'))
   const snap = await getDocs(q)
 
@@ -780,6 +781,22 @@ export async function syncAyushmanFacility() {
         parentCollection: 'patientFacilities',
         createdAt: serverTimestamp()
       })
+    }
+  }
+
+  // 2. Also sync General Surgery & Orthopedics in surgicalServices in Firestore
+  for (const targetSlug of ['general-surgery', 'orthopedics']) {
+    const seedItem = surgicalServices.find(s => s.slug === targetSlug)
+    if (seedItem) {
+      const sQ = query(collection(db, 'surgicalServices'), where('slug', '==', targetSlug))
+      const sSnap = await getDocs(sQ)
+      if (!sSnap.empty) {
+        const { treatments: _, ...sDocData } = seedItem
+        await updateDoc(doc(db, 'surgicalServices', sSnap.docs[0].id), {
+          ...sDocData,
+          updatedAt: serverTimestamp()
+        })
+      }
     }
   }
 }

@@ -80,20 +80,36 @@ export default function SEO({ title, description, image, type = 'website', keywo
     ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     : []
 
-  // Always include Local SEO schema on every page
+  // Always include Local SEO Hospital schema on every page
   const localSeoSchema = {
     '@context': 'https://schema.org',
-    '@type': 'MedicalClinic',
+    '@type': ['Hospital', 'MedicalClinic', 'EmergencyService'],
     name: siteData.name,
+    legalName: 'Servada Hospito Care Pvt. Ltd.',
     description: siteData.description,
     url: siteData.url,
     logo: `${siteData.url}${siteData.logo}`,
     image: `${siteData.url}${siteData.seo.ogImage}`,
     telephone: siteData.contact.phone,
+    emergencyTelephone: siteData.contact.phone2 || '7079001700',
     email: siteData.contact.email,
+    priceRange: '₹₹',
+    currenciesAccepted: 'INR',
+    paymentAccepted: 'Cash, Credit Card, Debit Card, UPI, Ayushman Bharat Card (PM-JAY), TPA Health Insurance',
+    isAcceptingNewPatients: true,
+    medicalSpecialty: [
+      'OrthopedicSurgery',
+      'GeneralSurgery',
+      'Gastroenterology',
+      'Cardiology',
+      'Gynecology',
+      'Nephrology',
+      'Urology',
+      'CriticalCareMedicine'
+    ],
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Anand palace, Bypass Rd, changer, Kankarbagh',
+      streetAddress: 'Anand palace, Bypass Rd, Pillar no 55, Kankarbagh',
       addressLocality: 'Patna',
       addressRegion: 'Bihar',
       postalCode: '800020',
@@ -107,9 +123,9 @@ export default function SEO({ title, description, image, type = 'website', keywo
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-        opens: '09:00',
-        closes: '17:00'
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '00:00',
+        closes: '23:59'
       }
     ]
   }
