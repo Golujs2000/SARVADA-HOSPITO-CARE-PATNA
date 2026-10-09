@@ -335,6 +335,17 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-max px-4 md:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-white/50">
           <p>© {new Date().getFullYear()} {siteData.name}. All rights reserved.</p>
+          <p className="flex items-center gap-1 text-white/60">
+            <span>Design by</span>
+            <a
+              href="https://nirviai.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-white hover:text-primary-400 transition-colors underline decoration-white/30 hover:decoration-primary-400 underline-offset-2"
+            >
+              nirviai.com
+            </a>
+          </p>
           <div className="flex flex-wrap items-center gap-4">
             {legalLinks.map(({ label, to }) => (
               <Link key={to} to={to} className="hover:text-white transition-colors">{label}</Link>
